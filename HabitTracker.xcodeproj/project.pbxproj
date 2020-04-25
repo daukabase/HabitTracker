@@ -13,26 +13,120 @@
 		B07BFD6824542C5F00D2D18F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5424542C5E00D2D18F /* Assets.xcassets */; };
 		B07BFD6924542C5F00D2D18F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5524542C5E00D2D18F /* Localizable.strings */; };
 		B07BFD6A24542C5F00D2D18F /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5624542C5E00D2D18F /* Localizable.stringsdict */; };
-		B07BFD6B24542C5F00D2D18F /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5824542C5E00D2D18F /* SF-Pro-Display-Thin.otf */; };
-		B07BFD6C24542C5F00D2D18F /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5924542C5E00D2D18F /* SF-Pro-Text-Heavy.otf */; };
-		B07BFD6D24542C5F00D2D18F /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5A24542C5E00D2D18F /* SF-Pro-Display-Light.otf */; };
-		B07BFD6E24542C5F00D2D18F /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5B24542C5E00D2D18F /* SF-Pro-Display-Regular.otf */; };
-		B07BFD6F24542C5F00D2D18F /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5C24542C5E00D2D18F /* SF-Pro-Display-Bold.otf */; };
-		B07BFD7024542C5F00D2D18F /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5D24542C5E00D2D18F /* SF-Pro-Display-Medium.otf */; };
-		B07BFD7124542C5F00D2D18F /* SF-Pro-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5E24542C5E00D2D18F /* SF-Pro-Display-Heavy.otf */; };
-		B07BFD7224542C5F00D2D18F /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5F24542C5E00D2D18F /* SF-Pro-Text-Light.otf */; };
-		B07BFD7324542C5F00D2D18F /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD6024542C5E00D2D18F /* SF-Pro-Display-Semibold.otf */; };
-		B07BFD7424542C5F00D2D18F /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD6124542C5E00D2D18F /* SF-Pro-Text-Regular.otf */; };
-		B07BFD7524542C5F00D2D18F /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD6224542C5E00D2D18F /* SF-Pro-Text-Bold.otf */; };
-		B07BFD7624542C5F00D2D18F /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD6324542C5E00D2D18F /* SF-Pro-Display-Ultralight.otf */; };
-		B07BFD7724542C5F00D2D18F /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD6424542C5E00D2D18F /* SF-Pro-Display-Black.otf */; };
-		B07BFD7824542C5F00D2D18F /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD6524542C5E00D2D18F /* SF-Pro-Text-Semibold.otf */; };
-		B07BFD7924542C5F00D2D18F /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD6624542C5F00D2D18F /* SF-Pro-Text-Medium.otf */; };
 		B07BFD7A24542C5F00D2D18F /* Colors.json in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD6724542C5F00D2D18F /* Colors.json */; };
 		B07BFD8024542C6800D2D18F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFD7C24542C6700D2D18F /* Fonts.swift */; };
 		B07BFD8124542C6800D2D18F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFD7D24542C6700D2D18F /* Images.swift */; };
 		B07BFD8224542C6800D2D18F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFD7E24542C6700D2D18F /* Colors.swift */; };
 		B07BFD8324542C6800D2D18F /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFD7F24542C6700D2D18F /* Localizable.swift */; };
+		B07BFD8624543B7E00D2D18F /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFD8424543B7E00D2D18F /* HabitsViewController.swift */; };
+		B07BFD8924543C7E00D2D18F /* HabitsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD8824543C7E00D2D18F /* HabitsViewController.storyboard */; };
+		B07BFDDA2454463D00D2D18F /* Gilroy-HeavyItalic.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD8A2454463500D2D18F /* Gilroy-HeavyItalic.woff2 */; };
+		B07BFDDB2454463D00D2D18F /* Gilroy-ExtraboldItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD8B2454463500D2D18F /* Gilroy-ExtraboldItalic.woff */; };
+		B07BFDDC2454463D00D2D18F /* Gilroy-SemiboldItalic.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD8C2454463500D2D18F /* Gilroy-SemiboldItalic.woff2 */; };
+		B07BFDDD2454463D00D2D18F /* Gilroy-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD8D2454463500D2D18F /* Gilroy-SemiboldItalic.ttf */; };
+		B07BFDDE2454463D00D2D18F /* Gilroy-Extrabold.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD8E2454463500D2D18F /* Gilroy-Extrabold.eot */; };
+		B07BFDDF2454463D00D2D18F /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD8F2454463500D2D18F /* Gilroy-Semibold.ttf */; };
+		B07BFDE02454463D00D2D18F /* Gilroy-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD902454463500D2D18F /* Gilroy-UltraLight.ttf */; };
+		B07BFDE12454463D00D2D18F /* Gilroy-Thin.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD912454463500D2D18F /* Gilroy-Thin.eot */; };
+		B07BFDE22454463D00D2D18F /* Gilroy-ThinItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD922454463500D2D18F /* Gilroy-ThinItalic.woff */; };
+		B07BFDE32454463D00D2D18F /* Gilroy-BoldItalic.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD932454463500D2D18F /* Gilroy-BoldItalic.eot */; };
+		B07BFDE42454463D00D2D18F /* Gilroy-Light.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD942454463500D2D18F /* Gilroy-Light.woff */; };
+		B07BFDE52454463D00D2D18F /* Gilroy-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD952454463500D2D18F /* Gilroy-ThinItalic.ttf */; };
+		B07BFDE62454463D00D2D18F /* Gilroy-Medium.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD962454463600D2D18F /* Gilroy-Medium.eot */; };
+		B07BFDE72454463D00D2D18F /* Gilroy-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD972454463600D2D18F /* Gilroy-BlackItalic.ttf */; };
+		B07BFDE82454463D00D2D18F /* Gilroy-ExtraboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD982454463600D2D18F /* Gilroy-ExtraboldItalic.ttf */; };
+		B07BFDE92454463D00D2D18F /* Gilroy-Black.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD992454463600D2D18F /* Gilroy-Black.woff */; };
+		B07BFDEA2454463D00D2D18F /* Gilroy-Thin.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD9A2454463600D2D18F /* Gilroy-Thin.woff */; };
+		B07BFDEB2454463D00D2D18F /* Gilroy-Thin.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD9B2454463600D2D18F /* Gilroy-Thin.woff2 */; };
+		B07BFDEC2454463D00D2D18F /* Gilroy-UltraLight.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD9C2454463600D2D18F /* Gilroy-UltraLight.woff */; };
+		B07BFDED2454463D00D2D18F /* Gilroy-Semibold.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD9D2454463600D2D18F /* Gilroy-Semibold.woff2 */; };
+		B07BFDEE2454463D00D2D18F /* Gilroy-Black.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD9E2454463600D2D18F /* Gilroy-Black.eot */; };
+		B07BFDEF2454463D00D2D18F /* Gilroy-LightItalic.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD9F2454463600D2D18F /* Gilroy-LightItalic.woff2 */; };
+		B07BFDF02454463D00D2D18F /* Gilroy-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDA02454463600D2D18F /* Gilroy-LightItalic.ttf */; };
+		B07BFDF12454463D00D2D18F /* Gilroy-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDA12454463700D2D18F /* Gilroy-MediumItalic.ttf */; };
+		B07BFDF22454463D00D2D18F /* Gilroy-Medium.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDA22454463700D2D18F /* Gilroy-Medium.woff */; };
+		B07BFDF32454463D00D2D18F /* Gilroy-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDA32454463700D2D18F /* Gilroy-RegularItalic.ttf */; };
+		B07BFDF42454463D00D2D18F /* Gilroy-RegularItalic.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDA42454463700D2D18F /* Gilroy-RegularItalic.woff2 */; };
+		B07BFDF52454463D00D2D18F /* Gilroy-UltraLightItalic.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDA52454463700D2D18F /* Gilroy-UltraLightItalic.woff2 */; };
+		B07BFDF62454463D00D2D18F /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDA62454463700D2D18F /* Gilroy-Bold.ttf */; };
+		B07BFDF72454463D00D2D18F /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDA72454463700D2D18F /* Gilroy-Medium.ttf */; };
+		B07BFDF82454463D00D2D18F /* Gilroy-LightItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDA82454463700D2D18F /* Gilroy-LightItalic.woff */; };
+		B07BFDF92454463D00D2D18F /* Gilroy-Bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDA92454463700D2D18F /* Gilroy-Bold.woff */; };
+		B07BFDFA2454463D00D2D18F /* Gilroy-Regular.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDAA2454463700D2D18F /* Gilroy-Regular.woff2 */; };
+		B07BFDFB2454463D00D2D18F /* Gilroy-RegularItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDAB2454463700D2D18F /* Gilroy-RegularItalic.woff */; };
+		B07BFDFC2454463D00D2D18F /* Gilroy-Black.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDAC2454463800D2D18F /* Gilroy-Black.woff2 */; };
+		B07BFDFD2454463D00D2D18F /* Gilroy-BlackItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDAD2454463800D2D18F /* Gilroy-BlackItalic.woff */; };
+		B07BFDFE2454463D00D2D18F /* Gilroy-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDAE2454463800D2D18F /* Gilroy-Heavy.ttf */; };
+		B07BFDFF2454463D00D2D18F /* Gilroy-Semibold.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDAF2454463800D2D18F /* Gilroy-Semibold.eot */; };
+		B07BFE002454463D00D2D18F /* Gilroy-UltraLight.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDB02454463800D2D18F /* Gilroy-UltraLight.eot */; };
+		B07BFE012454463D00D2D18F /* Gilroy-UltraLightItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDB12454463800D2D18F /* Gilroy-UltraLightItalic.woff */; };
+		B07BFE022454463D00D2D18F /* Gilroy-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDB22454463800D2D18F /* Gilroy-HeavyItalic.ttf */; };
+		B07BFE032454463D00D2D18F /* Gilroy-SemiboldItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDB32454463800D2D18F /* Gilroy-SemiboldItalic.woff */; };
+		B07BFE042454463D00D2D18F /* Gilroy-MediumItalic.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDB42454463800D2D18F /* Gilroy-MediumItalic.eot */; };
+		B07BFE052454463D00D2D18F /* Gilroy-MediumItalic.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDB52454463900D2D18F /* Gilroy-MediumItalic.woff2 */; };
+		B07BFE062454463D00D2D18F /* Gilroy-LightItalic.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDB62454463900D2D18F /* Gilroy-LightItalic.eot */; };
+		B07BFE072454463D00D2D18F /* Gilroy-BoldItalic.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDB72454463900D2D18F /* Gilroy-BoldItalic.woff2 */; };
+		B07BFE082454463D00D2D18F /* Gilroy-Light.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDB82454463900D2D18F /* Gilroy-Light.woff2 */; };
+		B07BFE092454463D00D2D18F /* Gilroy-Medium.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDB92454463900D2D18F /* Gilroy-Medium.woff2 */; };
+		B07BFE0A2454463D00D2D18F /* Gilroy-Regular.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDBA2454463900D2D18F /* Gilroy-Regular.eot */; };
+		B07BFE0B2454463D00D2D18F /* Gilroy-Heavy.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDBB2454463900D2D18F /* Gilroy-Heavy.woff */; };
+		B07BFE0C2454463D00D2D18F /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDBC2454463900D2D18F /* Gilroy-Light.ttf */; };
+		B07BFE0D2454463D00D2D18F /* Gilroy-Bold.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDBD2454463900D2D18F /* Gilroy-Bold.eot */; };
+		B07BFE0E2454463D00D2D18F /* Gilroy-Regular.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDBE2454463A00D2D18F /* Gilroy-Regular.woff */; };
+		B07BFE0F2454463D00D2D18F /* Gilroy-Light.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDBF2454463A00D2D18F /* Gilroy-Light.eot */; };
+		B07BFE102454463D00D2D18F /* Gilroy-ExtraboldItalic.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDC02454463A00D2D18F /* Gilroy-ExtraboldItalic.eot */; };
+		B07BFE112454463D00D2D18F /* Gilroy-SemiboldItalic.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDC12454463A00D2D18F /* Gilroy-SemiboldItalic.eot */; };
+		B07BFE122454463D00D2D18F /* Gilroy-HeavyItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDC22454463A00D2D18F /* Gilroy-HeavyItalic.woff */; };
+		B07BFE132454463D00D2D18F /* Gilroy-Semibold.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDC32454463A00D2D18F /* Gilroy-Semibold.woff */; };
+		B07BFE142454463D00D2D18F /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDC42454463A00D2D18F /* Gilroy-Regular.ttf */; };
+		B07BFE152454463D00D2D18F /* Gilroy-UltraLight.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDC52454463A00D2D18F /* Gilroy-UltraLight.woff2 */; };
+		B07BFE162454463D00D2D18F /* Gilroy-Extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDC62454463A00D2D18F /* Gilroy-Extrabold.ttf */; };
+		B07BFE172454463D00D2D18F /* Gilroy-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDC72454463B00D2D18F /* Gilroy-Thin.ttf */; };
+		B07BFE182454463D00D2D18F /* Gilroy-Extrabold.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDC82454463B00D2D18F /* Gilroy-Extrabold.woff2 */; };
+		B07BFE192454463D00D2D18F /* Gilroy-BlackItalic.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDC92454463B00D2D18F /* Gilroy-BlackItalic.woff2 */; };
+		B07BFE1A2454463D00D2D18F /* Gilroy-Heavy.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDCA2454463B00D2D18F /* Gilroy-Heavy.woff2 */; };
+		B07BFE1B2454463D00D2D18F /* Gilroy-ExtraboldItalic.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDCB2454463B00D2D18F /* Gilroy-ExtraboldItalic.woff2 */; };
+		B07BFE1C2454463D00D2D18F /* Gilroy-BlackItalic.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDCC2454463B00D2D18F /* Gilroy-BlackItalic.eot */; };
+		B07BFE1D2454463D00D2D18F /* Gilroy-Bold.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDCD2454463B00D2D18F /* Gilroy-Bold.woff2 */; };
+		B07BFE1E2454463D00D2D18F /* Gilroy-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDCE2454463B00D2D18F /* Gilroy-Black.ttf */; };
+		B07BFE1F2454463D00D2D18F /* Gilroy-UltraLightItalic.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDCF2454463B00D2D18F /* Gilroy-UltraLightItalic.eot */; };
+		B07BFE202454463D00D2D18F /* Gilroy-Heavy.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDD02454463C00D2D18F /* Gilroy-Heavy.eot */; };
+		B07BFE212454463D00D2D18F /* Gilroy-Extrabold.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDD12454463C00D2D18F /* Gilroy-Extrabold.woff */; };
+		B07BFE222454463D00D2D18F /* Gilroy-UltraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDD22454463C00D2D18F /* Gilroy-UltraLightItalic.ttf */; };
+		B07BFE232454463D00D2D18F /* Gilroy-ThinItalic.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDD32454463C00D2D18F /* Gilroy-ThinItalic.woff2 */; };
+		B07BFE242454463D00D2D18F /* Gilroy-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDD42454463C00D2D18F /* Gilroy-BoldItalic.ttf */; };
+		B07BFE252454463D00D2D18F /* Gilroy-BoldItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDD52454463C00D2D18F /* Gilroy-BoldItalic.woff */; };
+		B07BFE262454463D00D2D18F /* Gilroy-HeavyItalic.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDD62454463C00D2D18F /* Gilroy-HeavyItalic.eot */; };
+		B07BFE272454463D00D2D18F /* Gilroy-RegularItalic.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDD72454463C00D2D18F /* Gilroy-RegularItalic.eot */; };
+		B07BFE282454463D00D2D18F /* Gilroy-ThinItalic.eot in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDD82454463C00D2D18F /* Gilroy-ThinItalic.eot */; };
+		B07BFE292454463D00D2D18F /* Gilroy-MediumItalic.woff in Resources */ = {isa = PBXBuildFile; fileRef = B07BFDD92454463D00D2D18F /* Gilroy-MediumItalic.woff */; };
+		B07BFE2B2454486F00D2D18F /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE2A2454486F00D2D18F /* HabitCell.swift */; };
+		B07BFE2E24544B8B00D2D18F /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE2D24544B8B00D2D18F /* Days.swift */; };
+		B07BFE3024544B9800D2D18F /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE2F24544B9800D2D18F /* Habit.swift */; };
+		B07BFE4B24544C4A00D2D18F /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3424544C4A00D2D18F /* UIScrollView.swift */; };
+		B07BFE4C24544C4A00D2D18F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3524544C4A00D2D18F /* UIView.swift */; };
+		B07BFE4D24544C4A00D2D18F /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3624544C4A00D2D18F /* UIStackView.swift */; };
+		B07BFE4E24544C4A00D2D18F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3724544C4A00D2D18F /* UIColor.swift */; };
+		B07BFE4F24544C4A00D2D18F /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3824544C4A00D2D18F /* UITabBar.swift */; };
+		B07BFE5024544C4A00D2D18F /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3924544C4A00D2D18F /* UIPageViewController.swift */; };
+		B07BFE5124544C4A00D2D18F /* UIRectCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3A24544C4A00D2D18F /* UIRectCorner.swift */; };
+		B07BFE5224544C4A00D2D18F /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3B24544C4A00D2D18F /* UICollectionView.swift */; };
+		B07BFE5324544C4A00D2D18F /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3C24544C4A00D2D18F /* UIRefreshControl.swift */; };
+		B07BFE5424544C4A00D2D18F /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3D24544C4A00D2D18F /* UITableView.swift */; };
+		B07BFE5524544C4A00D2D18F /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3E24544C4A00D2D18F /* UITableViewCell.swift */; };
+		B07BFE5624544C4B00D2D18F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE3F24544C4A00D2D18F /* UIButton.swift */; };
+		B07BFE5724544C4B00D2D18F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4024544C4A00D2D18F /* UIImage.swift */; };
+		B07BFE5824544C4B00D2D18F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4124544C4A00D2D18F /* UIViewController.swift */; };
+		B07BFE5924544C4B00D2D18F /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4224544C4A00D2D18F /* UINavigationBar.swift */; };
+		B07BFE5A24544C4B00D2D18F /* UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4324544C4A00D2D18F /* UISwitch.swift */; };
+		B07BFE5B24544C4B00D2D18F /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4424544C4A00D2D18F /* UIImageView.swift */; };
+		B07BFE5C24544C4B00D2D18F /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4524544C4A00D2D18F /* UILabel.swift */; };
+		B07BFE5D24544C4B00D2D18F /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4624544C4A00D2D18F /* UIApplication.swift */; };
+		B07BFE5E24544C4B00D2D18F /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4724544C4A00D2D18F /* UINavigationController.swift */; };
+		B07BFE5F24544C4B00D2D18F /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4824544C4A00D2D18F /* UICollectionViewCell.swift */; };
+		B07BFE6024544C4B00D2D18F /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4924544C4A00D2D18F /* UIEdgeInsets.swift */; };
+		B07BFE6124544C4B00D2D18F /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE4A24544C4A00D2D18F /* UIStoryboard.swift */; };
+		B07BFE63245459B200D2D18F /* StringAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE62245459B200D2D18F /* StringAttribute.swift */; };
 		B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A35624126093007B2F21 /* AppDelegate.swift */; };
 		B0B3A37124126097007B2F21 /* HabitTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37024126097007B2F21 /* HabitTrackerTests.swift */; };
 		B0B3A37C24126097007B2F21 /* HabitTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */; };
@@ -40,7 +134,6 @@
 		B0BEFC62243A1A1E0020D377 /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A35F24126093007B2F21 /* HabitTracker.xcdatamodeld */; };
 		B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEFC6E243A29B40020D377 /* HomeViewController.swift */; };
 		B0BEFC76243A2A1B0020D377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BEFC74243A2A1B0020D377 /* LaunchScreen.storyboard */; };
-		B0BEFC7B243A2FE30020D377 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEFC7A243A2FE30020D377 /* HabitsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,26 +163,120 @@
 		B07BFD5424542C5E00D2D18F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B07BFD5524542C5E00D2D18F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B07BFD5624542C5E00D2D18F /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
-		B07BFD5824542C5E00D2D18F /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
-		B07BFD5924542C5E00D2D18F /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
-		B07BFD5A24542C5E00D2D18F /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
-		B07BFD5B24542C5E00D2D18F /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
-		B07BFD5C24542C5E00D2D18F /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
-		B07BFD5D24542C5E00D2D18F /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
-		B07BFD5E24542C5E00D2D18F /* SF-Pro-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Heavy.otf"; sourceTree = "<group>"; };
-		B07BFD5F24542C5E00D2D18F /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
-		B07BFD6024542C5E00D2D18F /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
-		B07BFD6124542C5E00D2D18F /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
-		B07BFD6224542C5E00D2D18F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
-		B07BFD6324542C5E00D2D18F /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
-		B07BFD6424542C5E00D2D18F /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
-		B07BFD6524542C5E00D2D18F /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
-		B07BFD6624542C5F00D2D18F /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		B07BFD6724542C5F00D2D18F /* Colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Colors.json; sourceTree = "<group>"; };
 		B07BFD7C24542C6700D2D18F /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		B07BFD7D24542C6700D2D18F /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		B07BFD7E24542C6700D2D18F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B07BFD7F24542C6700D2D18F /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		B07BFD8424543B7E00D2D18F /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		B07BFD8824543C7E00D2D18F /* HabitsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HabitsViewController.storyboard; sourceTree = "<group>"; };
+		B07BFD8A2454463500D2D18F /* Gilroy-HeavyItalic.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-HeavyItalic.woff2"; sourceTree = "<group>"; };
+		B07BFD8B2454463500D2D18F /* Gilroy-ExtraboldItalic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraboldItalic.woff"; sourceTree = "<group>"; };
+		B07BFD8C2454463500D2D18F /* Gilroy-SemiboldItalic.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiboldItalic.woff2"; sourceTree = "<group>"; };
+		B07BFD8D2454463500D2D18F /* Gilroy-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		B07BFD8E2454463500D2D18F /* Gilroy-Extrabold.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Extrabold.eot"; sourceTree = "<group>"; };
+		B07BFD8F2454463500D2D18F /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
+		B07BFD902454463500D2D18F /* Gilroy-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLight.ttf"; sourceTree = "<group>"; };
+		B07BFD912454463500D2D18F /* Gilroy-Thin.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.eot"; sourceTree = "<group>"; };
+		B07BFD922454463500D2D18F /* Gilroy-ThinItalic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ThinItalic.woff"; sourceTree = "<group>"; };
+		B07BFD932454463500D2D18F /* Gilroy-BoldItalic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-BoldItalic.eot"; sourceTree = "<group>"; };
+		B07BFD942454463500D2D18F /* Gilroy-Light.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.woff"; sourceTree = "<group>"; };
+		B07BFD952454463500D2D18F /* Gilroy-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ThinItalic.ttf"; sourceTree = "<group>"; };
+		B07BFD962454463600D2D18F /* Gilroy-Medium.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.eot"; sourceTree = "<group>"; };
+		B07BFD972454463600D2D18F /* Gilroy-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B07BFD982454463600D2D18F /* Gilroy-ExtraboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraboldItalic.ttf"; sourceTree = "<group>"; };
+		B07BFD992454463600D2D18F /* Gilroy-Black.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Black.woff"; sourceTree = "<group>"; };
+		B07BFD9A2454463600D2D18F /* Gilroy-Thin.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.woff"; sourceTree = "<group>"; };
+		B07BFD9B2454463600D2D18F /* Gilroy-Thin.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.woff2"; sourceTree = "<group>"; };
+		B07BFD9C2454463600D2D18F /* Gilroy-UltraLight.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLight.woff"; sourceTree = "<group>"; };
+		B07BFD9D2454463600D2D18F /* Gilroy-Semibold.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.woff2"; sourceTree = "<group>"; };
+		B07BFD9E2454463600D2D18F /* Gilroy-Black.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Black.eot"; sourceTree = "<group>"; };
+		B07BFD9F2454463600D2D18F /* Gilroy-LightItalic.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-LightItalic.woff2"; sourceTree = "<group>"; };
+		B07BFDA02454463600D2D18F /* Gilroy-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-LightItalic.ttf"; sourceTree = "<group>"; };
+		B07BFDA12454463700D2D18F /* Gilroy-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B07BFDA22454463700D2D18F /* Gilroy-Medium.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.woff"; sourceTree = "<group>"; };
+		B07BFDA32454463700D2D18F /* Gilroy-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-RegularItalic.ttf"; sourceTree = "<group>"; };
+		B07BFDA42454463700D2D18F /* Gilroy-RegularItalic.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-RegularItalic.woff2"; sourceTree = "<group>"; };
+		B07BFDA52454463700D2D18F /* Gilroy-UltraLightItalic.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLightItalic.woff2"; sourceTree = "<group>"; };
+		B07BFDA62454463700D2D18F /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
+		B07BFDA72454463700D2D18F /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.ttf"; sourceTree = "<group>"; };
+		B07BFDA82454463700D2D18F /* Gilroy-LightItalic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-LightItalic.woff"; sourceTree = "<group>"; };
+		B07BFDA92454463700D2D18F /* Gilroy-Bold.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.woff"; sourceTree = "<group>"; };
+		B07BFDAA2454463700D2D18F /* Gilroy-Regular.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.woff2"; sourceTree = "<group>"; };
+		B07BFDAB2454463700D2D18F /* Gilroy-RegularItalic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-RegularItalic.woff"; sourceTree = "<group>"; };
+		B07BFDAC2454463800D2D18F /* Gilroy-Black.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Black.woff2"; sourceTree = "<group>"; };
+		B07BFDAD2454463800D2D18F /* Gilroy-BlackItalic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-BlackItalic.woff"; sourceTree = "<group>"; };
+		B07BFDAE2454463800D2D18F /* Gilroy-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Heavy.ttf"; sourceTree = "<group>"; };
+		B07BFDAF2454463800D2D18F /* Gilroy-Semibold.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.eot"; sourceTree = "<group>"; };
+		B07BFDB02454463800D2D18F /* Gilroy-UltraLight.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLight.eot"; sourceTree = "<group>"; };
+		B07BFDB12454463800D2D18F /* Gilroy-UltraLightItalic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLightItalic.woff"; sourceTree = "<group>"; };
+		B07BFDB22454463800D2D18F /* Gilroy-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		B07BFDB32454463800D2D18F /* Gilroy-SemiboldItalic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiboldItalic.woff"; sourceTree = "<group>"; };
+		B07BFDB42454463800D2D18F /* Gilroy-MediumItalic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-MediumItalic.eot"; sourceTree = "<group>"; };
+		B07BFDB52454463900D2D18F /* Gilroy-MediumItalic.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-MediumItalic.woff2"; sourceTree = "<group>"; };
+		B07BFDB62454463900D2D18F /* Gilroy-LightItalic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-LightItalic.eot"; sourceTree = "<group>"; };
+		B07BFDB72454463900D2D18F /* Gilroy-BoldItalic.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-BoldItalic.woff2"; sourceTree = "<group>"; };
+		B07BFDB82454463900D2D18F /* Gilroy-Light.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.woff2"; sourceTree = "<group>"; };
+		B07BFDB92454463900D2D18F /* Gilroy-Medium.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.woff2"; sourceTree = "<group>"; };
+		B07BFDBA2454463900D2D18F /* Gilroy-Regular.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.eot"; sourceTree = "<group>"; };
+		B07BFDBB2454463900D2D18F /* Gilroy-Heavy.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Heavy.woff"; sourceTree = "<group>"; };
+		B07BFDBC2454463900D2D18F /* Gilroy-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.ttf"; sourceTree = "<group>"; };
+		B07BFDBD2454463900D2D18F /* Gilroy-Bold.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.eot"; sourceTree = "<group>"; };
+		B07BFDBE2454463A00D2D18F /* Gilroy-Regular.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.woff"; sourceTree = "<group>"; };
+		B07BFDBF2454463A00D2D18F /* Gilroy-Light.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.eot"; sourceTree = "<group>"; };
+		B07BFDC02454463A00D2D18F /* Gilroy-ExtraboldItalic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraboldItalic.eot"; sourceTree = "<group>"; };
+		B07BFDC12454463A00D2D18F /* Gilroy-SemiboldItalic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiboldItalic.eot"; sourceTree = "<group>"; };
+		B07BFDC22454463A00D2D18F /* Gilroy-HeavyItalic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-HeavyItalic.woff"; sourceTree = "<group>"; };
+		B07BFDC32454463A00D2D18F /* Gilroy-Semibold.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.woff"; sourceTree = "<group>"; };
+		B07BFDC42454463A00D2D18F /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
+		B07BFDC52454463A00D2D18F /* Gilroy-UltraLight.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLight.woff2"; sourceTree = "<group>"; };
+		B07BFDC62454463A00D2D18F /* Gilroy-Extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Extrabold.ttf"; sourceTree = "<group>"; };
+		B07BFDC72454463B00D2D18F /* Gilroy-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.ttf"; sourceTree = "<group>"; };
+		B07BFDC82454463B00D2D18F /* Gilroy-Extrabold.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Extrabold.woff2"; sourceTree = "<group>"; };
+		B07BFDC92454463B00D2D18F /* Gilroy-BlackItalic.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-BlackItalic.woff2"; sourceTree = "<group>"; };
+		B07BFDCA2454463B00D2D18F /* Gilroy-Heavy.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Heavy.woff2"; sourceTree = "<group>"; };
+		B07BFDCB2454463B00D2D18F /* Gilroy-ExtraboldItalic.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraboldItalic.woff2"; sourceTree = "<group>"; };
+		B07BFDCC2454463B00D2D18F /* Gilroy-BlackItalic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-BlackItalic.eot"; sourceTree = "<group>"; };
+		B07BFDCD2454463B00D2D18F /* Gilroy-Bold.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.woff2"; sourceTree = "<group>"; };
+		B07BFDCE2454463B00D2D18F /* Gilroy-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Black.ttf"; sourceTree = "<group>"; };
+		B07BFDCF2454463B00D2D18F /* Gilroy-UltraLightItalic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLightItalic.eot"; sourceTree = "<group>"; };
+		B07BFDD02454463C00D2D18F /* Gilroy-Heavy.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Heavy.eot"; sourceTree = "<group>"; };
+		B07BFDD12454463C00D2D18F /* Gilroy-Extrabold.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Extrabold.woff"; sourceTree = "<group>"; };
+		B07BFDD22454463C00D2D18F /* Gilroy-UltraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLightItalic.ttf"; sourceTree = "<group>"; };
+		B07BFDD32454463C00D2D18F /* Gilroy-ThinItalic.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ThinItalic.woff2"; sourceTree = "<group>"; };
+		B07BFDD42454463C00D2D18F /* Gilroy-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B07BFDD52454463C00D2D18F /* Gilroy-BoldItalic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-BoldItalic.woff"; sourceTree = "<group>"; };
+		B07BFDD62454463C00D2D18F /* Gilroy-HeavyItalic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-HeavyItalic.eot"; sourceTree = "<group>"; };
+		B07BFDD72454463C00D2D18F /* Gilroy-RegularItalic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-RegularItalic.eot"; sourceTree = "<group>"; };
+		B07BFDD82454463C00D2D18F /* Gilroy-ThinItalic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ThinItalic.eot"; sourceTree = "<group>"; };
+		B07BFDD92454463D00D2D18F /* Gilroy-MediumItalic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-MediumItalic.woff"; sourceTree = "<group>"; };
+		B07BFE2A2454486F00D2D18F /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
+		B07BFE2D24544B8B00D2D18F /* Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
+		B07BFE2F24544B9800D2D18F /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		B07BFE3424544C4A00D2D18F /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		B07BFE3524544C4A00D2D18F /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		B07BFE3624544C4A00D2D18F /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		B07BFE3724544C4A00D2D18F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		B07BFE3824544C4A00D2D18F /* UITabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
+		B07BFE3924544C4A00D2D18F /* UIPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewController.swift; sourceTree = "<group>"; };
+		B07BFE3A24544C4A00D2D18F /* UIRectCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRectCorner.swift; sourceTree = "<group>"; };
+		B07BFE3B24544C4A00D2D18F /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		B07BFE3C24544C4A00D2D18F /* UIRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRefreshControl.swift; sourceTree = "<group>"; };
+		B07BFE3D24544C4A00D2D18F /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		B07BFE3E24544C4A00D2D18F /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		B07BFE3F24544C4A00D2D18F /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		B07BFE4024544C4A00D2D18F /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		B07BFE4124544C4A00D2D18F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		B07BFE4224544C4A00D2D18F /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		B07BFE4324544C4A00D2D18F /* UISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitch.swift; sourceTree = "<group>"; };
+		B07BFE4424544C4A00D2D18F /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		B07BFE4524544C4A00D2D18F /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		B07BFE4624544C4A00D2D18F /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		B07BFE4724544C4A00D2D18F /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		B07BFE4824544C4A00D2D18F /* UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
+		B07BFE4924544C4A00D2D18F /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
+		B07BFE4A24544C4A00D2D18F /* UIStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		B07BFE62245459B200D2D18F /* StringAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttribute.swift; sourceTree = "<group>"; };
 		B0B3A35324126092007B2F21 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B3A35624126093007B2F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B3A36024126093007B2F21 /* HabitTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -103,7 +290,6 @@
 		B0BEFC5F243A188B0020D377 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0BEFC6E243A29B40020D377 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B0BEFC75243A2A1B0020D377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B0BEFC7A243A2FE30020D377 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		C7ACBB1EC42E4FA032A3B294 /* Pods-HabitTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-HabitTrackerUITests/Pods-HabitTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4C3880A19CE2D3742A93D5 /* libPods-HabitTrackerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HabitTrackerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC1085E69506A9EEBC1A732 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,21 +361,86 @@
 		B07BFD5724542C5E00D2D18F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				B07BFD5824542C5E00D2D18F /* SF-Pro-Display-Thin.otf */,
-				B07BFD5924542C5E00D2D18F /* SF-Pro-Text-Heavy.otf */,
-				B07BFD5A24542C5E00D2D18F /* SF-Pro-Display-Light.otf */,
-				B07BFD5B24542C5E00D2D18F /* SF-Pro-Display-Regular.otf */,
-				B07BFD5C24542C5E00D2D18F /* SF-Pro-Display-Bold.otf */,
-				B07BFD5D24542C5E00D2D18F /* SF-Pro-Display-Medium.otf */,
-				B07BFD5E24542C5E00D2D18F /* SF-Pro-Display-Heavy.otf */,
-				B07BFD5F24542C5E00D2D18F /* SF-Pro-Text-Light.otf */,
-				B07BFD6024542C5E00D2D18F /* SF-Pro-Display-Semibold.otf */,
-				B07BFD6124542C5E00D2D18F /* SF-Pro-Text-Regular.otf */,
-				B07BFD6224542C5E00D2D18F /* SF-Pro-Text-Bold.otf */,
-				B07BFD6324542C5E00D2D18F /* SF-Pro-Display-Ultralight.otf */,
-				B07BFD6424542C5E00D2D18F /* SF-Pro-Display-Black.otf */,
-				B07BFD6524542C5E00D2D18F /* SF-Pro-Text-Semibold.otf */,
-				B07BFD6624542C5F00D2D18F /* SF-Pro-Text-Medium.otf */,
+				B07BFD9E2454463600D2D18F /* Gilroy-Black.eot */,
+				B07BFDCE2454463B00D2D18F /* Gilroy-Black.ttf */,
+				B07BFD992454463600D2D18F /* Gilroy-Black.woff */,
+				B07BFDAC2454463800D2D18F /* Gilroy-Black.woff2 */,
+				B07BFDCC2454463B00D2D18F /* Gilroy-BlackItalic.eot */,
+				B07BFD972454463600D2D18F /* Gilroy-BlackItalic.ttf */,
+				B07BFDAD2454463800D2D18F /* Gilroy-BlackItalic.woff */,
+				B07BFDC92454463B00D2D18F /* Gilroy-BlackItalic.woff2 */,
+				B07BFDBD2454463900D2D18F /* Gilroy-Bold.eot */,
+				B07BFDA62454463700D2D18F /* Gilroy-Bold.ttf */,
+				B07BFDA92454463700D2D18F /* Gilroy-Bold.woff */,
+				B07BFDCD2454463B00D2D18F /* Gilroy-Bold.woff2 */,
+				B07BFD932454463500D2D18F /* Gilroy-BoldItalic.eot */,
+				B07BFDD42454463C00D2D18F /* Gilroy-BoldItalic.ttf */,
+				B07BFDD52454463C00D2D18F /* Gilroy-BoldItalic.woff */,
+				B07BFDB72454463900D2D18F /* Gilroy-BoldItalic.woff2 */,
+				B07BFD8E2454463500D2D18F /* Gilroy-Extrabold.eot */,
+				B07BFDC62454463A00D2D18F /* Gilroy-Extrabold.ttf */,
+				B07BFDD12454463C00D2D18F /* Gilroy-Extrabold.woff */,
+				B07BFDC82454463B00D2D18F /* Gilroy-Extrabold.woff2 */,
+				B07BFDC02454463A00D2D18F /* Gilroy-ExtraboldItalic.eot */,
+				B07BFD982454463600D2D18F /* Gilroy-ExtraboldItalic.ttf */,
+				B07BFD8B2454463500D2D18F /* Gilroy-ExtraboldItalic.woff */,
+				B07BFDCB2454463B00D2D18F /* Gilroy-ExtraboldItalic.woff2 */,
+				B07BFDD02454463C00D2D18F /* Gilroy-Heavy.eot */,
+				B07BFDAE2454463800D2D18F /* Gilroy-Heavy.ttf */,
+				B07BFDBB2454463900D2D18F /* Gilroy-Heavy.woff */,
+				B07BFDCA2454463B00D2D18F /* Gilroy-Heavy.woff2 */,
+				B07BFDD62454463C00D2D18F /* Gilroy-HeavyItalic.eot */,
+				B07BFDB22454463800D2D18F /* Gilroy-HeavyItalic.ttf */,
+				B07BFDC22454463A00D2D18F /* Gilroy-HeavyItalic.woff */,
+				B07BFD8A2454463500D2D18F /* Gilroy-HeavyItalic.woff2 */,
+				B07BFDBF2454463A00D2D18F /* Gilroy-Light.eot */,
+				B07BFDBC2454463900D2D18F /* Gilroy-Light.ttf */,
+				B07BFD942454463500D2D18F /* Gilroy-Light.woff */,
+				B07BFDB82454463900D2D18F /* Gilroy-Light.woff2 */,
+				B07BFDB62454463900D2D18F /* Gilroy-LightItalic.eot */,
+				B07BFDA02454463600D2D18F /* Gilroy-LightItalic.ttf */,
+				B07BFDA82454463700D2D18F /* Gilroy-LightItalic.woff */,
+				B07BFD9F2454463600D2D18F /* Gilroy-LightItalic.woff2 */,
+				B07BFD962454463600D2D18F /* Gilroy-Medium.eot */,
+				B07BFDA72454463700D2D18F /* Gilroy-Medium.ttf */,
+				B07BFDA22454463700D2D18F /* Gilroy-Medium.woff */,
+				B07BFDB92454463900D2D18F /* Gilroy-Medium.woff2 */,
+				B07BFDB42454463800D2D18F /* Gilroy-MediumItalic.eot */,
+				B07BFDA12454463700D2D18F /* Gilroy-MediumItalic.ttf */,
+				B07BFDD92454463D00D2D18F /* Gilroy-MediumItalic.woff */,
+				B07BFDB52454463900D2D18F /* Gilroy-MediumItalic.woff2 */,
+				B07BFDBA2454463900D2D18F /* Gilroy-Regular.eot */,
+				B07BFDC42454463A00D2D18F /* Gilroy-Regular.ttf */,
+				B07BFDBE2454463A00D2D18F /* Gilroy-Regular.woff */,
+				B07BFDAA2454463700D2D18F /* Gilroy-Regular.woff2 */,
+				B07BFDD72454463C00D2D18F /* Gilroy-RegularItalic.eot */,
+				B07BFDA32454463700D2D18F /* Gilroy-RegularItalic.ttf */,
+				B07BFDAB2454463700D2D18F /* Gilroy-RegularItalic.woff */,
+				B07BFDA42454463700D2D18F /* Gilroy-RegularItalic.woff2 */,
+				B07BFDAF2454463800D2D18F /* Gilroy-Semibold.eot */,
+				B07BFD8F2454463500D2D18F /* Gilroy-Semibold.ttf */,
+				B07BFDC32454463A00D2D18F /* Gilroy-Semibold.woff */,
+				B07BFD9D2454463600D2D18F /* Gilroy-Semibold.woff2 */,
+				B07BFDC12454463A00D2D18F /* Gilroy-SemiboldItalic.eot */,
+				B07BFD8D2454463500D2D18F /* Gilroy-SemiboldItalic.ttf */,
+				B07BFDB32454463800D2D18F /* Gilroy-SemiboldItalic.woff */,
+				B07BFD8C2454463500D2D18F /* Gilroy-SemiboldItalic.woff2 */,
+				B07BFD912454463500D2D18F /* Gilroy-Thin.eot */,
+				B07BFDC72454463B00D2D18F /* Gilroy-Thin.ttf */,
+				B07BFD9A2454463600D2D18F /* Gilroy-Thin.woff */,
+				B07BFD9B2454463600D2D18F /* Gilroy-Thin.woff2 */,
+				B07BFDD82454463C00D2D18F /* Gilroy-ThinItalic.eot */,
+				B07BFD952454463500D2D18F /* Gilroy-ThinItalic.ttf */,
+				B07BFD922454463500D2D18F /* Gilroy-ThinItalic.woff */,
+				B07BFDD32454463C00D2D18F /* Gilroy-ThinItalic.woff2 */,
+				B07BFDB02454463800D2D18F /* Gilroy-UltraLight.eot */,
+				B07BFD902454463500D2D18F /* Gilroy-UltraLight.ttf */,
+				B07BFD9C2454463600D2D18F /* Gilroy-UltraLight.woff */,
+				B07BFDC52454463A00D2D18F /* Gilroy-UltraLight.woff2 */,
+				B07BFDCF2454463B00D2D18F /* Gilroy-UltraLightItalic.eot */,
+				B07BFDD22454463C00D2D18F /* Gilroy-UltraLightItalic.ttf */,
+				B07BFDB12454463800D2D18F /* Gilroy-UltraLightItalic.woff */,
+				B07BFDA52454463700D2D18F /* Gilroy-UltraLightItalic.woff2 */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -203,6 +454,70 @@
 				B07BFD7F24542C6700D2D18F /* Localizable.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		B07BFE2C24544B7B00D2D18F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B07BFE2F24544B9800D2D18F /* Habit.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B07BFE3124544C3300D2D18F /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B07BFE64245459B800D2D18F /* Types */,
+				B07BFE3224544C3B00D2D18F /* Extensions */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		B07BFE3224544C3B00D2D18F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B07BFE3324544C4A00D2D18F /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B07BFE3324544C4A00D2D18F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B07BFE3424544C4A00D2D18F /* UIScrollView.swift */,
+				B07BFE3524544C4A00D2D18F /* UIView.swift */,
+				B07BFE3624544C4A00D2D18F /* UIStackView.swift */,
+				B07BFE3724544C4A00D2D18F /* UIColor.swift */,
+				B07BFE3824544C4A00D2D18F /* UITabBar.swift */,
+				B07BFE3924544C4A00D2D18F /* UIPageViewController.swift */,
+				B07BFE3A24544C4A00D2D18F /* UIRectCorner.swift */,
+				B07BFE3B24544C4A00D2D18F /* UICollectionView.swift */,
+				B07BFE3C24544C4A00D2D18F /* UIRefreshControl.swift */,
+				B07BFE3D24544C4A00D2D18F /* UITableView.swift */,
+				B07BFE3E24544C4A00D2D18F /* UITableViewCell.swift */,
+				B07BFE3F24544C4A00D2D18F /* UIButton.swift */,
+				B07BFE4024544C4A00D2D18F /* UIImage.swift */,
+				B07BFE4124544C4A00D2D18F /* UIViewController.swift */,
+				B07BFE4224544C4A00D2D18F /* UINavigationBar.swift */,
+				B07BFE4324544C4A00D2D18F /* UISwitch.swift */,
+				B07BFE4424544C4A00D2D18F /* UIImageView.swift */,
+				B07BFE4524544C4A00D2D18F /* UILabel.swift */,
+				B07BFE4624544C4A00D2D18F /* UIApplication.swift */,
+				B07BFE4724544C4A00D2D18F /* UINavigationController.swift */,
+				B07BFE4824544C4A00D2D18F /* UICollectionViewCell.swift */,
+				B07BFE4924544C4A00D2D18F /* UIEdgeInsets.swift */,
+				B07BFE4A24544C4A00D2D18F /* UIStoryboard.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		B07BFE64245459B800D2D18F /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				B07BFE62245459B200D2D18F /* StringAttribute.swift */,
+				B07BFE2D24544B8B00D2D18F /* Days.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 		B0B3A34A24126092007B2F21 = {
@@ -230,8 +545,10 @@
 		B0B3A35524126092007B2F21 /* HabitTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B07BFE3124544C3300D2D18F /* Library */,
 				B0BEFC5E243A18400020D377 /* Application */,
 				B07BFD7B24542C6700D2D18F /* Constants */,
+				B07BFE2C24544B7B00D2D18F /* Models */,
 				B0BEFC66243A1B650020D377 /* Modules */,
 				B07BFD5324542C5E00D2D18F /* Resources */,
 			);
@@ -288,7 +605,9 @@
 		B0BEFC7C243A2FE80020D377 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
-				B0BEFC7A243A2FE30020D377 /* HabitsViewController.swift */,
+				B07BFD8424543B7E00D2D18F /* HabitsViewController.swift */,
+				B07BFE2A2454486F00D2D18F /* HabitCell.swift */,
+				B07BFD8824543C7E00D2D18F /* HabitsViewController.storyboard */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -401,27 +720,93 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07BFDDD2454463D00D2D18F /* Gilroy-SemiboldItalic.ttf in Resources */,
+				B07BFE132454463D00D2D18F /* Gilroy-Semibold.woff in Resources */,
+				B07BFE262454463D00D2D18F /* Gilroy-HeavyItalic.eot in Resources */,
+				B07BFDF52454463D00D2D18F /* Gilroy-UltraLightItalic.woff2 in Resources */,
+				B07BFE212454463D00D2D18F /* Gilroy-Extrabold.woff in Resources */,
+				B07BFE192454463D00D2D18F /* Gilroy-BlackItalic.woff2 in Resources */,
+				B07BFDDA2454463D00D2D18F /* Gilroy-HeavyItalic.woff2 in Resources */,
+				B07BFDFB2454463D00D2D18F /* Gilroy-RegularItalic.woff in Resources */,
+				B07BFE072454463D00D2D18F /* Gilroy-BoldItalic.woff2 in Resources */,
+				B07BFE172454463D00D2D18F /* Gilroy-Thin.ttf in Resources */,
+				B07BFDF62454463D00D2D18F /* Gilroy-Bold.ttf in Resources */,
+				B07BFDEE2454463D00D2D18F /* Gilroy-Black.eot in Resources */,
+				B07BFDE82454463D00D2D18F /* Gilroy-ExtraboldItalic.ttf in Resources */,
+				B07BFE102454463D00D2D18F /* Gilroy-ExtraboldItalic.eot in Resources */,
+				B07BFDE22454463D00D2D18F /* Gilroy-ThinItalic.woff in Resources */,
+				B07BFE0C2454463D00D2D18F /* Gilroy-Light.ttf in Resources */,
+				B07BFE032454463D00D2D18F /* Gilroy-SemiboldItalic.woff in Resources */,
+				B07BFE062454463D00D2D18F /* Gilroy-LightItalic.eot in Resources */,
+				B07BFE1E2454463D00D2D18F /* Gilroy-Black.ttf in Resources */,
+				B07BFDFE2454463D00D2D18F /* Gilroy-Heavy.ttf in Resources */,
+				B07BFE252454463D00D2D18F /* Gilroy-BoldItalic.woff in Resources */,
+				B07BFE182454463D00D2D18F /* Gilroy-Extrabold.woff2 in Resources */,
+				B07BFE092454463D00D2D18F /* Gilroy-Medium.woff2 in Resources */,
+				B07BFDDE2454463D00D2D18F /* Gilroy-Extrabold.eot in Resources */,
+				B07BFE042454463D00D2D18F /* Gilroy-MediumItalic.eot in Resources */,
 				B0BEFC76243A2A1B0020D377 /* LaunchScreen.storyboard in Resources */,
-				B07BFD7824542C5F00D2D18F /* SF-Pro-Text-Semibold.otf in Resources */,
+				B07BFE272454463D00D2D18F /* Gilroy-RegularItalic.eot in Resources */,
+				B07BFDE92454463D00D2D18F /* Gilroy-Black.woff in Resources */,
+				B07BFE002454463D00D2D18F /* Gilroy-UltraLight.eot in Resources */,
 				B07BFD7A24542C5F00D2D18F /* Colors.json in Resources */,
+				B07BFE202454463D00D2D18F /* Gilroy-Heavy.eot in Resources */,
 				B07BFD6924542C5F00D2D18F /* Localizable.strings in Resources */,
-				B07BFD7524542C5F00D2D18F /* SF-Pro-Text-Bold.otf in Resources */,
-				B07BFD6B24542C5F00D2D18F /* SF-Pro-Display-Thin.otf in Resources */,
-				B07BFD6C24542C5F00D2D18F /* SF-Pro-Text-Heavy.otf in Resources */,
+				B07BFDEC2454463D00D2D18F /* Gilroy-UltraLight.woff in Resources */,
+				B07BFDF02454463D00D2D18F /* Gilroy-LightItalic.ttf in Resources */,
+				B07BFE232454463D00D2D18F /* Gilroy-ThinItalic.woff2 in Resources */,
+				B07BFDF72454463D00D2D18F /* Gilroy-Medium.ttf in Resources */,
+				B07BFE222454463D00D2D18F /* Gilroy-UltraLightItalic.ttf in Resources */,
+				B07BFDF92454463D00D2D18F /* Gilroy-Bold.woff in Resources */,
+				B07BFDE72454463D00D2D18F /* Gilroy-BlackItalic.ttf in Resources */,
+				B07BFDE02454463D00D2D18F /* Gilroy-UltraLight.ttf in Resources */,
+				B07BFE242454463D00D2D18F /* Gilroy-BoldItalic.ttf in Resources */,
+				B07BFE052454463D00D2D18F /* Gilroy-MediumItalic.woff2 in Resources */,
+				B07BFE012454463D00D2D18F /* Gilroy-UltraLightItalic.woff in Resources */,
 				B07BFD6824542C5F00D2D18F /* Assets.xcassets in Resources */,
-				B07BFD7624542C5F00D2D18F /* SF-Pro-Display-Ultralight.otf in Resources */,
-				B07BFD7924542C5F00D2D18F /* SF-Pro-Text-Medium.otf in Resources */,
+				B07BFE1F2454463D00D2D18F /* Gilroy-UltraLightItalic.eot in Resources */,
+				B07BFDFC2454463D00D2D18F /* Gilroy-Black.woff2 in Resources */,
+				B07BFE022454463D00D2D18F /* Gilroy-HeavyItalic.ttf in Resources */,
+				B07BFDF12454463D00D2D18F /* Gilroy-MediumItalic.ttf in Resources */,
+				B07BFDDF2454463D00D2D18F /* Gilroy-Semibold.ttf in Resources */,
+				B07BFE292454463D00D2D18F /* Gilroy-MediumItalic.woff in Resources */,
+				B07BFE162454463D00D2D18F /* Gilroy-Extrabold.ttf in Resources */,
+				B07BFDF42454463D00D2D18F /* Gilroy-RegularItalic.woff2 in Resources */,
+				B07BFDE52454463D00D2D18F /* Gilroy-ThinItalic.ttf in Resources */,
+				B07BFDF82454463D00D2D18F /* Gilroy-LightItalic.woff in Resources */,
+				B07BFDFF2454463D00D2D18F /* Gilroy-Semibold.eot in Resources */,
+				B07BFE1A2454463D00D2D18F /* Gilroy-Heavy.woff2 in Resources */,
+				B07BFDF32454463D00D2D18F /* Gilroy-RegularItalic.ttf in Resources */,
+				B07BFE0D2454463D00D2D18F /* Gilroy-Bold.eot in Resources */,
+				B07BFDEA2454463D00D2D18F /* Gilroy-Thin.woff in Resources */,
+				B07BFE152454463D00D2D18F /* Gilroy-UltraLight.woff2 in Resources */,
+				B07BFDFD2454463D00D2D18F /* Gilroy-BlackItalic.woff in Resources */,
+				B07BFDE12454463D00D2D18F /* Gilroy-Thin.eot in Resources */,
+				B07BFDFA2454463D00D2D18F /* Gilroy-Regular.woff2 in Resources */,
+				B07BFE122454463D00D2D18F /* Gilroy-HeavyItalic.woff in Resources */,
+				B07BFE082454463D00D2D18F /* Gilroy-Light.woff2 in Resources */,
+				B07BFE0F2454463D00D2D18F /* Gilroy-Light.eot in Resources */,
+				B07BFDDB2454463D00D2D18F /* Gilroy-ExtraboldItalic.woff in Resources */,
+				B07BFDEF2454463D00D2D18F /* Gilroy-LightItalic.woff2 in Resources */,
+				B07BFE0A2454463D00D2D18F /* Gilroy-Regular.eot in Resources */,
+				B07BFE0E2454463D00D2D18F /* Gilroy-Regular.woff in Resources */,
+				B07BFDF22454463D00D2D18F /* Gilroy-Medium.woff in Resources */,
+				B07BFE1D2454463D00D2D18F /* Gilroy-Bold.woff2 in Resources */,
+				B07BFE1C2454463D00D2D18F /* Gilroy-BlackItalic.eot in Resources */,
+				B07BFDE42454463D00D2D18F /* Gilroy-Light.woff in Resources */,
+				B07BFE282454463D00D2D18F /* Gilroy-ThinItalic.eot in Resources */,
+				B07BFE142454463D00D2D18F /* Gilroy-Regular.ttf in Resources */,
+				B07BFE112454463D00D2D18F /* Gilroy-SemiboldItalic.eot in Resources */,
 				B07BFD6A24542C5F00D2D18F /* Localizable.stringsdict in Resources */,
-				B07BFD7424542C5F00D2D18F /* SF-Pro-Text-Regular.otf in Resources */,
-				B07BFD7024542C5F00D2D18F /* SF-Pro-Display-Medium.otf in Resources */,
-				B07BFD6F24542C5F00D2D18F /* SF-Pro-Display-Bold.otf in Resources */,
-				B07BFD7724542C5F00D2D18F /* SF-Pro-Display-Black.otf in Resources */,
-				B07BFD6D24542C5F00D2D18F /* SF-Pro-Display-Light.otf in Resources */,
-				B07BFD6E24542C5F00D2D18F /* SF-Pro-Display-Regular.otf in Resources */,
-				B07BFD7324542C5F00D2D18F /* SF-Pro-Display-Semibold.otf in Resources */,
+				B07BFD8924543C7E00D2D18F /* HabitsViewController.storyboard in Resources */,
+				B07BFE0B2454463D00D2D18F /* Gilroy-Heavy.woff in Resources */,
+				B07BFDED2454463D00D2D18F /* Gilroy-Semibold.woff2 in Resources */,
+				B07BFE1B2454463D00D2D18F /* Gilroy-ExtraboldItalic.woff2 in Resources */,
 				B0BEFC60243A188B0020D377 /* GoogleService-Info.plist in Resources */,
-				B07BFD7124542C5F00D2D18F /* SF-Pro-Display-Heavy.otf in Resources */,
-				B07BFD7224542C5F00D2D18F /* SF-Pro-Text-Light.otf in Resources */,
+				B07BFDE32454463D00D2D18F /* Gilroy-BoldItalic.eot in Resources */,
+				B07BFDDC2454463D00D2D18F /* Gilroy-SemiboldItalic.woff2 in Resources */,
+				B07BFDE62454463D00D2D18F /* Gilroy-Medium.eot in Resources */,
+				B07BFDEB2454463D00D2D18F /* Gilroy-Thin.woff2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,14 +917,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07BFE5024544C4A00D2D18F /* UIPageViewController.swift in Sources */,
+				B07BFE5924544C4B00D2D18F /* UINavigationBar.swift in Sources */,
+				B07BFE4C24544C4A00D2D18F /* UIView.swift in Sources */,
 				B0BEFC62243A1A1E0020D377 /* HabitTracker.xcdatamodeld in Sources */,
+				B07BFE3024544B9800D2D18F /* Habit.swift in Sources */,
+				B07BFE5824544C4B00D2D18F /* UIViewController.swift in Sources */,
+				B07BFE4F24544C4A00D2D18F /* UITabBar.swift in Sources */,
+				B07BFE5524544C4A00D2D18F /* UITableViewCell.swift in Sources */,
 				B07BFD8124542C6800D2D18F /* Images.swift in Sources */,
+				B07BFE4E24544C4A00D2D18F /* UIColor.swift in Sources */,
 				B07BFD8024542C6800D2D18F /* Fonts.swift in Sources */,
+				B07BFE5C24544C4B00D2D18F /* UILabel.swift in Sources */,
+				B07BFE6124544C4B00D2D18F /* UIStoryboard.swift in Sources */,
+				B07BFE5724544C4B00D2D18F /* UIImage.swift in Sources */,
 				B07BFD8224542C6800D2D18F /* Colors.swift in Sources */,
+				B07BFD8624543B7E00D2D18F /* HabitsViewController.swift in Sources */,
 				B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */,
+				B07BFE2E24544B8B00D2D18F /* Days.swift in Sources */,
+				B07BFE5B24544C4B00D2D18F /* UIImageView.swift in Sources */,
+				B07BFE5D24544C4B00D2D18F /* UIApplication.swift in Sources */,
+				B07BFE4D24544C4A00D2D18F /* UIStackView.swift in Sources */,
+				B07BFE6024544C4B00D2D18F /* UIEdgeInsets.swift in Sources */,
 				B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */,
+				B07BFE5A24544C4B00D2D18F /* UISwitch.swift in Sources */,
+				B07BFE5624544C4B00D2D18F /* UIButton.swift in Sources */,
+				B07BFE5124544C4A00D2D18F /* UIRectCorner.swift in Sources */,
+				B07BFE4B24544C4A00D2D18F /* UIScrollView.swift in Sources */,
 				B07BFD8324542C6800D2D18F /* Localizable.swift in Sources */,
-				B0BEFC7B243A2FE30020D377 /* HabitsViewController.swift in Sources */,
+				B07BFE5F24544C4B00D2D18F /* UICollectionViewCell.swift in Sources */,
+				B07BFE63245459B200D2D18F /* StringAttribute.swift in Sources */,
+				B07BFE2B2454486F00D2D18F /* HabitCell.swift in Sources */,
+				B07BFE5224544C4A00D2D18F /* UICollectionView.swift in Sources */,
+				B07BFE5E24544C4B00D2D18F /* UINavigationController.swift in Sources */,
+				B07BFE5324544C4A00D2D18F /* UIRefreshControl.swift in Sources */,
+				B07BFE5424544C4A00D2D18F /* UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

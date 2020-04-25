@@ -15,7 +15,7 @@ class HomeViewController: SegementSlideViewController {
     }
 
     override func segementSlideContentViewController(at index: Int) -> SegementSlideContentScrollViewDelegate? {
-        return HabitsViewController()
+        return UIStoryboard.instantiate(ofType: HabitsViewController.self)
     }
     
     override func viewDidLoad() {

@@ -2,21 +2,25 @@
 //  HabitsViewController.swift
 //  HabitTracker
 //
-//  Created by Daulet on 4/5/20.
+//  Created by Daulet on 4/25/20.
 //  Copyright © 2020 Daulet. All rights reserved.
 //
 
 import UIKit
 import SegementSlide
 
-class HabitsViewController: UIViewController {
 
+final class HabitsViewController: UIViewController {
+
+    @IBOutlet var tableView: UITableView!
+    
+    var items: [Habit] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-
+    
 }
 
 extension HabitsViewController: SegementSlideContentScrollViewDelegate {

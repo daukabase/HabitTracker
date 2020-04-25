@@ -2,7 +2,6 @@
 # platform :ios, '9.0'
 
 def common_pods
-  pod 'R.swift', '~> 5.0.3'
   pod 'PinLayout', '~> 1.8.7'
   pod 'Kingfisher', '~> 5.7.1'
   pod 'SegementSlide', '~> 2.2.1'

@@ -16,28 +16,30 @@
 
 // swiftlint:disable identifier_name line_length type_body_length
 internal enum FontFamily {
-  internal enum SFProDisplay {
-    internal static let black = FontConvertible(name: "SFProDisplay-Black", family: "SF Pro Display", path: "SF-Pro-Display-Black.otf")
-    internal static let bold = FontConvertible(name: "SFProDisplay-Bold", family: "SF Pro Display", path: "SF-Pro-Display-Bold.otf")
-    internal static let heavy = FontConvertible(name: "SFProDisplay-Heavy", family: "SF Pro Display", path: "SF-Pro-Display-Heavy.otf")
-    internal static let light = FontConvertible(name: "SFProDisplay-Light", family: "SF Pro Display", path: "SF-Pro-Display-Light.otf")
-    internal static let medium = FontConvertible(name: "SFProDisplay-Medium", family: "SF Pro Display", path: "SF-Pro-Display-Medium.otf")
-    internal static let regular = FontConvertible(name: "SFProDisplay-Regular", family: "SF Pro Display", path: "SF-Pro-Display-Regular.otf")
-    internal static let semibold = FontConvertible(name: "SFProDisplay-Semibold", family: "SF Pro Display", path: "SF-Pro-Display-Semibold.otf")
-    internal static let thin = FontConvertible(name: "SFProDisplay-Thin", family: "SF Pro Display", path: "SF-Pro-Display-Thin.otf")
-    internal static let ultralight = FontConvertible(name: "SFProDisplay-Ultralight", family: "SF Pro Display", path: "SF-Pro-Display-Ultralight.otf")
-    internal static let all: [FontConvertible] = [black, bold, heavy, light, medium, regular, semibold, thin, ultralight]
+  internal enum Gilroy {
+    internal static let black = FontConvertible(name: "Gilroy-Black", family: "Gilroy", path: "Gilroy-Black.ttf")
+    internal static let blackItalic = FontConvertible(name: "Gilroy-BlackItalic", family: "Gilroy", path: "Gilroy-BlackItalic.ttf")
+    internal static let bold = FontConvertible(name: "Gilroy-Bold", family: "Gilroy", path: "Gilroy-Bold.ttf")
+    internal static let boldItalic = FontConvertible(name: "Gilroy-BoldItalic", family: "Gilroy", path: "Gilroy-BoldItalic.ttf")
+    internal static let extrabold = FontConvertible(name: "Gilroy-Extrabold", family: "Gilroy", path: "Gilroy-Extrabold.ttf")
+    internal static let extraboldItalic = FontConvertible(name: "Gilroy-ExtraboldItalic", family: "Gilroy", path: "Gilroy-ExtraboldItalic.ttf")
+    internal static let heavy = FontConvertible(name: "Gilroy-Heavy", family: "Gilroy", path: "Gilroy-Heavy.ttf")
+    internal static let heavyItalic = FontConvertible(name: "Gilroy-HeavyItalic", family: "Gilroy", path: "Gilroy-HeavyItalic.ttf")
+    internal static let light = FontConvertible(name: "Gilroy-Light", family: "Gilroy", path: "Gilroy-Light.ttf")
+    internal static let lightItalic = FontConvertible(name: "Gilroy-LightItalic", family: "Gilroy", path: "Gilroy-LightItalic.ttf")
+    internal static let medium = FontConvertible(name: "Gilroy-Medium", family: "Gilroy", path: "Gilroy-Medium.ttf")
+    internal static let mediumItalic = FontConvertible(name: "Gilroy-MediumItalic", family: "Gilroy", path: "Gilroy-MediumItalic.ttf")
+    internal static let regular = FontConvertible(name: "Gilroy-Regular", family: "Gilroy", path: "Gilroy-Regular.ttf")
+    internal static let regularItalic = FontConvertible(name: "Gilroy-RegularItalic", family: "Gilroy", path: "Gilroy-RegularItalic.ttf")
+    internal static let semibold = FontConvertible(name: "Gilroy-Semibold", family: "Gilroy", path: "Gilroy-Semibold.ttf")
+    internal static let semiboldItalic = FontConvertible(name: "Gilroy-SemiboldItalic", family: "Gilroy", path: "Gilroy-SemiboldItalic.ttf")
+    internal static let thin = FontConvertible(name: "Gilroy-Thin", family: "Gilroy", path: "Gilroy-Thin.ttf")
+    internal static let thinItalic = FontConvertible(name: "Gilroy-ThinItalic", family: "Gilroy", path: "Gilroy-ThinItalic.ttf")
+    internal static let ultraLight = FontConvertible(name: "Gilroy-UltraLight", family: "Gilroy", path: "Gilroy-UltraLight.ttf")
+    internal static let ultraLightItalic = FontConvertible(name: "Gilroy-UltraLightItalic", family: "Gilroy", path: "Gilroy-UltraLightItalic.ttf")
+    internal static let all: [FontConvertible] = [black, blackItalic, bold, boldItalic, extrabold, extraboldItalic, heavy, heavyItalic, light, lightItalic, medium, mediumItalic, regular, regularItalic, semibold, semiboldItalic, thin, thinItalic, ultraLight, ultraLightItalic]
   }
-  internal enum SFProText {
-    internal static let bold = FontConvertible(name: "SFProText-Bold", family: "SF Pro Text", path: "SF-Pro-Text-Bold.otf")
-    internal static let heavy = FontConvertible(name: "SFProText-Heavy", family: "SF Pro Text", path: "SF-Pro-Text-Heavy.otf")
-    internal static let light = FontConvertible(name: "SFProText-Light", family: "SF Pro Text", path: "SF-Pro-Text-Light.otf")
-    internal static let medium = FontConvertible(name: "SFProText-Medium", family: "SF Pro Text", path: "SF-Pro-Text-Medium.otf")
-    internal static let regular = FontConvertible(name: "SFProText-Regular", family: "SF Pro Text", path: "SF-Pro-Text-Regular.otf")
-    internal static let semibold = FontConvertible(name: "SFProText-Semibold", family: "SF Pro Text", path: "SF-Pro-Text-Semibold.otf")
-    internal static let all: [FontConvertible] = [bold, heavy, light, medium, regular, semibold]
-  }
-  internal static let allCustomFonts: [FontConvertible] = [SFProDisplay.all, SFProText.all].flatMap { $0 }
+  internal static let allCustomFonts: [FontConvertible] = [Gilroy.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }
