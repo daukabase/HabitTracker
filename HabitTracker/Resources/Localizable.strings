@@ -1,0 +1,471 @@
+/*
+ Localizable.strings
+ Business
+ 
+ Created by Олег Лейзер on 10.01.2018.
+ Copyright © 2018 Олег Лейзер. All rights reserved.
+ */
+
+"Account.Detail.Language.eng" = "Анг";
+"Account.Detail.Language.kaz" = "Каз";
+"Account.Detail.Language.rus" = "Рус";
+"Account.Detail.accountNumber" = "Номер счёта: ";
+"Account.Detail.balance" = "Остаток на счёте:";
+"Account.Detail.bank" = "Банк: ";
+"Account.Detail.bankBik" = "БИК Банка: ";
+"Account.Detail.bankBin" = "БИН Банка: ";
+"Account.Detail.correspondentAccount" = "Счёт корреспондента: ";
+"Account.Detail.correspondentBank" = "Банк-корреспондента: ";
+"Account.Detail.correspondentBik" = "БИК корреспондента: ";
+"Account.Detail.correspondentInn" = "ИИН корреспондента: ";
+"Account.Detail.correspondentSwift" = "SWIFT код корреспондента: ";
+"Account.Detail.currency" = "Валюта: ";
+"Account.Detail.iin/bin" = "БИН/ИИН: ";
+
+"Account.Share.Header" = "Направляю вам реквизиты счета нашей компании";
+
+"AccountType.account" = "Расчетный счет";
+"AccountType.arrested" = "Cчет арестован";
+"AccountType.card" = "Карточный счет";
+"AccountType.deposite" = "Депозитный счет";
+
+"Common.ATM" = "Банкоматы";
+"Common.Action.cancel" = "Отмена";
+"Common.Action.choose" = "Выбрать";
+"Common.Action.edit" = "Изменить";
+"Common.Action.next" = "Далее";
+"Common.Apply" = "Применить";
+"Common.Branches" = "Отделения";
+"Common.Button.refresh" = "Обновить";
+"Common.Contacts" = "Контакты";
+"Common.Error.Network.noInternet.message" = "Интернет недоступен";
+"Common.Error.Network.message" = "Не удалось обработать запрос. Проверьте наличие сети интернет и попробуйте снова, если ошибка повторится, обратитесь в службу поддержки.";
+"Common.Error.Serialization.message" = "Ошибка сериализации. Не удалось получить список, попробуйте обновить позднее.";
+"Common.Feedback" = "Написать";
+"Common.Filters" = "Фильтры";
+"Common.Login" = "Вход";
+"Common.News" = "Новости";
+"Common.Next" = "Далее";
+"Common.Password" = "Пароль";
+"Common.Placeholder.activationcode" = "Код активации";
+"Common.Placeholder.company" = "Компания (AB123456)";
+"Common.Placeholder.email" = "Электронная почта";
+"Common.Placeholder.iin" = "ИИН";
+"Common.Placeholder.password" = "Пароль";
+"Common.Placeholder.phone" = "Мобильный номер";
+"Common.Placeholder.save" = "Сохранить";
+"Common.Placeholder.username" = "Пользователь";
+"Common.Rate" = "Курс валют";
+"Common.Registration" = "Регистрация";
+"Common.Search.title" = "Поиск по сумме";
+"Common.Service" = "Сервис";
+"Common.Settings" = "Настройки";
+"Common.Username" = "Номер телефона";
+"Common.AppVersion" = "Версия приложения";
+"Common.cancel" = "Отмена";
+"Common.clear" = "Очистить";
+"Common.close" = "Закрыть";
+"Common.done" = "Готово";
+"Common.download" = "Отправить квитанцию";
+"Common.logout" = "Выход";
+"Common.logout.title" = "Вы точно хотите выйти?";
+"Common.ok" = "Ок";
+"Common.yes" = "Выйти";
+"Common.Call" = "Позвонить";
+"Common.emptyList" = "Список пуст";
+
+"Contractors.Add.enterBin" = "Введите БИН/ИИН";
+"Contractors.Add.enterName" = "Название";
+"Contractors.Add.enterKbe" = "Код получателя (КБе)";
+"Contractors.Add.incorrectBin" = "Некоректный БИН/ИИН";
+"Contractors.Add.existContractor" = "Контрагент уже существует";
+"Contractors.Add.saveAndAdd" = "Сохранить и добавить счет";
+"Contractors.Add.editContractor" = "Редактировать";
+"Contractors.Add.newContractor" = "Новый контрагент";
+"Contractors.Add.inCorrectKbe" = "Некорректный КБе";
+
+"Contractors.Accounts.addAccount" = "Добавить новый счёт";
+"Contractors.Accounts.accounts" = "Счета";
+"Contractors.Accounts.edit" = "Редактировать";
+"Contractors.Accounts.delete" = "Удалить";
+"Contractors.Accounts.country" = "Страна";
+
+"Contractors.Accounts.Add.currency" = "Валюта";
+"Contractors.Accounts.Add.accountLength" = "Длина счета должна быть 20 символов";
+"Contractors.Accounts.Add.enterAccount" = "Номер счета";
+"Contractors.Accounts.Add.bic" = "БИК банка";
+"Contractors.Accounts.Add.bankName" = "Наименование банка";
+"Contractors.Accounts.Add.accountExist" = "Счет уже существует, необходимо добавить реквизиты в режиме редактирования.";
+"Contractors.Accounts.Add.editAccount" = "Редактирование счета";
+"Contractors.Accounts.Add.newAccount" = "Новый счет";
+"Contractors.Accounts.Add.correctNumber" = "Корректный номер счета";
+"Contractors.Accounts.Add.incorrectNumber" = "Некорректный номер счета";
+
+"Contractors.Requisities.name" = "Наименование клиента";
+"Contractors.Requisities.bin" = "БИН/ИИН клиента";
+"Contractors.Requisities.kbe" = "КБе";
+"Contractors.Requisities.bankName" = "Наименование Банка";
+"Contractors.Requisities.payment" = "Заплатить";
+"Contractors.Requisities.requisities" = "Реквизиты счета";
+"Contractors.Requisities.number" = "Номер счета";
+"Contractors.Requisities.currency" = "Валюта";
+"Contractors.Requisities.title" = "Реквизиты счета";
+"Contractors.Add.enterBin" = "Введите БИН/ИИН";
+
+"Contractors.List.title" = "Контрагенты";
+"Contractors.List.emptyTitle" = "Контрагентов нет";
+"Contractors.List.emptyDescription" = "Добавьте контрагентов, чтобы сэкономить время на заполнении реквизитов";
+"Contractors.List.addContractor" = "Добавить нового контрагента";
+
+"CreatePinCode.Pin.oldPinText" = "Введите старый PIN-код";
+"CreatePinCode.Pin.text" = "Придумайте PIN-код";
+
+"Dashboard.Search.Placeholder" = "Поиск по сумме платежа";
+"Dashboard.Transactionheader" = "Последние платежи";
+
+"EmployeeDoneList.Main.SectionTitle" = "Количество сотрудников:";
+"EmployeeDoneList.Main.Title" = "Список на оплату";
+
+"EmployeeList.Error.period" = "Укажите период";
+"EmployeeList.Error.sum" = "Укажите сумму";
+"EmployeeList.Error.sumAndPeriod" = "Укажите сумму и период";
+"EmployeeList.Main.AddNewEmployee" = "Добавить нового сотрудника";
+"EmployeeList.Main.Added" = "Добавлено";
+"EmployeeList.Main.Empty" = "Реестр пуст";
+"EmployeeList.Main.EmptyList" = "Список пустой";
+"EmployeeList.Main.SearchSection" = "Сотрудники";
+"EmployeeList.Main.SearchTextField" = "Поиск по ФИО";
+"EmployeeList.Title" = "Справочник";
+
+"Error.Authorization.message" = "Проверьте введенные данные и попробуйте снова\nЕсли ошибка повторится, обратитесь в службу поддержки";
+"Error.Authorization.title" = "Ошибка Авторизации";
+
+"Error.Invalid.Code" = "Неверно введен \"Код\"\nПопробуйте снова";
+"Error.Invalid.Company" = "Неверно введено \"Компания\"\nПопробуйте снова";
+"Error.Invalid.Password" = "Неверно введено \"Пароль\"\nПопробуйте снова";
+"Error.Invalid.Phone" = "Неверно введен \"Номер телефона\"\nПопробуйте снова";
+"Error.Invalid.Username" = "Неверно введено \"Номер телефона\"\nПопробуйте снова";
+
+"Error.Required.Code" = "Поле \"Код активации\" обязательно к заполнению";
+"Error.Required.Company" = "Поле \"Компания\" обязательно к заполнению";
+"Error.Required.Password" = "Поле \"Пароль\" обязательно к заполнению";
+"Error.Required.Phone" = "Поле \"Номер телефона\" обязательно к заполнению";
+"Error.Required.Username" = "Поле \"Номер телефона\" обязательно к заполнению";
+
+"Exchange.Bank.Alfa" = "Альфа-Банк";
+"Exchange.Bank.NBRK" = "НБ РК";
+"Exchange.Bank.Today" = "Сегодня";
+"Exchange.Bank.Tomorrow" = "Завтра";
+"Exchange.Bank.Value" = "Номинал";
+"Exchange.Buy" = "Покупка";
+"Exchange.Currency" = "Валюта";
+"Exchange.CurrencyPair" = "Валютная пара";
+"Exchange.Rate" = "Курс";
+"Exchange.Sale" = "Продажа";
+"Exchange.Section.NBRK" = "Национальный Банк на";
+"Exchange.Section.Today" = "День в день";
+"Exchange.Section.Tomorrow" = "Будущая дата валютирования";
+"Exchange.Title" = "Курсы валют";
+"Exchange.Today" = "Курс валют на сегодня";
+"Exchange.Tomorrow" = "Курс валют на завтра";
+
+"ExchangeSetting.Title" = "Настройки";
+
+"Filter.OperationType.all" = "Все";
+"Filter.OperationType.income" = "Приход";
+"Filter.OperationType.outcome" = "Расход";
+"Filter.Period.custom" = "Задать период";
+"Filter.Period.month" = "7 дней";
+"Filter.Period.threeMonths" = "Текущий месяц";
+"Filter.Period.week" = "Сегодня";
+"Filter.Section.period" = "Период";
+"Filter.Section.sum" = "Сумма";
+"Filter.Section.type" = "Тип операций";
+"Filter.Title.main" = "Фильтр";
+
+"Information.CallCenter.mobile" = "8-8000-8000-75";
+"Information.CallCenter.phone" = "2510 (для мобильных)";
+"Information.CallCenter.work" = "+7 (727) 244 75 75";
+
+"LockScreen.Title" = "Введите Pin Код";
+"LockScreen.exit.title" = "Выход";
+
+"More.Contacts.Message" = "Для связи с банком Вы можете позвонить по следующим номерам";
+"More.Contacts.Title" = "Контакты";
+"More.Contacts.Mobile" = "С мобильного";
+"More.Contacts.CallCenter" = "Call center";
+"More.Contacts.International" = "Для международных";
+"More.TechSupport" = "Техническая поддержка";
+"More.Services" = "Сервисы";
+
+"MyTemplatesCollection.all" = "Все";
+"MyTemplatesCollection.myTemplates" = "Мои шаблоны";
+"MyTemplatesCollection.templates" = "Шаблоны";
+
+"News.Error.Content.message" = "Новостей нет, но вы держитесь";
+"News.Error.Content.title" = "Новости нет";
+"News.Error.Network.message" = "Не удалось загрузить. Проверьте наличие сети интернет и попробуйте снова, если ошибка повторится, обратитесь в службу поддержки.";
+"News.Error.Network.title" = "Ошибка загрузки";
+
+"News.navigation" = "Новости";
+"News.tabbar" = "Новости";
+
+"NewPayments.Search.empty" = "Ничего не найдено";
+"NewPayments.Search.searchTitle" = "Поиск";
+
+"Password.Entry.forgotNavTitle" = "Восстановление пароля";
+"Password.Entry.forgotPasswordTitle" = "Забыли пароль?";
+"Password.Entry.passwordPlaceholder" = "Введите пароль";
+
+"Password.Network.errorMessage" = "Проверьте наличие сети интернет и попробуйте снова, если ошибка повторится, обратитесь в службу поддержки.";
+"Password.Network.serializationError" = "Ошибка сериализации";
+"Password.Network.wrongNumberOrPassword" = "Неверный номер телефона или пароль";
+
+"Payment.Destination.title" = "Платежное поручение";
+
+"Payment.Tax.nds" = "НДС 12%%";
+"Payment.Tax.notax" = "НДС не облагается";
+
+"Payment.Urgent.placeholder" = "Срочный платеж";
+
+"PaymentList.KBE.notResident" = "Нерезидент";
+"PaymentList.KBE.resident" = "Резидент";
+"PaymentList.List.kbe" = "КБе";
+"PaymentList.List.kbk" = "КБК";
+"PaymentList.List.knp" = "КНП";
+
+"Payments.Card.accountUsd" = "Валютный платеж";
+"Payments.Card.cashback" = "Зарплатные отчисления";
+"Payments.Card.convert" = "Конвертация валюты";
+"Payments.Card.health" = "Социальные отчисления";
+"Payments.Card.invoicePayment" = "Платежное поручение";
+"Payments.Card.medical" = "Медицинские отчисления";
+"Payments.Card.medicalText" = "ОСМС платежи";
+"Payments.Card.moneyBox" = "Пенсионные отчисления";
+"Payments.Card.paymentState" = "Платежи в бюджет";
+"Payments.Card.title" = "Платежи и переводы";
+
+"Payments.Confirm.error" = "Введен неверный код";
+"Payments.Confirm.info" = "Введите одноразовый пароль";
+"Payments.Confirm.resend" = "Отправить повторно";
+"Payments.Confirm.save.failure.message" = "Произошла ошибка при сохранении платежа";
+"Payments.Confirm.save.failure.title" = "Ошибка сохранения";
+"Payments.Confirm.save.succes.message" = "Платеж успешно сохранен";
+"Payments.Confirm.save.succes.title" = "Платеж сохранен";
+"Payments.Confirm.sign.failure.message" = "Произошла ошибка при подписании платежа";
+"Payments.Confirm.sign.failure.title" = "Ошибка подписания";
+"Payments.Confirm.sign.succes.message" = "Платеж успешно подписан";
+"Payments.Confirm.sign.succes.title" = "Платеж подписан";
+
+"Payments.Destination.bin" = "БИН/ИИН";
+"Payments.Destination.kbe" = "КБе";
+"Payments.Destination.notification" = "Уведомить получателя";
+"Payments.Destination.number" = "Номер счёта";
+"Payments.Destination.receiver" = "Получатель";
+"Payments.Destination.title" = "Платежное поручение";
+
+"Payments.Detail.Cell.section" = "Детали платежа";
+"Payments.Detail.Sum.Description.common" = "Общая сумма реестра";
+"Payments.Detail.Sum.Description.payment" = "Сумма платежа";
+"Payments.Detail.Sum.Description.tax" = "Сумма налога";
+"Payments.Detail.addtax" = "В том числе НДС 12%";
+"Payments.Detail.choosevin" = "Выберите VIN код";
+"Payments.Detail.date" = "Дата валютирования";
+"Payments.Detail.destination" = "Назначение платежа";
+"Payments.Detail.express" = "Срочный платеж";
+"Payments.Detail.knp" = "КНП";
+"Payments.Detail.nds" = "НДС 12%%";
+"Payments.Detail.notax" = "НДС не облагается";
+"Payments.Detail.selectKnp" = "Укажите КНП";
+"Payments.Detail.title" = "Счёт списания";
+"Payments.Detail.vin" = "VIN-код автомобиля";
+
+"Payments.Status.processing" = "Обрабатывается банком";
+"Payments.Status.rejected" = "Отклонённые банком";
+"Payments.Status.toSignature" = "На подпись";
+
+"Payments.Tax.Main.Cell.kbk" = "KBK";
+"Payments.Tax.Main.Placeholder.payment" = "Тип платежа";
+"Payments.Tax.Main.Placeholder.region" = "Город";
+"Payments.Tax.Main.Placeholder.ugd" = "УГД";
+"Payments.Tax.Main.Placeholder.vin" = "VIN коды";
+"Payments.Tax.Main.sectiontitle" = "Оплата налогов";
+
+"PaymentsCollection.all" = "Все";
+"PaymentsCollection.payments" = "Платежи";
+
+"PensionContribution.Add.birthday" = "Дата рождения";
+"PensionContribution.Add.editTitle" = "Редактирование";
+"PensionContribution.Add.employee" = "Сотрудник";
+"PensionContribution.Add.errorBirthday" = "Укажите дату рождения";
+"PensionContribution.Add.errorFirsname" = "Укажите имя";
+"PensionContribution.Add.errorSurname" = "Укажите фамилию";
+"PensionContribution.Add.firsname" = "Имя";
+"PensionContribution.Add.newEmployee" = "Новый сотрудник";
+"PensionContribution.Add.patronymic" = "Отчество";
+"PensionContribution.Add.reestr" = "Реестр";
+"PensionContribution.Add.surname" = "Фамилия";
+
+"PensionContribution.Cell.incorrectSumm" = "Некорректная сумма";
+"PensionContribution.Cell.incorrectUin" = "Некорректный ИИН";
+
+"PinCode.Change.title" = "Смена кода";
+"PinCode.InfoLabel.title" = "Введите код-пароль";
+"PinCode.Touch.title" = "Приложите палец, чтобы войти";
+
+"Recovery.Password.mainTitle" = "Позвоните нам";
+"Recovery.Password.subTitle" = "Для восстановления пароля Вам\nпотребуется БИН, название компании\nи кодовое слово.";
+
+"Result.noBranches" = "Сервис временно не доступен.\nПопробуйте зайти позже";
+"Result.noData" = "Данные не найдены";
+"Result.noKbk" = "КБК не найдено";
+"Result.noMachines" = "Сервис временно не доступен.\nПопробуйте зайти позже";
+"Result.noTransactions" = "Транзакций не найдено";
+"Result.noVin" = "За вашей компанией не закреплен автотранспорт";
+
+"Screen.Events" = "Выписка";
+"Screen.Main" = "Главная";
+"Screen.More" = "Еще";
+"Screen.PaymentStatus.Signature" = "На подпись";
+"Screen.Payments" = "Платежи";
+
+"Settings.Pin.Autologin.detail" = "Если вы разблокируете ваш телефон через TouchId, в течении 10 секунд вы сможите зайти а приложение AlfaBuisness без дополнительной разблокировки.";
+"Settings.Pin.Autologin.title" = "Автовход";
+"Settings.Pin.change" = "Сменить код доступа";
+"Settings.Pin.faceidid" = "Использовать FaceID";
+"Settings.Pin.touchid" = "Использовать TouchID";
+
+"SignIn.Error.phone" = "Неверный номер телефона";
+"SignIn.Phone.detail" = "Чтобы продолжить работу, необходимо зарегистрироваться. Приложение бесплатное.";
+"SignIn.Phone.title" = "Укажите мобильный номер";
+"SignIn.UIN.title" = "Введите свой ИИН";
+
+"SignInInfromation.description" = "Для работы \nв интернет-банкинге \nобратитесь в Call-Center";
+
+"Signup.Button.text" = "Регистрация";
+"Signup.Code.Phone.info" = "На Ваш номер %@ был отправлен SMS c кодом подтверждения.";
+"Signup.Code.Seconds.many" = "секунд";
+"Signup.Code.activationcode" = "Код активации";
+"Signup.Code.resend" = "отправить повторно";
+"Signup.Code.sms" = "Повторная отправка SMS будет доступна через";
+"Signup.Confirm" = "Подтвердить";
+"Signup.Detail.Company" = "Компания";
+"Signup.Detail.fullname" = "ФИО";
+"Signup.Detail.iin" = "ИИН";
+"Signup.Info.text" = "Используйте компанию, пользователя, пароль из Интернет-Банка";
+"Signup.Label.text" = "";
+
+"TemplatesList.Card.convertDescription" = "USD, EUR, RUB, KZT";
+"TemplatesList.Card.medicalDescription" = "Медицинские отчисления";
+"TemplatesList.Card.paymentDescription" = "Перевод контрагенту";
+"TemplatesList.Card.pensionDescription" = "Обязательные, Добровольные, Профессиональные";
+"TemplatesList.Card.taxDescription" = "Налоги";
+
+"Templates.List.emptyTitle" = "Шаблонов нет";
+"Templates.List.emptyDescription" = "Здесь появятся шаблоны";
+
+"Transaction.Account" = "Расчетный счет";
+"Transaction.Bank" = "Банк";
+"Transaction.Filter.From" = "От";
+"Transaction.Filter.Period" = "Период";
+"Transaction.Filter.Summ" = "Сумма";
+"Transaction.Filter.To" = "До";
+"Transaction.IIN" = "БИН/ИИН";
+"Transaction.Info.Alert.message" = "Сохраненный шаблон можно найти на странице платежей";
+"Transaction.Info.Alert.successfull" = "Шаблон успешно создан";
+"Transaction.Info.Alert.templateName" = "Название шаблона";
+"Transaction.Info.Alert.title" = "Как назвать шаблон?";
+"Transaction.Info.pdf" = "Квитанция";
+"Transaction.Info.repeat" = "Повторить";
+"Transaction.Info.templates" = "В шаблон";
+"Transaction.Payment" = "Платёж №";
+"Transaction.Receiver" = "Получатель";
+"Transaction.Requisites.IIN" = "БИН/ИИН: ";
+"Transaction.Requisites.accountDebit" = "Счет списания: ";
+"Transaction.Requisites.accountReceiver" = "Счет получателя: ";
+"Transaction.Requisites.accountSender" = "Счет отправителя: ";
+"Transaction.Requisites.bank" = "БАНК: ";
+"Transaction.Requisites.fulfilled" = "Исполнен";
+"Transaction.Requisites.purposeOfPayment" = "Назначение платежа: ";
+"Transaction.Requisites.receiver" = "Получатель: ";
+"Transaction.Requisites.replenishment" = "Счет пополнения: ";
+"Transaction.Requisites.sender" = "Отправитель: ";
+"Transaction.Send" = "Отправить квитанцию";
+"Transaction.Share.Header" = "Направляю вам детализацию выписки";
+
+"PersonalManager.PersonalManager" = "Персональный менеджер";
+
+
+"CurrencyPayments.title" = "Валютный платеж";
+"CurrencyPayments.Validator.text" = "По международному формату Swift на поля %@ должны в сумме содержать не более %@ символов.";
+
+"CurrencyPayments.Section.beneficiar" = "Получатель";
+"CurrencyPayments.Section.bankBeneficiar" = "Банк-получателя";
+"CurrencyPayments.Section.details" = "Детали платежа";
+
+"CurrencyPayments.Actions.sign" = "Подписать и отправить";
+"CurrencyPayments.Actions.save" = "Сохранить";
+
+"CurrencyPayments.Amount.title" = "Сумма платежа";
+
+// contract
+"CurrencyPayments.InputProperty.contract.placeholder" = "Контракт";
+// accountWriteOff
+"CurrencyPayments.InputProperty.accountWriteOff.placeholder" = "Счёт списания";
+// amount
+"CurrencyPayments.InputProperty.amount.placeholder" = "Сумма перевода (32A)";
+// accountBeneficiar
+"CurrencyPayments.InputProperty.accountBeneficiar.placeholder" = "Счёт № / IBAN";
+// kbe
+"CurrencyPayments.InputProperty.kbe.placeholder" = "КБе";
+// inn
+"CurrencyPayments.InputProperty.inn.placeholder" = "ИНН";
+// kpp
+"CurrencyPayments.InputProperty.kpp.placeholder" = "КПП";
+// BeneficiarName
+"CurrencyPayments.InputProperty.beneficiarName.placeholder" = "Наименование получателя";
+"CurrencyPayments.InputProperty.beneficiarName.description" = "Например: LLP GOLDEN EAGLE";
+// Country
+"CurrencyPayments.InputProperty.country.placeholder" = "Страна";
+"CurrencyPayments.InputProperty.country.description" = "Например: KAZAKHSTAN";
+// address
+"CurrencyPayments.InputProperty.address.placeholder" = "Адрес";
+"CurrencyPayments.InputProperty.address.description" = "Например: Almaty, Nazarbayev st. 226";
+// codeBank
+"CurrencyPayments.InputProperty.codeBank.placeholder" = "Код банка (БИК) / SWIFT";
+"CurrencyPayments.InputProperty.codeBank.description" = "Например: ALFA";
+// nameBank
+"CurrencyPayments.InputProperty.nameBank.placeholder" = "Наименование банка";
+// detailContract
+"CurrencyPayments.InputProperty.detailContract.placeholder" = "Детали контракта";
+"CurrencyPayments.InputProperty.detailContract.description" = "Например: VO, № контракта, УНК";
+// paymentPurpose
+"CurrencyPayments.InputProperty.paymentPurpose.placeholder" = "Назначение платежа";
+"CurrencyPayments.InputProperty.paymentPurpose.description" = "Например: Для предоставления услуг";
+"CurrencyPayments.InputProperty.paymentPurpose.info" = "Дополнительная информация";
+// paymentPurposeCode
+"CurrencyPayments.InputProperty.paymentPurposeCode.placeholder" = "Код назначения платежа";
+"CurrencyPayments.InputProperty.paymentPurposeCode.description" = "Например: 711 или 221";
+// voCode
+"CurrencyPayments.InputProperty.voCode.placeholder" = "Код VO";
+"CurrencyPayments.InputProperty.voCode.description" = "Например: 12050 или 22100";
+// valutationDate
+"CurrencyPayments.InputProperty.valutationDate.placeholder" = "Дата валютирования";
+// beneficiarInfo
+"CurrencyPayments.InputProperty.beneficiarInfo.placeholder" = "Информация получателю";
+"CurrencyPayments.InputProperty.beneficiarInfo.description" = "Заполнять при необходимости";
+// accountComission
+"CurrencyPayments.InputProperty.accountComission.placeholder" = "Счёт списания комиссии";
+// signature
+"CurrencyPayments.InputProperty.signature.placeholder" = "Подпись";
+
+"CurrencyPayments.Account.signature.placeholder" = "Подпись";
+"CurrencyPayments.Autocomplete.Often" = "ЧАСТЫЕ";
+"CurrencyPayments.Autocomplete.List" = "СПИСОК";
+
+"CurrencyPayments.Done.Save.description" = "Для принятия платежа в обработку необходимо подписать платеж";
+"CurrencyPayments.Done.Save.message" = "Платеж №%@ сохранен на подпись";
+"CurrencyPayments.Done.Sign.description" = "В среднем платеж обрабатывается около 1-ого часа";
+"CurrencyPayments.Done.Sign.message" = "Платеж №%@ принят в обработку";
+"CurrencyPayments.Done.backPayments" = "Вернуться в платежи";
+"CurrencyPayments.Done.newPayment" = "Новый\nплатеж";
