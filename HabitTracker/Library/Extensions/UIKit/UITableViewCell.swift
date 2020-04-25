@@ -11,8 +11,8 @@ import UIKit
 extension UITableViewCell {
 
     func set(highlighted: Bool,
-             highlightedColor: UIColor = Color.Main.gray,
-             baseColor: UIColor = Color.Main.white) {
+             highlightedColor: UIColor = ColorName.uiGrayPrimary.color,
+             baseColor: UIColor = ColorName.uiWhite.color) {
 
         set(highlighted: highlighted,
             containerView: contentView,
@@ -22,8 +22,8 @@ extension UITableViewCell {
 
     func set(highlighted: Bool,
              containerView: UIView,
-             highlightedColor: UIColor = Color.Main.gray,
-             baseColor: UIColor = Color.Main.white) {
+             highlightedColor: UIColor = ColorName.uiGrayPrimary.color,
+             baseColor: UIColor = ColorName.uiWhite.color) {
 
         let color = highlighted ? highlightedColor : baseColor
 

@@ -14,7 +14,7 @@ extension UIViewController {
 
     enum NavigationItemStyle {
         case light
-        case dark
+        case orange
     }
 
     // MARK: - Internal methods
@@ -31,9 +31,9 @@ extension UIViewController {
 
         switch style {
         case .light:
-            backItem.tintColor = Color.Main.white
-        case .dark:
-            backItem.tintColor = Color.Main.blackText
+            backItem.tintColor = ColorName.uiWhite.color
+        case .orange:
+            backItem.tintColor = ColorName.uiOrange.color
         }
 
         let targetViewController = navigationController?.viewControllers[safe: index]
@@ -57,44 +57,4 @@ extension UIViewController {
         // Crunch for opaque tab bar and extendedLayoutIncludesOpaqueBars
         edgesForExtendedLayout = [.top, .left, .right]
     }
-
-    func showOverlayLoading(animated: Bool = true, completion: EmptyClosure? = nil) {
-        guard presentedViewController as? LoadingIndicatableOverlayViewController == nil else {
-            return
-        }
-        let vc = LoadingIndicatableOverlayViewController()
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: animated, completion: {
-            completion?()
-        })
-    }
-
-    func hideOverlayLoading(animated: Bool = true, completion: EmptyClosure? = nil) {
-        guard let presentedViewController = presentedViewController as? LoadingIndicatableOverlayViewController else {
-            return
-        }
-        presentedViewController.dismiss(animated: animated, completion: {
-            completion?()
-        })
-    }
-
-    // MARK: - Customizing title
-
-    func setTitle(item: LocalizableStringItem, style: NavigationItemStyle) {
-        let labelTitle = UILabel()
-        labelTitle.adjustsFontSizeToFitWidth = true
-        labelTitle.font = FontFamily.UniCreditCY.medium.font(size: 18)
-        labelTitle.localized = item
-
-        switch style {
-        case .light:
-            labelTitle.textColor = Color.Main.white
-        case .dark:
-            labelTitle.textColor = Color.Main.blackText
-        }
-
-        navigationItem.titleView = labelTitle
-    }
-
 }

@@ -22,8 +22,7 @@ extension UIButton {
     /// - roundedBorder: Sets cornerRadius, white background color and 1pt gray border.
     enum Style {
         case blue
-        case roundedGrayBorder
-        case white
+        case orange
     }
 
     // MARK: - Properties
@@ -53,39 +52,33 @@ extension UIButton {
         switch style {
         case .blue:
             setBlueStyle()
-        case .roundedGrayBorder:
-            setRoundedGrayBorderStyle()
-        case .white:
-            setWhiteStyle()
+        case .orange:
+            setOrangeStyle()
         }
     }
 
     // MARK: - Private methods
 
     private func setBlueStyle() {
-        layer.cornerRadius = Constants.defaultCornerRadius
+        roundCorners(.allCorners, radius: 25)
         backgroundColor = .clear
-        setTitleColor(.white, for: .normal)
-        titleLabel?.font = FontFamily.UniCreditCY.medium.font(size: Constants.defaultFontSize)
-        let normalImage = UIImage.imageWithColor(Color.Main.blue)
-        let disabledImage = UIImage.imageWithColor(Color.Main.blueLight)
+        setTitleColor(ColorName.uiWhite.color, for: .normal)
+        
+        titleLabel?.font = FontFamily.Gilroy.medium.font(size: 16)
+        let normalImage = UIImage.imageWithColor(ColorName.uiBlue.color)
+        let disabledImage = UIImage.imageWithColor(ColorName.uiBlueSecondary.color)
         setBackgroundImage(normalImage, for: .normal)
         setBackgroundImage(disabledImage, for: .disabled)
     }
 
-    private func setRoundedGrayBorderStyle() {
-        layer.cornerRadius = Constants.defaultCornerRadius
-        backgroundColor = .white
-        setTitleColor(Color.Main.blackText, for: .normal)
-        titleLabel?.font = FontFamily.UniCreditCY.medium.font(size: Constants.defaultFontSize)
-        layer.borderWidth = 1
-        layer.borderColor = Color.Main.graySeparator.cgColor
-    }
-
-    private func setWhiteStyle() {
-        backgroundColor = .white
-        setTitleColor(Color.Main.blackText, for: .normal)
-        titleLabel?.font = FontFamily.UniCreditCY.medium.font(size: Constants.defaultFontSize)
+    private func setOrangeStyle() {
+        roundCorners(.allCorners, radius: 25)
+        backgroundColor = .clear
+        setTitleColor(ColorName.uiWhite.color, for: .normal)
+        
+        titleLabel?.font = FontFamily.Gilroy.medium.font(size: 16)
+        let normalImage = UIImage.imageWithColor(ColorName.uiOrange.color)
+        setBackgroundImage(normalImage, for: .normal)
     }
 
 }

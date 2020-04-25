@@ -18,7 +18,7 @@ extension UISwitch {
 
     // MARK: - Internal methods
 
-    func apply(style: Style) {
+    func apply(style: Style = .default) {
         switch style {
         case .default:
             applyDefaultStyle()
@@ -28,9 +28,9 @@ extension UISwitch {
     // MARK: - Private methods
 
     private func applyDefaultStyle() {
-        onTintColor = Color.Main.blue
-        backgroundColor = Color.Main.graySeparator
-        cornerRadius = 16
+        onTintColor = ColorName.uiBlue.color
+        backgroundColor = ColorName.uiBlueSecondary.color
+        layer.cornerRadius = 20
     }
 
 }

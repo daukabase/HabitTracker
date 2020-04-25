@@ -24,11 +24,11 @@ extension UIView {
         case upperLeft // Upper left corner
         case lowerLeft // Lower right corner
     }
-
+    
     // MARK: - Methods
 
     func round() {
-        cornerRadius = bounds.height / 2
+        layer.cornerRadius = bounds.height / 2
     }
 
     func roundCorners(_ corners: UIRectCorner, radius: CGFloat = Constants.defaultCornerRadius) {
@@ -158,7 +158,7 @@ extension UIView {
     /// - Warning: Calls in animation block when uses with `setupHighlightListening()`.
     @objc
     func highlight() {
-        backgroundColor = Color.Main.gray
+        backgroundColor = ColorName.uiGrayPrimary.color
     }
 
     /// Unhighlights view. In default implementation just sets white background.
@@ -166,7 +166,7 @@ extension UIView {
     /// - Warning: Calls in animation block when uses with `setupHighlightListening()`.
     @objc
     func unhighlight() {
-        backgroundColor = Color.Main.white
+        backgroundColor = ColorName.uiWhite.color
     }
 
     /// Setups listening to highlight gestures.

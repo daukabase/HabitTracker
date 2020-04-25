@@ -11,7 +11,7 @@ import UIKit
 public extension UICollectionViewCell {
 
     class func identifier() -> String {
-        return nameOfClass
+        return String(describing: self)
     }
 
 }

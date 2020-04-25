@@ -1,33 +1,13 @@
 {
-    "uiPrimary": "#222932",
-    "uiCard": "#2B3A4A",
-    "uiSecondary": "#858F9A",
-    "uiGray": "#B5BBC2",
+    "uiBlue": "#4643D3",
+    "uiOrange": "#FE805C",
     "uiWhite": "#FFFFFF",
-    "uiBackground": "#F3F4F5",
-    "uiRed": "#F0453A",
-    "uiRedError": "#FF5C5C",
-    "uiGreenSuccess": "#0DBA26",
-    "uiSeparatorWhite": "#E8E9EA",
-    "uiSeparatorDark": "#383E46",
-
-    "interfaceImportantInfo": "#FFF7F7",
-    "strokeImportantInfo": "#FFE3E3",
+    "uiBlueSecondary": "#A5AFFB",
+    "uiBlueSecondary": "#A5AFFB",
     
-    "redBrand": "#F03226",
+    "uiGrayPrimary": "#50555C",
+    "uiGraySecondary": "#A5A5A5",
     
-    "buttonPrimaryNormal": "#F1463B",
-    "buttonPrimaryPressed": "#F03226",
-    "buttonPrimaryInactive": "#FBCCC9",
-    
-    "buttonSecondaryNormal": "#ECEDEF",
-    "buttonSecondaryInactive": "#F3F4F5",
-    
-    "textPrimary": "#172A3F",
-    "textParagraph": "#546271",
-    "textSecondary": "#6D7986",
-    "textTetriary": "#B5BBC2",
-    "textWhiteSecondary": "#A5A8AC",
-    "textGreen": "#5FAE50",
-    "textGreenSecondary": "#9FCE96"
+    "textPrimary": "#50555C",
+    "textSecondary": "#A5A5A5"
 }
