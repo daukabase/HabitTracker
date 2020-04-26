@@ -27,6 +27,10 @@ extension UIView {
     
     // MARK: - Methods
 
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
     func round() {
         layer.cornerRadius = bounds.height / 2
     }

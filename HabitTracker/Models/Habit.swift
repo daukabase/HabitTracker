@@ -14,13 +14,13 @@ struct Habit {
     var duration: Int
     var startData: Date
     var schedule: Set<Days>
-    var image: UIImage?
+    var backgroundImage: UIImage?
     
     var daysLeft: Int {
         return 4
     }
     
-    var maxRepetitions: Int {
+    var totalRepetitions: Int {
         return 30
     }
     

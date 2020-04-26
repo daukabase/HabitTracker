@@ -11,7 +11,24 @@ import SegementSlide
 class HomeViewController: SegementSlideViewController {
 
     override var titlesInSwitcher: [String] {
-        return ["Habits", "Challenge", "Program"]
+        return ["Habits", "Challenge", "Program"].map { $0.uppercased() }
+    }
+    
+    override var switcherConfig: SegementSlideSwitcherConfig {
+        return SegementSlideSwitcherConfig(type: .tab,
+                                           horizontalMargin: 16,
+                                           horizontalSpace: 32,
+                                           normalTitleFont: FontFamily.Gilroy.medium.font(size: 16),
+                                           selectedTitleFont: FontFamily.Gilroy.medium.font(size: 16),
+                                           normalTitleColor: ColorName.textSecondary.color,
+                                           selectedTitleColor: ColorName.textPrimary.color,
+                                           indicatorWidth: 86,
+                                           indicatorHeight: 4,
+                                           indicatorColor: ColorName.uiBlue.color,
+                                           badgeHeightForPointType: 0,
+                                           badgeHeightForCountType: 0,
+                                           badgeHeightForCustomType: 0,
+                                           badgeFontForCountType: FontFamily.Gilroy.medium.font(size: 16))
     }
 
     override func segementSlideContentViewController(at index: Int) -> SegementSlideContentScrollViewDelegate? {
@@ -24,10 +41,30 @@ class HomeViewController: SegementSlideViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: Asset.menu.image,
+                                                                                 style: .plain,
+                                                                                 target: self,
+                                                                                 action: #selector(menuItemDidTap))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.filter.image,
+                                                            style: .done,
+                                                            target: self,
+                                                                                  action: #selector(filterItemDidTap))
+        navigationController?.navigationBar.tintColor = ColorName.uiGrayPrimary.color
         
         reloadData()
         scrollToSlide(at: 0, animated: false)
     }
 
+    @objc
+    private func menuItemDidTap() {
+        
+    }
+    
+    @objc
+    private func filterItemDidTap() {
+        
+    }
+    
 }
