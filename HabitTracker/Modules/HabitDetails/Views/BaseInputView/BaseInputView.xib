@@ -33,7 +33,7 @@
                     <color key="textColor" red="0.94509803920000002" green="0.27450980390000002" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wake up early" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WU5-hL-1bw">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WU5-hL-1bw">
                     <rect key="frame" x="0.0" y="48" width="385" height="23"/>
                     <color key="textColor" red="0.31372549019607843" green="0.33333333333333331" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="18"/>

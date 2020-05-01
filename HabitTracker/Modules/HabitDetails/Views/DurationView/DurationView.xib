@@ -39,7 +39,7 @@
                     <rect key="frame" x="18" y="45" width="82" height="36"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="21" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmS-dm-h5e">
-                            <rect key="frame" x="8" y="7" width="66" height="22.5"/>
+                            <rect key="frame" x="8" y="9" width="66" height="22.5"/>
                             <color key="textColor" red="0.3333996534" green="0.34847956899999999" blue="0.72141361240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
@@ -47,7 +47,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="fmS-dm-h5e" firstAttribute="centerY" secondItem="Dwp-UI-fAM" secondAttribute="centerY" id="Ifl-nS-Gzr"/>
+                        <constraint firstItem="fmS-dm-h5e" firstAttribute="centerY" secondItem="Dwp-UI-fAM" secondAttribute="centerY" constant="2" id="Ifl-nS-Gzr"/>
                         <constraint firstAttribute="height" constant="36" id="Wgq-Ep-yy9"/>
                         <constraint firstAttribute="width" constant="82" id="XZz-Fs-VTv"/>
                         <constraint firstItem="fmS-dm-h5e" firstAttribute="leading" secondItem="Dwp-UI-fAM" secondAttribute="leading" constant="8" id="eji-vN-Rr0"/>
@@ -55,13 +55,13 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="gg4-fJ-u1J">
-                    <rect key="frame" x="136.5" y="45" width="149.5" height="36"/>
+                    <rect key="frame" x="136.5" y="45" width="178" height="36"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="bsf-IE-BQI">
-                            <rect key="frame" x="99.5" y="8" width="20" height="20"/>
+                            <rect key="frame" x="128" y="8" width="20" height="20"/>
                         </imageView>
                         <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="20/06/20" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZM-Fn-WMH">
-                            <rect key="frame" x="16" y="7.5" width="73" height="21.5"/>
+                            <rect key="frame" x="30" y="9.5" width="73" height="21.5"/>
                             <color key="textColor" red="0.3333996534" green="0.34847956899999999" blue="0.72141361240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
@@ -70,15 +70,15 @@
                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="bsf-IE-BQI" firstAttribute="centerY" secondItem="gg4-fJ-u1J" secondAttribute="centerY" id="5Nf-2W-0fM"/>
-                        <constraint firstItem="bsf-IE-BQI" firstAttribute="leading" secondItem="NZM-Fn-WMH" secondAttribute="trailing" constant="10.5" id="C8P-SA-bdR"/>
-                        <constraint firstItem="NZM-Fn-WMH" firstAttribute="leading" secondItem="gg4-fJ-u1J" secondAttribute="leading" constant="16" id="HWL-7S-WMy"/>
-                        <constraint firstItem="NZM-Fn-WMH" firstAttribute="centerY" secondItem="gg4-fJ-u1J" secondAttribute="centerY" id="RX3-Pc-6MJ"/>
+                        <constraint firstItem="NZM-Fn-WMH" firstAttribute="leading" secondItem="gg4-fJ-u1J" secondAttribute="leading" constant="30" id="HWL-7S-WMy"/>
+                        <constraint firstItem="NZM-Fn-WMH" firstAttribute="centerY" secondItem="gg4-fJ-u1J" secondAttribute="centerY" constant="2" id="RX3-Pc-6MJ"/>
                         <constraint firstAttribute="height" constant="36" id="UNq-H4-7Fu"/>
                         <constraint firstAttribute="trailing" secondItem="bsf-IE-BQI" secondAttribute="trailing" constant="30" id="afH-vD-n0K"/>
+                        <constraint firstAttribute="width" constant="178" id="uWT-wn-zxx"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="starting data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzY-Ce-WLd">
-                    <rect key="frame" x="177.5" y="89" width="67.5" height="14"/>
+                    <rect key="frame" x="192" y="89" width="67.5" height="14"/>
                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                     <color key="textColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -92,8 +92,9 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gg4-fJ-u1J" secondAttribute="trailing" constant="16" id="9dR-yT-qk0"/>
                 <constraint firstItem="MOy-ej-ap7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="U91-TM-TTC"/>
-                <constraint firstItem="gg4-fJ-u1J" firstAttribute="leading" secondItem="Dwp-UI-fAM" secondAttribute="trailing" constant="36.5" id="W5v-Gp-KKa"/>
+                <constraint firstItem="gg4-fJ-u1J" firstAttribute="leading" secondItem="Dwp-UI-fAM" secondAttribute="trailing" priority="750" constant="36.5" id="W5v-Gp-KKa"/>
                 <constraint firstItem="IDB-dc-ScD" firstAttribute="top" secondItem="Dwp-UI-fAM" secondAttribute="bottom" constant="8" id="Y2B-lJ-iOb"/>
                 <constraint firstItem="xzY-Ce-WLd" firstAttribute="top" secondItem="gg4-fJ-u1J" secondAttribute="bottom" constant="8" id="Ylj-Jn-DKD"/>
                 <constraint firstItem="MOy-ej-ap7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZA5-qf-igV"/>

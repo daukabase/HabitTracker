@@ -62,11 +62,15 @@ final class DurationView: UIView {
         
         startTimeTextField.inputView = datePicker
         startTimeTextField.addDoneButtonOnKeyboard()
+        startTimeTextField.tintColor = .clear
         
+        durationTextField.placeholder = "0"
+        durationTextField.delegate = self
         durationTextField.keyboardType = .numberPad
         durationTextField.addDoneButtonOnKeyboard()
         durationTextField.addTarget(self, action: #selector(didChangeDuration(_:)), for: .editingChanged)
         durationTextField.text = String(durationDays)
+        durationTextField.tintColor = ColorName.uiBlue.color
     }
     
     private func setStartTitle(for date: Date) {
@@ -76,17 +80,24 @@ final class DurationView: UIView {
     // MARK: - Actions
     @objc
     private func updateTextField(_ sender: Any?) {
-        guard let picker = inputView as? UIDatePicker else {
-            return
-        }
-        startDate = picker.date
-        setStartTitle(for: picker.date)
+        startDate = datePicker.date
+        setStartTitle(for: datePicker.date)
     }
     
     @objc
     private func didChangeDuration(_ textField: UITextField) {
         let durationDays = Int(textField.text?.digits ?? "") ?? 0
         self.durationDays = durationDays
+    }
+    
+}
+
+extension DurationView: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        let newPosition = textField.endOfDocument
+        textField.selectedTextRange = textField.textRange(from: newPosition, to: newPosition)
+        return true
     }
     
 }

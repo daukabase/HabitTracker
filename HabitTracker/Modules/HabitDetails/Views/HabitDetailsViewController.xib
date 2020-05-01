@@ -22,27 +22,37 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4aE-wQ-nim">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PZI-at-qJZ">
-                            <rect key="frame" x="32" y="0.0" width="350" height="818"/>
-                        </stackView>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61I-vD-ciy">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PZI-at-qJZ">
+                                    <rect key="frame" x="38" y="0.0" width="338" height="818"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="PZI-at-qJZ" firstAttribute="leading" secondItem="61I-vD-ciy" secondAttribute="leading" constant="38" id="0xZ-tP-uBD"/>
+                                <constraint firstItem="PZI-at-qJZ" firstAttribute="top" secondItem="61I-vD-ciy" secondAttribute="top" id="CYI-H6-xa4"/>
+                                <constraint firstAttribute="bottom" secondItem="PZI-at-qJZ" secondAttribute="bottom" id="QnM-m6-cOZ"/>
+                                <constraint firstAttribute="trailing" secondItem="PZI-at-qJZ" secondAttribute="trailing" constant="38" id="TV4-K1-7D7"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="PZI-at-qJZ" firstAttribute="leading" secondItem="PGZ-P8-rx3" secondAttribute="leading" constant="32" id="2dm-OH-gbd"/>
-                        <constraint firstItem="PGZ-P8-rx3" firstAttribute="bottom" secondItem="PZI-at-qJZ" secondAttribute="bottom" id="4pB-zc-bDI"/>
-                        <constraint firstItem="PGZ-P8-rx3" firstAttribute="trailing" secondItem="PZI-at-qJZ" secondAttribute="trailing" constant="32" id="HTN-0B-vTh"/>
-                        <constraint firstItem="PZI-at-qJZ" firstAttribute="top" secondItem="PGZ-P8-rx3" secondAttribute="top" id="IJP-hT-620"/>
+                        <constraint firstAttribute="bottom" secondItem="61I-vD-ciy" secondAttribute="bottom" id="Fd1-qD-Um6"/>
+                        <constraint firstItem="61I-vD-ciy" firstAttribute="leading" secondItem="4aE-wQ-nim" secondAttribute="leading" id="My8-5c-SIR"/>
+                        <constraint firstItem="61I-vD-ciy" firstAttribute="width" secondItem="4aE-wQ-nim" secondAttribute="width" id="WT8-0T-dJ8"/>
+                        <constraint firstAttribute="trailing" secondItem="61I-vD-ciy" secondAttribute="trailing" id="dXa-Zt-3KO"/>
+                        <constraint firstItem="61I-vD-ciy" firstAttribute="top" secondItem="4aE-wQ-nim" secondAttribute="top" id="u48-bu-qkB"/>
                     </constraints>
-                    <viewLayoutGuide key="contentLayoutGuide" id="qii-Qa-8Ss"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="PGZ-P8-rx3"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4aE-wQ-nim" secondAttribute="trailing" id="A5K-A7-GNV"/>
-                <constraint firstItem="4aE-wQ-nim" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.142857" priority="500" id="Bfd-t8-s18"/>
-                <constraint firstItem="4aE-wQ-nim" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NLI-dM-nyL"/>
-                <constraint firstItem="4aE-wQ-nim" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bC2-NL-hOe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4aE-wQ-nim" secondAttribute="bottom" id="eU5-5g-rRb"/>
+                <constraint firstItem="4aE-wQ-nim" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0kC-bL-nQu"/>
+                <constraint firstItem="4aE-wQ-nim" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="96Z-IO-alS"/>
+                <constraint firstItem="4aE-wQ-nim" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="MUe-Cj-eqT"/>
+                <constraint firstItem="4aE-wQ-nim" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Y0X-n3-9gF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>

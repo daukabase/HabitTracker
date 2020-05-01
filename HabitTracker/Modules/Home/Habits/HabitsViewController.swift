@@ -12,7 +12,7 @@ import PinLayout
 
 final class HabitsViewController: UIViewController {
 
-    lazy var saveHabitButton: UIButton = {
+    lazy var addHabitButton: UIButton = {
         let btn = UIButton(frame: .zero)
         
         btn.apply(style: .blue)
@@ -47,23 +47,35 @@ final class HabitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(saveHabitButton)
+        view.addSubview(addHabitButton)
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInset.top = 8
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
+        
+        addHabitButton.addTarget(self, action: #selector(addHabitDidTap), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        saveHabitButton
+        addHabitButton
             .pin
             .left(16)
             .right(16)
             .bottom(view.safeAreaInsets.bottom + 16)
             .height(50)
+    }
+    
+    @objc
+    func addHabitDidTap() {
+        let controller = HabitDetailsViewController()
+        controller.modalPresentationStyle = .fullScreen
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
 }

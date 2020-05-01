@@ -62,6 +62,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.5.2):
     - GoogleUtilities/Logger
+  - IQKeyboardManagerSwift (6.3.0)
   - Kingfisher (5.7.1)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
@@ -71,14 +72,17 @@ PODS:
   - PinLayout (1.8.13)
   - PromisesObjC (1.2.8)
   - SegementSlide (2.2.3)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Crashlytics (~> 3.14.0)
   - Fabric (~> 1.10.2)
   - Firebase/Analytics
+  - IQKeyboardManagerSwift (= 6.3.0)
   - Kingfisher (~> 5.7.1)
   - PinLayout (~> 1.8.7)
   - SegementSlide (~> 2.2.1)
+  - SnapKit
 
 SPEC REPOS:
   trunk:
@@ -94,11 +98,13 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - IQKeyboardManagerSwift
     - Kingfisher
     - nanopb
     - PinLayout
     - PromisesObjC
     - SegementSlide
+    - SnapKit
 
 SPEC CHECKSUMS:
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
@@ -113,12 +119,14 @@ SPEC CHECKSUMS:
   GoogleDataTransport: b29a21d813e906014ca16c00897827e40e4a24ab
   GoogleDataTransportCCTSupport: 6f15a89b0ca35d6fa523e1f752ef818588885988
   GoogleUtilities: ad0f3b691c67909d03a3327cc205222ab8f42e0e
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PinLayout: e41a50260a76508b7a7fcee8955c76639adc69bc
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SegementSlide: 7a35da31eaa87fa0af42cc402395821a0c6835ae
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 6a2bb6bdd0f1470515fcb3671cb5ec900380e607
+PODFILE CHECKSUM: 655f8450e0b4d641cae8c1dd1d53044e359d8c96
 
 COCOAPODS: 1.9.1

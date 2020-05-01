@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum Days: Int, CaseIterable {
+enum Day: Int, CaseIterable {
     case monday = 0
     case tuesday, wednesday, thursday, friday, saturday, sunday
 }
 
-extension Days {
+extension Day {
     
     var title: String {
         switch self {

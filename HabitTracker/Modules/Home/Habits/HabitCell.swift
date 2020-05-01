@@ -51,12 +51,19 @@ final class HabitCell: UITableViewCell {
     }
     
     private func setupProgressViewLayer() {
+        setupProgressIndicatorLayer()
+        
         let maskLayerPath = UIBezierPath(roundedRect: progressView.bounds, cornerRadius: 6)
         let maskLayer = CAShapeLayer()
         maskLayer.frame = progressView.bounds
         maskLayer.path = maskLayerPath.cgPath
         progressView.layer.mask = maskLayer
         progressView.layoutIfNeeded()
+    }
+    
+    private func setupProgressIndicatorLayer() {
+        progressView.layer.sublayers?[safe: 1]?.cornerRadius = 4
+        progressView.subviews[safe: 1]?.clipsToBounds = true
     }
     
 }

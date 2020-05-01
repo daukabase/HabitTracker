@@ -30,7 +30,8 @@ extension UISwitch {
     private func applyDefaultStyle() {
         onTintColor = ColorName.uiBlue.color
         backgroundColor = ColorName.uiBlueSecondary.color
-        layer.cornerRadius = 20
+        tintColor = ColorName.uiBlueSecondary.color
+        layer.cornerRadius = frame.height / 2
     }
 
 }

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import UserNotifications
 import Fabric
-
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupRootView()
-        configureAppearence()
+        
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysShow
         
         FirebaseApp.configure()
         
@@ -33,15 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: home)
         window?.makeKeyAndVisible()
-    }
-    
-    private func configureAppearence() {
-//        let titleAttributes: [StringAttribute] = [
-//            .aligment(.center),
-//            .lineHeight(19, font: R.font.montserratBold(size: 15)!),
-//        ]
-//        UINavigationBar.appearance().titleTextAttributes = titleAttributes.toDictionary()
-        UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.clear], for: .normal)
     }
     
 }

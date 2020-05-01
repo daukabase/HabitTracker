@@ -10,6 +10,8 @@
 		129A557E79D6F2FFAD8BBB22 /* libPods-HabitTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4C3880A19CE2D3742A93D5 /* libPods-HabitTrackerTests.a */; };
 		44D9D3DA49AB7A79CDD31836 /* libPods-HabitTrackerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E789095EBD2B8954D583742 /* libPods-HabitTrackerUITests.a */; };
 		4EA764B9A5A082FEE3189F50 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */; };
+		B047294C245C395000F3458F /* BackgroundImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B047294B245C395000F3458F /* BackgroundImagesViewController.swift */; };
+		B047294E245C396800F3458F /* BackgroundImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B047294D245C396800F3458F /* BackgroundImageCell.swift */; };
 		B07BFD6824542C5F00D2D18F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5424542C5E00D2D18F /* Assets.xcassets */; };
 		B07BFD7A24542C5F00D2D18F /* Colors.json in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD6724542C5F00D2D18F /* Colors.json */; };
 		B07BFD8024542C6800D2D18F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFD7C24542C6700D2D18F /* Fonts.swift */; };
@@ -138,6 +140,8 @@
 		B0DDCB0C24557459004223DB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDCB0B24557459004223DB /* UITextField.swift */; };
 		B0DDCB0E24557538004223DB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDCB0D24557538004223DB /* String.swift */; };
 		B0DDCB11245575DF004223DB /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDCB10245575DF004223DB /* ScheduleView.swift */; };
+		B0DDCB172455A260004223DB /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDCB162455A260004223DB /* DayButton.swift */; };
+		B0DDCB1A2455A29A004223DB /* SwitchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDCB192455A29A004223DB /* SwitchableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +168,8 @@
 		57AD6CE43C7FEDC077F26D19 /* Pods-HabitTrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-HabitTrackerUITests/Pods-HabitTrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A090C701CF70DB8F4C7F5564 /* Pods-HabitTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-HabitTrackerTests/Pods-HabitTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B047294B245C395000F3458F /* BackgroundImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImagesViewController.swift; sourceTree = "<group>"; };
+		B047294D245C396800F3458F /* BackgroundImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageCell.swift; sourceTree = "<group>"; };
 		B07BFD5424542C5E00D2D18F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B07BFD6724542C5F00D2D18F /* Colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Colors.json; sourceTree = "<group>"; };
 		B07BFD7C24542C6700D2D18F /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -298,6 +304,8 @@
 		B0DDCB0B24557459004223DB /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		B0DDCB0D24557538004223DB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B0DDCB10245575DF004223DB /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		B0DDCB162455A260004223DB /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
+		B0DDCB192455A29A004223DB /* SwitchableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchableView.swift; sourceTree = "<group>"; };
 		C7ACBB1EC42E4FA032A3B294 /* Pods-HabitTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-HabitTrackerUITests/Pods-HabitTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4C3880A19CE2D3742A93D5 /* libPods-HabitTrackerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HabitTrackerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC1085E69506A9EEBC1A732 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -352,6 +360,15 @@
 				2E789095EBD2B8954D583742 /* libPods-HabitTrackerUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B047294A245C393E00F3458F /* BackgroundImages */ = {
+			isa = PBXGroup;
+			children = (
+				B047294B245C395000F3458F /* BackgroundImagesViewController.swift */,
+				B047294D245C396800F3458F /* BackgroundImageCell.swift */,
+			);
+			path = BackgroundImages;
 			sourceTree = "<group>";
 		};
 		B07BFD5324542C5E00D2D18F /* Resources */ = {
@@ -636,6 +653,8 @@
 			isa = PBXGroup;
 			children = (
 				B07BFE742454877300D2D18F /* HabitDetailsViewController.xib */,
+				B047294A245C393E00F3458F /* BackgroundImages */,
+				B0DDCB182455A27C004223DB /* SwitchableView */,
 				B0DDCB0F245575D1004223DB /* ScheduleView */,
 				B0DDCAFF245567D8004223DB /* DurationView */,
 				B0DDCAFE245567D2004223DB /* BaseInputView */,
@@ -676,8 +695,17 @@
 			isa = PBXGroup;
 			children = (
 				B0DDCB10245575DF004223DB /* ScheduleView.swift */,
+				B0DDCB162455A260004223DB /* DayButton.swift */,
 			);
 			path = ScheduleView;
+			sourceTree = "<group>";
+		};
+		B0DDCB182455A27C004223DB /* SwitchableView */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDCB192455A29A004223DB /* SwitchableView.swift */,
+			);
+			path = SwitchableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1016,14 +1044,18 @@
 				B0DDCB012455680E004223DB /* DurationView.swift in Sources */,
 				B07BFE5A24544C4B00D2D18F /* UISwitch.swift in Sources */,
 				B07BFE5624544C4B00D2D18F /* UIButton.swift in Sources */,
+				B047294C245C395000F3458F /* BackgroundImagesViewController.swift in Sources */,
+				B0DDCB172455A260004223DB /* DayButton.swift in Sources */,
 				B07BFD8324542C6800D2D18F /* Localizable.swift in Sources */,
 				B07BFE63245459B200D2D18F /* StringAttribute.swift in Sources */,
 				B0DDCB0824556FBB004223DB /* Date.swift in Sources */,
+				B0DDCB1A2455A29A004223DB /* SwitchableView.swift in Sources */,
 				B0DDCB0924556FBB004223DB /* JSONDecoder.swift in Sources */,
 				B07BFE5224544C4A00D2D18F /* UICollectionView.swift in Sources */,
 				B0DDCB0E24557538004223DB /* String.swift in Sources */,
 				B07BFE5E24544C4B00D2D18F /* UINavigationController.swift in Sources */,
 				B07BFE5424544C4A00D2D18F /* UITableView.swift in Sources */,
+				B047294E245C396800F3458F /* BackgroundImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

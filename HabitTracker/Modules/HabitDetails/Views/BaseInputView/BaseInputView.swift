@@ -15,7 +15,7 @@ final class BaseInputView: UIView {
     var placeholderAttributes: [StringAttribute] {
         return [
             .font(FontFamily.Gilroy.regular.font(size: 18)),
-            .foregroundColor(ColorName.textSecondary.color)
+            .foregroundColor(ColorName.uiGraySecondary.color)
         ]
     }
     

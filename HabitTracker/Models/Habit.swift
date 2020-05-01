@@ -13,7 +13,7 @@ struct Habit {
     var notes: String
     var duration: Int
     var startData: Date
-    var schedule: Set<Days>
+    var schedule: Set<Day>
     var backgroundImage: UIImage?
     
     var daysLeft: Int {

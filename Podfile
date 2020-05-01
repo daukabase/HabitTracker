@@ -5,6 +5,8 @@ def common_pods
   pod 'PinLayout', '~> 1.8.7'
   pod 'Kingfisher', '~> 5.7.1'
   pod 'SegementSlide', '~> 2.2.1'
+  pod 'SnapKit'
+  pod 'IQKeyboardManagerSwift', '6.3.0'
   
   # Google API
   pod 'Fabric', '~> 1.10.2'
