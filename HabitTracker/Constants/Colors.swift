@@ -19,6 +19,9 @@ public struct ColorName {
   public let rgbaValue: UInt32
   public var color: Color { return Color(named: self) }
 
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#171d33"></span>
+  /// Alpha: 100% <br/> (0x171d33ff)
+  public static let textBlack = ColorName(rgbaValue: 0x171d33ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#50555c"></span>
   /// Alpha: 100% <br/> (0x50555cff)
   public static let textPrimary = ColorName(rgbaValue: 0x50555cff)

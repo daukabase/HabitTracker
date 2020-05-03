@@ -9,5 +9,8 @@
     "uiGraySecondary": "#A5A5A5",
     
     "textPrimary": "#50555C",
-    "textSecondary": "#A5A5A5"
+    "textSecondary": "#A5A5A5",
+    
+    "textBlack": "#171D33"
+    
 }

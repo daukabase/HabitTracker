@@ -11,6 +11,27 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
+
+  internal enum Onboarding {
+    internal enum Auth {
+      /// So now if you are motivated enough and ready to achieve your goals, let’s create an account and start your first habit. 
+      internal static let description = L10n.tr("Localizable", "Onboarding.Auth.description")
+      /// Let’s Start!
+      internal static let title = L10n.tr("Localizable", "Onboarding.Auth.title")
+    }
+    internal enum Challenge {
+      /// Be a good friend and change life for the better not only for yourself. Invite friends to create a challenge and motivate each other.
+      internal static let description = L10n.tr("Localizable", "Onboarding.Challenge.description")
+      /// Challenge accepted!
+      internal static let title = L10n.tr("Localizable", "Onboarding.Challenge.title")
+    }
+    internal enum Track {
+      /// Creat habits that you what to start and keep track of your progress.
+      internal static let description = L10n.tr("Localizable", "Onboarding.Track.description")
+      /// Track your Habits
+      internal static let title = L10n.tr("Localizable", "Onboarding.Track.title")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

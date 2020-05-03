@@ -11,7 +11,14 @@ import UIKit
 final class DurationView: UIView {
     
     private(set) var startDate: Date = Date()
-    private(set) var durationDays: Int = 21
+    
+    let suggestedDays = 21
+    var suggestedDaysIndex: Int? {
+        return durationDaysArray.enumerated().first { (index, value) -> Bool in
+            return value == suggestedDays
+        }?.offset
+    }
+    let durationDaysArray: [Int] = [5, 7, 13, 21, 48, 66, 85, 256]
     
     lazy var datePicker: UIDatePicker = {
         let picker = UIDatePicker(frame: .zero)
@@ -21,6 +28,17 @@ final class DurationView: UIView {
         picker.locale = Locale(identifier: "ru_RU")
         picker.addTarget(self, action: #selector(updateTextField), for: .valueChanged)
         
+        return picker
+    }()
+    
+    lazy var durationPickerView: UIPickerView = {
+        let picker = UIPickerView(frame: .zero)
+        
+        picker.delegate = self
+        picker.dataSource = self
+        if let suggestedDaysIndex = suggestedDaysIndex {
+            picker.selectRow(suggestedDaysIndex, inComponent: 0, animated: false)
+        }
         return picker
     }()
     
@@ -65,12 +83,10 @@ final class DurationView: UIView {
         startTimeTextField.tintColor = .clear
         
         durationTextField.placeholder = "0"
-        durationTextField.delegate = self
-        durationTextField.keyboardType = .numberPad
+        durationTextField.text = "\(suggestedDays)"
+        durationTextField.tintColor = .clear
         durationTextField.addDoneButtonOnKeyboard()
-        durationTextField.addTarget(self, action: #selector(didChangeDuration(_:)), for: .editingChanged)
-        durationTextField.text = String(durationDays)
-        durationTextField.tintColor = ColorName.uiBlue.color
+        durationTextField.inputView = durationPickerView
     }
     
     private func setStartTitle(for date: Date) {
@@ -86,8 +102,7 @@ final class DurationView: UIView {
     
     @objc
     private func didChangeDuration(_ textField: UITextField) {
-        let durationDays = Int(textField.text?.digits ?? "") ?? 0
-        self.durationDays = durationDays
+        
     }
     
 }
@@ -98,6 +113,36 @@ extension DurationView: UITextFieldDelegate {
         let newPosition = textField.endOfDocument
         textField.selectedTextRange = textField.textRange(from: newPosition, to: newPosition)
         return true
+    }
+    
+}
+
+extension DurationView: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        durationTextField.text = "\(durationDaysArray[row])"
+    }
+    
+}
+
+extension DurationView: UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 1 {
+            return 1
+        }
+        return durationDaysArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 1 {
+            return "days"
+        }
+        return String(durationDaysArray[row])
     }
     
 }

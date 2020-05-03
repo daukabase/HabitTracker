@@ -12,6 +12,25 @@
 		4EA764B9A5A082FEE3189F50 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */; };
 		B047294C245C395000F3458F /* BackgroundImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B047294B245C395000F3458F /* BackgroundImagesViewController.swift */; };
 		B047294E245C396800F3458F /* BackgroundImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B047294D245C396800F3458F /* BackgroundImageCell.swift */; };
+		B0472957245D71FD00F3458F /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0472951245D71FD00F3458F /* OnboardingPage.swift */; };
+		B0472958245D71FD00F3458F /* OnboardingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0472953245D71FD00F3458F /* OnboardingPageViewController.xib */; };
+		B0472959245D71FD00F3458F /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0472954245D71FD00F3458F /* OnboardingViewController.xib */; };
+		B047295A245D71FD00F3458F /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0472955245D71FD00F3458F /* OnboardingPageViewController.swift */; };
+		B047295B245D71FD00F3458F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0472956245D71FD00F3458F /* OnboardingViewController.swift */; };
+		B047295D245D74FC00F3458F /* OnboardingDescriptionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B047295C245D74FC00F3458F /* OnboardingDescriptionPage.swift */; };
+		B05FC1CD245D805F00F4C214 /* ActionableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05FC1CC245D805F00F4C214 /* ActionableLabel.swift */; };
+		B05FC1CF245D810100F4C214 /* StringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05FC1CE245D810100F4C214 /* StringBuilder.swift */; };
+		B077F9AA245D947400FAFFB6 /* InputCodeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9A8245D947300FAFFB6 /* InputCodeItemView.swift */; };
+		B077F9AB245D947400FAFFB6 /* InputCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9A9245D947300FAFFB6 /* InputCodeView.swift */; };
+		B077F9B3245D94B500FAFFB6 /* NumberConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9AE245D94B500FAFFB6 /* NumberConfirmationViewController.swift */; };
+		B077F9B6245D94B500FAFFB6 /* NumberConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9B1245D94B500FAFFB6 /* NumberConfirmationViewModel.swift */; };
+		B077F9B7245D94B500FAFFB6 /* NumberConfirmationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B077F9B2245D94B500FAFFB6 /* NumberConfirmationViewController.storyboard */; };
+		B077F9BE245D97E500FAFFB6 /* ErrorDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9B9245D97E500FAFFB6 /* ErrorDisplayable.swift */; };
+		B077F9BF245D97E500FAFFB6 /* Maskable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9BA245D97E500FAFFB6 /* Maskable.swift */; };
+		B077F9C0245D97E500FAFFB6 /* InfoDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9BB245D97E500FAFFB6 /* InfoDisplayable.swift */; };
+		B077F9C2245D97E500FAFFB6 /* LoaderViewDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9BD245D97E500FAFFB6 /* LoaderViewDisplayable.swift */; };
+		B077F9C6245D981200FAFFB6 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9C4245D981200FAFFB6 /* MessageManager.swift */; };
+		B077F9C7245D981200FAFFB6 /* MessageBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9C5245D981200FAFFB6 /* MessageBanner.swift */; };
 		B07BFD6824542C5F00D2D18F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD5424542C5E00D2D18F /* Assets.xcassets */; };
 		B07BFD7A24542C5F00D2D18F /* Colors.json in Resources */ = {isa = PBXBuildFile; fileRef = B07BFD6724542C5F00D2D18F /* Colors.json */; };
 		B07BFD8024542C6800D2D18F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFD7C24542C6700D2D18F /* Fonts.swift */; };
@@ -170,6 +189,25 @@
 		A090C701CF70DB8F4C7F5564 /* Pods-HabitTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-HabitTrackerTests/Pods-HabitTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B047294B245C395000F3458F /* BackgroundImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImagesViewController.swift; sourceTree = "<group>"; };
 		B047294D245C396800F3458F /* BackgroundImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageCell.swift; sourceTree = "<group>"; };
+		B0472951245D71FD00F3458F /* OnboardingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		B0472953245D71FD00F3458F /* OnboardingPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingPageViewController.xib; sourceTree = "<group>"; };
+		B0472954245D71FD00F3458F /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		B0472955245D71FD00F3458F /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		B0472956245D71FD00F3458F /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		B047295C245D74FC00F3458F /* OnboardingDescriptionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDescriptionPage.swift; sourceTree = "<group>"; };
+		B05FC1CC245D805F00F4C214 /* ActionableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableLabel.swift; sourceTree = "<group>"; };
+		B05FC1CE245D810100F4C214 /* StringBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringBuilder.swift; sourceTree = "<group>"; };
+		B077F9A8245D947300FAFFB6 /* InputCodeItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCodeItemView.swift; sourceTree = "<group>"; };
+		B077F9A9245D947300FAFFB6 /* InputCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCodeView.swift; sourceTree = "<group>"; };
+		B077F9AE245D94B500FAFFB6 /* NumberConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberConfirmationViewController.swift; sourceTree = "<group>"; };
+		B077F9B1245D94B500FAFFB6 /* NumberConfirmationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberConfirmationViewModel.swift; sourceTree = "<group>"; };
+		B077F9B2245D94B500FAFFB6 /* NumberConfirmationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NumberConfirmationViewController.storyboard; sourceTree = "<group>"; };
+		B077F9B9245D97E500FAFFB6 /* ErrorDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDisplayable.swift; sourceTree = "<group>"; };
+		B077F9BA245D97E500FAFFB6 /* Maskable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maskable.swift; sourceTree = "<group>"; };
+		B077F9BB245D97E500FAFFB6 /* InfoDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDisplayable.swift; sourceTree = "<group>"; };
+		B077F9BD245D97E500FAFFB6 /* LoaderViewDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderViewDisplayable.swift; sourceTree = "<group>"; };
+		B077F9C4245D981200FAFFB6 /* MessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
+		B077F9C5245D981200FAFFB6 /* MessageBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBanner.swift; sourceTree = "<group>"; };
 		B07BFD5424542C5E00D2D18F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B07BFD6724542C5F00D2D18F /* Colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Colors.json; sourceTree = "<group>"; };
 		B07BFD7C24542C6700D2D18F /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -371,6 +409,84 @@
 			path = BackgroundImages;
 			sourceTree = "<group>";
 		};
+		B047294F245D71FD00F3458F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B0472950245D71FD00F3458F /* Model */,
+				B0472952245D71FD00F3458F /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B0472950245D71FD00F3458F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0472951245D71FD00F3458F /* OnboardingPage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0472952245D71FD00F3458F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0472953245D71FD00F3458F /* OnboardingPageViewController.xib */,
+				B0472954245D71FD00F3458F /* OnboardingViewController.xib */,
+				B0472955245D71FD00F3458F /* OnboardingPageViewController.swift */,
+				B0472956245D71FD00F3458F /* OnboardingViewController.swift */,
+				B047295C245D74FC00F3458F /* OnboardingDescriptionPage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B05FC1CB245D803E00F4C214 /* Reusable Layer */ = {
+			isa = PBXGroup;
+			children = (
+				B077F9AC245D948100FAFFB6 /* InputCode */,
+				B05FC1CC245D805F00F4C214 /* ActionableLabel.swift */,
+			);
+			path = "Reusable Layer";
+			sourceTree = "<group>";
+		};
+		B077F9AC245D948100FAFFB6 /* InputCode */ = {
+			isa = PBXGroup;
+			children = (
+				B077F9C3245D981200FAFFB6 /* MessageBanner */,
+				B077F9A8245D947300FAFFB6 /* InputCodeItemView.swift */,
+				B077F9A9245D947300FAFFB6 /* InputCodeView.swift */,
+			);
+			path = InputCode;
+			sourceTree = "<group>";
+		};
+		B077F9AD245D94B500FAFFB6 /* NumberConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				B077F9AE245D94B500FAFFB6 /* NumberConfirmationViewController.swift */,
+				B077F9B1245D94B500FAFFB6 /* NumberConfirmationViewModel.swift */,
+				B077F9B2245D94B500FAFFB6 /* NumberConfirmationViewController.storyboard */,
+			);
+			path = NumberConfirmation;
+			sourceTree = "<group>";
+		};
+		B077F9B8245D97E500FAFFB6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B077F9B9245D97E500FAFFB6 /* ErrorDisplayable.swift */,
+				B077F9BA245D97E500FAFFB6 /* Maskable.swift */,
+				B077F9BB245D97E500FAFFB6 /* InfoDisplayable.swift */,
+				B077F9BD245D97E500FAFFB6 /* LoaderViewDisplayable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B077F9C3245D981200FAFFB6 /* MessageBanner */ = {
+			isa = PBXGroup;
+			children = (
+				B077F9C4245D981200FAFFB6 /* MessageManager.swift */,
+				B077F9C5245D981200FAFFB6 /* MessageBanner.swift */,
+			);
+			path = MessageBanner;
+			sourceTree = "<group>";
+		};
 		B07BFD5324542C5E00D2D18F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +608,8 @@
 		B07BFE3124544C3300D2D18F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				B077F9B8245D97E500FAFFB6 /* Protocols */,
+				B05FC1CB245D803E00F4C214 /* Reusable Layer */,
 				B07BFE64245459B800D2D18F /* Types */,
 				B07BFE3224544C3B00D2D18F /* Extensions */,
 			);
@@ -534,6 +652,7 @@
 			children = (
 				B07BFE7C24548BAE00D2D18F /* Closures.swift */,
 				B07BFE62245459B200D2D18F /* StringAttribute.swift */,
+				B05FC1CE245D810100F4C214 /* StringBuilder.swift */,
 				B07BFE2D24544B8B00D2D18F /* Days.swift */,
 			);
 			path = Types;
@@ -624,6 +743,8 @@
 		B0BEFC66243A1B650020D377 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B077F9AD245D94B500FAFFB6 /* NumberConfirmation */,
+				B047294F245D71FD00F3458F /* Onboarding */,
 				B07BFE722454873F00D2D18F /* HabitDetails */,
 				B0BEFC67243A1B7D0020D377 /* Home */,
 			);
@@ -821,6 +942,7 @@
 				B07BFE262454463D00D2D18F /* Gilroy-HeavyItalic.eot in Resources */,
 				B07BFDF52454463D00D2D18F /* Gilroy-UltraLightItalic.woff2 in Resources */,
 				B07BFE212454463D00D2D18F /* Gilroy-Extrabold.woff in Resources */,
+				B077F9B7245D94B500FAFFB6 /* NumberConfirmationViewController.storyboard in Resources */,
 				B07BFE192454463D00D2D18F /* Gilroy-BlackItalic.woff2 in Resources */,
 				B07BFDDA2454463D00D2D18F /* Gilroy-HeavyItalic.woff2 in Resources */,
 				B07BFDFB2454463D00D2D18F /* Gilroy-RegularItalic.woff in Resources */,
@@ -849,6 +971,7 @@
 				B07BFDE92454463D00D2D18F /* Gilroy-Black.woff in Resources */,
 				B07BFE002454463D00D2D18F /* Gilroy-UltraLight.eot in Resources */,
 				B07BFD7A24542C5F00D2D18F /* Colors.json in Resources */,
+				B0472958245D71FD00F3458F /* OnboardingPageViewController.xib in Resources */,
 				B07BFE202454463D00D2D18F /* Gilroy-Heavy.eot in Resources */,
 				B07BFDEC2454463D00D2D18F /* Gilroy-UltraLight.woff in Resources */,
 				B07BFDF02454463D00D2D18F /* Gilroy-LightItalic.ttf in Resources */,
@@ -866,6 +989,7 @@
 				B07BFE1F2454463D00D2D18F /* Gilroy-UltraLightItalic.eot in Resources */,
 				B07BFDFC2454463D00D2D18F /* Gilroy-Black.woff2 in Resources */,
 				B07BFE022454463D00D2D18F /* Gilroy-HeavyItalic.ttf in Resources */,
+				B0472959245D71FD00F3458F /* OnboardingViewController.xib in Resources */,
 				B07BFDF12454463D00D2D18F /* Gilroy-MediumItalic.ttf in Resources */,
 				B07BFDDF2454463D00D2D18F /* Gilroy-Semibold.ttf in Resources */,
 				B07BFE292454463D00D2D18F /* Gilroy-MediumItalic.woff in Resources */,
@@ -1018,13 +1142,17 @@
 			files = (
 				B0DDCB0A24556FBB004223DB /* Formatter.swift in Sources */,
 				B07BFE4C24544C4A00D2D18F /* UIView.swift in Sources */,
+				B05FC1CF245D810100F4C214 /* StringBuilder.swift in Sources */,
 				B0BEFC62243A1A1E0020D377 /* HabitTracker.xcdatamodeld in Sources */,
+				B077F9AB245D947400FAFFB6 /* InputCodeView.swift in Sources */,
 				B07BFE78245488CF00D2D18F /* BaseInputView.swift in Sources */,
 				B07BFE3024544B9800D2D18F /* Habit.swift in Sources */,
 				B0DDCB11245575DF004223DB /* ScheduleView.swift in Sources */,
 				B07BFE5824544C4B00D2D18F /* UIViewController.swift in Sources */,
 				B07BFE5524544C4A00D2D18F /* UITableViewCell.swift in Sources */,
+				B05FC1CD245D805F00F4C214 /* ActionableLabel.swift in Sources */,
 				B07BFD8124542C6800D2D18F /* Images.swift in Sources */,
+				B077F9B6245D94B500FAFFB6 /* NumberConfirmationViewModel.swift in Sources */,
 				B07BFD8024542C6800D2D18F /* Fonts.swift in Sources */,
 				B07BFE752454877300D2D18F /* HabitDetailsViewController.swift in Sources */,
 				B07BFE6124544C4B00D2D18F /* UIStoryboard.swift in Sources */,
@@ -1032,11 +1160,13 @@
 				B07BFE6F245460AE00D2D18F /* Array.swift in Sources */,
 				B07BFD8224542C6800D2D18F /* Colors.swift in Sources */,
 				B07BFE7D24548BAE00D2D18F /* Closures.swift in Sources */,
+				B077F9C7245D981200FAFFB6 /* MessageBanner.swift in Sources */,
 				B0DDCB0C24557459004223DB /* UITextField.swift in Sources */,
 				B07BFD8624543B7E00D2D18F /* HabitsViewController.swift in Sources */,
 				B07BFE6C24545F6E00D2D18F /* UIRectCorner.swift in Sources */,
 				B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */,
 				B07BFE2E24544B8B00D2D18F /* Days.swift in Sources */,
+				B077F9BF245D97E500FAFFB6 /* Maskable.swift in Sources */,
 				B07BFE5D24544C4B00D2D18F /* UIApplication.swift in Sources */,
 				B07BFE6024544C4B00D2D18F /* UIEdgeInsets.swift in Sources */,
 				B07BFE712454612C00D2D18F /* HabitCell.swift in Sources */,
@@ -1044,17 +1174,27 @@
 				B0DDCB012455680E004223DB /* DurationView.swift in Sources */,
 				B07BFE5A24544C4B00D2D18F /* UISwitch.swift in Sources */,
 				B07BFE5624544C4B00D2D18F /* UIButton.swift in Sources */,
+				B047295B245D71FD00F3458F /* OnboardingViewController.swift in Sources */,
+				B077F9C0245D97E500FAFFB6 /* InfoDisplayable.swift in Sources */,
 				B047294C245C395000F3458F /* BackgroundImagesViewController.swift in Sources */,
 				B0DDCB172455A260004223DB /* DayButton.swift in Sources */,
 				B07BFD8324542C6800D2D18F /* Localizable.swift in Sources */,
+				B077F9C6245D981200FAFFB6 /* MessageManager.swift in Sources */,
 				B07BFE63245459B200D2D18F /* StringAttribute.swift in Sources */,
+				B077F9B3245D94B500FAFFB6 /* NumberConfirmationViewController.swift in Sources */,
 				B0DDCB0824556FBB004223DB /* Date.swift in Sources */,
+				B0472957245D71FD00F3458F /* OnboardingPage.swift in Sources */,
 				B0DDCB1A2455A29A004223DB /* SwitchableView.swift in Sources */,
 				B0DDCB0924556FBB004223DB /* JSONDecoder.swift in Sources */,
 				B07BFE5224544C4A00D2D18F /* UICollectionView.swift in Sources */,
+				B047295D245D74FC00F3458F /* OnboardingDescriptionPage.swift in Sources */,
+				B077F9BE245D97E500FAFFB6 /* ErrorDisplayable.swift in Sources */,
 				B0DDCB0E24557538004223DB /* String.swift in Sources */,
 				B07BFE5E24544C4B00D2D18F /* UINavigationController.swift in Sources */,
+				B077F9C2245D97E500FAFFB6 /* LoaderViewDisplayable.swift in Sources */,
+				B077F9AA245D947400FAFFB6 /* InputCodeItemView.swift in Sources */,
 				B07BFE5424544C4A00D2D18F /* UITableView.swift in Sources */,
+				B047295A245D71FD00F3458F /* OnboardingPageViewController.swift in Sources */,
 				B047294E245C396800F3458F /* BackgroundImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

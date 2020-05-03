@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ck-uU-zeb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gilroy-Medium.ttf">
+            <string>Gilroy-Medium</string>
+        </array>
+        <array key="Gilroy-Regular.ttf">
+            <string>Gilroy-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Number Confirmation View Controller-->
+        <scene sceneID="uaz-Yx-ccx">
+            <objects>
+                <viewController id="1ck-uU-zeb" customClass="NumberConfirmationViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mdf-cK-0In">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter SMS-code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CM9-vI-Rvg">
+                                <rect key="frame" x="133" y="92" width="148.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="20"/>
+                                <color key="textColor" red="0.94509803920000002" green="0.27450980390000002" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-8V-iDL" customClass="InputCodeView" customModule="HabitTracker" customModuleProvider="target">
+                                <rect key="frame" x="32" y="216" width="350" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="fmh-Ha-4Hz"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-SL-2Wa">
+                                <rect key="frame" x="113" y="292" width="188" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="f5m-Jm-cvA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="13"/>
+                                <color key="textColor" red="0.7356921434" green="0.7356921434" blue="0.7356921434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTV-el-RjF">
+                                <rect key="frame" x="64" y="144" width="286" height="24"/>
+                                <string key="text">An 6-digit verification code has
+been sent to +7 775-404-45-67</string>
+                                <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
+                                <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzk-4G-MYb">
+                                <rect key="frame" x="143" y="292" width="128" height="25"/>
+                                <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="13"/>
+                                <state key="normal" title="Отправить повторно">
+                                    <color key="titleColor" red="0.94509803920000002" green="0.27450980390000002" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resendButtomDidClicked" destination="1ck-uU-zeb" eventType="touchUpInside" id="gkF-WW-FyG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8FR-SL-2Wa" firstAttribute="top" secondItem="dhE-8V-iDL" secondAttribute="bottom" constant="12" id="4Ct-Zx-acl"/>
+                            <constraint firstItem="lTV-el-RjF" firstAttribute="top" secondItem="CM9-vI-Rvg" secondAttribute="bottom" constant="32" id="AU8-GE-9rU"/>
+                            <constraint firstItem="8FR-SL-2Wa" firstAttribute="centerX" secondItem="I3H-Ld-dFl" secondAttribute="centerX" id="INu-R3-0pP"/>
+                            <constraint firstItem="dhE-8V-iDL" firstAttribute="top" secondItem="lTV-el-RjF" secondAttribute="bottom" constant="48" id="OgO-T6-VnP"/>
+                            <constraint firstItem="CM9-vI-Rvg" firstAttribute="top" secondItem="I3H-Ld-dFl" secondAttribute="top" constant="48" id="Phh-r7-hlF"/>
+                            <constraint firstAttribute="trailing" secondItem="lTV-el-RjF" secondAttribute="trailing" constant="64" id="SxB-vm-EtO"/>
+                            <constraint firstItem="Rzk-4G-MYb" firstAttribute="top" secondItem="8FR-SL-2Wa" secondAttribute="top" id="gXT-n9-inT"/>
+                            <constraint firstItem="lTV-el-RjF" firstAttribute="leading" secondItem="mdf-cK-0In" secondAttribute="leading" constant="64" id="jIx-9j-0lz"/>
+                            <constraint firstItem="Rzk-4G-MYb" firstAttribute="centerX" secondItem="I3H-Ld-dFl" secondAttribute="centerX" id="naa-YY-jNe"/>
+                            <constraint firstItem="dhE-8V-iDL" firstAttribute="centerX" secondItem="I3H-Ld-dFl" secondAttribute="centerX" id="rjc-67-r7Z"/>
+                            <constraint firstItem="CM9-vI-Rvg" firstAttribute="centerX" secondItem="I3H-Ld-dFl" secondAttribute="centerX" id="zvc-lY-DtL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I3H-Ld-dFl"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="lTV-el-RjF" id="vVu-c5-xft"/>
+                        <outlet property="inputCodeView" destination="dhE-8V-iDL" id="6gm-sX-tc0"/>
+                        <outlet property="resendCodeButton" destination="Rzk-4G-MYb" id="YDQ-Ie-ypo"/>
+                        <outlet property="resendCodeLabel" destination="8FR-SL-2Wa" id="pC9-iF-agn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8G-BW-ony" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398.55072463768118" y="75"/>
+        </scene>
+    </scenes>
+</document>

@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
-        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysShow
         
         FirebaseApp.configure()
         
@@ -31,11 +30,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setupRootView() {
-        let home = HomeViewController()
+        let home = UINavigationController(rootViewController: HomeViewController())
+        let code = UIStoryboard.instantiate(ofType: NumberConfirmationViewController.self)!
+        let onboarding = OnboardingPageViewController(with: [
+            .init(type: .goal),
+            .init(type: .track),
+            .init(type: .challenge),
+            .init(type: .auth),
+        ])
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: home)
+        window?.rootViewController = home
         window?.makeKeyAndVisible()
+        
+        home.pushViewController(code, animated: true)
     }
     
 }
