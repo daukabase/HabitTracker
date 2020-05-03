@@ -55,36 +55,40 @@ final class OnboardingViewController: UIViewController {
                                           description: L10n.Onboarding.Challenge.description),
                               to: stackView)
         case .auth:
-            let lastSubview = setupPresentation(info: .init(image: Asset.onboarding1.image,
-                                                            title: L10n.Onboarding.Auth.title,
-                                                            description: L10n.Onboarding.Auth.description),
-                                                to: stackView)
-            stackView.setCustomSpacing(38, after: lastSubview)
-            
-            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 50))
-            button.autoresizingMask = [.flexibleWidth]
-            button.title = "Sign up"
-            button.snp.makeConstraints { (make) in
-                make.height.equalTo(50)
-            }
-            button.apply(style: .orange)
-            button.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
-            
-            stackView.addArrangedSubview(button)
-            stackView.setCustomSpacing(16, after: button)
-            
-            let attributes: [StringAttribute] = [
-                .font(FontFamily.Gilroy.regular.font(size: 13)),
-                .foregroundColor(ColorName.uiBlue.color)
-            ]
-            let label = ActionableLabel()
-            label.append(text: "Already have an account?")
-            label.append(text: " Sign in ", attributes: attributes) { [weak self] in
-                self?.routeToSignIn()
-            }
-            
-            stackView.addArrangedSubview(label)
+            setupPresentationAuth(info: .init(image: Asset.onboarding1.image,
+                                              title: L10n.Onboarding.Auth.title,
+                                              description: L10n.Onboarding.Auth.description),
+                                  to: stackView)
         }
+    }
+    
+    private func setupPresentationAuth(info: PresentationInfo, to stackView: UIStackView) {
+        let lastSubview = setupPresentation(info: info, to: stackView)
+        stackView.setCustomSpacing(38, after: lastSubview)
+        
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 50))
+        button.autoresizingMask = [.flexibleWidth]
+        button.title = "Sign up"
+        button.snp.makeConstraints { (make) in
+            make.height.equalTo(50)
+        }
+        button.apply(style: .orange)
+        button.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
+        
+        stackView.addArrangedSubview(button)
+        stackView.setCustomSpacing(16, after: button)
+        
+        let attributes: [StringAttribute] = [
+            .font(FontFamily.Gilroy.regular.font(size: 13)),
+            .foregroundColor(ColorName.uiBlue.color)
+        ]
+        let label = ActionableLabel()
+        label.append(text: "Already have an account?")
+        label.append(text: " Sign in ", attributes: attributes) { [weak self] in
+            self?.routeToSignIn()
+        }
+        
+        stackView.addArrangedSubview(label)
     }
     
     @discardableResult
@@ -141,15 +145,24 @@ final class OnboardingViewController: UIViewController {
     }
     
     private func routeToSignIn() {
+        guard let controller = UIStoryboard.instantiate(ofType: NumberRegistrationViewController.self) else {
+            return
+        }
         
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     private func routeToSignUp() {
+        guard let controller = UIStoryboard.instantiate(ofType: NumberRegistrationViewController.self) else {
+            return
+        }
         
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc
     private func didTapSignUpButton() {
+        UserDefaultsStorage.isOnboardingCompleted = true
         routeToSignUp()
     }
     

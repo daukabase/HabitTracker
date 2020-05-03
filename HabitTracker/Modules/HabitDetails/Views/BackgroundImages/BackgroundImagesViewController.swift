@@ -45,6 +45,7 @@ final class BackgroundImagesViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
+        collectionView.clipsToBounds = false
         
         collectionView.registerCell(cellType: BackgroundImageCell.self)
         

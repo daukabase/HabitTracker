@@ -46,6 +46,7 @@ final class OnboardingPageViewController: UIPageViewController {
         delegate = self
         dataSource = self
         view.backgroundColor = ColorName.uiWhite.color
+        navigationController?.navigationBar.isHidden = false
     }
     
     private func setInitialViewController() {

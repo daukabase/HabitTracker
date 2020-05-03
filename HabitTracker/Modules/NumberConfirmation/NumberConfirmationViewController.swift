@@ -18,7 +18,7 @@ final class NumberConfirmationViewController: UIViewController, ErrorDisplayable
     var onSuccess: Closure<String>?
     var onClose: EmptyClosure?
     
-    var model = NumberConfirmationViewModel(phoneNumber: "+7 707 898 83 38", timeLeft: Constants.resendInterval)
+    var model: NumberConfirmationViewModel?
     
     private var timer: Timer?
     private var timeLeft: Int = Constants.resendInterval
@@ -31,8 +31,8 @@ final class NumberConfirmationViewController: UIViewController, ErrorDisplayable
     override func viewDidLoad() {
         super.viewDidLoad()
         commonInit()
-        configureResendTimer(timePeriod: model.timeLeft)
-        descriptionLabel.attributedText = model.descriptionAttributed
+        configureResendTimer(timePeriod: Constants.resendInterval)
+        descriptionLabel.attributedText = model?.descriptionAttributed
         setBackButton(style: .orange)
     }
     
@@ -65,7 +65,11 @@ private extension NumberConfirmationViewController {
         inputCodeView.didFillText = { [weak self] text in
             self?.send(code: text)
         }
-        inputCodeView.codeLength = model.codeLength
+        
+        if let codeLength = model?.codeLength {
+            inputCodeView.codeLength = codeLength
+        }
+        
         inputCodeView.becomeFirstResponder()
         
     }
@@ -112,7 +116,22 @@ private extension NumberConfirmationViewController {
 private extension NumberConfirmationViewController {
     
     func send(code: String) {
+        startLoading(isTransparentBackground: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
+            self?.endLoading()
+            self?.routeToMainScreen()
+        }
+    }
+    
+    private func routeToMainScreen() {
+        guard let window = UIApplication.shared.keyWindow else { return }
+        window.rootViewController = UINavigationController(rootViewController: HomeViewController())
         
+        UIView.transition(with: window,
+                          duration: 0.7,
+                          options: .transitionCrossDissolve,
+                          animations: {},
+                          completion: nil)
     }
     
 }

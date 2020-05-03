@@ -38,23 +38,26 @@ final class HomeViewController: SegementSlideViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.isHidden = false
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: Asset.menu.image,
-                                                                                 style: .plain,
-                                                                                 target: self,
-                                                                                 action: #selector(menuItemDidTap))
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(menuItemDidTap))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.filter.image,
                                                             style: .done,
                                                             target: self,
-                                                                                  action: #selector(filterItemDidTap))
-        navigationController?.navigationBar.tintColor = ColorName.uiGrayPrimary.color
+                                                            action: #selector(filterItemDidTap))
         
         reloadData()
         scrollToSlide(at: 0, animated: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = ColorName.uiWhite.color
+        navigationController?.navigationBar.tintColor = ColorName.uiGrayPrimary.color
     }
 
     @objc

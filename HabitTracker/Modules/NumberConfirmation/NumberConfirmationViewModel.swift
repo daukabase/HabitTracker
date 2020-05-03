@@ -33,13 +33,11 @@ struct NumberConfirmationViewModel {
     }
     
     let phoneNumber: String
-    let timeLeft: Int
     let codeLength: Int = 4
     let descriptionAttributed: NSAttributedString?
     
-    init(phoneNumber: String, timeLeft: Int = Constants.resendInterval) {
+    init(phoneNumber: String) {
         self.phoneNumber = phoneNumber
-        self.timeLeft = timeLeft
         
         let descriptionAttributed = NSMutableAttributedString()
         let textAttributes: [StringAttribute] = [

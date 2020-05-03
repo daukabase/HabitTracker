@@ -10,6 +10,8 @@
 		129A557E79D6F2FFAD8BBB22 /* libPods-HabitTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4C3880A19CE2D3742A93D5 /* libPods-HabitTrackerTests.a */; };
 		44D9D3DA49AB7A79CDD31836 /* libPods-HabitTrackerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E789095EBD2B8954D583742 /* libPods-HabitTrackerUITests.a */; };
 		4EA764B9A5A082FEE3189F50 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */; };
+		B00123E8245F01CF001B5481 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */; };
+		B00123EA245F01F0001B5481 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E9245F01F0001B5481 /* Optional.swift */; };
 		B03495F6245EDC6B00C11283 /* NumberRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03495F5245EDC6B00C11283 /* NumberRegistrationViewController.swift */; };
 		B03495F8245EE0D900C11283 /* NumberRegistrationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03495F7245EE0D900C11283 /* NumberRegistrationViewController.storyboard */; };
 		B047294C245C395000F3458F /* BackgroundImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B047294B245C395000F3458F /* BackgroundImagesViewController.swift */; };
@@ -188,6 +190,8 @@
 		57AD6CE43C7FEDC077F26D19 /* Pods-HabitTrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-HabitTrackerUITests/Pods-HabitTrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A090C701CF70DB8F4C7F5564 /* Pods-HabitTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-HabitTrackerTests/Pods-HabitTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		B00123E9245F01F0001B5481 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		B03495F5245EDC6B00C11283 /* NumberRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRegistrationViewController.swift; sourceTree = "<group>"; };
 		B03495F7245EE0D900C11283 /* NumberRegistrationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NumberRegistrationViewController.storyboard; sourceTree = "<group>"; };
 		B047294B245C395000F3458F /* BackgroundImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImagesViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +404,22 @@
 				2E789095EBD2B8954D583742 /* libPods-HabitTrackerUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B00123E5245F01BD001B5481 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B00123E6245F01CF001B5481 /* UserDefaultsStorage */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B00123E6245F01CF001B5481 /* UserDefaultsStorage */ = {
+			isa = PBXGroup;
+			children = (
+				B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */,
+			);
+			path = UserDefaultsStorage;
 			sourceTree = "<group>";
 		};
 		B03495F4245EDC4700C11283 /* NumberRegistration */ = {
@@ -618,6 +638,7 @@
 		B07BFE3124544C3300D2D18F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				B00123E5245F01BD001B5481 /* Core */,
 				B077F9B8245D97E500FAFFB6 /* Protocols */,
 				B05FC1CB245D803E00F4C214 /* Reusable Layer */,
 				B07BFE64245459B800D2D18F /* Types */,
@@ -672,6 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				B07BFE6E245460AE00D2D18F /* Array.swift */,
+				B00123E9245F01F0001B5481 /* Optional.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -1165,7 +1187,9 @@
 				B05FC1CD245D805F00F4C214 /* ActionableLabel.swift in Sources */,
 				B07BFD8124542C6800D2D18F /* Images.swift in Sources */,
 				B077F9B6245D94B500FAFFB6 /* NumberConfirmationViewModel.swift in Sources */,
+				B00123E8245F01CF001B5481 /* UserDefaultsStorage.swift in Sources */,
 				B07BFD8024542C6800D2D18F /* Fonts.swift in Sources */,
+				B00123EA245F01F0001B5481 /* Optional.swift in Sources */,
 				B07BFE752454877300D2D18F /* HabitDetailsViewController.swift in Sources */,
 				B07BFE6124544C4B00D2D18F /* UIStoryboard.swift in Sources */,
 				B07BFE5724544C4B00D2D18F /* UIImage.swift in Sources */,

@@ -25,25 +25,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = true
         
         FirebaseApp.configure()
+        setupAppearence()
         
         return true
     }
     
     private func setupRootView() {
-        let home = UINavigationController(rootViewController: HomeViewController())
-        let number = UIStoryboard.instantiate(ofType: NumberRegistrationViewController.self)!
-        let onboarding = OnboardingPageViewController(with: [
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+//        UserDefaultsStorage.isOnboardingCompleted = false
+        UserDefaultsStorage.isOnboardingCompleted ? routeToHome() : routeToOnboarding()
+    }
+    
+    private func routeToOnboarding() {
+        let controller = OnboardingPageViewController(with: [
             .init(type: .goal),
             .init(type: .track),
             .init(type: .challenge),
             .init(type: .auth),
         ])
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = home
-        window?.makeKeyAndVisible()
-        
-        home.pushViewController(number, animated: true)
+        window?.rootViewController = UINavigationController(rootViewController: controller)
     }
     
+    private func routeToHome() {
+        let controller = HomeViewController()
+        
+        window?.rootViewController = UINavigationController(rootViewController: controller)
+    }
+    
+    private func setupAppearence() {
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().backgroundColor = .clear
+        UINavigationBar.appearance().isTranslucent = false
+    }
+    
+}
+
+struct UserDefaultsStorage {
+    @UserDefaultsBacked(key: "isOnboardingCompleted", defaultValue: false)
+    static var isOnboardingCompleted: Bool
 }

@@ -59,11 +59,13 @@ extension NumberRegistrationViewController {
     
     @IBAction
     private func didClickContinuesButton() {
-        guard let code = UIStoryboard.instantiate(ofType: NumberConfirmationViewController.self) else {
+        guard let controller = UIStoryboard.instantiate(ofType: NumberConfirmationViewController.self) else {
             return
         }
         
-        navigationController?.pushViewController(code, animated: true)
+        controller.model = NumberConfirmationViewModel(phoneNumber: textField.text ?? "")
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     private func updateUI(for fulfilled: Bool) {
