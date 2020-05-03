@@ -71,10 +71,10 @@ final class LodingView: UIView {
         animationView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         animationView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
-        containerView.centerXAnchor.constraint(equalTo: animationView.centerXAnchor, constant: -6).isActive = true
-        containerView.centerYAnchor.constraint(equalTo: animationView.centerYAnchor,constant: -4).isActive = true
-        containerView.widthAnchor.constraint(equalToConstant: 128).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 128).isActive = true
+        containerView.centerXAnchor.constraint(equalTo: animationView.centerXAnchor).isActive = true
+        containerView.centerYAnchor.constraint(equalTo: animationView.centerYAnchor).isActive = true
+        containerView.widthAnchor.constraint(equalToConstant: 64).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
         isTransparentBackground = false
     }

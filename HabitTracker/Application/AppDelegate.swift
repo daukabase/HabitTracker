@@ -33,7 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupRootView() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-//        UserDefaultsStorage.isOnboardingCompleted = false
+        
+        #if DEBUG
+            UserDefaultsStorage.isOnboardingCompleted = false
+        #endif
+        
         UserDefaultsStorage.isOnboardingCompleted ? routeToHome() : routeToOnboarding()
     }
     

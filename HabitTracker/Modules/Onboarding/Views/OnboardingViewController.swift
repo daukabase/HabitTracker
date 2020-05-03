@@ -138,7 +138,7 @@ final class OnboardingViewController: UIViewController {
         window.rootViewController = UINavigationController(rootViewController: HomeViewController())
         
         UIView.transition(with: window,
-                          duration: 0.7,
+                          duration: 0.3,
                           options: .transitionCrossDissolve,
                           animations: {},
                           completion: nil)
