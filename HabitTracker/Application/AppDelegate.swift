@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupRootView() {
         let home = UINavigationController(rootViewController: HomeViewController())
-        let code = UIStoryboard.instantiate(ofType: NumberConfirmationViewController.self)!
+        let number = UIStoryboard.instantiate(ofType: NumberRegistrationViewController.self)!
         let onboarding = OnboardingPageViewController(with: [
             .init(type: .goal),
             .init(type: .track),
@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = home
         window?.makeKeyAndVisible()
         
-        home.pushViewController(code, animated: true)
+        home.pushViewController(number, animated: true)
     }
     
 }

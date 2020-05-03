@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HabitDetailsViewController: UIViewController {
+final class HabitDetailsViewController: UIViewController {
     
     @IBOutlet var stackView: UIStackView!
     

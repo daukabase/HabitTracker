@@ -15,12 +15,16 @@ protocol Maskable {
  
 extension Maskable {
     
-    private var defaultPhoneNumber: String {
+    var phoneNumberMask: String {
         return "+X (XXX) XXX XX XX"
     }
     
-    private var replacementCharacter: Character {
+    var replacementCharacter: Character {
         return "X"
+    }
+    
+    func getIsFulfilled(value: String) -> Bool {
+        return getMasked(from: value).count == phoneNumberMask.count
     }
     
     func getMasked(from value: String) -> String {
@@ -32,7 +36,7 @@ extension Maskable {
     }
 
     func mask(_ value: String) -> String {
-        let mask = defaultPhoneNumber
+        let mask = phoneNumberMask
         
         var result = ""
         var index = value.startIndex

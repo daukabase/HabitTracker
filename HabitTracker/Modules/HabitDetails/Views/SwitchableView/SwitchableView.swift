@@ -10,7 +10,7 @@
 import UIKit
 import SnapKit
 
-class SwitchableView: UIView {
+final class SwitchableView: UIView {
     
     var onStateChanged: BoolClosure?
     

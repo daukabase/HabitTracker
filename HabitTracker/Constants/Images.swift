@@ -23,6 +23,7 @@ internal enum Asset {
   internal static let illustration3 = ImageAsset(name: "Illustration3")
   internal static let calendar = ImageAsset(name: "calendar")
   internal static let done = ImageAsset(name: "done")
+  internal static let doneBlue = ImageAsset(name: "doneBlue")
   internal static let filter = ImageAsset(name: "filter")
   internal static let menu = ImageAsset(name: "menu")
   internal static let onboarding1 = ImageAsset(name: "onboarding1")

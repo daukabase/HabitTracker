@@ -16,7 +16,7 @@ struct NumberConfirmationViewModel {
     }
     
     
-    var textAttributes: [StringAttribute] {
+    private var textAttributes: [StringAttribute] {
         return [
             .foregroundColor(ColorName.textSecondary.color),
             .lineHeight(20, font: FontFamily.Gilroy.regular.font(size: 13)),
@@ -24,7 +24,7 @@ struct NumberConfirmationViewModel {
         ]
     }
     
-    var numberAttributes: [StringAttribute] {
+    private var numberAttributes: [StringAttribute] {
         return [
             .foregroundColor(ColorName.textBlack.color),
             .lineHeight(20, font: FontFamily.Gilroy.medium.font(size: 14)),
@@ -53,7 +53,7 @@ struct NumberConfirmationViewModel {
             .aligment(.center)
         ]
         
-        descriptionAttributed.append("An 6-digit verification code has \nbeen sent to ".with(attributes: textAttributes))
+        descriptionAttributed.append("An \(codeLength)-digit verification code has \nbeen sent to ".with(attributes: textAttributes))
         descriptionAttributed.append(phoneNumber.with(attributes: numberAttributes))
         
         self.descriptionAttributed = descriptionAttributed

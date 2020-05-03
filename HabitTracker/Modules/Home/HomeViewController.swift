@@ -8,7 +8,7 @@
 
 import SegementSlide
 
-class HomeViewController: SegementSlideViewController {
+final class HomeViewController: SegementSlideViewController {
 
     override var titlesInSwitcher: [String] {
         return ["Habits", "Challenge", "Program"].map { $0.uppercased() }
