@@ -47,7 +47,7 @@ final class HabitCell: UITableViewCell {
         titleLabel.text = model.title
         daysLeftLabel.text = "\(model.daysLeft) days left"
         progressIndicatorLabel.attributedText = indicatorValue
-        backgroundImageView.image = model.backgroundImage
+        backgroundImageView.image = model.image
     }
     
     private func setupProgressViewLayer() {

@@ -12,6 +12,9 @@
 		4EA764B9A5A082FEE3189F50 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */; };
 		B00123E8245F01CF001B5481 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */; };
 		B00123EA245F01F0001B5481 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E9245F01F0001B5481 /* Optional.swift */; };
+		B02110ED24653ECF005BF1E2 /* DoneHabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02110EC24653ECF005BF1E2 /* DoneHabitCell.swift */; };
+		B02110EF24654175005BF1E2 /* DoneHabitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02110EE24654175005BF1E2 /* DoneHabitButton.swift */; };
+		B02110F124654F27005BF1E2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02110F024654F27005BF1E2 /* UIColor.swift */; };
 		B03495F6245EDC6B00C11283 /* NumberRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03495F5245EDC6B00C11283 /* NumberRegistrationViewController.swift */; };
 		B03495F8245EE0D900C11283 /* NumberRegistrationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03495F7245EE0D900C11283 /* NumberRegistrationViewController.storyboard */; };
 		B047294C245C395000F3458F /* BackgroundImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B047294B245C395000F3458F /* BackgroundImagesViewController.swift */; };
@@ -192,6 +195,9 @@
 		A090C701CF70DB8F4C7F5564 /* Pods-HabitTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-HabitTrackerTests/Pods-HabitTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		B00123E9245F01F0001B5481 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		B02110EC24653ECF005BF1E2 /* DoneHabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneHabitCell.swift; sourceTree = "<group>"; };
+		B02110EE24654175005BF1E2 /* DoneHabitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneHabitButton.swift; sourceTree = "<group>"; };
+		B02110F024654F27005BF1E2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B03495F5245EDC6B00C11283 /* NumberRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRegistrationViewController.swift; sourceTree = "<group>"; };
 		B03495F7245EE0D900C11283 /* NumberRegistrationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NumberRegistrationViewController.storyboard; sourceTree = "<group>"; };
 		B047294B245C395000F3458F /* BackgroundImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImagesViewController.swift; sourceTree = "<group>"; };
@@ -674,6 +680,7 @@
 				B07BFE4724544C4A00D2D18F /* UINavigationController.swift */,
 				B07BFE4924544C4A00D2D18F /* UIEdgeInsets.swift */,
 				B07BFE4A24544C4A00D2D18F /* UIStoryboard.swift */,
+				B02110F024654F27005BF1E2 /* UIColor.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -799,6 +806,8 @@
 				B07BFD8424543B7E00D2D18F /* HabitsViewController.swift */,
 				B07BFD8824543C7E00D2D18F /* HabitsViewController.storyboard */,
 				B07BFE702454612B00D2D18F /* HabitCell.swift */,
+				B02110EC24653ECF005BF1E2 /* DoneHabitCell.swift */,
+				B02110EE24654175005BF1E2 /* DoneHabitButton.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -1175,6 +1184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DDCB0A24556FBB004223DB /* Formatter.swift in Sources */,
+				B02110F124654F27005BF1E2 /* UIColor.swift in Sources */,
 				B07BFE4C24544C4A00D2D18F /* UIView.swift in Sources */,
 				B05FC1CF245D810100F4C214 /* StringBuilder.swift in Sources */,
 				B0BEFC62243A1A1E0020D377 /* HabitTracker.xcdatamodeld in Sources */,
@@ -1199,6 +1209,7 @@
 				B077F9C7245D981200FAFFB6 /* MessageBanner.swift in Sources */,
 				B0DDCB0C24557459004223DB /* UITextField.swift in Sources */,
 				B07BFD8624543B7E00D2D18F /* HabitsViewController.swift in Sources */,
+				B02110ED24653ECF005BF1E2 /* DoneHabitCell.swift in Sources */,
 				B07BFE6C24545F6E00D2D18F /* UIRectCorner.swift in Sources */,
 				B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */,
 				B07BFE2E24544B8B00D2D18F /* Days.swift in Sources */,
@@ -1223,6 +1234,7 @@
 				B0472957245D71FD00F3458F /* OnboardingPage.swift in Sources */,
 				B0DDCB1A2455A29A004223DB /* SwitchableView.swift in Sources */,
 				B0DDCB0924556FBB004223DB /* JSONDecoder.swift in Sources */,
+				B02110EF24654175005BF1E2 /* DoneHabitButton.swift in Sources */,
 				B07BFE5224544C4A00D2D18F /* UICollectionView.swift in Sources */,
 				B077F9BE245D97E500FAFFB6 /* ErrorDisplayable.swift in Sources */,
 				B0DDCB0E24557538004223DB /* String.swift in Sources */,

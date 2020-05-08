@@ -38,5 +38,22 @@ extension UITableView {
         let header = tableHeaderView
         tableHeaderView = header
     }
+    
+    func register<T: UITableViewCell>(_ cellClass: T.Type) {
+        if Bundle.main.path(forResource: cellClass.identifier, ofType: "nib") != nil {
+            register(UINib(nibName: cellClass.identifier, bundle: nil), forCellReuseIdentifier: cellClass.identifier)
+        } else {
+            register(cellClass, forCellReuseIdentifier: cellClass.identifier)
+        }
+    }
+    
+    func dequeueReusableCell<T: UITableViewCell>(_ cellClass: T.Type, for indexPath: IndexPath) -> T {
+        self.register(T.self)
+        guard let cell = self.dequeueReusableCell(withIdentifier: cellClass.identifier, for: indexPath) as? T else {
+            fatalError("Error: cannot dequeue cell with identifier: \(cellClass.identifier) " +
+                "for index path: \(indexPath)")
+        }
+        return cell
+    }
 
 }

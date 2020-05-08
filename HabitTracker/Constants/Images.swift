@@ -24,11 +24,15 @@ internal enum Asset {
   internal static let calendar = ImageAsset(name: "calendar")
   internal static let done = ImageAsset(name: "done")
   internal static let doneBlue = ImageAsset(name: "doneBlue")
+  internal static let doneCircle = ImageAsset(name: "doneCircle")
+  internal static let dungbell = ImageAsset(name: "dungbell")
   internal static let filter = ImageAsset(name: "filter")
   internal static let menu = ImageAsset(name: "menu")
   internal static let onboarding1 = ImageAsset(name: "onboarding1")
   internal static let plus = ImageAsset(name: "plus")
+  internal static let running = ImageAsset(name: "running")
   internal static let selected = ImageAsset(name: "selected")
+  internal static let trash = ImageAsset(name: "trash")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

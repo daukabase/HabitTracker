@@ -11,7 +11,41 @@ import SegementSlide
 import PinLayout
 
 final class HabitsViewController: UIViewController {
-
+    
+    enum State {
+        case habit(items: [Habit])
+    }
+    
+    lazy var state: State = .habit(items: items)
+    
+    var items: [Habit] = [
+        Habit(title: "Wake up early",
+              notes: "Workout",
+              durationDays: 10,
+              startDate: Date(),
+              schedule: [.monday, .wednesday, .friday],
+              colorHex: "#FF3367",
+              isCurrentCompleted: false,
+              image: Asset.dungbell.image),
+        Habit(title: "Evening meditation",
+              notes: "Relax",
+              durationDays: 10,
+              startDate: Date(),
+              schedule: [.monday, .wednesday, .friday],
+              colorHex: "#50CBF5",
+              isCurrentCompleted: false,
+              image: Asset.dungbell.image),
+        Habit(title: "Abs burning workout",
+              notes: "Abs",
+              durationDays: 10,
+              startDate: Date(),
+              schedule: [.monday, .wednesday, .friday],
+              colorHex: "#916AC8",
+              isCurrentCompleted: false,
+              image: Asset.running.image)
+    ]
+    
+    
     lazy var addHabitButton: UIButton = {
         let btn = UIButton(frame: .zero)
         
@@ -22,27 +56,6 @@ final class HabitsViewController: UIViewController {
     }()
     
     @IBOutlet var tableView: UITableView!
-    
-    var items: [Habit] = [
-        Habit(title: "Wake up early",
-              notes: "workout",
-              duration: 10,
-              startData: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              backgroundImage: Asset.illustration1.image),
-        Habit(title: "Evening meditation",
-              notes: "relax",
-              duration: 20,
-              startData: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              backgroundImage: Asset.illustration2.image),
-        Habit(title: "Abs burning workout",
-              notes: "Abs",
-              duration: 15,
-              startData: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              backgroundImage: Asset.illustration3.image),
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,11 +104,14 @@ extension HabitsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HabitCell.identifier, for: indexPath) as? HabitCell else {
-            return UITableViewCell()
-        }
+        let cell = tableView.dequeueReusableCell(state.cellType, for: indexPath)
         
-        cell.configure(model: items[indexPath.row])
+        switch state {
+        case let .habit(items):
+            if let cell = cell as? DoneHabitCell {
+                cell.configure(model: items[indexPath.row])
+            }
+        }
         
         return cell
     }
@@ -106,6 +122,17 @@ extension HabitsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+}
+
+extension HabitsViewController.State {
+    
+    var cellType: UITableViewCell.Type {
+        switch self {
+        case .habit:
+            return DoneHabitCell.self
+        }
     }
     
 }
