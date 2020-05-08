@@ -29,22 +29,48 @@ extension UIImage {
         return newImage!
     }
     
-    class func circle(diameter: CGFloat, borderColor: UIColor) -> UIImage {
+    class func circle(diameter: CGFloat, borderColor: UIColor, fillColor: UIColor = .clear) -> UIImage {
         let diameter = diameter
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: diameter, height: diameter))
         
         let img = renderer.image { ctx in
-            ctx.cgContext.setFillColor(UIColor.white.cgColor)
+            ctx.cgContext.setFillColor(fillColor.cgColor)
             ctx.cgContext.setStrokeColor(borderColor.cgColor)
             
             ctx.cgContext.setLineWidth(1)
 
             let rectangle = CGRect(x: 1, y: 1, width: diameter - 2, height: diameter - 2)
             ctx.cgContext.addEllipse(in: rectangle)
-            ctx.cgContext.drawPath(using: .stroke)
+            ctx.cgContext.drawPath(using: .fillStroke)
         }
 
         return img
+    }
+    
+    class func imageByCombiningImage(firstImage: UIImage, withImage secondImage: UIImage) -> UIImage? {
+        
+        let newImageWidth  = max(firstImage.size.width,  secondImage.size.width )
+        let newImageHeight = max(firstImage.size.height, secondImage.size.height)
+        let newImageSize = CGSize(width : newImageWidth, height: newImageHeight)
+        
+        
+        UIGraphicsBeginImageContextWithOptions(newImageSize, false, UIScreen.main.scale)
+        
+        let firstImageDrawX  = round((newImageSize.width  - firstImage.size.width  ) / 2)
+        let firstImageDrawY  = round((newImageSize.height - firstImage.size.height ) / 2)
+        
+        let secondImageDrawX = round((newImageSize.width  - secondImage.size.width ) / 2)
+        let secondImageDrawY = round((newImageSize.height - secondImage.size.height) / 2)
+        
+        firstImage.draw(at: CGPoint(x: firstImageDrawX,  y: firstImageDrawY))
+        secondImage.draw(at: CGPoint(x: secondImageDrawX, y: secondImageDrawY))
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        
+        return image
     }
     
     /// Creates image with given UIColor. Commonly used for setting UIButton background.

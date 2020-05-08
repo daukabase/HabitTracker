@@ -25,12 +25,32 @@ extension UIView {
         case lowerLeft // Lower right corner
     }
     
-    // MARK: - Methods
-
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+    
+    @IBInspectable
+    var masksToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }
+        set {
+            layer.masksToBounds = newValue
+        }
+    }
+    
+    
     static var identifier: String {
         return String(describing: self)
     }
     
+    // MARK: - Methods
     func round() {
         layer.cornerRadius = bounds.height / 2
     }

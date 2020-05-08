@@ -17,26 +17,18 @@ final class DoneHabitCell: UITableViewCell {
     @IBOutlet private var iconImageView: UIImageView!
     @IBOutlet private var containerView: UIView!
     
-    @IBOutlet var viewBackgrounded: [UIView]!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        viewBackgrounded.forEach { $0.backgroundColor = .clear }
-        
         iconImageView.roundCorners(.allCorners, radius: iconImageView.frame.height / 2)
         
-        containerView.roundCorners(.allCorners, radius: 10)
-        containerView.backgroundColor = .white
-        
-//        containerView.applyDropShadow(color: UIColor.black.withAlphaComponent(0.06),
-//                                      opacity: 1,
-//                                      offset: CGSize(width: 0, height: 4),
-//                                      radius: 26,
-//                                      scale: false)
-        
-        containerView.clipsToBounds = true
-        
+        containerView.layer.backgroundColor = UIColor.clear.cgColor
+        containerView.applyDropShadow(color: UIColor.black.withAlphaComponent(0.06),
+                                      opacity: 1,
+                                      offset: CGSize(width: 0, height: 4),
+                                      radius: 26,
+                                      scale: true)
         
         setupProgressViewLayer()
     }
@@ -87,6 +79,5 @@ final class DoneHabitCell: UITableViewCell {
         progressView.layer.sublayers?[safe: 1]?.cornerRadius = 4
         progressView.subviews[safe: 1]?.clipsToBounds = true
     }
-    
     
 }

@@ -25,6 +25,7 @@ internal enum Asset {
   internal static let done = ImageAsset(name: "done")
   internal static let doneBlue = ImageAsset(name: "doneBlue")
   internal static let doneCircle = ImageAsset(name: "doneCircle")
+  internal static let doneLittle = ImageAsset(name: "doneLittle")
   internal static let dungbell = ImageAsset(name: "dungbell")
   internal static let filter = ImageAsset(name: "filter")
   internal static let menu = ImageAsset(name: "menu")

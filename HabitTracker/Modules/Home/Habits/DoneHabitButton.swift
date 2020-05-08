@@ -43,11 +43,15 @@ final class DoneHabitButton: UIButton {
     }
     
     func configure(color: UIColor) {
-        let image = Asset.doneCircle.image.filled(with: color)
         let circle = UIImage.circle(diameter: 24, borderColor: color)
         
+        let doneImage = UIImage.imageByCombiningImage(
+            firstImage: UIImage.circle(diameter: 24, borderColor: color, fillColor: color),
+            withImage: Asset.doneLittle.image.resizedTo(size: CGSize(width: 11, height: 9))
+        )
+        
         setBackgroundImage(circle, for: .normal)
-        setBackgroundImage(image, for: .selected)
+        setBackgroundImage(doneImage, for: .selected)
         
         layoutIfNeeded()
     }

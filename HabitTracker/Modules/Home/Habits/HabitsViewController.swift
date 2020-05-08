@@ -33,7 +33,7 @@ final class HabitsViewController: UIViewController {
               startDate: Date(),
               schedule: [.monday, .wednesday, .friday],
               colorHex: "#50CBF5",
-              isCurrentCompleted: false,
+              isCurrentCompleted: true,
               image: Asset.dungbell.image),
         Habit(title: "Abs burning workout",
               notes: "Abs",
