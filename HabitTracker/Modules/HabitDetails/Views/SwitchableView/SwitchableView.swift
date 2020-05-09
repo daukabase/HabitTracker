@@ -14,6 +14,10 @@ final class SwitchableView: UIView {
     
     var onStateChanged: BoolClosure?
     
+    var isOn: Bool {
+        return switchView.isOn
+    }
+    
     lazy var label: UILabel = {
         let label = UILabel(frame: .zero)
         

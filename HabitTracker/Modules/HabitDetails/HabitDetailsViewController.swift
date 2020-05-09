@@ -61,11 +61,25 @@ final class HabitDetailsViewController: UIViewController {
     lazy var remindView: SwitchableView = {
         let remindView = SwitchableView(frame: .zero)
         remindView.label.text = "Remind me"
+        remindView.onStateChanged = { isOn in
+            UIView.animate(withDuration: 0.3) {
+                self.datePickerView.isHidden = !isOn
+            }
+        }
         return remindView
     }()
     
     lazy var iconsViewController = IconsViewController()
     lazy var colorsViewController = ColorsViewController()
+    
+    lazy var datePickerView: UIDatePicker = {
+        let picker = UIDatePicker(frame: .zero)
+        
+        picker.datePickerMode = .time
+        picker.isHidden = !remindView.isOn
+        
+        return picker
+    }()
     
     lazy var saveButton: UIButton = {
         let saveButton = UIButton(frame: .zero)
@@ -125,6 +139,7 @@ final class HabitDetailsViewController: UIViewController {
             scheduleView,
             chooseAllView,
             remindView,
+            datePickerView,
             saveButton
         ]
             .forEach(stackView.addArrangedSubview)
