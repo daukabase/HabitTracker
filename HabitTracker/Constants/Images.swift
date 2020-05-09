@@ -18,6 +18,18 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
+  internal static let done = ImageAsset(name: "done")
+  internal static let doneBlue = ImageAsset(name: "doneBlue")
+  internal static let doneCircle = ImageAsset(name: "doneCircle")
+  internal static let doneLittle = ImageAsset(name: "doneLittle")
+  internal static let doneNormal = ImageAsset(name: "doneNormal")
+  internal static let goal = ImageAsset(name: "goal")
+  internal static let graphIllistration = ImageAsset(name: "graphIllistration")
+  internal static let `guard` = ImageAsset(name: "guard")
+  internal static let order = ImageAsset(name: "order")
+  internal static let stars = ImageAsset(name: "stars")
+  internal static let trophy = ImageAsset(name: "trophy")
+  internal static let trophyBig = ImageAsset(name: "trophyBig")
   internal static let apple = ImageAsset(name: "apple")
   internal static let dance = ImageAsset(name: "dance")
   internal static let drink = ImageAsset(name: "drink")
@@ -33,17 +45,11 @@ internal enum Asset {
   internal static let illustration1 = ImageAsset(name: "Illustration1")
   internal static let illustration2 = ImageAsset(name: "Illustration2")
   internal static let illustration3 = ImageAsset(name: "Illustration3")
+  internal static let onboarding1 = ImageAsset(name: "onboarding1")
   internal static let calendar = ImageAsset(name: "calendar")
-  internal static let done = ImageAsset(name: "done")
-  internal static let doneBlue = ImageAsset(name: "doneBlue")
-  internal static let doneCircle = ImageAsset(name: "doneCircle")
-  internal static let doneLittle = ImageAsset(name: "doneLittle")
-  internal static let doneNormal = ImageAsset(name: "doneNormal")
   internal static let filter = ImageAsset(name: "filter")
   internal static let menu = ImageAsset(name: "menu")
-  internal static let onboarding1 = ImageAsset(name: "onboarding1")
   internal static let plus = ImageAsset(name: "plus")
-  internal static let selected = ImageAsset(name: "selected")
   internal static let trash = ImageAsset(name: "trash")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HabitDetailsViewController: UIViewController {
+final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable {
     
     @IBOutlet var stackView: UIStackView!
     
@@ -88,6 +88,7 @@ final class HabitDetailsViewController: UIViewController {
         saveButton.snp.makeConstraints { (make) in
             make.height.equalTo(50)
         }
+        saveButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
         return saveButton
     }()
     
@@ -148,4 +149,16 @@ final class HabitDetailsViewController: UIViewController {
         stackView.setCustomSpacing(38, after: saveButton)
     }
 
+    @objc
+    private func didTapActionButton() {
+        startLoading(isTransparentBackground: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.endLoading()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
 }

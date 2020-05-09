@@ -22,14 +22,16 @@ final class DoneHabitCell: UITableViewCell {
         super.awakeFromNib()
         
         clipsToBounds = false
+        contentView.clipsToBounds = false
         iconImageView.roundCorners(.allCorners, radius: iconImageView.frame.height / 2)
         
         containerView.layer.backgroundColor = UIColor.clear.cgColor
-        containerView.applyDropShadow(color: UIColor.black.withAlphaComponent(0.06),
-                                      opacity: 1,
-                                      offset: CGSize(width: 0, height: 4),
-                                      radius: 26,
-                                      scale: true)
+        containerView.applyDropShadow()
+//        containerView.applyDropShadow(color: UIColor.black.withAlphaComponent(0.06),
+//                                      opacity: 1,
+//                                      offset: CGSize(width: 0, height: 4),
+//                                      radius: 26,
+//                                      scale: true)
         
         setupProgressViewLayer()
     }

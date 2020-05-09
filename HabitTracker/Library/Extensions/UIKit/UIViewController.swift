@@ -14,6 +14,7 @@ extension UIViewController {
 
     enum NavigationItemStyle {
         case light
+        case dark
         case orange
     }
 
@@ -32,6 +33,8 @@ extension UIViewController {
         switch style {
         case .light:
             backItem.tintColor = ColorName.uiWhite.color
+        case .dark:
+            backItem.tintColor = ColorName.textBlack.color
         case .orange:
             backItem.tintColor = ColorName.uiOrange.color
         }

@@ -42,6 +42,10 @@ final class HabitsViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         
         addHabitButton.addTarget(self, action: #selector(addHabitDidTap), for: .touchUpInside)
+        
+        
+        let controller = HabitViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -104,6 +108,9 @@ extension HabitsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let controller = HabitViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }

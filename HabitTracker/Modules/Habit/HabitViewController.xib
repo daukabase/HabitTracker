@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HabitViewController" customModule="HabitTracker" customModuleProvider="target">
+            <connections>
+                <outlet property="stackView" destination="Jmj-cP-sMA" id="MBz-i7-06A"/>
+                <outlet property="view" destination="PQR-Si-p3e" id="pFm-Ja-Mm3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="PQR-Si-p3e">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKH-9d-pBB">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyL-vj-Acw">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Jmj-cP-sMA">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jmj-cP-sMA" secondAttribute="bottom" id="iqa-Rk-dBo"/>
+                                <constraint firstAttribute="trailing" secondItem="Jmj-cP-sMA" secondAttribute="trailing" id="mg0-Pp-bHG"/>
+                                <constraint firstItem="Jmj-cP-sMA" firstAttribute="leading" secondItem="lyL-vj-Acw" secondAttribute="leading" id="pwG-g4-caU"/>
+                                <constraint firstItem="Jmj-cP-sMA" firstAttribute="top" secondItem="lyL-vj-Acw" secondAttribute="top" id="wIu-rh-Hfw"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="lyL-vj-Acw" firstAttribute="top" secondItem="NKH-9d-pBB" secondAttribute="top" id="2SC-RB-H7K"/>
+                        <constraint firstAttribute="trailing" secondItem="lyL-vj-Acw" secondAttribute="trailing" id="45p-b2-tIG"/>
+                        <constraint firstAttribute="bottom" secondItem="lyL-vj-Acw" secondAttribute="bottom" id="MBZ-ff-bhN"/>
+                        <constraint firstItem="lyL-vj-Acw" firstAttribute="width" secondItem="NKH-9d-pBB" secondAttribute="width" id="PiJ-Y1-3dS"/>
+                        <constraint firstItem="lyL-vj-Acw" firstAttribute="leading" secondItem="NKH-9d-pBB" secondAttribute="leading" id="btz-gu-4Z0"/>
+                        <constraint firstItem="lyL-vj-Acw" firstAttribute="height" secondItem="NKH-9d-pBB" secondAttribute="height" priority="750" id="hkz-RI-Ixe"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="NKH-9d-pBB" firstAttribute="trailing" secondItem="R1h-0J-ITF" secondAttribute="trailing" id="OuL-YT-AkN"/>
+                <constraint firstItem="NKH-9d-pBB" firstAttribute="top" secondItem="R1h-0J-ITF" secondAttribute="top" id="PfM-yk-oll"/>
+                <constraint firstItem="NKH-9d-pBB" firstAttribute="bottom" secondItem="R1h-0J-ITF" secondAttribute="bottom" id="ggi-QB-Wy2"/>
+                <constraint firstItem="NKH-9d-pBB" firstAttribute="leading" secondItem="R1h-0J-ITF" secondAttribute="leading" id="xrX-eu-Q9f"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="R1h-0J-ITF"/>
+            <point key="canvasLocation" x="-557.97101449275362" y="103.79464285714285"/>
+        </view>
+    </objects>
+</document>

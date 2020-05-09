@@ -7,6 +7,7 @@ def common_pods
   pod 'SegementSlide', '~> 2.2.1'
   pod 'SnapKit'
   pod 'IQKeyboardManagerSwift', '6.3.0'
+  pod 'JTAppleCalendar'
   
   # Google API
   pod 'Fabric', '~> 1.10.2'
