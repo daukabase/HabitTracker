@@ -86,7 +86,9 @@ final class ColorsViewController: UIViewController {
                 
                 self?.stackView.layoutIfNeeded()
             }
-            
+            if (color == selectedColor) {
+                button.isSelected = true
+            }
             stackView.addArrangedSubview(button)
         }
     }
