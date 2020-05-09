@@ -13,6 +13,8 @@ final class ColorsViewController: UIViewController {
     let spacing: CGFloat = 16
     var onColor: Closure<UIColor>?
     
+    private(set) lazy var selectedColor: UIColor = colors[0]
+    
     private var colors: [UIColor] = [
         UIColor(hexString: "#FF3367"),
         UIColor(hexString: "#50CBF5"),
@@ -72,13 +74,16 @@ final class ColorsViewController: UIViewController {
                 guard let _button = button else {
                     return
                 }
+                self?.selectedColor = _button.color
                 self?.onColor?(_button.color)
+                
                 self?.stackView.arrangedSubviews.forEach({ (view) in
                     guard let button = view as? ColorButton else {
                         return
                     }
                     button.isSelected = _button == button ? true : false
                 })
+                
                 self?.stackView.layoutIfNeeded()
             }
             

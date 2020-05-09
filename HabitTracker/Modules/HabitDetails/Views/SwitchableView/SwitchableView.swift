@@ -72,8 +72,11 @@ final class SwitchableView: UIView {
     }
     
     @objc
-    func setState(_ switchView: UISwitch) {
+    private func setState(_ switchView: UISwitch) {
         onStateChanged?(switchView.isOn)
     }
     
+    func set(isOn: Bool) {
+        switchView.setOn(isOn, animated: true)
+    }
 }

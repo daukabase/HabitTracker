@@ -34,7 +34,7 @@ final class HomeViewController: SegementSlideViewController {
               schedule: [.monday, .wednesday, .friday],
               colorHex: "#FF3367",
               isCurrentCompleted: false,
-              image: Asset.dungbell.image),
+              habitIcon: .sleep),
         Habit(title: "Evening meditation",
               notes: "Relax",
               durationDays: 10,
@@ -42,7 +42,7 @@ final class HomeViewController: SegementSlideViewController {
               schedule: [.monday, .wednesday, .friday],
               colorHex: "#50CBF5",
               isCurrentCompleted: true,
-              image: Asset.dungbell.image),
+              habitIcon: .workout),
         Habit(title: "Abs burning workout",
               notes: "Abs",
               durationDays: 10,
@@ -50,7 +50,7 @@ final class HomeViewController: SegementSlideViewController {
               schedule: [.monday, .wednesday, .friday],
               colorHex: "#916AC8",
               isCurrentCompleted: false,
-              image: Asset.running.image)
+              habitIcon: .running)
     ]
     
     var challenges: [Challenge] = [
@@ -61,7 +61,7 @@ final class HomeViewController: SegementSlideViewController {
               schedule: [.monday, .wednesday, .friday],
               colorHex: "#FF3367",
               isCurrentCompleted: false,
-              image: Asset.dungbell.image),
+              habitIcon: .sleep),
         Challenge(title: "Evening meditation",
               notes: "Relax",
               durationDays: 10,
@@ -69,7 +69,7 @@ final class HomeViewController: SegementSlideViewController {
               schedule: [.monday, .wednesday, .friday],
               colorHex: "#50CBF5",
               isCurrentCompleted: true,
-              image: Asset.dungbell.image),
+              habitIcon: .apple),
         Challenge(title: "Abs burning workout",
               notes: "Abs",
               durationDays: 10,
@@ -77,7 +77,7 @@ final class HomeViewController: SegementSlideViewController {
               schedule: [.monday, .wednesday, .friday],
               colorHex: "#916AC8",
               isCurrentCompleted: false,
-              image: Asset.running.image)
+              habitIcon: .running)
     ]
     
     override var titlesInSwitcher: [String] {

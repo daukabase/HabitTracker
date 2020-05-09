@@ -35,11 +35,15 @@ final class HabitDetailsViewController: UIViewController {
     lazy var scheduleView: ScheduleView = {
         let scheduleView = ScheduleView(frame: .zero)
         scheduleView.titleLabel.text = "Schedule"
-        scheduleView.onChange = {
-            
+        scheduleView.onChange = { [weak self] in
+            self?.changedSchedule()
         }
         return scheduleView
     }()
+    
+    func changedSchedule() {
+        chooseAllView.set(isOn: scheduleView.isAllSelected)
+    }
     
     lazy var chooseAllView: SwitchableView = {
         let chooseAllView = SwitchableView(frame: .zero)
@@ -60,6 +64,7 @@ final class HabitDetailsViewController: UIViewController {
         return remindView
     }()
     
+    lazy var iconsViewController = IconsViewController()
     lazy var colorsViewController = ColorsViewController()
     
     lazy var saveButton: UIButton = {
@@ -74,6 +79,11 @@ final class HabitDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        iconsViewController.setup(color: colorsViewController.selectedColor)
+        colorsViewController.onColor = { [weak iconsViewController] color in
+            iconsViewController?.setup(color: color)
+        }
         
         commonInit()
         setupViews()
@@ -104,9 +114,19 @@ final class HabitDetailsViewController: UIViewController {
     }
     
     private func setupViews() {
-        addChild(colorsViewController)
+        [iconsViewController, colorsViewController].forEach(addChild)
         
-        [titleInputView, notesInputView, durationView, scheduleView, chooseAllView, remindView, colorsViewController.view, saveButton]
+        [
+            titleInputView,
+            notesInputView,
+            iconsViewController.view,
+            colorsViewController.view,
+            durationView,
+            scheduleView,
+            chooseAllView,
+            remindView,
+            saveButton
+        ]
             .forEach(stackView.addArrangedSubview)
         
         stackView.setCustomSpacing(16, after: colorsViewController.view)

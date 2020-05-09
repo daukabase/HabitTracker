@@ -11,6 +11,8 @@
     "textPrimary": "#50555C",
     "textSecondary": "#A5A5A5",
     
-    "textBlack": "#171D33"
+    "textBlack": "#171D33",
+    
+    "icons": "#3B414B"
     
 }

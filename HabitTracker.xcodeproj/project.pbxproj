@@ -21,7 +21,6 @@
 		B03495F6245EDC6B00C11283 /* NumberRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03495F5245EDC6B00C11283 /* NumberRegistrationViewController.swift */; };
 		B03495F8245EE0D900C11283 /* NumberRegistrationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03495F7245EE0D900C11283 /* NumberRegistrationViewController.storyboard */; };
 		B047294C245C395000F3458F /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B047294B245C395000F3458F /* ColorsViewController.swift */; };
-		B047294E245C396800F3458F /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B047294D245C396800F3458F /* ColorCell.swift */; };
 		B0472957245D71FD00F3458F /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0472951245D71FD00F3458F /* OnboardingPage.swift */; };
 		B0472958245D71FD00F3458F /* OnboardingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0472953245D71FD00F3458F /* OnboardingPageViewController.xib */; };
 		B0472959245D71FD00F3458F /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0472954245D71FD00F3458F /* OnboardingViewController.xib */; };
@@ -153,6 +152,10 @@
 		B07BFE78245488CF00D2D18F /* BaseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE77245488CF00D2D18F /* BaseInputView.swift */; };
 		B07BFE7A245488D700D2D18F /* BaseInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07BFE79245488D700D2D18F /* BaseInputView.xib */; };
 		B07BFE7D24548BAE00D2D18F /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE7C24548BAE00D2D18F /* Closures.swift */; };
+		B08355812466B9100043CB8A /* IconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B083557F2466B9100043CB8A /* IconsViewController.swift */; };
+		B08355842466E3E50043CB8A /* HabitIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08355832466E3E50043CB8A /* HabitIcon.swift */; };
+		B08355872466E4080043CB8A /* IconCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08355862466E4080043CB8A /* IconCellViewModel.swift */; };
+		B08355892466E41A0043CB8A /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08355882466E41A0043CB8A /* IconCell.swift */; };
 		B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A35624126093007B2F21 /* AppDelegate.swift */; };
 		B0B3A37124126097007B2F21 /* HabitTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37024126097007B2F21 /* HabitTrackerTests.swift */; };
 		B0B3A37C24126097007B2F21 /* HabitTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */; };
@@ -207,7 +210,6 @@
 		B03495F5245EDC6B00C11283 /* NumberRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRegistrationViewController.swift; sourceTree = "<group>"; };
 		B03495F7245EE0D900C11283 /* NumberRegistrationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NumberRegistrationViewController.storyboard; sourceTree = "<group>"; };
 		B047294B245C395000F3458F /* ColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
-		B047294D245C396800F3458F /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		B0472951245D71FD00F3458F /* OnboardingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		B0472953245D71FD00F3458F /* OnboardingPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingPageViewController.xib; sourceTree = "<group>"; };
 		B0472954245D71FD00F3458F /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
@@ -339,6 +341,10 @@
 		B07BFE77245488CF00D2D18F /* BaseInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInputView.swift; sourceTree = "<group>"; };
 		B07BFE79245488D700D2D18F /* BaseInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseInputView.xib; sourceTree = "<group>"; };
 		B07BFE7C24548BAE00D2D18F /* Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
+		B083557F2466B9100043CB8A /* IconsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsViewController.swift; sourceTree = "<group>"; };
+		B08355832466E3E50043CB8A /* HabitIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitIcon.swift; sourceTree = "<group>"; };
+		B08355862466E4080043CB8A /* IconCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCellViewModel.swift; sourceTree = "<group>"; };
+		B08355882466E41A0043CB8A /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		B0B3A35324126092007B2F21 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B3A35624126093007B2F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B3A36024126093007B2F21 /* HabitTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -475,7 +481,6 @@
 			isa = PBXGroup;
 			children = (
 				B047294B245C395000F3458F /* ColorsViewController.swift */,
-				B047294D245C396800F3458F /* ColorCell.swift */,
 				B0235DA3246606D200F91DF0 /* ColorButton.swift */,
 			);
 			path = Colors;
@@ -750,6 +755,25 @@
 			path = HabitDetails;
 			sourceTree = "<group>";
 		};
+		B083557E2466B8C70043CB8A /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B083557F2466B9100043CB8A /* IconsViewController.swift */,
+				B08355832466E3E50043CB8A /* HabitIcon.swift */,
+				B08355852466E3FF0043CB8A /* IconCell */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		B08355852466E3FF0043CB8A /* IconCell */ = {
+			isa = PBXGroup;
+			children = (
+				B08355862466E4080043CB8A /* IconCellViewModel.swift */,
+				B08355882466E41A0043CB8A /* IconCell.swift */,
+			);
+			path = IconCell;
+			sourceTree = "<group>";
+		};
 		B0B3A34A24126092007B2F21 = {
 			isa = PBXGroup;
 			children = (
@@ -849,6 +873,7 @@
 			isa = PBXGroup;
 			children = (
 				B07BFE742454877300D2D18F /* HabitDetailsViewController.xib */,
+				B083557E2466B8C70043CB8A /* Icons */,
 				B047294A245C393E00F3458F /* Colors */,
 				B0DDCB182455A27C004223DB /* SwitchableView */,
 				B0DDCB0F245575D1004223DB /* ScheduleView */,
@@ -1242,6 +1267,7 @@
 				B07BFE7D24548BAE00D2D18F /* Closures.swift in Sources */,
 				B077F9C7245D981200FAFFB6 /* MessageBanner.swift in Sources */,
 				B0DDCB0C24557459004223DB /* UITextField.swift in Sources */,
+				B08355842466E3E50043CB8A /* HabitIcon.swift in Sources */,
 				B07BFD8624543B7E00D2D18F /* HabitsViewController.swift in Sources */,
 				B02110ED24653ECF005BF1E2 /* DoneHabitCell.swift in Sources */,
 				B02110F52465A0FC005BF1E2 /* Challenge.swift in Sources */,
@@ -1250,8 +1276,10 @@
 				B07BFE2E24544B8B00D2D18F /* Days.swift in Sources */,
 				B077F9BF245D97E500FAFFB6 /* Maskable.swift in Sources */,
 				B07BFE5D24544C4B00D2D18F /* UIApplication.swift in Sources */,
+				B08355872466E4080043CB8A /* IconCellViewModel.swift in Sources */,
 				B07BFE6024544C4B00D2D18F /* UIEdgeInsets.swift in Sources */,
 				B07BFE712454612C00D2D18F /* HabitCell.swift in Sources */,
+				B08355892466E41A0043CB8A /* IconCell.swift in Sources */,
 				B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */,
 				B0DDCB012455680E004223DB /* DurationView.swift in Sources */,
 				B07BFE5A24544C4B00D2D18F /* UISwitch.swift in Sources */,
@@ -1263,6 +1291,7 @@
 				B0DDCB172455A260004223DB /* DayButton.swift in Sources */,
 				B07BFD8324542C6800D2D18F /* Localizable.swift in Sources */,
 				B077F9C6245D981200FAFFB6 /* MessageManager.swift in Sources */,
+				B08355812466B9100043CB8A /* IconsViewController.swift in Sources */,
 				B07BFE63245459B200D2D18F /* StringAttribute.swift in Sources */,
 				B03495F6245EDC6B00C11283 /* NumberRegistrationViewController.swift in Sources */,
 				B077F9B3245D94B500FAFFB6 /* NumberConfirmationViewController.swift in Sources */,
@@ -1279,7 +1308,6 @@
 				B077F9AA245D947400FAFFB6 /* InputCodeItemView.swift in Sources */,
 				B07BFE5424544C4A00D2D18F /* UITableView.swift in Sources */,
 				B047295A245D71FD00F3458F /* OnboardingPageViewController.swift in Sources */,
-				B047294E245C396800F3458F /* ColorCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

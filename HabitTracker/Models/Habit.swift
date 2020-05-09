@@ -16,7 +16,11 @@ class Habit {
     var schedule: Set<Day>
     var colorHex: String
     var isCurrentCompleted: Bool
-    var image: UIImage?
+    var habitIcon: HabitIcon
+    
+    var image: UIImage {
+        return habitIcon.icon
+    }
     
     // TODO: remove mocks
     let totalRepetitions: Int = Int.random(in: 19...24)
@@ -76,7 +80,7 @@ class Habit {
          schedule: [Day],
          color: UIColor,
          isCurrentCompleted: Bool,
-         image: UIImage?) {
+         habitIcon: HabitIcon) {
         
         self.title = title
         self.notes = notes
@@ -85,7 +89,7 @@ class Habit {
         self.schedule = Set(schedule)
         self.colorHex = color.toHexString()
         self.isCurrentCompleted = isCurrentCompleted
-        self.image = image
+        self.habitIcon = habitIcon
     }
     
     init(title: String,
@@ -95,7 +99,7 @@ class Habit {
          schedule: [Day],
          colorHex: String,
          isCurrentCompleted: Bool,
-         image: UIImage?) {
+         habitIcon: HabitIcon) {
         self.title = title
         self.notes = notes
         self.durationDays = durationDays
@@ -103,7 +107,7 @@ class Habit {
         self.schedule = Set(schedule)
         self.colorHex = colorHex
         self.isCurrentCompleted = isCurrentCompleted
-        self.image = image
+        self.habitIcon = habitIcon
     }
     
 }
