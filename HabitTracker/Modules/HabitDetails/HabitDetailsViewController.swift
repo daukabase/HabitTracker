@@ -12,6 +12,66 @@ final class HabitDetailsViewController: UIViewController {
     
     @IBOutlet var stackView: UIStackView!
     
+    lazy var titleInputView: BaseInputView = {
+        let titleInputView = BaseInputView(frame: .zero)
+        titleInputView.setup(title: "Title", placeholder: "Enter title")
+        
+        return titleInputView
+    }()
+    
+    lazy var notesInputView: BaseInputView = {
+        let notesInputView = BaseInputView(frame: .zero)
+        notesInputView.setup(title: "Notes", placeholder: "Description")
+        
+        return notesInputView
+    }()
+    
+    lazy var durationView: DurationView = {
+        let durationView = DurationView(frame: .zero)
+        durationView.setup(title: "Duration")
+        return durationView
+    }()
+    
+    lazy var scheduleView: ScheduleView = {
+        let scheduleView = ScheduleView(frame: .zero)
+        scheduleView.titleLabel.text = "Schedule"
+        scheduleView.onChange = {
+            
+        }
+        return scheduleView
+    }()
+    
+    lazy var chooseAllView: SwitchableView = {
+        let chooseAllView = SwitchableView(frame: .zero)
+        chooseAllView.label.text = "Choose everyday"
+        chooseAllView.onStateChanged = { [weak scheduleView] isOn in
+            if isOn {
+                scheduleView?.selectAllDays()
+            } else {
+                scheduleView?.deselectAllDays()
+            }
+        }
+        return chooseAllView
+    }()
+    
+    lazy var remindView: SwitchableView = {
+        let remindView = SwitchableView(frame: .zero)
+        remindView.label.text = "Remind me"
+        return remindView
+    }()
+    
+    lazy var colorsViewController = ColorsViewController()
+    
+    lazy var saveButton: UIButton = {
+        let saveButton = UIButton(frame: .zero)
+        saveButton.apply(style: .blue)
+        saveButton.title = "Save"
+        saveButton.snp.makeConstraints { (make) in
+            make.height.equalTo(50)
+        }
+        return saveButton
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,12 +79,8 @@ final class HabitDetailsViewController: UIViewController {
         setupViews()
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    func commonInit() {
-        title = "Habit details"
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = false
@@ -35,55 +91,25 @@ final class HabitDetailsViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
         
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    private func commonInit() {
+        title = "Habit details"
+        
         setBackButton(style: .orange)
     }
     
-    func setupViews() {
-        let titleInputView = BaseInputView(frame: .zero)
-        titleInputView.setup(title: "Title", placeholder: "Enter title")
-        stackView.addArrangedSubview(titleInputView)
+    private func setupViews() {
+        addChild(colorsViewController)
         
-        let notesInputView = BaseInputView(frame: .zero)
-        notesInputView.setup(title: "Notes", placeholder: "Description")
-        stackView.addArrangedSubview(notesInputView)
+        [titleInputView, notesInputView, durationView, scheduleView, chooseAllView, remindView, colorsViewController.view, saveButton]
+            .forEach(stackView.addArrangedSubview)
         
-        let durationView = DurationView(frame: .zero)
-        durationView.setup(title: "Duration")
-        stackView.addArrangedSubview(durationView)
-
-        let scheduleView = ScheduleView(frame: .zero)
-        scheduleView.titleLabel.text = "Schedule"
-        stackView.addArrangedSubview(scheduleView)
-
-        let chooseAllView = SwitchableView(frame: .zero)
-        chooseAllView.label.text = "Choose everyday"
-        chooseAllView.onStateChanged = { [weak scheduleView] isOn in
-            if isOn {
-                scheduleView?.selectAllDays()
-            } else {
-                scheduleView?.deselectAllDays()
-            }
-        }
-        stackView.addArrangedSubview(chooseAllView)
-        
-        let remindView = SwitchableView(frame: .zero)
-        remindView.label.text = "Remind me"
-        stackView.addArrangedSubview(remindView)
-        
-        let backController = BackgroundImagesViewController()
-        addChild(backController)
-        
-        stackView.addArrangedSubview(backController.view)
-        stackView.setCustomSpacing(16, after: backController.view)
-        
-        let saveButton = UIButton(frame: .zero)
-        saveButton.apply(style: .blue)
-        saveButton.title = "Save"
-        saveButton.snp.makeConstraints { (make) in
-            make.height.equalTo(50)
-        }
-        
-        stackView.addArrangedSubview(saveButton)
+        stackView.setCustomSpacing(16, after: colorsViewController.view)
         stackView.setCustomSpacing(38, after: saveButton)
     }
 

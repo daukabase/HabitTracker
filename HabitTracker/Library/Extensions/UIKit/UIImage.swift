@@ -73,6 +73,17 @@ extension UIImage {
         return image
     }
     
+    static func image(with color: UIColor) -> UIImage? {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
+        color.setFill()
+        UIRectFill(rect)
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return colorImage
+    }
+    
     /// Creates image with given UIColor. Commonly used for setting UIButton background.
     class func imageWithColor(_ color: UIColor, of size: CGSize = CGSize(width: 1.0, height: 1.0)) -> UIImage {
         let rect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)

@@ -1,5 +1,5 @@
 //
-//  DoneHabitCell.swift
+//  ChallengeCell.swift
 //  HabitTracker
 //
 //  Created by Daulet on 5/8/20.
@@ -8,18 +8,42 @@
 
 import UIKit
 
-final class DoneHabitCell: UITableViewCell {
+final class ChallengeCell: UITableViewCell {
     
     @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var doneButton: DoneHabitButton!
     @IBOutlet private var progressIndicatorLabel: UILabel!
     @IBOutlet private var progressView: UIProgressView!
     @IBOutlet private var iconImageView: UIImageView!
     @IBOutlet private var containerView: UIView!
+    @IBOutlet private var askMarkContainerView: UIView!
+    @IBOutlet private var askMarkButton: UIButton!
+    @IBOutlet private var markDoneContainerView: UIView!
+    @IBOutlet private var markDoneButton: UIButton!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        clipsToBounds = false
+        let buttonShadowColor = UIColor(red: 254/255,
+                                        green: 128/255,
+                                        blue: 92/255,
+                                        alpha: 0.24)
+        
+        askMarkButton.apply(style: .orange)
+        askMarkContainerView.layer.backgroundColor = UIColor.clear.cgColor
+        askMarkContainerView.applyDropShadow(color: buttonShadowColor,
+                                      opacity: 1,
+                                      offset: CGSize(width: 0, height: 4),
+                                      radius: 20,
+                                      scale: true)
+        
+        markDoneButton.apply(style: .orange)
+        markDoneContainerView.layer.backgroundColor = UIColor.clear.cgColor
+        markDoneContainerView.applyDropShadow(color: buttonShadowColor,
+                                              opacity: 1,
+                                              offset: CGSize(width: 0, height: 4),
+                                              radius: 20,
+                                              scale: true)
         
         iconImageView.roundCorners(.allCorners, radius: iconImageView.frame.height / 2)
         
@@ -38,7 +62,7 @@ final class DoneHabitCell: UITableViewCell {
         setupProgressViewLayer()
     }
     
-    func configure(model: Habit) {
+    func configure(model: Challenge) {
         titleLabel.text = model.title
         progressIndicatorLabel.attributedText = model.completionAttributedText
         iconImageView.image = model.image?.filled(with: model.color)
@@ -46,22 +70,6 @@ final class DoneHabitCell: UITableViewCell {
         progressView.setProgress(model.progress, animated: true)
         progressView.trackTintColor = model.color.withAlphaComponent(0.15)
         progressView.progressTintColor = model.color
-        
-        doneButton.configure(color: model.color)
-        doneButton.isSelected = model.isCurrentCompleted
-        
-        doneButton.onClick = { [weak model, weak self] isSelected in
-            guard let model = model else {
-                return
-            }
-            if isSelected {
-                model.done()
-            } else {
-                model.undone()
-            }
-            self?.progressIndicatorLabel.attributedText = model.completionAttributedText
-            self?.progressView.setProgress(model.progress, animated: true)
-        }
     }
     
     private func setupProgressViewLayer() {
@@ -78,6 +86,16 @@ final class DoneHabitCell: UITableViewCell {
     private func setupProgressIndicatorLayer() {
         progressView.layer.sublayers?[safe: 1]?.cornerRadius = 4
         progressView.subviews[safe: 1]?.clipsToBounds = true
+    }
+    
+    @IBAction
+    private func askMarkButtonClicked() {
+        
+    }
+    
+    @IBAction
+    private func markDoneButtonClicked() {
+        
     }
     
 }

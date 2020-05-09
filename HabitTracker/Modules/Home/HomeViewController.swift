@@ -9,7 +9,77 @@
 import SegementSlide
 
 final class HomeViewController: SegementSlideViewController {
-
+    
+    lazy var habitsViewController: HabitsViewController = {
+        guard let controller = UIStoryboard.instantiate(ofType: HabitsViewController.self) else {
+            fatalError()
+        }
+        controller.state = .habit(items: self.habits)
+        return controller
+    }()
+    
+    lazy var challengesViewController: HabitsViewController = {
+        guard let controller = UIStoryboard.instantiate(ofType: HabitsViewController.self) else {
+            fatalError()
+        }
+        controller.state = .challenge(items: self.challenges)
+        return controller
+    }()
+    
+    var habits: [Habit] = [
+        Habit(title: "Wake up early",
+              notes: "Workout",
+              durationDays: 10,
+              startDate: Date(),
+              schedule: [.monday, .wednesday, .friday],
+              colorHex: "#FF3367",
+              isCurrentCompleted: false,
+              image: Asset.dungbell.image),
+        Habit(title: "Evening meditation",
+              notes: "Relax",
+              durationDays: 10,
+              startDate: Date(),
+              schedule: [.monday, .wednesday, .friday],
+              colorHex: "#50CBF5",
+              isCurrentCompleted: true,
+              image: Asset.dungbell.image),
+        Habit(title: "Abs burning workout",
+              notes: "Abs",
+              durationDays: 10,
+              startDate: Date(),
+              schedule: [.monday, .wednesday, .friday],
+              colorHex: "#916AC8",
+              isCurrentCompleted: false,
+              image: Asset.running.image)
+    ]
+    
+    var challenges: [Challenge] = [
+        Challenge(title: "Wake up early",
+              notes: "Workout",
+              durationDays: 10,
+              startDate: Date(),
+              schedule: [.monday, .wednesday, .friday],
+              colorHex: "#FF3367",
+              isCurrentCompleted: false,
+              image: Asset.dungbell.image),
+        Challenge(title: "Evening meditation",
+              notes: "Relax",
+              durationDays: 10,
+              startDate: Date(),
+              schedule: [.monday, .wednesday, .friday],
+              colorHex: "#50CBF5",
+              isCurrentCompleted: true,
+              image: Asset.dungbell.image),
+        Challenge(title: "Abs burning workout",
+              notes: "Abs",
+              durationDays: 10,
+              startDate: Date(),
+              schedule: [.monday, .wednesday, .friday],
+              colorHex: "#916AC8",
+              isCurrentCompleted: false,
+              image: Asset.running.image)
+    ]
+    
     override var titlesInSwitcher: [String] {
         return ["Habits", "Challenge", "Program"].map { $0.uppercased() }
     }
@@ -32,7 +102,12 @@ final class HomeViewController: SegementSlideViewController {
     }
 
     override func segementSlideContentViewController(at index: Int) -> SegementSlideContentScrollViewDelegate? {
-        return UIStoryboard.instantiate(ofType: HabitsViewController.self)
+        if index == 0 {
+            return habitsViewController
+        } else if index == 1 {
+            return challengesViewController
+        }
+        return nil
     }
     
     override func viewDidLoad() {

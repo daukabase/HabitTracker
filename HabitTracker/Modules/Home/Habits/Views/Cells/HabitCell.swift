@@ -20,6 +20,7 @@ final class HabitCell: UITableViewCell {
         super.awakeFromNib()
         backgroundImageView.roundCorners(.allCorners, radius: 24)
         setupProgressViewLayer()
+        clipsToBounds = false
     }
     
     override func layoutSubviews() {

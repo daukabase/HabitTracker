@@ -1,6 +1,6 @@
 
 //
-//  BackgroundImageCell.swift
+//  ColorCell.swift
 //  HabitTracker
 //
 //  Created by Daulet on 5/1/20.
@@ -9,11 +9,11 @@
 
 import UIKit
 
-final class BackgroundImageCell: UICollectionViewCell {
+final class ColorCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            doneIndicatorView.isHidden = !isSelected
+            doneImageView.isHidden = !isSelected
         }
     }
     
@@ -25,48 +25,42 @@ final class BackgroundImageCell: UICollectionViewCell {
     
     private lazy var doneImageView: UIImageView = {
         let image = UIImageView(image: Asset.done.image)
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .center
         return image
     }()
     
-    private lazy var doneIndicatorView: UIView = {
-        let view = UIView(frame: .zero)
-        
-        view.isHidden = true
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        
-        return view
-    }()
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView.round()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         contentView.addSubview(imageView)
-        contentView.addSubview(doneIndicatorView)
-        
-        doneIndicatorView.addSubview(doneImageView)
+        contentView.addSubview(doneImageView)
         
         imageView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.width.equalTo(91)
             make.height.equalTo(64)
         }
-        doneIndicatorView.snp.makeConstraints { (make) in
-            make.edges.equalTo(imageView)
-        }
         doneImageView.snp.makeConstraints { (make) in
-            make.center.equalTo(doneIndicatorView)
-            make.size.equalTo(22)
+            make.center.equalTo(imageView)
         }
         
-        imageView.layer.cornerRadius = 12
         imageView.clipsToBounds = true
-        
-        doneIndicatorView.layer.cornerRadius = 12
-        doneIndicatorView.clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
         return nil
+    }
+    
+    func setup(color: UIColor) {
+        imageView.image = UIImage.image(with: color)
+    }
+    
+    func setup(colorHex: String) {
+        setup(color: UIColor(hexString: colorHex))
     }
     
 }

@@ -10,6 +10,11 @@ import UIKit
 
 final class ScheduleView: UIView {
     
+    var onChange: EmptyClosure?
+    
+    var isAllSelected: Bool {
+        return selectedDays.count == Day.allCases.count
+    }
     
     var selectedDays: Set<Day> {
         var selectedDays = Set<Day>()
@@ -97,6 +102,10 @@ final class ScheduleView: UIView {
         Day.allCases.forEach { (day) in
             let dayButton = DayButton(frame: .zero)
             dayButton.day = day
+            
+            dayButton.onClick = { [weak self] _ in
+                self?.onChange?()
+            }
             
             stackView.addArrangedSubview(dayButton)
         }

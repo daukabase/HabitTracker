@@ -14,37 +14,10 @@ final class HabitsViewController: UIViewController {
     
     enum State {
         case habit(items: [Habit])
+        case challenge(items: [Challenge])
     }
     
-    lazy var state: State = .habit(items: items)
-    
-    var items: [Habit] = [
-        Habit(title: "Wake up early",
-              notes: "Workout",
-              durationDays: 10,
-              startDate: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              colorHex: "#FF3367",
-              isCurrentCompleted: false,
-              image: Asset.dungbell.image),
-        Habit(title: "Evening meditation",
-              notes: "Relax",
-              durationDays: 10,
-              startDate: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              colorHex: "#50CBF5",
-              isCurrentCompleted: true,
-              image: Asset.dungbell.image),
-        Habit(title: "Abs burning workout",
-              notes: "Abs",
-              durationDays: 10,
-              startDate: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              colorHex: "#916AC8",
-              isCurrentCompleted: false,
-              image: Asset.running.image)
-    ]
-    
+    var state: State = .habit(items: [])
     
     lazy var addHabitButton: UIButton = {
         let btn = UIButton(frame: .zero)
@@ -100,7 +73,12 @@ extension HabitsViewController: SegementSlideContentScrollViewDelegate {
 extension HabitsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        switch state {
+        case let .habit(items):
+            return items.count
+        case let .challenge(items):
+            return items.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,6 +87,10 @@ extension HabitsViewController: UITableViewDelegate {
         switch state {
         case let .habit(items):
             if let cell = cell as? DoneHabitCell {
+                cell.configure(model: items[indexPath.row])
+            }
+        case let .challenge(items):
+            if let cell = cell as? ChallengeCell {
                 cell.configure(model: items[indexPath.row])
             }
         }
@@ -132,6 +114,8 @@ extension HabitsViewController.State {
         switch self {
         case .habit:
             return DoneHabitCell.self
+        case .challenge:
+            return ChallengeCell.self
         }
     }
     

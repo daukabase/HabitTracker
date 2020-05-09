@@ -72,7 +72,7 @@ extension UIButton {
     }
 
     private func setOrangeStyle() {
-        roundCorners(.allCorners, radius: 25)
+        roundCorners(.allCorners, radius: frame.height / 2)
         backgroundColor = .clear
         setTitleColor(ColorName.uiWhite.color, for: .normal)
         

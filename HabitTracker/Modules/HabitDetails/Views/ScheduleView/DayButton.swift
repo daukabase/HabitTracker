@@ -11,6 +11,7 @@ import PinLayout
 
 class DayButton: UIButton {
     
+    var onClick: BoolClosure?
     var day: Day = .monday {
         didSet {
             setTitle(day.title, for: .normal)
@@ -51,10 +52,9 @@ class DayButton: UIButton {
     }
     
     @objc func didTap() {
-        UIView.animate(withDuration: 1) {
-            self.isSelected.toggle()
-            self.layoutIfNeeded()
-        }
+        isSelected.toggle()
+        layoutIfNeeded()
+        onClick?(isSelected)
     }
     
 }
