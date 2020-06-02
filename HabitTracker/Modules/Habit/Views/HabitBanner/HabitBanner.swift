@@ -29,6 +29,7 @@ final class HabitBanner: UIView {
         
         containerView.layer.backgroundColor = UIColor.clear.cgColor
         containerView.applyDropShadow()
+        backgroundColor = .clear
     }
     
     func setup(model: HabitBannerViewModel) {

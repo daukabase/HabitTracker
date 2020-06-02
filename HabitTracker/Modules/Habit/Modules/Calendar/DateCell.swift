@@ -16,7 +16,7 @@ class DateCell: JTACDayCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        doneImageView.isHidden = true
     }
     
 }

@@ -46,10 +46,8 @@ extension CalendarViewController: JTACMonthViewDelegate {
 extension CalendarViewController: JTACMonthViewDataSource {
     
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
-        let startDate = formatter.date(from: "2019 01 01")!
-        let endDate = Date()
+        let startDate = "01.01.2020".date(with: .ddMMYYYY)!
+        let endDate = "25.08.2020".date(with: .ddMMYYYY)!
         return ConfigurationParameters(startDate: startDate,
                                        endDate: endDate,
                                        generateInDates: .forAllMonths,
@@ -68,7 +66,7 @@ extension CalendarViewController {
         cell.dateLabel.text = cellState.text
         handleCellTextColor(cell: cell, cellState: cellState)
     }
-        
+    
     func handleCellTextColor(cell: DateCell, cellState: CellState) {
         if cellState.dateBelongsTo == .thisMonth {
             cell.dateLabel.textColor = ColorName.textPrimary.color

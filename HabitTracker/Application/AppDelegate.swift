@@ -34,9 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        #if DEBUG
+//        #if DEBUG
 //            UserDefaultsStorage.isOnboardingCompleted = false
-        #endif
+//        #endif
         
         UserDefaultsStorage.isOnboardingCompleted ? routeToHome() : routeToOnboarding()
     }

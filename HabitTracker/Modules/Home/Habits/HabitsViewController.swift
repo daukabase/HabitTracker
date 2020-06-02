@@ -109,7 +109,14 @@ extension HabitsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        
         let controller = HabitViewController()
+        
+        if case let HabitsViewController.State.habit(items) = state {
+            controller.habit = items[indexPath.row]
+        }
+        
+        
         navigationController?.pushViewController(controller, animated: true)
     }
     

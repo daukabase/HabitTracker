@@ -166,9 +166,13 @@
 		B083559E246753FE0043CB8A /* HabitBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B083559D246753FE0043CB8A /* HabitBannerViewModel.swift */; };
 		B08355A5246759030043CB8A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08355A3246759030043CB8A /* StatisticsViewController.swift */; };
 		B08355A6246759030043CB8A /* StatisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B08355A4246759030043CB8A /* StatisticsViewController.xib */; };
+		B091F53C2483DC7B0040F0EE /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B091F53A2483DC7B0040F0EE /* AchievementsViewController.swift */; };
+		B091F53D2483DC7B0040F0EE /* AchievementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B091F53B2483DC7B0040F0EE /* AchievementsViewController.xib */; };
+		B091F53F2483DD8E0040F0EE /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B091F53E2483DD8E0040F0EE /* AchievementView.swift */; };
 		B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A35624126093007B2F21 /* AppDelegate.swift */; };
 		B0B3A37124126097007B2F21 /* HabitTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37024126097007B2F21 /* HabitTrackerTests.swift */; };
 		B0B3A37C24126097007B2F21 /* HabitTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */; };
+		B0BB451A2486B7FF00D248BE /* AchievementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0BB45192486B7FF00D248BE /* AchievementView.xib */; };
 		B0BEFC60243A188B0020D377 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0BEFC5F243A188B0020D377 /* GoogleService-Info.plist */; };
 		B0BEFC62243A1A1E0020D377 /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A35F24126093007B2F21 /* HabitTracker.xcdatamodeld */; };
 		B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEFC6E243A29B40020D377 /* HomeViewController.swift */; };
@@ -365,6 +369,9 @@
 		B083559D246753FE0043CB8A /* HabitBannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitBannerViewModel.swift; sourceTree = "<group>"; };
 		B08355A3246759030043CB8A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		B08355A4246759030043CB8A /* StatisticsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsViewController.xib; sourceTree = "<group>"; };
+		B091F53A2483DC7B0040F0EE /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		B091F53B2483DC7B0040F0EE /* AchievementsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementsViewController.xib; sourceTree = "<group>"; };
+		B091F53E2483DD8E0040F0EE /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		B0B3A35324126092007B2F21 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B3A35624126093007B2F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B3A36024126093007B2F21 /* HabitTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -375,6 +382,7 @@
 		B0B3A37724126097007B2F21 /* HabitTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerUITests.swift; sourceTree = "<group>"; };
 		B0B3A37D24126097007B2F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0BB45192486B7FF00D248BE /* AchievementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementView.xib; sourceTree = "<group>"; };
 		B0BEFC5F243A188B0020D377 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0BEFC6E243A29B40020D377 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B0BEFC75243A2A1B0020D377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -818,6 +826,7 @@
 		B0835596246747C60043CB8A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B091F5392483DC4D0040F0EE /* Achievements */,
 				B0835597246747F10043CB8A /* Statistics */,
 				B083558F246727390043CB8A /* Calendar */,
 			);
@@ -836,7 +845,6 @@
 		B08355982467481F0043CB8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B08355A0246758A50043CB8A /* New Group */,
 				B083559F246758A00043CB8A /* HabitBanner */,
 			);
 			path = Views;
@@ -852,11 +860,15 @@
 			path = HabitBanner;
 			sourceTree = "<group>";
 		};
-		B08355A0246758A50043CB8A /* New Group */ = {
+		B091F5392483DC4D0040F0EE /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
+				B091F53A2483DC7B0040F0EE /* AchievementsViewController.swift */,
+				B091F53E2483DD8E0040F0EE /* AchievementView.swift */,
+				B0BB45192486B7FF00D248BE /* AchievementView.xib */,
+				B091F53B2483DC7B0040F0EE /* AchievementsViewController.xib */,
 			);
-			path = "New Group";
+			path = Achievements;
 			sourceTree = "<group>";
 		};
 		B0B3A34A24126092007B2F21 = {
@@ -1158,6 +1170,7 @@
 				B0BEFC76243A2A1B0020D377 /* LaunchScreen.storyboard in Resources */,
 				B07BFE272454463D00D2D18F /* Gilroy-RegularItalic.eot in Resources */,
 				B083559C2467486C0043CB8A /* HabitBanner.xib in Resources */,
+				B091F53D2483DC7B0040F0EE /* AchievementsViewController.xib in Resources */,
 				B07BFDE92454463D00D2D18F /* Gilroy-Black.woff in Resources */,
 				B07BFE002454463D00D2D18F /* Gilroy-UltraLight.eot in Resources */,
 				B07BFD7A24542C5F00D2D18F /* Colors.json in Resources */,
@@ -1186,6 +1199,7 @@
 				B07BFE292454463D00D2D18F /* Gilroy-MediumItalic.woff in Resources */,
 				B07BFE162454463D00D2D18F /* Gilroy-Extrabold.ttf in Resources */,
 				B07BFDF42454463D00D2D18F /* Gilroy-RegularItalic.woff2 in Resources */,
+				B0BB451A2486B7FF00D248BE /* AchievementView.xib in Resources */,
 				B07BFDE52454463D00D2D18F /* Gilroy-ThinItalic.ttf in Resources */,
 				B07BFDF82454463D00D2D18F /* Gilroy-LightItalic.woff in Resources */,
 				B07BFDFF2454463D00D2D18F /* Gilroy-Semibold.eot in Resources */,
@@ -1338,6 +1352,7 @@
 				B0BEFC62243A1A1E0020D377 /* HabitTracker.xcdatamodeld in Sources */,
 				B077F9AB245D947400FAFFB6 /* InputCodeView.swift in Sources */,
 				B07BFE78245488CF00D2D18F /* BaseInputView.swift in Sources */,
+				B091F53F2483DD8E0040F0EE /* AchievementView.swift in Sources */,
 				B07BFE3024544B9800D2D18F /* Habit.swift in Sources */,
 				B0DDCB11245575DF004223DB /* ScheduleView.swift in Sources */,
 				B07BFE5824544C4B00D2D18F /* UIViewController.swift in Sources */,
@@ -1349,6 +1364,7 @@
 				B083559E246753FE0043CB8A /* HabitBannerViewModel.swift in Sources */,
 				B07BFD8024542C6800D2D18F /* Fonts.swift in Sources */,
 				B00123EA245F01F0001B5481 /* Optional.swift in Sources */,
+				B091F53C2483DC7B0040F0EE /* AchievementsViewController.swift in Sources */,
 				B07BFE752454877300D2D18F /* HabitDetailsViewController.swift in Sources */,
 				B07BFE6124544C4B00D2D18F /* UIStoryboard.swift in Sources */,
 				B02110F324659C6D005BF1E2 /* ChallengeCell.swift in Sources */,

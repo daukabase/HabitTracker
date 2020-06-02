@@ -10,6 +10,10 @@ import Foundation
 
 extension String {
     
+    func date(with formatter: DateFormatter) -> Date? {
+        return formatter.date(from: self)
+    }
+    
     var digits: String {
         return components(separatedBy: CharacterSet.decimalDigits.inverted)
             .joined()

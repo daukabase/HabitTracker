@@ -25,6 +25,12 @@ internal enum L10n {
       /// Challenge accepted!
       internal static let title = L10n.tr("Localizable", "Onboarding.Challenge.title")
     }
+    internal enum Goal {
+      /// Already have a goal and want to reach it?\n A few clicks and you can get a little closer to it. 
+      internal static let description = L10n.tr("Localizable", "Onboarding.Goal.description")
+      /// Forward to the Goal
+      internal static let title = L10n.tr("Localizable", "Onboarding.Goal.title")
+    }
     internal enum Track {
       /// Creat habits that you what to start and keep track of your progress.
       internal static let description = L10n.tr("Localizable", "Onboarding.Track.description")

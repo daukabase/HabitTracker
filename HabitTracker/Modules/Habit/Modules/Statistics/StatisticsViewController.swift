@@ -17,6 +17,8 @@ class StatisticsViewController: UIViewController {
 
         containerView.layer.backgroundColor = UIColor.clear.cgColor
         containerView.applyDropShadow()
+        view.clipsToBounds = false
+        containerView.clipsToBounds = false
     }
 
 

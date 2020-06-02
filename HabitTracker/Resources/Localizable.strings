@@ -12,5 +12,8 @@
 "Onboarding.Track.title" = "Track your Habits";
 "Onboarding.Track.description" = "Creat habits that you what to start and keep track of your progress.";
 
+"Onboarding.Goal.title" = "Forward to the Goal";
+"Onboarding.Goal.description" = "Already have a goal and want to reach it?\n A few clicks and you can get a little closer to it. ";
+
 "Onboarding.Auth.title" = "Let’s Start!";
 "Onboarding.Auth.description" = "So now if you are motivated enough and ready to achieve your goals, let’s create an account and start your first habit. ";
