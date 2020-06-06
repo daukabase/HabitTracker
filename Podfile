@@ -6,9 +6,9 @@ def common_pods
   pod 'Kingfisher', '~> 5.7.1'
   pod 'SegementSlide', '~> 2.2.1'
   pod 'SnapKit'
-  pod 'IQKeyboardManagerSwift', '6.3.0'
+  pod 'IQKeyboardManagerSwift', ' ~> 6.3.0'
   pod 'JTAppleCalendar'
-  
+  pod 'Charts', '~> 3.5.0'
   # Google API
   pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.14.0'

@@ -11,9 +11,9 @@ import UIKit
 final class AchievementsViewController: UIViewController {
 
     private var achievements: [Achievement] = [
-        CommonAchievement(numberOfDays: "2", description: "Current Streak", image: Asset.order.image),
-        CommonAchievement(numberOfDays: "3", description: "Longest Streak", image: Asset.trophy.image),
-        CommonAchievement(numberOfDays: "5", description: "Total done", image: Asset.guard.image),
+        CommonAchievement(numberOfDays: 2, description: "Current Streak", image: Asset.order.image),
+        CommonAchievement(numberOfDays: 3, description: "Longest Streak", image: Asset.trophy.image),
+        CommonAchievement(numberOfDays: 5, description: "Total done", image: Asset.guard.image),
         GoalAchievement(completedDays: 6, totalDays: 8, description: "Goal", image: Asset.goal.image)
     ]
     
@@ -39,6 +39,7 @@ final class AchievementsViewController: UIViewController {
             stackToProcess.distribution = .fillEqually
             stackToProcess.axis = .horizontal
             stackToProcess.spacing = 17
+            stackToProcess.backgroundColor = .clear
             
             stackView.addArrangedSubview(stackToProcess)
         }

@@ -51,7 +51,7 @@ struct CommonAchievement: Achievement {
     var description: String
     var image: UIImage?
     
-    init(numberOfDays: String, description: String, image: UIImage) {
+    init(numberOfDays: Int, description: String, image: UIImage) {
         let indicatorValue = NSMutableAttributedString()
         let first: [StringAttribute] = [
             .font(FontFamily.Gilroy.semibold.font(size: 24)),
@@ -92,7 +92,7 @@ final class AchievementView: UIView {
         
         commonInit()
     }
-        
+    
     private func commonInit() {
         let view = initFromNib()
         

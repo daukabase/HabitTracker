@@ -10,6 +10,14 @@ import Foundation
 
 extension Formatter {
     
+    static let iso8601: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        return formatter
+    }()
+    
     static let ddMM: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
@@ -39,6 +47,14 @@ extension Formatter {
         formatter.timeZone = TimeZone.current
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "MM"
+        return formatter
+    }()
+    
+    static let MMMyyyy: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "MMM, yyyy"
         return formatter
     }()
     

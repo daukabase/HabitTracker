@@ -11,12 +11,41 @@ import JTAppleCalendar
 
 class DateCell: JTACDayCell {
     
+    private var radius: CGFloat {
+        return frame.height / 2
+    }
+    
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var selectedView: UIView!
     @IBOutlet var doneImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        doneImageView.isHidden = true
+        selectedView.isHidden = true
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+    }
+    
+    func set(range position: SelectionRangePosition) {
+        switch position {
+        case .left:
+            selectedView.roundCorners([.bottomLeft, .topRight], radius: radius)
+            selectedView.isHidden = false
+        case .middle:
+            selectedView.roundCorners([], radius: .zero)
+            selectedView.isHidden = false
+        case .right:
+            selectedView.roundCorners([.bottomRight, .topLeft], radius: radius)
+            selectedView.isHidden = false
+        case .full:
+            selectedView.roundCorners(.allCorners, radius: radius)
+            selectedView.isHidden = false
+        case .none:
+            selectedView.isHidden = true
+        }
     }
     
 }

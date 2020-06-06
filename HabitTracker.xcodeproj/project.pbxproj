@@ -187,6 +187,7 @@
 		B0DDCB11245575DF004223DB /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDCB10245575DF004223DB /* ScheduleView.swift */; };
 		B0DDCB172455A260004223DB /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDCB162455A260004223DB /* DayButton.swift */; };
 		B0DDCB1A2455A29A004223DB /* SwitchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDCB192455A29A004223DB /* SwitchableView.swift */; };
+		B0EC35E0248B937A0075FBA6 /* DateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EC35DF248B937A0075FBA6 /* DateHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -396,6 +397,7 @@
 		B0DDCB10245575DF004223DB /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		B0DDCB162455A260004223DB /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
 		B0DDCB192455A29A004223DB /* SwitchableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchableView.swift; sourceTree = "<group>"; };
+		B0EC35DF248B937A0075FBA6 /* DateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeader.swift; sourceTree = "<group>"; };
 		C7ACBB1EC42E4FA032A3B294 /* Pods-HabitTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-HabitTrackerUITests/Pods-HabitTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4C3880A19CE2D3742A93D5 /* libPods-HabitTrackerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HabitTrackerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC1085E69506A9EEBC1A732 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -818,6 +820,7 @@
 			children = (
 				B0835590246727550043CB8A /* CalendarViewController.swift */,
 				B083559424672A1D0043CB8A /* DateCell.swift */,
+				B0EC35DF248B937A0075FBA6 /* DateHeader.swift */,
 				B08355922467275D0043CB8A /* CalendarViewController.storyboard */,
 			);
 			path = Calendar;
@@ -1375,6 +1378,7 @@
 				B077F9C7245D981200FAFFB6 /* MessageBanner.swift in Sources */,
 				B0DDCB0C24557459004223DB /* UITextField.swift in Sources */,
 				B08355842466E3E50043CB8A /* HabitIcon.swift in Sources */,
+				B0EC35E0248B937A0075FBA6 /* DateHeader.swift in Sources */,
 				B0835591246727550043CB8A /* CalendarViewController.swift in Sources */,
 				B08355A5246759030043CB8A /* StatisticsViewController.swift in Sources */,
 				B07BFD8624543B7E00D2D18F /* HabitsViewController.swift in Sources */,

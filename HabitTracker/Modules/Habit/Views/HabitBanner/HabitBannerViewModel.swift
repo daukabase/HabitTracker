@@ -10,9 +10,6 @@ import Foundation
 
 struct HabitBannerViewModel {
     
-    let text = "Congratulations!\n You have a "
-    let text2 = "new record."
-    
     private var descriptionNormalTextAttributes: [StringAttribute] = [
         .foregroundColor(ColorName.textSecondary.color),
         .aligment(.center),
