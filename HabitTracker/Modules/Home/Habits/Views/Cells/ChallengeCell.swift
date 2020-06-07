@@ -10,6 +10,8 @@ import UIKit
 
 final class ChallengeCell: UITableViewCell {
     
+    weak var delegate: ChallengeDelegate?
+    
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var progressIndicatorLabel: UILabel!
     @IBOutlet private var progressView: UIProgressView!
@@ -91,12 +93,12 @@ final class ChallengeCell: UITableViewCell {
     
     @IBAction
     private func askMarkButtonClicked() {
-        
+        delegate?.askMark()
     }
     
     @IBAction
     private func markDoneButtonClicked() {
-        
+        delegate?.markAsDone()
     }
     
 }

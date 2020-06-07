@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Gilroy-Medium.ttf">
+            <string>Gilroy-Medium</string>
+        </array>
         <array key="Gilroy-Semibold.ttf">
             <string>Gilroy-Semibold</string>
         </array>
@@ -19,7 +22,7 @@
             <objects>
                 <viewController id="nPS-dY-Lbq" customClass="CalendarViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PTn-aJ-xVx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="430"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="481"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkF-vH-5Qr">
@@ -204,29 +207,99 @@
                                     <constraint firstAttribute="bottom" secondItem="eiQ-zl-YJj" secondAttribute="bottom" id="yii-Dv-OvR"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5u4-Qr-62F">
+                                <rect key="frame" x="104" y="430" width="206" height="35"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zPK-dJ-J5k">
+                                        <rect key="frame" x="0.0" y="0.0" width="103" height="35"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUT-ES-u0H">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doneLittle" translatesAutoresizingMaskIntoConstraints="NO" id="IIo-cZ-Qci">
+                                                        <rect key="frame" x="11.5" y="12.5" width="12" height="10"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="IIo-cZ-Qci" firstAttribute="centerY" secondItem="zUT-ES-u0H" secondAttribute="centerY" id="F3f-Qv-DpR"/>
+                                                    <constraint firstItem="IIo-cZ-Qci" firstAttribute="centerX" secondItem="zUT-ES-u0H" secondAttribute="centerX" id="FpS-zQ-Ba3"/>
+                                                    <constraint firstAttribute="width" constant="35" id="ZLH-fb-T8x"/>
+                                                    <constraint firstAttribute="height" constant="35" id="aTb-d5-4yB"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ9-FG-RLN">
+                                                <rect key="frame" x="43" y="10.5" width="60" height="14"/>
+                                                <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="14"/>
+                                                <color key="textColor" red="0.23137254901960785" green="0.25490196078431371" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cIV-sF-J80">
+                                        <rect key="frame" x="103" y="0.0" width="103" height="35"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h76-kV-GFK">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csw-1C-X7h">
+                                                        <rect key="frame" x="14" y="13" width="6" height="11"/>
+                                                        <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40392156862745099" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="Csw-1C-X7h" firstAttribute="centerY" secondItem="h76-kV-GFK" secondAttribute="centerY" id="4pC-VC-sEA"/>
+                                                    <constraint firstAttribute="width" constant="35" id="Ght-Ed-ox1"/>
+                                                    <constraint firstAttribute="height" constant="35" id="fQE-UL-fZb"/>
+                                                    <constraint firstItem="Csw-1C-X7h" firstAttribute="centerX" secondItem="h76-kV-GFK" secondAttribute="centerX" id="t8L-Qo-u5e"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVw-UW-dak">
+                                                <rect key="frame" x="43" y="10.5" width="60" height="14"/>
+                                                <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="14"/>
+                                                <color key="textColor" red="0.23137254900000001" green="0.25490196079999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="206" id="UER-gk-wvj"/>
+                                    <constraint firstAttribute="height" constant="35" id="iTk-Lz-n30"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ofZ-i3-ta7" firstAttribute="bottom" secondItem="5u4-Qr-62F" secondAttribute="bottom" constant="16" id="6Ig-bu-W2v"/>
                             <constraint firstItem="bkF-vH-5Qr" firstAttribute="leading" secondItem="ofZ-i3-ta7" secondAttribute="leading" constant="16" id="AMZ-eT-lHc"/>
                             <constraint firstItem="ofZ-i3-ta7" firstAttribute="trailing" secondItem="bkF-vH-5Qr" secondAttribute="trailing" constant="16" id="Dcf-4m-biE"/>
                             <constraint firstItem="bkF-vH-5Qr" firstAttribute="top" secondItem="ofZ-i3-ta7" secondAttribute="top" constant="16" id="HUT-sR-3Re"/>
-                            <constraint firstItem="ofZ-i3-ta7" firstAttribute="bottom" secondItem="bkF-vH-5Qr" secondAttribute="bottom" constant="16" id="Iyx-4l-aC1"/>
+                            <constraint firstItem="5u4-Qr-62F" firstAttribute="top" secondItem="bkF-vH-5Qr" secondAttribute="bottom" constant="16" id="b5g-wd-dtr"/>
+                            <constraint firstItem="5u4-Qr-62F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ofZ-i3-ta7" secondAttribute="leading" constant="16" id="eLn-Bt-bUn"/>
+                            <constraint firstItem="5u4-Qr-62F" firstAttribute="centerX" secondItem="ofZ-i3-ta7" secondAttribute="centerX" id="wLe-sh-Mn4"/>
+                            <constraint firstItem="ofZ-i3-ta7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5u4-Qr-62F" secondAttribute="trailing" constant="16" id="wPZ-UX-wfA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ofZ-i3-ta7"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="430"/>
+                    <size key="freeformSize" width="414" height="481"/>
                     <connections>
                         <outlet property="calendarView" destination="Pfc-ib-WCE" id="YPx-p8-KN4"/>
                         <outlet property="containerView" destination="bkF-vH-5Qr" id="jcC-Hh-bvs"/>
                         <outletCollection property="backgroundedView" destination="bkF-vH-5Qr" collectionClass="NSMutableArray" id="J3q-Sq-OeN"/>
                         <outletCollection property="backgroundedView" destination="PTn-aJ-xVx" collectionClass="NSMutableArray" id="PBB-Dl-QmX"/>
+                        <outletCollection property="roundViews" destination="zUT-ES-u0H" collectionClass="NSMutableArray" id="ntg-Ld-ncr"/>
+                        <outletCollection property="roundViews" destination="h76-kV-GFK" collectionClass="NSMutableArray" id="zGG-9b-Aiw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzU-nK-fXW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169.56521739130437" y="83.705357142857139"/>
+            <point key="canvasLocation" x="169.56521739130437" y="83.370535714285708"/>
         </scene>
     </scenes>
     <resources>

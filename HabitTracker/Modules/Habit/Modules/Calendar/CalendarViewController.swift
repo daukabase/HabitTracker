@@ -12,11 +12,12 @@ import JTAppleCalendar
 final class CalendarViewController: UIViewController {
     
     private var dateFormatter: DateFormatter = Formatter.MMMyyyy
-    private var notDoneDates = Set(["2020-06-09T15:33:37.471+0000".date(with: .iso8601)!.daySerialized])
+    private var notDoneDates = Set<Date>()
     private var doneDates = Set<Date>()
     
     @IBOutlet var containerView: UIView!
     @IBOutlet var calendarView: JTACMonthView!
+    @IBOutlet var roundViews: [UIView]!
     @IBOutlet var backgroundedView: [UIView]!
     
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ final class CalendarViewController: UIViewController {
         calendarView.allowsMultipleSelection = true
         calendarView.showsHorizontalScrollIndicator = false
         
+        roundViews.forEach { $0.round() }
         applyMocks()
     }
     
@@ -44,13 +46,14 @@ final class CalendarViewController: UIViewController {
         let startDate2 = "2020-06-06T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
         let endDate2 = "2020-06-15T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
         
-        let notDone = "2020-06-04T15:33:37.471+0000".date(with: .iso8601)!.daySerialized
+        let notDone1 = "2020-06-02T15:33:37.471+0000".date(with: .iso8601)!.daySerialized
+        let notDone2 = "2020-06-04T15:33:37.471+0000".date(with: .iso8601)!.daySerialized
         
         doneDates = Set(
             Date.dates(from: startDate1, to: startDate2).map { $0.daySerialized }
         )
         notDoneDates = Set(
-            [notDone]
+            Date.dates(from: notDone1, to: notDone2)
         )
         
         let intervals = [
@@ -82,14 +85,6 @@ final class CalendarViewController: UIViewController {
         }
         
         return dates
-    }
-    
-    private func setDateInterval(between date1: Date, _ date2: Date) {
-        let dates = Date.dates(from: date1, to: date2)
-        
-        calendarView.reloadData()
-        calendarView.selectDates(dates, triggerSelectionDelegate: true, keepSelectionIfMultiSelectionAllowed: true)
-        calendarView.reloadData()
     }
     
 }

@@ -25,11 +25,11 @@ struct GoalAchievement: Achievement {
         let indicatorValue = NSMutableAttributedString()
         let first: [StringAttribute] = [
             .font(FontFamily.Gilroy.semibold.font(size: 24)),
-            .foregroundColor(ColorName.uiWhite.color)
+            .foregroundColor(ColorName.icons.color)
         ]
         let second: [StringAttribute] = [
-            .font(FontFamily.Gilroy.medium.font(size: 20)),
-            .foregroundColor(ColorName.uiWhite.color)
+            .font(FontFamily.Gilroy.semibold.font(size: 18)),
+            .foregroundColor(ColorName.icons.color)
         ]
         
         let firstText = "\(completedDays)".with(attributes: first)
@@ -58,7 +58,7 @@ struct CommonAchievement: Achievement {
             .foregroundColor(ColorName.icons.color)
         ]
         let second: [StringAttribute] = [
-            .font(FontFamily.Gilroy.medium.font(size: 20)),
+            .font(FontFamily.Gilroy.semibold.font(size: 18)),
             .foregroundColor(ColorName.icons.color)
         ]
         

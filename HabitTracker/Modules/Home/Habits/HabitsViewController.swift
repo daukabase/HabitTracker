@@ -10,6 +10,23 @@ import UIKit
 import SegementSlide
 import PinLayout
 
+protocol ChallengeDelegate: class {
+    func askMark()
+    func markAsDone()
+}
+
+extension HabitsViewController: ChallengeDelegate {
+    
+    func askMark() {
+        navigationController?.pushViewController(AskMarkViewController(), animated: true)
+    }
+    
+    func markAsDone() {
+        navigationController?.pushViewController(MarkAsDoneViewController(), animated: true)
+    }
+    
+}
+
 final class HabitsViewController: UIViewController {
     
     enum State {
@@ -23,7 +40,13 @@ final class HabitsViewController: UIViewController {
         let btn = UIButton(frame: .zero)
         
         btn.apply(style: .blue)
-        btn.title = "Add habit  +"
+        switch state {
+        case .challenge:
+            btn.title = "Add challenge  +"
+        case .habit:
+            btn.title = "Add habit  +"
+        }
+        
         
         return btn
     }()
@@ -43,7 +66,6 @@ final class HabitsViewController: UIViewController {
         
         addHabitButton.addTarget(self, action: #selector(addHabitDidTap), for: .touchUpInside)
         
-        
         let controller = HabitViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -56,6 +78,8 @@ final class HabitsViewController: UIViewController {
             .right(16)
             .bottom(view.safeAreaInsets.bottom + 16)
             .height(50)
+        
+        addHabitButton.roundCorners(.allCorners, radius: addHabitButton.frame.height / 2)
     }
     
     @objc
@@ -96,6 +120,7 @@ extension HabitsViewController: UITableViewDelegate {
         case let .challenge(items):
             if let cell = cell as? ChallengeCell {
                 cell.configure(model: items[indexPath.row])
+                cell.delegate = self
             }
         }
         

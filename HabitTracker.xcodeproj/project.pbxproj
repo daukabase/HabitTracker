@@ -26,6 +26,10 @@
 		B0472959245D71FD00F3458F /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0472954245D71FD00F3458F /* OnboardingViewController.xib */; };
 		B047295A245D71FD00F3458F /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0472955245D71FD00F3458F /* OnboardingPageViewController.swift */; };
 		B047295B245D71FD00F3458F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0472956245D71FD00F3458F /* OnboardingViewController.swift */; };
+		B04DE763248D4A8800E2971D /* AskMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04DE761248D4A8800E2971D /* AskMarkViewController.swift */; };
+		B04DE764248D4A8800E2971D /* AskMarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B04DE762248D4A8800E2971D /* AskMarkViewController.xib */; };
+		B04DE769248D4C8300E2971D /* MarkAsDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04DE767248D4C8300E2971D /* MarkAsDoneViewController.swift */; };
+		B04DE76A248D4C8300E2971D /* MarkAsDoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B04DE768248D4C8300E2971D /* MarkAsDoneViewController.xib */; };
 		B05FC1CD245D805F00F4C214 /* ActionableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05FC1CC245D805F00F4C214 /* ActionableLabel.swift */; };
 		B05FC1CF245D810100F4C214 /* StringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05FC1CE245D810100F4C214 /* StringBuilder.swift */; };
 		B077F9AA245D947400FAFFB6 /* InputCodeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077F9A8245D947300FAFFB6 /* InputCodeItemView.swift */; };
@@ -230,6 +234,10 @@
 		B0472954245D71FD00F3458F /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		B0472955245D71FD00F3458F /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		B0472956245D71FD00F3458F /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		B04DE761248D4A8800E2971D /* AskMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskMarkViewController.swift; sourceTree = "<group>"; };
+		B04DE762248D4A8800E2971D /* AskMarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AskMarkViewController.xib; sourceTree = "<group>"; };
+		B04DE767248D4C8300E2971D /* MarkAsDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkAsDoneViewController.swift; sourceTree = "<group>"; };
+		B04DE768248D4C8300E2971D /* MarkAsDoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkAsDoneViewController.xib; sourceTree = "<group>"; };
 		B05FC1CC245D805F00F4C214 /* ActionableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableLabel.swift; sourceTree = "<group>"; };
 		B05FC1CE245D810100F4C214 /* StringBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringBuilder.swift; sourceTree = "<group>"; };
 		B077F9A8245D947300FAFFB6 /* InputCodeItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCodeItemView.swift; sourceTree = "<group>"; };
@@ -542,6 +550,33 @@
 				B0472956245D71FD00F3458F /* OnboardingViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B04DE760248D4A6B00E2971D /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				B04DE766248D4C6F00E2971D /* MarkAsDone */,
+				B04DE765248D4A8D00E2971D /* AskMark */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		B04DE765248D4A8D00E2971D /* AskMark */ = {
+			isa = PBXGroup;
+			children = (
+				B04DE761248D4A8800E2971D /* AskMarkViewController.swift */,
+				B04DE762248D4A8800E2971D /* AskMarkViewController.xib */,
+			);
+			path = AskMark;
+			sourceTree = "<group>";
+		};
+		B04DE766248D4C6F00E2971D /* MarkAsDone */ = {
+			isa = PBXGroup;
+			children = (
+				B04DE767248D4C8300E2971D /* MarkAsDoneViewController.swift */,
+				B04DE768248D4C8300E2971D /* MarkAsDoneViewController.xib */,
+			);
+			path = MarkAsDone;
 			sourceTree = "<group>";
 		};
 		B05FC1CB245D803E00F4C214 /* Reusable Layer */ = {
@@ -942,6 +977,7 @@
 		B0BEFC66243A1B650020D377 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B04DE760248D4A6B00E2971D /* Challenge */,
 				B083558A246717100043CB8A /* Habit */,
 				B03495F4245EDC4700C11283 /* NumberRegistration */,
 				B077F9AD245D94B500FAFFB6 /* NumberConfirmation */,
@@ -1183,6 +1219,7 @@
 				B07BFDF02454463D00D2D18F /* Gilroy-LightItalic.ttf in Resources */,
 				B083558E246717350043CB8A /* HabitViewController.xib in Resources */,
 				B07BFE232454463D00D2D18F /* Gilroy-ThinItalic.woff2 in Resources */,
+				B04DE764248D4A8800E2971D /* AskMarkViewController.xib in Resources */,
 				B07BFE762454877300D2D18F /* HabitDetailsViewController.xib in Resources */,
 				B07BFDF72454463D00D2D18F /* Gilroy-Medium.ttf in Resources */,
 				B07BFE222454463D00D2D18F /* Gilroy-UltraLightItalic.ttf in Resources */,
@@ -1190,6 +1227,7 @@
 				B07BFDE72454463D00D2D18F /* Gilroy-BlackItalic.ttf in Resources */,
 				B07BFDE02454463D00D2D18F /* Gilroy-UltraLight.ttf in Resources */,
 				B07BFE242454463D00D2D18F /* Gilroy-BoldItalic.ttf in Resources */,
+				B04DE76A248D4C8300E2971D /* MarkAsDoneViewController.xib in Resources */,
 				B07BFE052454463D00D2D18F /* Gilroy-MediumItalic.woff2 in Resources */,
 				B07BFE012454463D00D2D18F /* Gilroy-UltraLightItalic.woff in Resources */,
 				B07BFD6824542C5F00D2D18F /* Assets.xcassets in Resources */,
@@ -1397,11 +1435,13 @@
 				B083559A246748640043CB8A /* HabitBanner.swift in Sources */,
 				B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */,
 				B0DDCB012455680E004223DB /* DurationView.swift in Sources */,
+				B04DE769248D4C8300E2971D /* MarkAsDoneViewController.swift in Sources */,
 				B07BFE5A24544C4B00D2D18F /* UISwitch.swift in Sources */,
 				B0235DA4246606D200F91DF0 /* ColorButton.swift in Sources */,
 				B07BFE5624544C4B00D2D18F /* UIButton.swift in Sources */,
 				B047295B245D71FD00F3458F /* OnboardingViewController.swift in Sources */,
 				B077F9C0245D97E500FAFFB6 /* InfoDisplayable.swift in Sources */,
+				B04DE763248D4A8800E2971D /* AskMarkViewController.swift in Sources */,
 				B047294C245C395000F3458F /* ColorsViewController.swift in Sources */,
 				B0DDCB172455A260004223DB /* DayButton.swift in Sources */,
 				B07BFD8324542C6800D2D18F /* Localizable.swift in Sources */,
