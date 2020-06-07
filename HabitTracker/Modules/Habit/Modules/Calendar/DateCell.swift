@@ -32,17 +32,20 @@ class DateCell: JTACDayCell {
     
     @IBOutlet private var dateLabel: UILabel!
     @IBOutlet private var selectedView: UIView!
+    @IBOutlet private var selectedSingleView: UIView!
     @IBOutlet private var todayIndicatorView: UIView!
     @IBOutlet private var doneImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         clipsToBounds = false
+        isUserInteractionEnabled = false
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         todayIndicatorView.cornerRadius = todayIndicatorView.frame.height / 2
+        selectedSingleView.layer.cornerRadius = selectedSingleView.frame.height / 2
     }
     
     func set(state: State) {
@@ -53,8 +56,16 @@ class DateCell: JTACDayCell {
         dateLabel.text = text
     }
     
+    private func set(selected color: UIColor) {
+        [selectedView, selectedSingleView].forEach { $0.backgroundColor = color }
+    }
+    
     private func set(range position: SelectionRangePosition) {
-        selectedView.backgroundColor = colorRed
+        set(selected: colorRed)
+        
+        selectedView.isHidden = position == .full
+        selectedSingleView.isHidden = position != .full
+        
         switch position {
         case .left:
             selectedView.layer.cornerRadius = radius
@@ -66,10 +77,10 @@ class DateCell: JTACDayCell {
             selectedView.layer.cornerRadius = radius
             selectedView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         case .full:
-            selectedView.layer.cornerRadius = radius
-            selectedView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            break
         case .none:
             selectedView.backgroundColor = ColorName.uiWhite.color
+            selectedSingleView.backgroundColor = ColorName.uiWhite.color
         }
     }
     
@@ -82,7 +93,7 @@ class DateCell: JTACDayCell {
             dateLabel.isHidden = false
             doneImageView.isHidden = true
             todayIndicatorView.isHidden = true
-            selectedView.backgroundColor = colorRed.withAlphaComponent(0.15)
+            set(selected: colorRed.withAlphaComponent(0.15))
         case let .selected(position, isDone):
             set(range: position)
 
@@ -90,7 +101,7 @@ class DateCell: JTACDayCell {
             dateLabel.isHidden = isDone
             doneImageView.isHidden = !isDone
             todayIndicatorView.isHidden = true
-            selectedView.backgroundColor = colorRed
+            set(selected: colorRed)
         case let .today(position):
             set(range: position)
             
@@ -99,9 +110,10 @@ class DateCell: JTACDayCell {
             doneImageView.isHidden = true
             todayIndicatorView.isHidden = false
         case let .default(isCurrentMonth):
+            set(selected: ColorName.uiWhite.color)
+            
             dateLabel.textColor = isCurrentMonth ? ColorName.icons.color : ColorName.textSecondary.color
             dateLabel.isHidden = false
-            selectedView.backgroundColor = ColorName.uiWhite.color
             doneImageView.isHidden = true
             todayIndicatorView.isHidden = true
         }

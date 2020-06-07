@@ -28,20 +28,29 @@ final class CalendarViewController: UIViewController {
         containerView.layer.backgroundColor = UIColor.clear.cgColor
         containerView.applyDropShadow()
         
-        calendarView.scrollDirection = .vertical
+        calendarView.scrollDirection = .horizontal
         calendarView.scrollingMode = .stopAtEachCalendarFrame
         calendarView.rangeSelectionMode = .continuous
         calendarView.allowsMultipleSelection = true
         calendarView.showsHorizontalScrollIndicator = false
         
+        applyMocks()
+    }
+    
+    private func applyMocks() {
         let startDate1 = "2020-05-26T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
-        let endDate1 = "2020-06-09T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
+        let endDate1 = "2020-06-02T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
         
-        let startDate2 = "2020-06-11T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
+        let startDate2 = "2020-06-06T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
         let endDate2 = "2020-06-15T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
         
+        let notDone = "2020-06-04T15:33:37.471+0000".date(with: .iso8601)!.daySerialized
+        
         doneDates = Set(
-            Date.dates(from: startDate1, to: endDate1).map { $0.daySerialized }
+            Date.dates(from: startDate1, to: startDate2).map { $0.daySerialized }
+        )
+        notDoneDates = Set(
+            [notDone]
         )
         
         let intervals = [
@@ -49,12 +58,15 @@ final class CalendarViewController: UIViewController {
             (startDate2, endDate2)
         ]
         
+        setupCalendar(with: intervals)
+    }
+    
+    private func setupCalendar(with intervals: [(Date, Date)]) {
         let dates = getDates(by: intervals)
         
         DispatchQueue.main.async {
             self.calendarView.reloadData()
             self.calendarView.selectDates(dates, triggerSelectionDelegate: true, keepSelectionIfMultiSelectionAllowed: true)
-            self.calendarView.reloadData()
         }
     }
     
@@ -117,7 +129,7 @@ extension CalendarViewController: JTACMonthViewDelegate {
     }
     
     func calendarSizeForMonths(_ calendar: JTACMonthView?) -> MonthSize? {
-        return MonthSize(defaultSize: 64)
+        return MonthSize(defaultSize: 100)
     }
     
 }
@@ -130,7 +142,7 @@ extension CalendarViewController: JTACMonthViewDataSource {
         
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
-                                                 generateInDates: .off,
+                                                 generateInDates: .forAllMonths,
                                                  generateOutDates: .off)
         
         return parameters
