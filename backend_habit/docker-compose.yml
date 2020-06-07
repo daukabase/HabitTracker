@@ -1,0 +1,46 @@
+version: "3.1"
+services:
+
+    postgres:
+      image: postgres:11
+      container_name: habbit_postgres
+      volumes:
+         - ./sourcefiles/postgres:/var/lib/postgresql/data
+      environment:
+        - POSTGRES_USER=admin
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=habbit
+      ports:
+       - 5431:5432
+      networks:
+            testing_net:
+                ipv4_address: 172.28.1.2
+    webserver:
+      image: nginx:1.17.6
+      container_name: habbit_webserver
+      working_dir: /application
+      volumes:
+          - ./application:/application
+          - ./sourcefiles/nginx:/etc/nginx/conf.d
+      ports:
+       - 8001:80
+      networks:
+            testing_net:
+                ipv4_address: 172.28.1.3
+
+    php-fpm:
+      build: sourcefiles/php-fpm
+      container_name: habbit_phpfpm
+      working_dir: /application
+      volumes:
+        - ./application:/application
+        - ./sourcefiles/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
+      networks:
+          testing_net:
+              ipv4_address: 172.28.1.4
+networks:
+    testing_net:
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.28.0.0/16
