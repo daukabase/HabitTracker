@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gilroy-Regular.ttf">
+            <string>Gilroy-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DurationView" customModule="HabitTracker" customModuleProvider="target">
+            <connections>
+                <outlet property="durationContentView" destination="Dwp-UI-fAM" id="ID6-aa-2pi"/>
+                <outlet property="durationTextField" destination="fmS-dm-h5e" id="NAj-fF-akg"/>
+                <outlet property="startTimeContentView" destination="gg4-fJ-u1J" id="TI6-Aj-DnB"/>
+                <outlet property="startTimeTextField" destination="NZM-Fn-WMH" id="2Un-Ef-imv"/>
+                <outlet property="titleLabel" destination="MOy-ej-ap7" id="MLS-ai-FaO"/>
+                <outletCollection property="views" destination="gg4-fJ-u1J" collectionClass="NSMutableArray" id="t6D-q5-sT2"/>
+                <outletCollection property="views" destination="Dwp-UI-fAM" collectionClass="NSMutableArray" id="BJZ-Xp-idV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="700" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOy-ej-ap7">
+                    <rect key="frame" x="0.0" y="16" width="43" height="13"/>
+                    <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="16"/>
+                    <color key="textColor" red="0.94509803920000002" green="0.27450980390000002" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="Dwp-UI-fAM">
+                    <rect key="frame" x="18" y="45" width="82" height="36"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="21" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmS-dm-h5e">
+                            <rect key="frame" x="8" y="9" width="66" height="22.5"/>
+                            <color key="textColor" red="0.3333996534" green="0.34847956899999999" blue="0.72141361240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="18"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="fmS-dm-h5e" firstAttribute="centerY" secondItem="Dwp-UI-fAM" secondAttribute="centerY" constant="2" id="Ifl-nS-Gzr"/>
+                        <constraint firstAttribute="height" constant="36" id="Wgq-Ep-yy9"/>
+                        <constraint firstAttribute="width" constant="82" id="XZz-Fs-VTv"/>
+                        <constraint firstItem="fmS-dm-h5e" firstAttribute="leading" secondItem="Dwp-UI-fAM" secondAttribute="leading" constant="8" id="eji-vN-Rr0"/>
+                        <constraint firstAttribute="trailing" secondItem="fmS-dm-h5e" secondAttribute="trailing" constant="8" id="qLL-wN-h5X"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" horizontalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="gg4-fJ-u1J">
+                    <rect key="frame" x="136.5" y="45" width="178" height="36"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="bsf-IE-BQI">
+                            <rect key="frame" x="128" y="8" width="20" height="20"/>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="20/06/20" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZM-Fn-WMH">
+                            <rect key="frame" x="30" y="9.5" width="73" height="21.5"/>
+                            <color key="textColor" red="0.3333996534" green="0.34847956899999999" blue="0.72141361240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="18"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="bsf-IE-BQI" firstAttribute="centerY" secondItem="gg4-fJ-u1J" secondAttribute="centerY" id="5Nf-2W-0fM"/>
+                        <constraint firstItem="NZM-Fn-WMH" firstAttribute="leading" secondItem="gg4-fJ-u1J" secondAttribute="leading" constant="30" id="HWL-7S-WMy"/>
+                        <constraint firstItem="NZM-Fn-WMH" firstAttribute="centerY" secondItem="gg4-fJ-u1J" secondAttribute="centerY" constant="2" id="RX3-Pc-6MJ"/>
+                        <constraint firstAttribute="height" constant="36" id="UNq-H4-7Fu"/>
+                        <constraint firstAttribute="trailing" secondItem="bsf-IE-BQI" secondAttribute="trailing" constant="30" id="afH-vD-n0K"/>
+                        <constraint firstAttribute="width" constant="178" id="uWT-wn-zxx"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="starting data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzY-Ce-WLd">
+                    <rect key="frame" x="192" y="89" width="67.5" height="14"/>
+                    <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
+                    <color key="textColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="501" text="days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDB-dc-ScD">
+                    <rect key="frame" x="46" y="89" width="26" height="14"/>
+                    <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
+                    <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gg4-fJ-u1J" secondAttribute="trailing" constant="16" id="9dR-yT-qk0"/>
+                <constraint firstItem="MOy-ej-ap7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="U91-TM-TTC"/>
+                <constraint firstItem="gg4-fJ-u1J" firstAttribute="leading" secondItem="Dwp-UI-fAM" secondAttribute="trailing" priority="750" constant="36.5" id="W5v-Gp-KKa"/>
+                <constraint firstItem="IDB-dc-ScD" firstAttribute="top" secondItem="Dwp-UI-fAM" secondAttribute="bottom" constant="8" id="Y2B-lJ-iOb"/>
+                <constraint firstItem="xzY-Ce-WLd" firstAttribute="top" secondItem="gg4-fJ-u1J" secondAttribute="bottom" constant="8" id="Ylj-Jn-DKD"/>
+                <constraint firstItem="MOy-ej-ap7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZA5-qf-igV"/>
+                <constraint firstItem="Dwp-UI-fAM" firstAttribute="top" secondItem="MOy-ej-ap7" secondAttribute="bottom" constant="16" id="ehc-zK-c0p"/>
+                <constraint firstItem="IDB-dc-ScD" firstAttribute="centerX" secondItem="Dwp-UI-fAM" secondAttribute="centerX" id="fut-uf-fRv"/>
+                <constraint firstItem="gg4-fJ-u1J" firstAttribute="centerY" secondItem="Dwp-UI-fAM" secondAttribute="centerY" id="hhR-24-erJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="IDB-dc-ScD" secondAttribute="bottom" constant="8" id="l40-NZ-niw"/>
+                <constraint firstItem="xzY-Ce-WLd" firstAttribute="centerX" secondItem="gg4-fJ-u1J" secondAttribute="centerX" id="m2y-t7-gKE"/>
+                <constraint firstItem="Dwp-UI-fAM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="seL-po-hbd"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="136.875" y="-130.45774647887325"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="calendar" width="20" height="20"/>
+    </resources>
+</document>

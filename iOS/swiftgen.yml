@@ -1,0 +1,26 @@
+colors:
+  inputs:
+    - HabitTracker/Resources/Colors.json
+  outputs:
+    - templateName: swift4
+      output: HabitTracker/Constants/Colors.swift
+      params:
+        publicAccess: true
+fonts:
+  inputs:
+    - HabitTracker/Resources/Fonts
+  outputs:
+    - templateName: swift4
+      output: HabitTracker/Constants/Fonts.swift
+strings:
+  inputs:
+    - HabitTracker/Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift4
+      output: HabitTracker/Constants/Localizable.swift
+xcassets:
+  inputs:
+    - HabitTracker/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift4
+      output: HabitTracker/Constants/Images.swift
