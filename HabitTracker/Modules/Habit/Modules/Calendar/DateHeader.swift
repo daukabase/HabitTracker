@@ -9,6 +9,14 @@
 import UIKit
 import JTAppleCalendar
 
-class DateHeader: JTACMonthReusableView  {
+final class DateHeader: JTACMonthReusableView {
+    
     @IBOutlet var monthTitle: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        monthTitle.font = FontFamily.Gilroy.semibold.font(size: 16)
+    }
+    
 }

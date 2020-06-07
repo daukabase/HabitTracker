@@ -12,17 +12,17 @@ extension UIRectCorner {
 
     var caCornerMaskValue: CACornerMask {
         var mask: CACornerMask = []
+        if contains(.topLeft) {
+            mask = mask.union(.layerMinXMinYCorner)
+        }
+        if contains(.topRight) {
+            mask = mask.union(.layerMaxXMinYCorner)
+        }
         if contains(.bottomLeft) {
             mask = mask.union(.layerMinXMaxYCorner)
         }
         if contains(.bottomRight) {
             mask = mask.union(.layerMaxXMaxYCorner)
-        }
-        if contains(.topRight) {
-            mask = mask.union(.layerMinXMinYCorner)
-        }
-        if contains(.topLeft) {
-            mask = mask.union(.layerMaxXMinYCorner)
         }
         if contains(.allCorners) {
             mask = mask.union([.layerMaxXMinYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner])
