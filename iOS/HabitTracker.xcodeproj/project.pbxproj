@@ -173,6 +173,10 @@
 		B091F53C2483DC7B0040F0EE /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B091F53A2483DC7B0040F0EE /* AchievementsViewController.swift */; };
 		B091F53D2483DC7B0040F0EE /* AchievementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B091F53B2483DC7B0040F0EE /* AchievementsViewController.xib */; };
 		B091F53F2483DD8E0040F0EE /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B091F53E2483DD8E0040F0EE /* AchievementView.swift */; };
+		B0A6B3112498F4FB0079AF72 /* SelectImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6B30F2498F4FB0079AF72 /* SelectImagesViewController.swift */; };
+		B0A6B314249927A10079AF72 /* SelectImagesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A6B313249927A10079AF72 /* SelectImagesViewController.storyboard */; };
+		B0A6B31624992A960079AF72 /* SelectImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6B31524992A960079AF72 /* SelectImageCell.swift */; };
+		B0A6B31824992B0E0079AF72 /* AddImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6B31724992B0E0079AF72 /* AddImageCell.swift */; };
 		B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A35624126093007B2F21 /* AppDelegate.swift */; };
 		B0B3A37124126097007B2F21 /* HabitTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37024126097007B2F21 /* HabitTrackerTests.swift */; };
 		B0B3A37C24126097007B2F21 /* HabitTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */; };
@@ -381,6 +385,10 @@
 		B091F53A2483DC7B0040F0EE /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		B091F53B2483DC7B0040F0EE /* AchievementsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementsViewController.xib; sourceTree = "<group>"; };
 		B091F53E2483DD8E0040F0EE /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
+		B0A6B30F2498F4FB0079AF72 /* SelectImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImagesViewController.swift; sourceTree = "<group>"; };
+		B0A6B313249927A10079AF72 /* SelectImagesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectImagesViewController.storyboard; sourceTree = "<group>"; };
+		B0A6B31524992A960079AF72 /* SelectImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageCell.swift; sourceTree = "<group>"; };
+		B0A6B31724992B0E0079AF72 /* AddImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageCell.swift; sourceTree = "<group>"; };
 		B0B3A35324126092007B2F21 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B3A35624126093007B2F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B3A36024126093007B2F21 /* HabitTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -564,6 +572,7 @@
 		B04DE765248D4A8D00E2971D /* AskMark */ = {
 			isa = PBXGroup;
 			children = (
+				B0A6B30E2498F4D40079AF72 /* Modules */,
 				B04DE761248D4A8800E2971D /* AskMarkViewController.swift */,
 				B04DE762248D4A8800E2971D /* AskMarkViewController.xib */,
 			);
@@ -842,10 +851,10 @@
 		B083558A246717100043CB8A /* Habit */ = {
 			isa = PBXGroup;
 			children = (
+				B0835596246747C60043CB8A /* Modules */,
 				B08355982467481F0043CB8A /* Views */,
 				B083558B246717350043CB8A /* HabitViewController.swift */,
 				B083558C246717350043CB8A /* HabitViewController.xib */,
-				B0835596246747C60043CB8A /* Modules */,
 			);
 			path = Habit;
 			sourceTree = "<group>";
@@ -909,6 +918,14 @@
 			path = Achievements;
 			sourceTree = "<group>";
 		};
+		B0A6B30E2498F4D40079AF72 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B0B76A0624A50E39007E7F6F /* SelectImages */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		B0B3A34A24126092007B2F21 = {
 			isa = PBXGroup;
 			children = (
@@ -960,6 +977,17 @@
 				B0B3A37D24126097007B2F21 /* Info.plist */,
 			);
 			path = HabitTrackerUITests;
+			sourceTree = "<group>";
+		};
+		B0B76A0624A50E39007E7F6F /* SelectImages */ = {
+			isa = PBXGroup;
+			children = (
+				B0A6B30F2498F4FB0079AF72 /* SelectImagesViewController.swift */,
+				B0A6B31524992A960079AF72 /* SelectImageCell.swift */,
+				B0A6B31724992B0E0079AF72 /* AddImageCell.swift */,
+				B0A6B313249927A10079AF72 /* SelectImagesViewController.storyboard */,
+			);
+			path = SelectImages;
 			sourceTree = "<group>";
 		};
 		B0BEFC5E243A18400020D377 /* Application */ = {
@@ -1207,6 +1235,7 @@
 				B07BFDDE2454463D00D2D18F /* Gilroy-Extrabold.eot in Resources */,
 				B07BFE042454463D00D2D18F /* Gilroy-MediumItalic.eot in Resources */,
 				B0BEFC76243A2A1B0020D377 /* LaunchScreen.storyboard in Resources */,
+				B0A6B314249927A10079AF72 /* SelectImagesViewController.storyboard in Resources */,
 				B07BFE272454463D00D2D18F /* Gilroy-RegularItalic.eot in Resources */,
 				B083559C2467486C0043CB8A /* HabitBanner.xib in Resources */,
 				B091F53D2483DC7B0040F0EE /* AchievementsViewController.xib in Resources */,
@@ -1405,6 +1434,7 @@
 				B083559E246753FE0043CB8A /* HabitBannerViewModel.swift in Sources */,
 				B07BFD8024542C6800D2D18F /* Fonts.swift in Sources */,
 				B00123EA245F01F0001B5481 /* Optional.swift in Sources */,
+				B0A6B31624992A960079AF72 /* SelectImageCell.swift in Sources */,
 				B091F53C2483DC7B0040F0EE /* AchievementsViewController.swift in Sources */,
 				B07BFE752454877300D2D18F /* HabitDetailsViewController.swift in Sources */,
 				B07BFE6124544C4B00D2D18F /* UIStoryboard.swift in Sources */,
@@ -1423,6 +1453,7 @@
 				B02110ED24653ECF005BF1E2 /* DoneHabitCell.swift in Sources */,
 				B02110F52465A0FC005BF1E2 /* Challenge.swift in Sources */,
 				B07BFE6C24545F6E00D2D18F /* UIRectCorner.swift in Sources */,
+				B0A6B31824992B0E0079AF72 /* AddImageCell.swift in Sources */,
 				B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */,
 				B07BFE2E24544B8B00D2D18F /* Days.swift in Sources */,
 				B077F9BF245D97E500FAFFB6 /* Maskable.swift in Sources */,
@@ -1463,6 +1494,7 @@
 				B077F9C2245D97E500FAFFB6 /* LoaderViewDisplayable.swift in Sources */,
 				B077F9AA245D947400FAFFB6 /* InputCodeItemView.swift in Sources */,
 				B07BFE5424544C4A00D2D18F /* UITableView.swift in Sources */,
+				B0A6B3112498F4FB0079AF72 /* SelectImagesViewController.swift in Sources */,
 				B047295A245D71FD00F3458F /* OnboardingPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

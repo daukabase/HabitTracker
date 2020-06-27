@@ -20,6 +20,9 @@
 internal enum Asset {
   internal static let askMark = ImageAsset(name: "Ask Mark")
   internal static let markAsDone = ImageAsset(name: "Mark as Done")
+  internal static let camera = ImageAsset(name: "camera")
+  internal static let deleteButton = ImageAsset(name: "deleteButton")
+  internal static let runningMan = ImageAsset(name: "runningMan")
   internal static let add = ImageAsset(name: "add")
   internal static let done = ImageAsset(name: "done")
   internal static let doneBlue = ImageAsset(name: "doneBlue")

@@ -27,6 +27,12 @@ final class NumberRegistrationViewController: UIViewController, Maskable {
         checkImageView.alpha = 0
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        textField.becomeFirstResponder()
+    }
+    
 }
 
 extension NumberRegistrationViewController: UITextFieldDelegate {

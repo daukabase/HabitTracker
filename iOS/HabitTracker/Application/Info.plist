@@ -84,5 +84,11 @@ Montserrat-ThinItalic.otf</string>
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Пожалуйста, предоставьте доступ к вашей галерее</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Пожалуйста, предоставьте доступ к вашей камере</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Пожалуйста, предоставьте доступ к вашему микрофону</string>
 </dict>
 </plist>
