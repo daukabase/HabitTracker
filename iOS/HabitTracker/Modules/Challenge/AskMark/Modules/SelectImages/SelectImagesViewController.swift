@@ -16,7 +16,6 @@ final class SelectImagesViewController: UIViewController {
     private var selectedItems: [YPMediaItem] = []
     
     // MARK: - Views
-    
     private lazy var config: YPImagePickerConfiguration = {
         var config = YPImagePickerConfiguration()
         
@@ -82,6 +81,17 @@ final class SelectImagesViewController: UIViewController {
         return picker
     }()
     
+    @IBOutlet private var collectionView: UICollectionView!
+
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    // MARK: - Private Methods
     private func didFinishPicking(items: [YPMediaItem], cancelled: Bool) {
         for item in items {
             switch item {
@@ -93,16 +103,6 @@ final class SelectImagesViewController: UIViewController {
         }
         
         picker.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBOutlet private var collectionView: UICollectionView!
-
-    // MARK: - Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
     
 }
@@ -145,15 +145,24 @@ extension SelectImagesViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.onDelete = { [weak self] in
+        cell.onDelete = { [weak self, indexPath] in
             print("deleting at: \(indexPath)")
+            guard
+                let self = self,
+                (self.selectedItems.indices ~= indexPath.row)
+            else {
+                return
+            }
             
-            self?.collectionView.performBatchUpdates ({
-                self?.collectionView.deleteItems(at: [indexPath])
-                self?.selectedItems.remove(at: indexPath.row)
+            self.selectedItems.remove(at: indexPath.row)
+            
+            
+            self.collectionView.performBatchUpdates({
+                self.collectionView.deleteItems(at: [indexPath])
             }, completion: { _ in
-                
+                self.collectionView.reloadData()
             })
+            
         }
         cell.configure(image: selectedItems[indexPath.row].image)
         

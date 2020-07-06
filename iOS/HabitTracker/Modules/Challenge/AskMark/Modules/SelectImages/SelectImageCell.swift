@@ -27,7 +27,11 @@ final class SelectImageCell: UICollectionViewCell {
     
     @IBAction
     private func deleteButtonDidPressed() {
+        deleteButton.isUserInteractionEnabled = false
         onDelete?()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
+            self.deleteButton.isUserInteractionEnabled = true
+        }
     }
     
 }

@@ -12,8 +12,20 @@ final class HabitViewController: UIViewController {
 
     var habit: Habit? {
         didSet {
-            self.title = habit?.title
+            guard let habit = habit else {
+                return
+            }
+            habitTitleView.setup(title: habit.title,
+                                 image: habit.image,
+                                 color: habit.color)
         }
+    }
+    
+    func setup(habit: Habit) {
+        habitTitleView.setup(title: habit.title,
+                             image: habit.image,
+                             color: habit.color)
+        calendarViewController.setup(theme: habit.color)
     }
     
     private lazy var calendarViewController: CalendarViewController = {
@@ -52,10 +64,18 @@ final class HabitViewController: UIViewController {
         return view
     }()
     
+    private lazy var habitTitleView: HabitTitleView = {
+        let view = HabitTitleView(frame: .zero)
+        
+        return view
+    }()
+    
     @IBOutlet private var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.titleView = habitTitleView
 
         setBackButton(style: .dark)
         addChild(calendarViewController)

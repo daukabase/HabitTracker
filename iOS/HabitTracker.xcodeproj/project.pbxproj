@@ -177,6 +177,8 @@
 		B0A6B314249927A10079AF72 /* SelectImagesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A6B313249927A10079AF72 /* SelectImagesViewController.storyboard */; };
 		B0A6B31624992A960079AF72 /* SelectImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6B31524992A960079AF72 /* SelectImageCell.swift */; };
 		B0A6B31824992B0E0079AF72 /* AddImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6B31724992B0E0079AF72 /* AddImageCell.swift */; };
+		B0AFA6CC24B35CF800B5DA45 /* HabitTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AFA6CB24B35CF800B5DA45 /* HabitTitleView.swift */; };
+		B0AFA6CE24B35D0D00B5DA45 /* HabitTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0AFA6CD24B35D0D00B5DA45 /* HabitTitleView.xib */; };
 		B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A35624126093007B2F21 /* AppDelegate.swift */; };
 		B0B3A37124126097007B2F21 /* HabitTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37024126097007B2F21 /* HabitTrackerTests.swift */; };
 		B0B3A37C24126097007B2F21 /* HabitTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */; };
@@ -389,6 +391,8 @@
 		B0A6B313249927A10079AF72 /* SelectImagesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectImagesViewController.storyboard; sourceTree = "<group>"; };
 		B0A6B31524992A960079AF72 /* SelectImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageCell.swift; sourceTree = "<group>"; };
 		B0A6B31724992B0E0079AF72 /* AddImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageCell.swift; sourceTree = "<group>"; };
+		B0AFA6CB24B35CF800B5DA45 /* HabitTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTitleView.swift; sourceTree = "<group>"; };
+		B0AFA6CD24B35D0D00B5DA45 /* HabitTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTitleView.xib; sourceTree = "<group>"; };
 		B0B3A35324126092007B2F21 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B3A35624126093007B2F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B3A36024126093007B2F21 /* HabitTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -591,6 +595,7 @@
 		B05FC1CB245D803E00F4C214 /* Reusable Layer */ = {
 			isa = PBXGroup;
 			children = (
+				B077F9C3245D981200FAFFB6 /* MessageBanner */,
 				B077F9AC245D948100FAFFB6 /* InputCode */,
 				B05FC1CC245D805F00F4C214 /* ActionableLabel.swift */,
 			);
@@ -600,7 +605,6 @@
 		B077F9AC245D948100FAFFB6 /* InputCode */ = {
 			isa = PBXGroup;
 			children = (
-				B077F9C3245D981200FAFFB6 /* MessageBanner */,
 				B077F9A8245D947300FAFFB6 /* InputCodeItemView.swift */,
 				B077F9A9245D947300FAFFB6 /* InputCodeView.swift */,
 			);
@@ -893,6 +897,7 @@
 			isa = PBXGroup;
 			children = (
 				B083559F246758A00043CB8A /* HabitBanner */,
+				B0AFA6CF24B35D1700B5DA45 /* HabitTitleView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -924,6 +929,15 @@
 				B0B76A0624A50E39007E7F6F /* SelectImages */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		B0AFA6CF24B35D1700B5DA45 /* HabitTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				B0AFA6CB24B35CF800B5DA45 /* HabitTitleView.swift */,
+				B0AFA6CD24B35D0D00B5DA45 /* HabitTitleView.xib */,
+			);
+			path = HabitTitleView;
 			sourceTree = "<group>";
 		};
 		B0B3A34A24126092007B2F21 = {
@@ -1202,6 +1216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0AFA6CE24B35D0D00B5DA45 /* HabitTitleView.xib in Resources */,
 				B07BFDDD2454463D00D2D18F /* Gilroy-SemiboldItalic.ttf in Resources */,
 				B08355A6246759030043CB8A /* StatisticsViewController.xib in Resources */,
 				B07BFE132454463D00D2D18F /* Gilroy-Semibold.woff in Resources */,
@@ -1461,6 +1476,7 @@
 				B083558D246717350043CB8A /* HabitViewController.swift in Sources */,
 				B08355872466E4080043CB8A /* IconCellViewModel.swift in Sources */,
 				B07BFE6024544C4B00D2D18F /* UIEdgeInsets.swift in Sources */,
+				B0AFA6CC24B35CF800B5DA45 /* HabitTitleView.swift in Sources */,
 				B07BFE712454612C00D2D18F /* HabitCell.swift in Sources */,
 				B08355892466E41A0043CB8A /* IconCell.swift in Sources */,
 				B083559A246748640043CB8A /* HabitBanner.swift in Sources */,

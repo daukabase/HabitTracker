@@ -41,10 +41,6 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         return scheduleView
     }()
     
-    func changedSchedule() {
-        chooseAllView.set(isOn: scheduleView.isAllSelected)
-    }
-    
     lazy var chooseAllView: SwitchableView = {
         let chooseAllView = SwitchableView(frame: .zero)
         chooseAllView.label.text = "Choose everyday"
@@ -120,6 +116,10 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func changedSchedule() {
+        chooseAllView.set(isOn: scheduleView.isAllSelected)
     }
     
     private func commonInit() {
