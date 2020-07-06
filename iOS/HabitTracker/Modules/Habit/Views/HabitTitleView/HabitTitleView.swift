@@ -29,7 +29,6 @@ final class HabitTitleView: UIView {
     
     func setup(title: String?, image: UIImage?, color: UIColor) {
         self.titleLabel.text = title
-        self.titleLabel.textColor = color
         self.imageView.image = image?.filled(with: color)
     }
     
