@@ -27,6 +27,7 @@ final class SelectImageCell: UICollectionViewCell {
     
     @IBAction
     private func deleteButtonDidPressed() {
+        // TODO: убрать эту хуйню
         deleteButton.isUserInteractionEnabled = false
         onDelete?()
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
