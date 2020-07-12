@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupRootView()
@@ -26,8 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         setupAppearence()
+        setupNotifications()
         
         return true
+    }
+    
+    private func setupNotifications() {
+        
+        Notifications.shared.notificationRequest()
     }
     
     private func setupRootView() {
@@ -35,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         #if DEBUG
-//            UserDefaultsStorage.isOnboardingCompleted = false
+            UserDefaultsStorage.isOnboardingCompleted = false
         #endif
         
         UserDefaultsStorage.isOnboardingCompleted ? routeToHome() : routeToOnboarding()
@@ -63,6 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
     }
     
+}
+
+extension String {
+    static let doneAction = "habit_done_action"
 }
 
 struct UserDefaultsStorage {

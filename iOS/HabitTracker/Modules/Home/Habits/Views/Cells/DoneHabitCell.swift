@@ -10,6 +10,7 @@ import UIKit
 
 final class DoneHabitCell: UITableViewCell {
     
+    var onProgress: BoolClosure?
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var doneButton: DoneHabitButton!
     @IBOutlet private var progressIndicatorLabel: UILabel!
@@ -57,6 +58,8 @@ final class DoneHabitCell: UITableViewCell {
             guard let model = model else {
                 return
             }
+            self?.onProgress?(isSelected)
+            
             if isSelected {
                 model.done()
             } else {

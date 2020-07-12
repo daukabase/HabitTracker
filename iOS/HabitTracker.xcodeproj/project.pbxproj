@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0875B6E424BB263200F2982D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0875B6E324BB263200F2982D /* Notifications.swift */; };
 		129A557E79D6F2FFAD8BBB22 /* libPods-HabitTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4C3880A19CE2D3742A93D5 /* libPods-HabitTrackerTests.a */; };
 		44D9D3DA49AB7A79CDD31836 /* libPods-HabitTrackerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E789095EBD2B8954D583742 /* libPods-HabitTrackerUITests.a */; };
 		4EA764B9A5A082FEE3189F50 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */; };
@@ -218,6 +219,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0875B6E324BB263200F2982D /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		2E789095EBD2B8954D583742 /* libPods-HabitTrackerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HabitTrackerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		393584F43D2B3466CCFB7881 /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		531362444435295FEE47C9DA /* Pods-HabitTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-HabitTrackerTests/Pods-HabitTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -451,6 +453,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0875B6E224BB262000F2982D /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				0875B6E324BB263200F2982D /* Notifications.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		7C759B7654B854B73EED1F5B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +487,7 @@
 		B00123E5245F01BD001B5481 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0875B6E224BB262000F2982D /* Notifications */,
 				B00123E6245F01CF001B5481 /* UserDefaultsStorage */,
 			);
 			path = Core;
@@ -1454,6 +1465,7 @@
 				B07BFE752454877300D2D18F /* HabitDetailsViewController.swift in Sources */,
 				B07BFE6124544C4B00D2D18F /* UIStoryboard.swift in Sources */,
 				B02110F324659C6D005BF1E2 /* ChallengeCell.swift in Sources */,
+				0875B6E424BB263200F2982D /* Notifications.swift in Sources */,
 				B07BFE5724544C4B00D2D18F /* UIImage.swift in Sources */,
 				B07BFE6F245460AE00D2D18F /* Array.swift in Sources */,
 				B07BFD8224542C6800D2D18F /* Colors.swift in Sources */,
@@ -1678,6 +1690,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JNA8QM22SG;
 				INFOPLIST_FILE = HabitTracker/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1685,7 +1698,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = HabitTracker.HabitTrackerr;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HabitTracker.HabitTrackerrr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1698,6 +1712,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JNA8QM22SG;
 				INFOPLIST_FILE = HabitTracker/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1705,7 +1720,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = HabitTracker.HabitTrackerr;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HabitTracker.HabitTrackerrr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
