@@ -19,7 +19,7 @@ class Habit {
     var habitIcon: HabitIcon
     
     var image: UIImage {
-        return habitIcon.icon
+        return habitIcon.icon.filled(with: color)
     }
     
     // TODO: remove mocks

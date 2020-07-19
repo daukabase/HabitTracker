@@ -178,15 +178,6 @@ extension InputCodeView: UIKeyInput {
     
 }
 
-//extension InputCodeView: UITextInput {
-//    
-//    func text(in range: UITextRange) -> String? {
-//        
-//    }
-//    
-//    
-//}
-
 // MARK: - UITextInputTraits
 
 // swiftlint:disable unused_setter_value
