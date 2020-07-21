@@ -13,7 +13,7 @@ public protocol SugarTargetType: TargetType {
 
 public extension SugarTargetType {
     
-    public var baseURL: URL {
+    var baseURL: URL {
         return Config.baseUrl
     }
     
@@ -21,15 +21,15 @@ public extension SugarTargetType {
         return self.path.isEmpty ? self.baseURL : self.baseURL.appendingPathComponent(self.path)
     }
     
-    public var path: String {
+    var path: String {
         return self.route.path
     }
     
-    public var method: Moya.Method {
+    var method: Moya.Method {
         return self.route.method
     }
     
-    public var task: Task {
+    var task: Task {
         guard let parameters = self.parameters else { return .requestPlain }
         return .requestParameters(parameters: parameters.values, encoding: parameters.encoding)
     }
