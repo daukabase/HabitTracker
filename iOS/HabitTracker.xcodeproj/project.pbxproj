@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084941BF24C6DB1000A0D9DE /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084941BE24C6DB1000A0D9DE /* AuthToken.swift */; };
 		0875B6E424BB263200F2982D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0875B6E324BB263200F2982D /* Notifications.swift */; };
+		08EDA49824C487BC00F9DDFC /* NetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA49324C487BC00F9DDFC /* NetworkType.swift */; };
+		08EDA49924C487BC00F9DDFC /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA49424C487BC00F9DDFC /* NetworkProvider.swift */; };
+		08EDA49B24C487BC00F9DDFC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA49624C487BC00F9DDFC /* NetworkError.swift */; };
+		08EDA49C24C487BC00F9DDFC /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA49724C487BC00F9DDFC /* Network.swift */; };
+		08EDA4A524C487E900F9DDFC /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA4A124C487E900F9DDFC /* Parameters.swift */; };
+		08EDA4A624C487E900F9DDFC /* SugarTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA4A224C487E900F9DDFC /* SugarTargetType.swift */; };
+		08EDA4A724C487E900F9DDFC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA4A324C487E900F9DDFC /* Route.swift */; };
+		08EDA4A824C487E900F9DDFC /* PromiseKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA4A424C487E900F9DDFC /* PromiseKitExtensions.swift */; };
+		08EDA4AB24C48B4E00F9DDFC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA4AA24C48B4E00F9DDFC /* Config.swift */; };
 		129A557E79D6F2FFAD8BBB22 /* libPods-HabitTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4C3880A19CE2D3742A93D5 /* libPods-HabitTrackerTests.a */; };
 		44D9D3DA49AB7A79CDD31836 /* libPods-HabitTrackerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E789095EBD2B8954D583742 /* libPods-HabitTrackerUITests.a */; };
 		4EA764B9A5A082FEE3189F50 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */; };
@@ -219,7 +229,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084941BE24C6DB1000A0D9DE /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		0875B6E324BB263200F2982D /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		08EDA49324C487BC00F9DDFC /* NetworkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkType.swift; sourceTree = "<group>"; };
+		08EDA49424C487BC00F9DDFC /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		08EDA49624C487BC00F9DDFC /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		08EDA49724C487BC00F9DDFC /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		08EDA4A124C487E900F9DDFC /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		08EDA4A224C487E900F9DDFC /* SugarTargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarTargetType.swift; sourceTree = "<group>"; };
+		08EDA4A324C487E900F9DDFC /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		08EDA4A424C487E900F9DDFC /* PromiseKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseKitExtensions.swift; sourceTree = "<group>"; };
+		08EDA4AA24C48B4E00F9DDFC /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		2E789095EBD2B8954D583742 /* libPods-HabitTrackerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HabitTrackerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		393584F43D2B3466CCFB7881 /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		531362444435295FEE47C9DA /* Pods-HabitTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-HabitTrackerTests/Pods-HabitTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -459,6 +479,39 @@
 				0875B6E324BB263200F2982D /* Notifications.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		08EDA49224C485B000F9DDFC /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				08EDA4AA24C48B4E00F9DDFC /* Config.swift */,
+				08EDA49724C487BC00F9DDFC /* Network.swift */,
+				08EDA49624C487BC00F9DDFC /* NetworkError.swift */,
+				08EDA49424C487BC00F9DDFC /* NetworkProvider.swift */,
+				08EDA49324C487BC00F9DDFC /* NetworkType.swift */,
+				08EDA49F24C487E900F9DDFC /* ThirdParty */,
+				084941BE24C6DB1000A0D9DE /* AuthToken.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		08EDA49F24C487E900F9DDFC /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				08EDA4A024C487E900F9DDFC /* MoyaSugar */,
+				08EDA4A424C487E900F9DDFC /* PromiseKitExtensions.swift */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		08EDA4A024C487E900F9DDFC /* MoyaSugar */ = {
+			isa = PBXGroup;
+			children = (
+				08EDA4A124C487E900F9DDFC /* Parameters.swift */,
+				08EDA4A224C487E900F9DDFC /* SugarTargetType.swift */,
+				08EDA4A324C487E900F9DDFC /* Route.swift */,
+			);
+			path = MoyaSugar;
 			sourceTree = "<group>";
 		};
 		7C759B7654B854B73EED1F5B /* Pods */ = {
@@ -774,6 +827,7 @@
 		B07BFE3124544C3300D2D18F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				08EDA49224C485B000F9DDFC /* Network Layer */,
 				B00123E5245F01BD001B5481 /* Core */,
 				B077F9B8245D97E500FAFFB6 /* Protocols */,
 				B05FC1CB245D803E00F4C214 /* Reusable Layer */,
@@ -1020,9 +1074,9 @@
 			children = (
 				B0B3A35624126093007B2F21 /* AppDelegate.swift */,
 				B0B3A36724126097007B2F21 /* Info.plist */,
+				B0BEFC5F243A188B0020D377 /* GoogleService-Info.plist */,
 				B0BEFC74243A2A1B0020D377 /* LaunchScreen.storyboard */,
 				B0B3A35F24126093007B2F21 /* HabitTracker.xcdatamodeld */,
-				B0BEFC5F243A188B0020D377 /* GoogleService-Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -1441,7 +1495,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EDA4A524C487E900F9DDFC /* Parameters.swift in Sources */,
 				B0DDCB0A24556FBB004223DB /* Formatter.swift in Sources */,
+				08EDA4AB24C48B4E00F9DDFC /* Config.swift in Sources */,
 				B02110F124654F27005BF1E2 /* UIColor.swift in Sources */,
 				B07BFE4C24544C4A00D2D18F /* UIView.swift in Sources */,
 				B05FC1CF245D810100F4C214 /* StringBuilder.swift in Sources */,
@@ -1450,7 +1506,9 @@
 				B07BFE78245488CF00D2D18F /* BaseInputView.swift in Sources */,
 				B091F53F2483DD8E0040F0EE /* AchievementView.swift in Sources */,
 				B07BFE3024544B9800D2D18F /* Habit.swift in Sources */,
+				08EDA49924C487BC00F9DDFC /* NetworkProvider.swift in Sources */,
 				B0DDCB11245575DF004223DB /* ScheduleView.swift in Sources */,
+				08EDA4A824C487E900F9DDFC /* PromiseKitExtensions.swift in Sources */,
 				B07BFE5824544C4B00D2D18F /* UIViewController.swift in Sources */,
 				B07BFE5524544C4A00D2D18F /* UITableViewCell.swift in Sources */,
 				B05FC1CD245D805F00F4C214 /* ActionableLabel.swift in Sources */,
@@ -1470,7 +1528,9 @@
 				B07BFE6F245460AE00D2D18F /* Array.swift in Sources */,
 				B07BFD8224542C6800D2D18F /* Colors.swift in Sources */,
 				B07BFE7D24548BAE00D2D18F /* Closures.swift in Sources */,
+				08EDA49B24C487BC00F9DDFC /* NetworkError.swift in Sources */,
 				B077F9C7245D981200FAFFB6 /* MessageBanner.swift in Sources */,
+				08EDA4A624C487E900F9DDFC /* SugarTargetType.swift in Sources */,
 				B0DDCB0C24557459004223DB /* UITextField.swift in Sources */,
 				B08355842466E3E50043CB8A /* HabitIcon.swift in Sources */,
 				B0EC35E0248B937A0075FBA6 /* DateHeader.swift in Sources */,
@@ -1501,10 +1561,12 @@
 				B047295B245D71FD00F3458F /* OnboardingViewController.swift in Sources */,
 				B077F9C0245D97E500FAFFB6 /* InfoDisplayable.swift in Sources */,
 				B04DE763248D4A8800E2971D /* AskMarkViewController.swift in Sources */,
+				08EDA49824C487BC00F9DDFC /* NetworkType.swift in Sources */,
 				B047294C245C395000F3458F /* ColorsViewController.swift in Sources */,
 				B0DDCB172455A260004223DB /* DayButton.swift in Sources */,
 				B07BFD8324542C6800D2D18F /* Localizable.swift in Sources */,
 				B083559524672A1D0043CB8A /* DateCell.swift in Sources */,
+				084941BF24C6DB1000A0D9DE /* AuthToken.swift in Sources */,
 				B077F9C6245D981200FAFFB6 /* MessageManager.swift in Sources */,
 				B08355812466B9100043CB8A /* IconsViewController.swift in Sources */,
 				B07BFE63245459B200D2D18F /* StringAttribute.swift in Sources */,
@@ -1518,7 +1580,9 @@
 				B07BFE5224544C4A00D2D18F /* UICollectionView.swift in Sources */,
 				B077F9BE245D97E500FAFFB6 /* ErrorDisplayable.swift in Sources */,
 				B0DDCB0E24557538004223DB /* String.swift in Sources */,
+				08EDA4A724C487E900F9DDFC /* Route.swift in Sources */,
 				B07BFE5E24544C4B00D2D18F /* UINavigationController.swift in Sources */,
+				08EDA49C24C487BC00F9DDFC /* Network.swift in Sources */,
 				B077F9C2245D97E500FAFFB6 /* LoaderViewDisplayable.swift in Sources */,
 				B077F9AA245D947400FAFFB6 /* InputCodeItemView.swift in Sources */,
 				B07BFE5424544C4A00D2D18F /* UITableView.swift in Sources */,
