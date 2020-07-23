@@ -31,8 +31,4 @@ public extension Network {
         return promise
     }
     
-    private func putAdditionalHeaders(into headers: inout [String: String]?) {
-        
-    }
-    
 }
