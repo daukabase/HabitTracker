@@ -31,9 +31,7 @@ extension NetworkType {
     }
     
     public static var networkWithoutPlugins: Network<T> {
-        return Network(provider: networkProvider([
-            AuthEndpointAccessPlugin()
-        ]))
+        return Network(provider: networkProvider([]))
     }
     
     public static func endpointsClosure<T>() -> (T) -> Endpoint where T: SugarTargetType {
