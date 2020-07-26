@@ -20,8 +20,8 @@
 		08DA7D9F24C9BBD400CC52A9 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D9E24C9BBD400CC52A9 /* Collection.swift */; };
 		08DA7DA224C9BE1700CC52A9 /* NetworkRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7DA124C9BE1700CC52A9 /* NetworkRequestType.swift */; };
 		08DA7DA424C9C1CE00CC52A9 /* HError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7DA324C9C1CE00CC52A9 /* HError.swift */; };
-		08DA7DA624C9C22A00CC52A9 /* HErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7DA524C9C22A00CC52A9 /* HErrorCode.swift */; };
-		08DA7DA824C9C26400CC52A9 /* HErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7DA724C9C26400CC52A9 /* HErrorModel.swift */; };
+		08DA7DA624C9C22A00CC52A9 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7DA524C9C22A00CC52A9 /* ErrorCode.swift */; };
+		08DA7DA824C9C26400CC52A9 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7DA724C9C26400CC52A9 /* ErrorModel.swift */; };
 		08EDA49824C487BC00F9DDFC /* NetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA49324C487BC00F9DDFC /* NetworkType.swift */; };
 		08EDA49924C487BC00F9DDFC /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA49424C487BC00F9DDFC /* NetworkProvider.swift */; };
 		08EDA49B24C487BC00F9DDFC /* NetworkProvider+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA49624C487BC00F9DDFC /* NetworkProvider+Error.swift */; };
@@ -254,8 +254,8 @@
 		08DA7D9E24C9BBD400CC52A9 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		08DA7DA124C9BE1700CC52A9 /* NetworkRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestType.swift; sourceTree = "<group>"; };
 		08DA7DA324C9C1CE00CC52A9 /* HError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HError.swift; sourceTree = "<group>"; };
-		08DA7DA524C9C22A00CC52A9 /* HErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HErrorCode.swift; sourceTree = "<group>"; };
-		08DA7DA724C9C26400CC52A9 /* HErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HErrorModel.swift; sourceTree = "<group>"; };
+		08DA7DA524C9C22A00CC52A9 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		08DA7DA724C9C26400CC52A9 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		08EDA49324C487BC00F9DDFC /* NetworkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkType.swift; sourceTree = "<group>"; };
 		08EDA49424C487BC00F9DDFC /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		08EDA49624C487BC00F9DDFC /* NetworkProvider+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkProvider+Error.swift"; sourceTree = "<group>"; };
@@ -546,7 +546,7 @@
 			isa = PBXGroup;
 			children = (
 				08DA7D9624C88BD100CC52A9 /* Header.swift */,
-				08DA7DA524C9C22A00CC52A9 /* HErrorCode.swift */,
+				08DA7DA524C9C22A00CC52A9 /* ErrorCode.swift */,
 				08DA7DA124C9BE1700CC52A9 /* NetworkRequestType.swift */,
 			);
 			path = Types;
@@ -555,7 +555,7 @@
 		08DA7DA924C9C2B000CC52A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				08DA7DA724C9C26400CC52A9 /* HErrorModel.swift */,
+				08DA7DA724C9C26400CC52A9 /* ErrorModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1664,7 +1664,7 @@
 				B04DE769248D4C8300E2971D /* MarkAsDoneViewController.swift in Sources */,
 				B07BFE5A24544C4B00D2D18F /* UISwitch.swift in Sources */,
 				08DA7D8A24C853F200CC52A9 /* KeychainManager.swift in Sources */,
-				08DA7DA824C9C26400CC52A9 /* HErrorModel.swift in Sources */,
+				08DA7DA824C9C26400CC52A9 /* ErrorModel.swift in Sources */,
 				B0235DA4246606D200F91DF0 /* ColorButton.swift in Sources */,
 				B07BFE5624544C4B00D2D18F /* UIButton.swift in Sources */,
 				B047295B245D71FD00F3458F /* OnboardingViewController.swift in Sources */,
@@ -1676,7 +1676,7 @@
 				B07BFD8324542C6800D2D18F /* Localizable.swift in Sources */,
 				B083559524672A1D0043CB8A /* DateCell.swift in Sources */,
 				084941BF24C6DB1000A0D9DE /* AuthToken.swift in Sources */,
-				08DA7DA624C9C22A00CC52A9 /* HErrorCode.swift in Sources */,
+				08DA7DA624C9C22A00CC52A9 /* ErrorCode.swift in Sources */,
 				B077F9C6245D981200FAFFB6 /* MessageManager.swift in Sources */,
 				B08355812466B9100043CB8A /* IconsViewController.swift in Sources */,
 				B07BFE63245459B200D2D18F /* StringAttribute.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  HErrorModel.swift
+//  ErrorModel.swift
 //  HabitTracker
 //
 //  Created by Daulet Almagambetov on 7/23/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct HErrorModel: Codable {
+struct ErrorModel: Codable {
 
     private enum LocalizedFailure: String {
         case devMessage

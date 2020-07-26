@@ -23,7 +23,7 @@ public var hErrorDomain: String = {
 
 extension NSError {
     
-    class func networkError(_ error: Any?, code: HErrorCode) -> NSError {
+    class func networkError(_ error: Any?, code: ErrorCode) -> NSError {
         var userInfo: [String: Any]?
         if let error = error {
             userInfo = [NSLocalizedFailureReasonErrorKey: error]
@@ -33,7 +33,7 @@ extension NSError {
         return NSError(domain: hErrorDomain, code: code.intValue, userInfo: userInfo)
     }
     
-    class func networkError(_ error: HErrorModel?, code: HErrorCode) -> NSError {
+    class func networkError(_ error: ErrorModel?, code: ErrorCode) -> NSError {
         return NSError(domain: hErrorDomain,
                        code: code.intValue,
                        userInfo: error?.localizedUserInfo())
@@ -44,8 +44,8 @@ extension NSError {
 extension NetworkProvider {
     
     static func generateError(data: Data, statusCode: Int?) -> NSError {
-        let code: HErrorCode = statusCode.map { .statusCode($0) } ?? .data
-        let errorModel = try? JSONDecoder().decode(HErrorModel.self, from: data)
+        let code: ErrorCode = statusCode.map { .statusCode($0) } ?? .data
+        let errorModel = dataToObject(data: data, object: ErrorModel.self)
         
         return NSError.networkError(errorModel, code: code)
     }

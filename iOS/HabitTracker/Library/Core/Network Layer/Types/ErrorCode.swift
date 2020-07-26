@@ -1,5 +1,5 @@
 //
-//  HErrorCode.swift
+//  ErrorCode.swift
 //  HabitTracker
 //
 //  Created by Daulet Almagambetov on 7/23/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum HErrorCode: CustomStringConvertible {
+enum ErrorCode: CustomStringConvertible {
     
     case jsonMapping
     case statusCode(Int)
