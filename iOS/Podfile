@@ -22,7 +22,7 @@ end
 def interface
   pod 'SegementSlide', '~> 2.2.1'
   pod 'JTAppleCalendar'
-  pod 'YPImagePicker', `~> 4.2.1`
+  pod 'YPImagePicker', '~> 4.2.1'
 end
 
 target 'HabitTracker' do

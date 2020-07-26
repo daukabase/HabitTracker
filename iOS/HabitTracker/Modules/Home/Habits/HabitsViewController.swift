@@ -15,48 +15,41 @@ protocol ChallengeDelegate: class {
     func markAsDone()
 }
 
-extension HabitsViewController: ChallengeDelegate {
-    
-    func askMark() {
-        navigationController?.pushViewController(AskMarkViewController(), animated: true)
-    }
-    
-    func markAsDone() {
-        navigationController?.pushViewController(MarkAsDoneViewController(), animated: true)
-    }
-    
-}
-
 final class HabitsViewController: UIViewController {
     
+    // MARK: - Nested Types
     enum State {
         case habit(items: [Habit])
         case challenge(items: [Challenge])
     }
     
+    // MARK: - Properties
     var state: State = .habit(items: [])
     
-    lazy var addHabitButton: UIButton = {
-        let btn = UIButton(frame: .zero)
+    
+    // MARK: - Views
+    private lazy var addButton: RoundedShadowButton = {
+        let model = RoundedShadowButtonModel(shadowModel: .blueButton,
+                                             radius: 32,
+                                             backgroundColor: ColorName.uiBlue.color)
+        let button = RoundedShadowButton(model: model, frame: .zero)
         
-        btn.apply(style: .blue)
-        switch state {
-        case .challenge:
-            btn.title = "Add challenge  +"
-        case .habit:
-            btn.title = "Add habit  +"
-        }
+        button.setImage(Asset.add.image, for: .normal)
         
-        
-        return btn
+        return button
     }()
     
     @IBOutlet var tableView: UITableView!
     
+    // MARK: - UIViewController
+    override func loadView() {
+        super.loadView()
+        
+        view.addSubview(addButton)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(addHabitButton)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -64,7 +57,13 @@ final class HabitsViewController: UIViewController {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         
-        addHabitButton.addTarget(self, action: #selector(addHabitDidTap), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(addHabitDidTap), for: .touchUpInside)
+        
+        addButton.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-24)
+            make.size.equalTo(64)
+        }
         
         let controller = HabitViewController()
         navigationController?.pushViewController(controller, animated: true)
@@ -72,34 +71,29 @@ final class HabitsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        addHabitButton
-            .pin
-            .left(16)
-            .right(16)
-            .bottom(view.safeAreaInsets.bottom + 16)
-            .height(50)
-        
-        addHabitButton.roundCorners(.allCorners, radius: addHabitButton.frame.height / 2)
     }
     
+    // MARK: - Actions
     @objc
-    func addHabitDidTap() {
+    private func addHabitDidTap() {
         let controller = HabitDetailsViewController()
         controller.modalPresentationStyle = .fullScreen
         
-        DispatchQueue.main.async { [weak self] in
-            self?.navigationController?.pushViewController(controller, animated: true)
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     
 }
 
+
 extension HabitsViewController: SegementSlideContentScrollViewDelegate {
-    
+    // MARK: - SegementSlideContentScrollViewDelegate
 }
 
 extension HabitsViewController: UITableViewDelegate {
     
+    // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch state {
         case let .habit(items):
@@ -134,6 +128,7 @@ extension HabitsViewController: UITableViewDelegate {
 
 extension HabitsViewController: UITableViewDataSource {
     
+    // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -148,8 +143,23 @@ extension HabitsViewController: UITableViewDataSource {
     
 }
 
+extension HabitsViewController: ChallengeDelegate {
+    
+    // MARK: - ChallengeDelegate
+    func askMark() {
+        navigationController?.pushViewController(AskMarkViewController(), animated: true)
+    }
+    
+    func markAsDone() {
+        navigationController?.pushViewController(MarkAsDoneViewController(), animated: true)
+    }
+    
+}
+
+
 extension HabitsViewController.State {
     
+    // MARK: - State Properties
     var cellType: UITableViewCell.Type {
         switch self {
         case .habit:

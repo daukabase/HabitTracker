@@ -147,6 +147,14 @@ extension UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
+    
+    func applyDropShadow(with model: ShadowModel) {
+        applyDropShadow(color: UIColor(cgColor: model.color),
+                        opacity: model.opacity,
+                        offset: model.offset,
+                        radius: model.radius,
+                        scale: model.scale)
+    }
 
     /// Adds this view as a subview to a given view uses constraints
     func attach(to view: UIView, topOffset: CGFloat = 0,

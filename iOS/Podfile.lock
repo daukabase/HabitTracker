@@ -98,7 +98,7 @@ DEPENDENCIES:
   - PromisesSwift
   - SegementSlide (~> 2.2.1)
   - SnapKit
-  - YPImagePicker
+  - YPImagePicker (~> 4.2.1)
 
 SPEC REPOS:
   trunk:
@@ -155,6 +155,6 @@ SPEC CHECKSUMS:
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   YPImagePicker: 3b88ca0c50134af2856c48c481572c98a8b8b65b
 
-PODFILE CHECKSUM: d2be5d4767993f4ff1858588b529697552446810
+PODFILE CHECKSUM: afe125ecb11dd0284a54b47bb5e153d98abc97fa
 
 COCOAPODS: 1.9.3
