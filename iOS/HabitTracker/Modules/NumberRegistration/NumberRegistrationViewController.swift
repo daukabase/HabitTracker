@@ -6,31 +6,33 @@
 //  Copyright © 2020 Daulet. All rights reserved.
 //
 
+import SkyFloatingLabelTextField
 import UIKit
 
 final class NumberRegistrationViewController: UIViewController, Maskable {
     
-    @IBOutlet var textField: UITextField!
-    @IBOutlet var continueButton: UIButton!
-    @IBOutlet var checkImageView: UIImageView!
+    @IBOutlet private var emailTextField: InputTextField!
+    @IBOutlet private var passwordTextField: InputTextField!
+    @IBOutlet private var continueButton: UIButton!
+//    @IBOutlet var checkImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBackButton(style: .orange)
-        textField.delegate = self
-        textField.keyboardType = .numberPad
-        textField.placeholder = phoneNumberMask
+//        textField.delegate = self
+//        textField.keyboardType = .numberPad
+//        textField.placeholder = phoneNumberMask
         
         continueButton.apply(style: .blue)
         continueButton.isEnabled = false
-        checkImageView.alpha = 0
+//        checkImageView.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        textField.becomeFirstResponder()
+        emailTextField.becomeFirstResponder()
     }
     
 }
@@ -69,14 +71,14 @@ extension NumberRegistrationViewController {
             return
         }
         
-        controller.model = NumberConfirmationViewModel(phoneNumber: textField.text ?? "")
+        controller.model = NumberConfirmationViewModel(phoneNumber: emailTextField.text ?? "")
         
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func updateUI(for fulfilled: Bool) {
         UIView.animate(withDuration: 0.1) {
-            self.checkImageView.alpha = fulfilled ? 1 : 0
+//            self.checkImageView.alpha = fulfilled ? 1 : 0
             self.continueButton.isEnabled = fulfilled
             self.continueButton.layoutIfNeeded()
         }

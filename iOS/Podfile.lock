@@ -76,6 +76,7 @@ PODS:
   - PromisesObjC (1.2.9)
   - PryntTrimmerView (4.0.0)
   - SegementSlide (2.2.4)
+  - SkyFloatingLabelTextField (3.8.0)
   - SnapKit (5.0.1)
   - SteviaLayout (4.7.3)
   - YPImagePicker (4.2.1):
@@ -92,6 +93,7 @@ DEPENDENCIES:
   - Kingfisher (~> 5.7.1)
   - PinLayout (~> 1.8.7)
   - SegementSlide (~> 2.2.1)
+  - SkyFloatingLabelTextField (from `https://github.com/Skyscanner/SkyFloatingLabelTextField.git`, branch `master`)
   - SnapKit
   - YPImagePicker
 
@@ -121,6 +123,16 @@ SPEC REPOS:
     - SteviaLayout
     - YPImagePicker
 
+EXTERNAL SOURCES:
+  SkyFloatingLabelTextField:
+    :branch: master
+    :git: https://github.com/Skyscanner/SkyFloatingLabelTextField.git
+
+CHECKOUT OPTIONS:
+  SkyFloatingLabelTextField:
+    :commit: dd82b264eb99125033d4a248b4c4b97685d289f7
+    :git: https://github.com/Skyscanner/SkyFloatingLabelTextField.git
+
 SPEC CHECKSUMS:
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
@@ -142,10 +154,11 @@ SPEC CHECKSUMS:
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   PryntTrimmerView: 67e67573ffd4c073f1308effa66aefd0cfa667a0
   SegementSlide: 934778f53ad95d93bc0471a6d1c6def9eb9490a7
+  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   YPImagePicker: 3b88ca0c50134af2856c48c481572c98a8b8b65b
 
-PODFILE CHECKSUM: 10933431e019020c9f97a4ff609d2ad79739df71
+PODFILE CHECKSUM: 9d441942362e2c60f753a4a52bb5bb84b8bdbc9c
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.1

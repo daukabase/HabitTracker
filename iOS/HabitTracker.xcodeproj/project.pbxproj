@@ -11,6 +11,7 @@
 		129A557E79D6F2FFAD8BBB22 /* libPods-HabitTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4C3880A19CE2D3742A93D5 /* libPods-HabitTrackerTests.a */; };
 		44D9D3DA49AB7A79CDD31836 /* libPods-HabitTrackerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E789095EBD2B8954D583742 /* libPods-HabitTrackerUITests.a */; };
 		4EA764B9A5A082FEE3189F50 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */; };
+		7AB21B6624CDA04E0073EB95 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB21B6524CDA04E0073EB95 /* InputTextField.swift */; };
 		B00123E8245F01CF001B5481 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */; };
 		B00123EA245F01F0001B5481 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E9245F01F0001B5481 /* Optional.swift */; };
 		B02110ED24653ECF005BF1E2 /* DoneHabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02110EC24653ECF005BF1E2 /* DoneHabitCell.swift */; };
@@ -225,6 +226,7 @@
 		531362444435295FEE47C9DA /* Pods-HabitTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-HabitTrackerTests/Pods-HabitTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		57AD6CE43C7FEDC077F26D19 /* Pods-HabitTrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-HabitTrackerUITests/Pods-HabitTrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AB21B6524CDA04E0073EB95 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		A090C701CF70DB8F4C7F5564 /* Pods-HabitTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-HabitTrackerTests/Pods-HabitTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		B00123E9245F01F0001B5481 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
@@ -461,6 +463,14 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		7AB21B6424CDA0290073EB95 /* InputTextField */ = {
+			isa = PBXGroup;
+			children = (
+				7AB21B6524CDA04E0073EB95 /* InputTextField.swift */,
+			);
+			path = InputTextField;
+			sourceTree = "<group>";
+		};
 		7C759B7654B854B73EED1F5B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,6 +616,7 @@
 		B05FC1CB245D803E00F4C214 /* Reusable Layer */ = {
 			isa = PBXGroup;
 			children = (
+				7AB21B6424CDA0290073EB95 /* InputTextField */,
 				B077F9C3245D981200FAFFB6 /* MessageBanner */,
 				B077F9AC245D948100FAFFB6 /* InputCode */,
 				B05FC1CC245D805F00F4C214 /* ActionableLabel.swift */,
@@ -1481,6 +1492,7 @@
 				B02110F52465A0FC005BF1E2 /* Challenge.swift in Sources */,
 				B07BFE6C24545F6E00D2D18F /* UIRectCorner.swift in Sources */,
 				B0A6B31824992B0E0079AF72 /* AddImageCell.swift in Sources */,
+				7AB21B6624CDA04E0073EB95 /* InputTextField.swift in Sources */,
 				B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */,
 				B07BFE2E24544B8B00D2D18F /* Days.swift in Sources */,
 				B077F9BF245D97E500FAFFB6 /* Maskable.swift in Sources */,
