@@ -10,7 +10,6 @@ import UIKit
 
 final class AddImageCell: UICollectionViewCell {
     
-    
     @IBOutlet var containerView: UIView!
     
     override func awakeFromNib() {

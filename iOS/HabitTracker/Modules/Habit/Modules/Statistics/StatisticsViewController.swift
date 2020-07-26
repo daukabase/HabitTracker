@@ -7,21 +7,18 @@
 //
 
 import UIKit
-import Charts
 
 final class StatisticsViewController: UIViewController {
 
-    var lineChartEntry = [ChartDataEntry]()
-    
     @IBOutlet var containerView: UIView!
-    @IBOutlet var chartView: LineChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.clipsToBounds = false
+        
         containerView.layer.backgroundColor = UIColor.clear.cgColor
         containerView.applyDropShadow()
-        view.clipsToBounds = false
         containerView.clipsToBounds = false
     }
     
