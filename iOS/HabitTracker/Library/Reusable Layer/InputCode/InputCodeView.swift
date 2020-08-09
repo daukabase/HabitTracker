@@ -184,15 +184,6 @@ extension InputCodeView: UIKeyInput {
 // swiftlint:disable implicitly_unwrapped_optional
 extension InputCodeView: UITextInputTraits {
     
-    var autocorrectionType: UITextAutocorrectionType {
-        get {
-            return .yes
-        }
-        set {
-            assertionFailure()
-        }
-    }
-    
     var keyboardType: UIKeyboardType {
         get {
             return .numberPad
