@@ -19,6 +19,7 @@ private enum ViewLoadableConstants {
     static let loadingIndicatorIdentifier = "loading_indicator"
 }
 
+// TODO: rename to LoadingView
 final class LodingView: UIView {
     
     var isTransparentBackground: Bool = false {

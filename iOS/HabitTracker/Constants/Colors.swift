@@ -9,8 +9,7 @@
   public typealias Color = UIColor
 #endif
 
-// swiftlint:disable superfluous_disable_command
-// swiftlint:disable file_length
+// swiftlint:disable superfluous_disable_command file_length implicit_return
 
 // MARK: - Colors
 
@@ -46,6 +45,9 @@ public struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#fe805c"></span>
   /// Alpha: 100% <br/> (0xfe805cff)
   public static let uiOrange = ColorName(rgbaValue: 0xfe805cff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ff5c5c"></span>
+  /// Alpha: 100% <br/> (0xff5c5cff)
+  public static let uiRed = ColorName(rgbaValue: 0xff5c5cff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
   /// Alpha: 100% <br/> (0xffffffff)
   public static let uiWhite = ColorName(rgbaValue: 0xffffffff)
@@ -54,18 +56,35 @@ public struct ColorName {
 
 // MARK: - Implementation Details
 
-// swiftlint:disable operator_usage_whitespace
 internal extension Color {
   convenience init(rgbaValue: UInt32) {
-    let red   = CGFloat((rgbaValue >> 24) & 0xff) / 255.0
-    let green = CGFloat((rgbaValue >> 16) & 0xff) / 255.0
-    let blue  = CGFloat((rgbaValue >>  8) & 0xff) / 255.0
-    let alpha = CGFloat((rgbaValue      ) & 0xff) / 255.0
-
-    self.init(red: red, green: green, blue: blue, alpha: alpha)
+    let components = RGBAComponents(rgbaValue: rgbaValue).normalized
+    self.init(red: components[0], green: components[1], blue: components[2], alpha: components[3])
   }
 }
-// swiftlint:enable operator_usage_whitespace
+
+private struct RGBAComponents {
+  let rgbaValue: UInt32
+
+  private var shifts: [UInt32] {
+    [
+      rgbaValue >> 24, // red
+      rgbaValue >> 16, // green
+      rgbaValue >> 8,  // blue
+      rgbaValue        // alpha
+    ]
+  }
+
+  private var components: [CGFloat] {
+    shifts.map {
+      CGFloat($0 & 0xff)
+    }
+  }
+
+  var normalized: [CGFloat] {
+    components.map { $0 / 255.0 }
+  }
+}
 
 public extension Color {
   convenience init(named color: ColorName) {

@@ -51,6 +51,7 @@ final class InputCodeView: UIView {
     init() {
         super.init(frame: .zero)
         configureUI()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -177,11 +178,29 @@ extension InputCodeView: UIKeyInput {
     
 }
 
+//extension InputCodeView: UITextInput {
+//    
+//    func text(in range: UITextRange) -> String? {
+//        
+//    }
+//    
+//    
+//}
+
 // MARK: - UITextInputTraits
 
 // swiftlint:disable unused_setter_value
 // swiftlint:disable implicitly_unwrapped_optional
 extension InputCodeView: UITextInputTraits {
+    
+    var autocorrectionType: UITextAutocorrectionType {
+        get {
+            return .yes
+        }
+        set {
+            assertionFailure()
+        }
+    }
     
     var keyboardType: UIKeyboardType {
         get {

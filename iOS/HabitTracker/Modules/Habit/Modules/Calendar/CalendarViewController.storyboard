@@ -291,6 +291,8 @@
                     <connections>
                         <outlet property="calendarView" destination="Pfc-ib-WCE" id="YPx-p8-KN4"/>
                         <outlet property="containerView" destination="bkF-vH-5Qr" id="jcC-Hh-bvs"/>
+                        <outlet property="doneDescriptionView" destination="zUT-ES-u0H" id="ps4-2T-qel"/>
+                        <outlet property="notDoneDescriptionView" destination="h76-kV-GFK" id="YFu-Wd-Gvg"/>
                         <outletCollection property="backgroundedView" destination="bkF-vH-5Qr" collectionClass="NSMutableArray" id="J3q-Sq-OeN"/>
                         <outletCollection property="backgroundedView" destination="PTn-aJ-xVx" collectionClass="NSMutableArray" id="PBB-Dl-QmX"/>
                         <outletCollection property="roundViews" destination="zUT-ES-u0H" collectionClass="NSMutableArray" id="ntg-Ld-ncr"/>

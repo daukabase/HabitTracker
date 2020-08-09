@@ -10,13 +10,17 @@ import UIKit
 
 class MarkAsDoneViewController: UIViewController {
 
-    @IBOutlet var sendButton: UIButton!
+    @IBOutlet var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sendButton.round()
-        sendButton.apply(style: .blue)
+        addButton.round()
+        addButton.applyDropShadow(color: ColorName.uiBlue.color,
+                               opacity: 1,
+                               offset: CGSize(width: 0, height: 4),
+                               radius: 20,
+                               scale: true)
         setBackButton(style: .orange)
         title = "Mark As Done"
     }

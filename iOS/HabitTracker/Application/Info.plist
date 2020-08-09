@@ -27,6 +27,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Пожалуйста, предоставьте доступ к вашей камере</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Пожалуйста, предоставьте доступ к вашему микрофону</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Пожалуйста, предоставьте доступ к вашей галерее</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Black.otf

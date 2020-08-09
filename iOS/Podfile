@@ -9,10 +9,12 @@ def common_pods
   pod 'IQKeyboardManagerSwift', ' ~> 6.3.0'
   pod 'JTAppleCalendar'
   pod 'Charts', '~> 3.5.0'
+  pod 'YPImagePicker'
   # Google API
   pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.14.0'
   pod 'Firebase/Analytics'
+  pod 'SkyFloatingLabelTextField', :git => 'https://github.com/Skyscanner/SkyFloatingLabelTextField.git', :branch => 'master'
 end
 
 

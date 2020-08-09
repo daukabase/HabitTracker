@@ -11,15 +11,22 @@ import JTAppleCalendar
 
 final class CalendarViewController: UIViewController {
     
+    // MARK: - Properties
     private var dateFormatter: DateFormatter = Formatter.MMMyyyy
     private var notDoneDates = Set<Date>()
     private var doneDates = Set<Date>()
+    private var themeColor = UIColor.clear
+    private var bufferColorSetup: Closure<UIColor>?
     
+    // MARK: - Views
     @IBOutlet var containerView: UIView!
+    @IBOutlet var doneDescriptionView: UIView!
+    @IBOutlet var notDoneDescriptionView: UIView!
     @IBOutlet var calendarView: JTACMonthView!
     @IBOutlet var roundViews: [UIView]!
     @IBOutlet var backgroundedView: [UIView]!
     
+    // MARK: - Superview
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,8 +44,27 @@ final class CalendarViewController: UIViewController {
         
         roundViews.forEach { $0.round() }
         applyMocks()
+        bufferColorSetup?(themeColor)
     }
     
+    // MARK: - Internal Methods
+    func setup(theme color: UIColor) {
+        self.themeColor = color
+        
+        guard isViewLoaded else {
+            bufferColorSetup = setup(theme:)
+            return
+        }
+        
+        self.doneDescriptionView.backgroundColor = color
+        self.notDoneDescriptionView.backgroundColor = color.withAlphaComponent(0.15)
+        
+        DispatchQueue.main.async {
+            self.calendarView.reloadData()
+        }
+    }
+    
+    // MARK: - Private Methods
     private func applyMocks() {
         let startDate1 = "2020-05-26T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
         let endDate1 = "2020-06-02T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
@@ -91,6 +117,7 @@ final class CalendarViewController: UIViewController {
 
 extension CalendarViewController: JTACMonthViewDelegate {
     
+    // MARK: - JTACMonthViewDelegate
     func calendar(_ calendar: JTACMonthView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTACDayCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: DateCell.identifier, for: indexPath) as! DateCell
         
@@ -131,6 +158,7 @@ extension CalendarViewController: JTACMonthViewDelegate {
 
 extension CalendarViewController: JTACMonthViewDataSource {
     
+    // MARK: - JTACMonthViewDataSource
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
         let startDate = "2020-05-06T15:33:37.471+0600".date(with: .iso8601)!
         let endDate = Date()
@@ -147,6 +175,7 @@ extension CalendarViewController: JTACMonthViewDataSource {
 
 private extension CalendarViewController {
     
+    // MARK: - Private Configurations
     func configure(cell: JTACDayCell?, cellState: CellState) {
         guard let cell = cell as? DateCell else {
             return
@@ -168,7 +197,7 @@ private extension CalendarViewController {
             state = .default(isCurrentMonth: cellState.dateBelongsTo == .thisMonth)
         }
         
-        cell.set(state: state)
+        cell.set(state: state, with: themeColor)
         cell.set(text: cellState.text)
         cell.layoutIfNeeded()
     }

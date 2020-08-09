@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MarkAsDoneViewController" customModule="HabitTracker" customModuleProvider="target">
             <connections>
-                <outlet property="sendButton" destination="9uJ-LY-FY3" id="wb8-1K-Lcq"/>
+                <outlet property="addButton" destination="O2b-65-hcx" id="6MM-bh-Jo1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,21 +25,22 @@
                         <constraint firstAttribute="height" constant="667" id="oMx-sH-UP1"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uJ-LY-FY3">
-                    <rect key="frame" x="32" y="814" width="350" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2b-65-hcx">
+                    <rect key="frame" x="318" y="766" width="64" height="64"/>
+                    <color key="backgroundColor" red="0.27450980390000002" green="0.26274509800000001" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="tt3-J4-C6c"/>
+                        <constraint firstAttribute="width" constant="64" id="iLH-GI-vlS"/>
+                        <constraint firstAttribute="height" constant="64" id="r4W-Gu-8aV"/>
                     </constraints>
-                    <state key="normal" title="Send"/>
+                    <state key="normal" image="add"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.97647058823529409" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="9uJ-LY-FY3" secondAttribute="bottom" constant="32" id="J9b-GJ-xr9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="O2b-65-hcx" secondAttribute="bottom" constant="32" id="Cp3-BK-IfK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O2b-65-hcx" secondAttribute="trailing" constant="32" id="JIP-bz-EPV"/>
                 <constraint firstItem="nPD-3d-nXz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RTW-0L-T7Z"/>
-                <constraint firstItem="9uJ-LY-FY3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="S7A-dS-fat"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nPD-3d-nXz" secondAttribute="trailing" id="Try-qI-UCO"/>
-                <constraint firstAttribute="trailing" secondItem="9uJ-LY-FY3" secondAttribute="trailing" constant="32" id="ZmY-wu-lmH"/>
                 <constraint firstItem="nPD-3d-nXz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="wJW-BL-GlE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -48,5 +49,6 @@
     </objects>
     <resources>
         <image name="Mark as Done" width="1125" height="2001"/>
+        <image name="add" width="23" height="23"/>
     </resources>
 </document>

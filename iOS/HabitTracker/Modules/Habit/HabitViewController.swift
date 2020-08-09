@@ -10,12 +10,7 @@ import UIKit
 
 final class HabitViewController: UIViewController {
 
-    var habit: Habit? {
-        didSet {
-            self.title = habit?.title
-        }
-    }
-    
+    // MARK: - Controllers
     private lazy var calendarViewController: CalendarViewController = {
         guard let controller = UIStoryboard.instantiate(ofType: CalendarViewController.self) else {
             fatalError()
@@ -36,6 +31,7 @@ final class HabitViewController: UIViewController {
         return controller
     }()
     
+    // MARK: - Views
     private lazy var imageView: UIImageView = {
         let image = UIImageView(frame: .zero)
         
@@ -52,10 +48,25 @@ final class HabitViewController: UIViewController {
         return view
     }()
     
+    private lazy var habitTitleView: HabitTitleView = {
+        let view = HabitTitleView(frame: .zero)
+        
+        return view
+    }()
+    
     @IBOutlet private var stackView: UIStackView!
     
+    // MARK: - Superview
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.titleView = habitTitleView
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: Asset.more.image,
+            style: .done,
+            target: self,
+            action: #selector(didTapRightBarButton(sender:))
+        )
 
         setBackButton(style: .dark)
         addChild(calendarViewController)
@@ -81,6 +92,22 @@ final class HabitViewController: UIViewController {
         ]
         
     }
+    
+    // MARK: - Internal Methods
+    func setup(habit: Habit) {
+        habitTitleView.setup(title: habit.title,
+                             image: habit.image,
+                             color: habit.color)
+        calendarViewController.setup(theme: habit.color)
+    }
+    
+    
+    // MARK: - Private Actions
+    @objc
+    private func didTapRightBarButton(sender: UIBarButtonItem) {
+        
+    }
+    
     
     
 }

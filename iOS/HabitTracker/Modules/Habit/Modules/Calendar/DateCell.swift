@@ -19,7 +19,7 @@ class DateCell: JTACDayCell {
         case `default`(isCurrentMonth: Bool)
     }
     
-    private let colorRed = Color(hexString: "#FF3367")
+    private var color = UIColor(hexString: "#FF3367")
     private var radius: CGFloat {
         return selectedView.frame.height / 2
     }
@@ -48,7 +48,8 @@ class DateCell: JTACDayCell {
         selectedSingleView.layer.cornerRadius = selectedSingleView.frame.height / 2
     }
     
-    func set(state: State) {
+    func set(state: State, with color: UIColor) {
+        self.color = color
         self.state = state
     }
     
@@ -61,7 +62,7 @@ class DateCell: JTACDayCell {
     }
     
     private func set(range position: SelectionRangePosition) {
-        set(selected: colorRed)
+        set(selected: color)
         
         selectedView.isHidden = position == .full
         selectedSingleView.isHidden = position != .full
@@ -93,7 +94,7 @@ class DateCell: JTACDayCell {
             dateLabel.isHidden = false
             doneImageView.isHidden = true
             todayIndicatorView.isHidden = true
-            set(selected: colorRed.withAlphaComponent(0.15))
+            set(selected: color.withAlphaComponent(0.15))
         case let .selected(position, isDone):
             set(range: position)
 
@@ -101,7 +102,7 @@ class DateCell: JTACDayCell {
             dateLabel.isHidden = isDone
             doneImageView.isHidden = !isDone
             todayIndicatorView.isHidden = true
-            set(selected: colorRed)
+            set(selected: color)
         case let .today(position):
             set(range: position)
             

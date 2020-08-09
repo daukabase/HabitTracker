@@ -7,23 +7,43 @@
 //
 
 import UIKit
+import SnapKit
 
-class AskMarkViewController: UIViewController {
+final class AskMarkViewController: UIViewController {
 
-    @IBOutlet var addButton: UIButton!
+    @IBOutlet var sendButton: UIButton!
+    @IBOutlet var textView: UITextView!
+    @IBOutlet var textContainerView: UIView!
+    @IBOutlet var progressBar: UIProgressView!
+    @IBOutlet var iconImageView: UIImageView!
+    @IBOutlet var challengeTitleLabel: UILabel!
+    @IBOutlet var membersImagesView: UIView!
+    @IBOutlet var progresLabel: UILabel!
+    @IBOutlet var addedImagesView: UIView!
+    
+    @IBOutlet var backgroundedViews: [UIView]!
+    
+    lazy var selectedImagesController: UIViewController = {
+        guard let controller = UIStoryboard.instantiate(ofType: SelectImagesViewController.self) else {
+            fatalError()
+        }
+        
+        return controller
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        addButton.round()
-        addButton.applyDropShadow(color: ColorName.uiBlue.color,
-                               opacity: 1,
-                               offset: CGSize(width: 0, height: 4),
-                               radius: 20,
-                               scale: true)
-        setBackButton(style: .orange)
-        title = "Ask Mark"
+        
+        commonInit()
+        setupColors()
     }
 
+    private func setupColors() {
+        backgroundedViews.forEach { (view) in
+            view.backgroundColor = .clear
+        }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -41,6 +61,36 @@ class AskMarkViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
         
+    }
+    
+    private func commonInit() {
+        title = "Ask Mark"
+        
+        sendButton.round()
+        sendButton.apply(style: .blue)
+        setBackButton(style: .orange)
+        
+        textContainerView.layer.backgroundColor = UIColor.clear.cgColor
+        textContainerView.applyDropShadow()
+        
+        textView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        textView.cornerRadius = 10
+        textView.masksToBounds = true
+        
+        setupViews()
+        setupLayout()
+    }
+    
+    private func setupViews() {
+        addedImagesView.translatesAutoresizingMaskIntoConstraints = true
+        addedImagesView.addSubview(selectedImagesController.view)
+        addChild(selectedImagesController)
+    }
+    
+    private func setupLayout() {
+        selectedImagesController.view.snp.makeConstraints { (make) in
+            make.left.top.right.bottom.equalToSuperview()
+        }
     }
     
 }

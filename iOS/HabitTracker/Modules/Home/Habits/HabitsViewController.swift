@@ -116,6 +116,9 @@ extension HabitsViewController: UITableViewDelegate {
         case let .habit(items):
             if let cell = cell as? DoneHabitCell {
                 cell.configure(model: items[indexPath.row])
+                cell.onProgress = { isSelected in
+                    Notifications.shared.scheduleNotification(notificationType: "Test")
+                }
             }
         case let .challenge(items):
             if let cell = cell as? ChallengeCell {
@@ -134,13 +137,11 @@ extension HabitsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        
         let controller = HabitViewController()
         
         if case let HabitsViewController.State.habit(items) = state {
-            controller.habit = items[indexPath.row]
+            controller.setup(habit: items[indexPath.row])
         }
-        
         
         navigationController?.pushViewController(controller, animated: true)
     }
