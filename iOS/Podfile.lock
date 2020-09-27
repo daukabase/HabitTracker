@@ -98,7 +98,7 @@ DEPENDENCIES:
   - PromisesSwift
   - SegementSlide (~> 2.2.1)
   - SnapKit
-  - YPImagePicker
+  - YPImagePicker (~> 4.2.1)
 
 SPEC REPOS:
   trunk:
@@ -130,8 +130,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
-  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
+  Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
   Firebase: ed042590caa0029392257529a8003c25ee82bc18
   FirebaseAnalytics: 5fa308e1b13f838d0f6dc74719ac2a72e8c5afc4
   FirebaseCore: 687b8e6a0a4337b898a6326d68254c2f80c143af
@@ -155,6 +155,6 @@ SPEC CHECKSUMS:
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   YPImagePicker: 3b88ca0c50134af2856c48c481572c98a8b8b65b
 
-PODFILE CHECKSUM: d2be5d4767993f4ff1858588b529697552446810
+PODFILE CHECKSUM: 2329a809c218df23eacae3e271635241f3e92bf3
 
 COCOAPODS: 1.9.3
