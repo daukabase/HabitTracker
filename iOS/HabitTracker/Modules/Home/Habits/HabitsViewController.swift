@@ -115,9 +115,11 @@ extension HabitsViewController: UITableViewDelegate {
         switch state {
         case let .habit(items):
             if let cell = cell as? DoneHabitCell {
-                cell.configure(model: items[indexPath.row])
+                let habit = items[indexPath.row]
+                cell.configure(model: habit)
                 cell.onProgress = { isSelected in
-                    Notifications.shared.scheduleNotification(notificationType: "Test")
+                    let dh = DoneHabit(id: UUID().uuidString, title: habit.title, notes: habit.notes, icon: habit.image, date: Date.distantFuture)
+                    Notifications.shared.scheduleNotification(doneHabit: dh)
                 }
             }
         case let .challenge(items):
