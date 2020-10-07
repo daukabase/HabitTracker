@@ -17,9 +17,9 @@
 		08CB490C252E1E3600BDB5DD /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB490B252E1E3600BDB5DD /* Checkpoint.swift */; };
 		08CB4911252E1E3F00BDB5DD /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4910252E1E3F00BDB5DD /* AchievementModel.swift */; };
 		08CB4976252E202F00BDB5DD /* HabitStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4975252E202F00BDB5DD /* HabitStorage.swift */; };
-		08CB4987252E256000BDB5DD /* HabitStorage+HabitStorageAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4986252E256000BDB5DD /* HabitStorage+HabitStorageAbstract.swift */; };
-		08CB498C252E258200BDB5DD /* HabitStorage+CheckpointStorageAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB498B252E258200BDB5DD /* HabitStorage+CheckpointStorageAbstract.swift */; };
-		08CB4991252E25A000BDB5DD /* HabitStorage+AchievementStorageAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4990252E25A000BDB5DD /* HabitStorage+AchievementStorageAbstract.swift */; };
+		08CB4987252E256000BDB5DD /* HabitStorage+Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4986252E256000BDB5DD /* HabitStorage+Habit.swift */; };
+		08CB498C252E258200BDB5DD /* HabitStorage+Checkpoint in Sources */ = {isa = PBXBuildFile; fileRef = 08CB498B252E258200BDB5DD /* HabitStorage+Checkpoint */; };
+		08CB4991252E25A000BDB5DD /* HabitStorage+Achievement in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4990252E25A000BDB5DD /* HabitStorage+Achievement */; };
 		08DA7D8A24C853F200CC52A9 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8924C853F200CC52A9 /* KeychainManager.swift */; };
 		08DA7D8C24C88B4400CC52A9 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8B24C88B4400CC52A9 /* URLRequest.swift */; };
 		08DA7D8F24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8E24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift */; };
@@ -260,9 +260,9 @@
 		08CB490B252E1E3600BDB5DD /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
 		08CB4910252E1E3F00BDB5DD /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		08CB4975252E202F00BDB5DD /* HabitStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStorage.swift; sourceTree = "<group>"; };
-		08CB4986252E256000BDB5DD /* HabitStorage+HabitStorageAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HabitStorage+HabitStorageAbstract.swift"; sourceTree = "<group>"; };
-		08CB498B252E258200BDB5DD /* HabitStorage+CheckpointStorageAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HabitStorage+CheckpointStorageAbstract.swift"; sourceTree = "<group>"; };
-		08CB4990252E25A000BDB5DD /* HabitStorage+AchievementStorageAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HabitStorage+AchievementStorageAbstract.swift"; sourceTree = "<group>"; };
+		08CB4986252E256000BDB5DD /* HabitStorage+Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HabitStorage+Habit.swift"; sourceTree = "<group>"; };
+		08CB498B252E258200BDB5DD /* HabitStorage+Checkpoint */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HabitStorage+Checkpoint"; sourceTree = "<group>"; };
+		08CB4990252E25A000BDB5DD /* HabitStorage+Achievement */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HabitStorage+Achievement"; sourceTree = "<group>"; };
 		08DA7D8924C853F200CC52A9 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		08DA7D8B24C88B4400CC52A9 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		08DA7D8E24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpointAccessPlugin.swift; sourceTree = "<group>"; };
@@ -557,9 +557,9 @@
 			isa = PBXGroup;
 			children = (
 				08CB4975252E202F00BDB5DD /* HabitStorage.swift */,
-				08CB4986252E256000BDB5DD /* HabitStorage+HabitStorageAbstract.swift */,
-				08CB498B252E258200BDB5DD /* HabitStorage+CheckpointStorageAbstract.swift */,
-				08CB4990252E25A000BDB5DD /* HabitStorage+AchievementStorageAbstract.swift */,
+				08CB4986252E256000BDB5DD /* HabitStorage+Habit.swift */,
+				08CB498B252E258200BDB5DD /* HabitStorage+Checkpoint */,
+				08CB4990252E25A000BDB5DD /* HabitStorage+Achievement */,
 			);
 			path = HabitStorage;
 			sourceTree = "<group>";
@@ -1665,7 +1665,7 @@
 				B07BFE2E24544B8B00D2D18F /* Days.swift in Sources */,
 				B077F9BF245D97E500FAFFB6 /* Maskable.swift in Sources */,
 				08DA7D8C24C88B4400CC52A9 /* URLRequest.swift in Sources */,
-				08CB4987252E256000BDB5DD /* HabitStorage+HabitStorageAbstract.swift in Sources */,
+				08CB4987252E256000BDB5DD /* HabitStorage+Habit.swift in Sources */,
 				08CB4904252E1E2E00BDB5DD /* HabitModel.swift in Sources */,
 				B07BFE5D24544C4B00D2D18F /* UIApplication.swift in Sources */,
 				B083558D246717350043CB8A /* HabitViewController.swift in Sources */,
@@ -1676,7 +1676,7 @@
 				B0AFA6CC24B35CF800B5DA45 /* HabitTitleView.swift in Sources */,
 				B07BFE712454612C00D2D18F /* HabitCell.swift in Sources */,
 				B08355892466E41A0043CB8A /* IconCell.swift in Sources */,
-				08CB4991252E25A000BDB5DD /* HabitStorage+AchievementStorageAbstract.swift in Sources */,
+				08CB4991252E25A000BDB5DD /* HabitStorage+Achievement in Sources */,
 				B083559A246748640043CB8A /* HabitBanner.swift in Sources */,
 				B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */,
 				B0DDCB012455680E004223DB /* DurationView.swift in Sources */,
@@ -1699,7 +1699,7 @@
 				08DA7DA624C9C22A00CC52A9 /* ErrorCode.swift in Sources */,
 				B077F9C6245D981200FAFFB6 /* MessageManager.swift in Sources */,
 				B08355812466B9100043CB8A /* IconsViewController.swift in Sources */,
-				08CB498C252E258200BDB5DD /* HabitStorage+CheckpointStorageAbstract.swift in Sources */,
+				08CB498C252E258200BDB5DD /* HabitStorage+Checkpoint in Sources */,
 				B07BFE63245459B200D2D18F /* StringAttribute.swift in Sources */,
 				B03495F6245EDC6B00C11283 /* NumberRegistrationViewController.swift in Sources */,
 				B077F9B3245D94B500FAFFB6 /* NumberConfirmationViewController.swift in Sources */,
