@@ -13,6 +13,13 @@
 		08C695BE24CDF00300BDBEA2 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */; };
 		08C695C124CDF02000BDBEA2 /* RoundedShadowButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */; };
 		08C695C424CDF07900BDBEA2 /* CAShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695C324CDF07900BDBEA2 /* CAShapeLayer.swift */; };
+		08CB4904252E1E2E00BDB5DD /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4903252E1E2E00BDB5DD /* HabitModel.swift */; };
+		08CB490C252E1E3600BDB5DD /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB490B252E1E3600BDB5DD /* Checkpoint.swift */; };
+		08CB4911252E1E3F00BDB5DD /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4910252E1E3F00BDB5DD /* AchievementModel.swift */; };
+		08CB4976252E202F00BDB5DD /* HabitStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4975252E202F00BDB5DD /* HabitStorage.swift */; };
+		08CB4987252E256000BDB5DD /* HabitStorage+HabitStorageAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4986252E256000BDB5DD /* HabitStorage+HabitStorageAbstract.swift */; };
+		08CB498C252E258200BDB5DD /* HabitStorage+CheckpointStorageAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB498B252E258200BDB5DD /* HabitStorage+CheckpointStorageAbstract.swift */; };
+		08CB4991252E25A000BDB5DD /* HabitStorage+AchievementStorageAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4990252E25A000BDB5DD /* HabitStorage+AchievementStorageAbstract.swift */; };
 		08DA7D8A24C853F200CC52A9 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8924C853F200CC52A9 /* KeychainManager.swift */; };
 		08DA7D8C24C88B4400CC52A9 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8B24C88B4400CC52A9 /* URLRequest.swift */; };
 		08DA7D8F24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8E24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift */; };
@@ -249,6 +256,13 @@
 		08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButtonModel.swift; sourceTree = "<group>"; };
 		08C695C324CDF07900BDBEA2 /* CAShapeLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAShapeLayer.swift; sourceTree = "<group>"; };
+		08CB4903252E1E2E00BDB5DD /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
+		08CB490B252E1E3600BDB5DD /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
+		08CB4910252E1E3F00BDB5DD /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
+		08CB4975252E202F00BDB5DD /* HabitStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStorage.swift; sourceTree = "<group>"; };
+		08CB4986252E256000BDB5DD /* HabitStorage+HabitStorageAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HabitStorage+HabitStorageAbstract.swift"; sourceTree = "<group>"; };
+		08CB498B252E258200BDB5DD /* HabitStorage+CheckpointStorageAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HabitStorage+CheckpointStorageAbstract.swift"; sourceTree = "<group>"; };
+		08CB4990252E25A000BDB5DD /* HabitStorage+AchievementStorageAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HabitStorage+AchievementStorageAbstract.swift"; sourceTree = "<group>"; };
 		08DA7D8924C853F200CC52A9 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		08DA7D8B24C88B4400CC52A9 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		08DA7D8E24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpointAccessPlugin.swift; sourceTree = "<group>"; };
@@ -518,6 +532,36 @@
 				08C695C324CDF07900BDBEA2 /* CAShapeLayer.swift */,
 			);
 			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
+		08CB4901252E1E1800BDB5DD /* HabitStorage */ = {
+			isa = PBXGroup;
+			children = (
+				08CB4902252E1E2100BDB5DD /* Models */,
+				08CB4982252E255000BDB5DD /* HabitStorage */,
+			);
+			path = HabitStorage;
+			sourceTree = "<group>";
+		};
+		08CB4902252E1E2100BDB5DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08CB4903252E1E2E00BDB5DD /* HabitModel.swift */,
+				08CB490B252E1E3600BDB5DD /* Checkpoint.swift */,
+				08CB4910252E1E3F00BDB5DD /* AchievementModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		08CB4982252E255000BDB5DD /* HabitStorage */ = {
+			isa = PBXGroup;
+			children = (
+				08CB4975252E202F00BDB5DD /* HabitStorage.swift */,
+				08CB4986252E256000BDB5DD /* HabitStorage+HabitStorageAbstract.swift */,
+				08CB498B252E258200BDB5DD /* HabitStorage+CheckpointStorageAbstract.swift */,
+				08CB4990252E25A000BDB5DD /* HabitStorage+AchievementStorageAbstract.swift */,
+			);
+			path = HabitStorage;
 			sourceTree = "<group>";
 		};
 		08DA7D8D24C88B6500CC52A9 /* Plugins */ = {
@@ -938,6 +982,7 @@
 		B07BFE3124544C3300D2D18F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				08CB4901252E1E1800BDB5DD /* HabitStorage */,
 				B00123E5245F01BD001B5481 /* Core */,
 				B077F9B8245D97E500FAFFB6 /* Protocols */,
 				B05FC1CB245D803E00F4C214 /* Reusable Layer */,
@@ -1572,6 +1617,7 @@
 				B077F9AB245D947400FAFFB6 /* InputCodeView.swift in Sources */,
 				08C695BC24CDE55700BDBEA2 /* ShadowModel.swift in Sources */,
 				B07BFE78245488CF00D2D18F /* BaseInputView.swift in Sources */,
+				08CB490C252E1E3600BDB5DD /* Checkpoint.swift in Sources */,
 				B091F53F2483DD8E0040F0EE /* AchievementView.swift in Sources */,
 				B07BFE3024544B9800D2D18F /* Habit.swift in Sources */,
 				08EDA49924C487BC00F9DDFC /* NetworkProvider.swift in Sources */,
@@ -1589,6 +1635,7 @@
 				B0A6B31624992A960079AF72 /* SelectImageCell.swift in Sources */,
 				B091F53C2483DC7B0040F0EE /* AchievementsViewController.swift in Sources */,
 				08C695C424CDF07900BDBEA2 /* CAShapeLayer.swift in Sources */,
+				08CB4976252E202F00BDB5DD /* HabitStorage.swift in Sources */,
 				B07BFE752454877300D2D18F /* HabitDetailsViewController.swift in Sources */,
 				B07BFE6124544C4B00D2D18F /* UIStoryboard.swift in Sources */,
 				B02110F324659C6D005BF1E2 /* ChallengeCell.swift in Sources */,
@@ -1597,6 +1644,7 @@
 				B07BFE6F245460AE00D2D18F /* Array.swift in Sources */,
 				B07BFD8224542C6800D2D18F /* Colors.swift in Sources */,
 				08DA7D9D24C9BB4B00CC52A9 /* SharedMethods.swift in Sources */,
+				08CB4911252E1E3F00BDB5DD /* AchievementModel.swift in Sources */,
 				B07BFE7D24548BAE00D2D18F /* Closures.swift in Sources */,
 				08EDA49B24C487BC00F9DDFC /* NetworkProvider+Error.swift in Sources */,
 				08DA7DA224C9BE1700CC52A9 /* NetworkRequestType.swift in Sources */,
@@ -1617,6 +1665,8 @@
 				B07BFE2E24544B8B00D2D18F /* Days.swift in Sources */,
 				B077F9BF245D97E500FAFFB6 /* Maskable.swift in Sources */,
 				08DA7D8C24C88B4400CC52A9 /* URLRequest.swift in Sources */,
+				08CB4987252E256000BDB5DD /* HabitStorage+HabitStorageAbstract.swift in Sources */,
+				08CB4904252E1E2E00BDB5DD /* HabitModel.swift in Sources */,
 				B07BFE5D24544C4B00D2D18F /* UIApplication.swift in Sources */,
 				B083558D246717350043CB8A /* HabitViewController.swift in Sources */,
 				B08355872466E4080043CB8A /* IconCellViewModel.swift in Sources */,
@@ -1626,6 +1676,7 @@
 				B0AFA6CC24B35CF800B5DA45 /* HabitTitleView.swift in Sources */,
 				B07BFE712454612C00D2D18F /* HabitCell.swift in Sources */,
 				B08355892466E41A0043CB8A /* IconCell.swift in Sources */,
+				08CB4991252E25A000BDB5DD /* HabitStorage+AchievementStorageAbstract.swift in Sources */,
 				B083559A246748640043CB8A /* HabitBanner.swift in Sources */,
 				B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */,
 				B0DDCB012455680E004223DB /* DurationView.swift in Sources */,
@@ -1648,6 +1699,7 @@
 				08DA7DA624C9C22A00CC52A9 /* ErrorCode.swift in Sources */,
 				B077F9C6245D981200FAFFB6 /* MessageManager.swift in Sources */,
 				B08355812466B9100043CB8A /* IconsViewController.swift in Sources */,
+				08CB498C252E258200BDB5DD /* HabitStorage+CheckpointStorageAbstract.swift in Sources */,
 				B07BFE63245459B200D2D18F /* StringAttribute.swift in Sources */,
 				B03495F6245EDC6B00C11283 /* NumberRegistrationViewController.swift in Sources */,
 				B077F9B3245D94B500FAFFB6 /* NumberConfirmationViewController.swift in Sources */,

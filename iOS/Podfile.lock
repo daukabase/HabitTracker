@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.2)
+  - CoreStore (7.3.0)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
@@ -86,6 +87,7 @@ PODS:
     - SteviaLayout (~> 4.7.3)
 
 DEPENDENCIES:
+  - CoreStore (~> 7.2)
   - Crashlytics (~> 3.14.0)
   - Fabric (~> 1.10.2)
   - Firebase/Analytics
@@ -103,6 +105,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CoreStore
     - Crashlytics
     - Fabric
     - Firebase
@@ -130,6 +133,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  CoreStore: d9c0ab3095dea26504bf76e6d8a042a4cb071e35
   Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
   Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
@@ -155,6 +159,6 @@ SPEC CHECKSUMS:
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
 
-PODFILE CHECKSUM: 34c91ead44793eb0e734b20d09e20b0e91f499d0
+PODFILE CHECKSUM: 8f852660cc735fd4c552a9d1f3a200c607fb598e
 
 COCOAPODS: 1.9.3

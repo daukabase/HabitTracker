@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias RResult<T> = Result<T, Error>
+
 public extension Result {
     
     var success: Success? {

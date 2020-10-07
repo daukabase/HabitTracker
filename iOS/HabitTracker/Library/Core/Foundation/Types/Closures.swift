@@ -8,10 +8,10 @@
 
 import Foundation
 
-typealias Closure<T> = (T) -> Void
+public typealias Closure<T> = (T) -> Void
 
-typealias EmptyClosure = () -> Void
+public typealias EmptyClosure = () -> Void
 
-typealias BoolClosure = (Bool) -> Void
+public typealias BoolClosure = (Bool) -> Void
 
-typealias ErrorClosure = (Error) -> Void
+public typealias ErrorClosure = (Error) -> Void
