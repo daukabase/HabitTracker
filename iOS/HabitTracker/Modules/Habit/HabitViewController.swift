@@ -19,17 +19,9 @@ final class HabitViewController: UIViewController {
         return controller
     }()
     
-    private lazy var statisticsViewController: StatisticsViewController = {
-        let controller = StatisticsViewController()
-        
-        return controller
-    }()
+    private lazy var statisticsViewController = StatisticsViewController()
     
-    private lazy var achievementsViewController: AchievementsViewController = {
-        let controller = AchievementsViewController()
-        
-        return controller
-    }()
+    private lazy var achievementsViewController = AchievementsViewController()
     
     // MARK: - Views
     private lazy var imageView: UIImageView = {
@@ -48,11 +40,7 @@ final class HabitViewController: UIViewController {
         return view
     }()
     
-    private lazy var habitTitleView: HabitTitleView = {
-        let view = HabitTitleView(frame: .zero)
-        
-        return view
-    }()
+    private lazy var habitTitleView = HabitTitleView(frame: .zero)
     
     @IBOutlet private var stackView: UIStackView!
     
@@ -70,13 +58,11 @@ final class HabitViewController: UIViewController {
 
         setBackButton(style: .dark)
         addChild(calendarViewController)
-        addChild(statisticsViewController)
         addChild(achievementsViewController)
      
         stackView.addArrangedSubview(calendarViewController.view)
         stackView.addArrangedSubview(habitBanner)
         stackView.addArrangedSubview(achievementsViewController.view)
-        stackView.addArrangedSubview(statisticsViewController.view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,13 +87,10 @@ final class HabitViewController: UIViewController {
         calendarViewController.setup(theme: habit.color)
     }
     
-    
     // MARK: - Private Actions
     @objc
     private func didTapRightBarButton(sender: UIBarButtonItem) {
         
     }
-    
-    
     
 }

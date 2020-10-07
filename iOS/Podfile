@@ -1,6 +1,8 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+inhibit_all_warnings!
+
 def common_pods
   pod 'PinLayout', '~> 1.8.7'
   pod 'SnapKit'
@@ -22,7 +24,7 @@ end
 def interface
   pod 'SegementSlide', '~> 2.2.1'
   pod 'JTAppleCalendar'
-  pod 'YPImagePicker', '~> 4.2.1'
+  pod 'YPImagePicker'
 end
 
 target 'HabitTracker' do

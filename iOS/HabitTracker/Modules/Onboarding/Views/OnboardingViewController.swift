@@ -55,6 +55,7 @@ final class OnboardingViewController: UIViewController {
                                           description: L10n.Onboarding.Track.description),
                               to: stackView)
         case .auth:
+            UserDefaultsStorage.isOnboardingCompleted = true
             setupPresentationAuth(info: .init(image: Asset.onboarding1.image,
                                               title: L10n.Onboarding.Auth.title,
                                               description: L10n.Onboarding.Auth.description),
@@ -180,7 +181,6 @@ final class OnboardingViewController: UIViewController {
     
     @objc
     private func didTapSignUpButton() {
-        UserDefaultsStorage.isOnboardingCompleted = true
         routeToSignUp()
     }
     

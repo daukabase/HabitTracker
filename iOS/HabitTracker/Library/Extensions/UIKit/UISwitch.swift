@@ -12,13 +12,13 @@ extension UISwitch {
 
     // MARK: - Nested types
 
-    enum Style {
+    enum SwitchStyle {
         case `default`
     }
 
     // MARK: - Internal methods
 
-    func apply(style: Style = .default) {
+    func apply(style: SwitchStyle = .default) {
         switch style {
         case .default:
             applyDefaultStyle()
