@@ -32,4 +32,17 @@ final class HabitDTO: CoreStoreObject {
     @Field.Stored("durationDays")
     var durationDays: Int = 0
     
+    @Field.Stored("frequency")
+    var frequency: String = ""
+    
+    func mutate(using habit: HabitModel) {
+        self.id = habit.id
+        self.colorHex = habit.colorHex
+        self.durationDays = habit.durationDays
+        self.frequency = try! habit.frequence.toDTO()
+        self.icon = habit.icon.rawValue
+        self.notes = habit.notes
+        self.startDate = habit.startDate
+    }
+    
 }

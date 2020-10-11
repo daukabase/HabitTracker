@@ -9,8 +9,12 @@
 import Foundation
 import UIKit
 
-enum HabitIcon: Int, CaseIterable {
-    case running = 0, meditation, sleep, ride, apple, dance, drink, eat, read, swim, walk, workout
+enum HabitIcon: String, CaseIterable {
+    case running, meditation, sleep, ride, apple, dance, drink, eat, read, swim, walk, workout
+    
+    init(rawValue: String, of defaultValue: HabitIcon = .meditation) {
+        self = HabitIcon.init(rawValue: rawValue) ?? defaultValue
+    }
 }
 
 extension HabitIcon {

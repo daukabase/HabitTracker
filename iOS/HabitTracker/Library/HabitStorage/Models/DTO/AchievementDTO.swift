@@ -6,12 +6,14 @@
 //  Copyright © 2020 Daulet. All rights reserved.
 //
 
-import Foundation
+import CoreStore
 
-class AchievementModel {
+final class AchievementDTO: CoreStoreObject {
     
-    init() {
-        
-    }
+}
+
+final class AchievementModel {
+    
+    
     
 }

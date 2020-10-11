@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setupNotifications() {
-        
         Notifications.shared.notificationRequest()
     }
     

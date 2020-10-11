@@ -9,13 +9,13 @@
 
 import UIKit
 
-protocol Achievement {
+protocol AbstractAchievement {
     var title: NSAttributedString? { get set }
     var description: String { get set }
     var image: UIImage? { get set }
 }
 
-struct GoalAchievement: Achievement {
+struct GoalAchievement: AbstractAchievement {
     
     var title: NSAttributedString?
     var description: String
@@ -45,7 +45,7 @@ struct GoalAchievement: Achievement {
     
 }
 
-struct CommonAchievement: Achievement {
+struct CommonAchievement: AbstractAchievement {
     
     var title: NSAttributedString?
     var description: String
@@ -103,7 +103,7 @@ final class AchievementView: UIView {
         descriptionLabel.textColor = ColorName.textSecondary.color
     }
     
-    func configure(model: Achievement) {
+    func configure(model: AbstractAchievement) {
         self.imageView.image = model.image
         self.titleLabel.attributedText = model.title
         self.descriptionLabel.text = model.description

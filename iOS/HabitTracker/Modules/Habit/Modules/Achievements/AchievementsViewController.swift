@@ -10,7 +10,7 @@ import UIKit
 
 final class AchievementsViewController: UIViewController {
 
-    private var achievements: [Achievement] = [
+    private var achievements: [AbstractAchievement] = [
         CommonAchievement(numberOfDays: 2, description: "Current Streak", image: Asset.order.image),
         CommonAchievement(numberOfDays: 3, description: "Longest Streak", image: Asset.trophy.image),
         CommonAchievement(numberOfDays: 5, description: "Total done", image: Asset.guard.image),
@@ -28,7 +28,7 @@ final class AchievementsViewController: UIViewController {
         stackView.clipsToBounds = false
     }
     
-    private func add(achievement: Achievement) {
+    private func add(achievement: AbstractAchievement) {
         let stackToProcess: UIStackView
         
         if let subStackView = stackView.arrangedSubviews.last as? UIStackView, subStackView.arrangedSubviews.count < 2 {

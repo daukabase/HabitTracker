@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0810654725336C1B0002B7F6 /* DTOConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810654625336C1B0002B7F6 /* DTOConvertible.swift */; };
+		0810655425337AD50002B7F6 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810655325337AD50002B7F6 /* Frequency.swift */; };
+		0810655B25337D310002B7F6 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810655A25337D310002B7F6 /* HabitModel.swift */; };
+		08106563253384E20002B7F6 /* CheckpointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08106562253384E20002B7F6 /* CheckpointModel.swift */; };
 		084941BF24C6DB1000A0D9DE /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084941BE24C6DB1000A0D9DE /* AuthToken.swift */; };
 		0875B6E424BB263200F2982D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0875B6E324BB263200F2982D /* Notifications.swift */; };
 		08C695BC24CDE55700BDBEA2 /* ShadowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */; };
 		08C695BE24CDF00300BDBEA2 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */; };
 		08C695C124CDF02000BDBEA2 /* RoundedShadowButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */; };
 		08C695C424CDF07900BDBEA2 /* CAShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695C324CDF07900BDBEA2 /* CAShapeLayer.swift */; };
-		08CB4904252E1E2E00BDB5DD /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4903252E1E2E00BDB5DD /* HabitModel.swift */; };
-		08CB490C252E1E3600BDB5DD /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB490B252E1E3600BDB5DD /* Checkpoint.swift */; };
-		08CB4911252E1E3F00BDB5DD /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4910252E1E3F00BDB5DD /* AchievementModel.swift */; };
+		08CB4904252E1E2E00BDB5DD /* HabitDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4903252E1E2E00BDB5DD /* HabitDTO.swift */; };
+		08CB490C252E1E3600BDB5DD /* CheckpointDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB490B252E1E3600BDB5DD /* CheckpointDTO.swift */; };
+		08CB4911252E1E3F00BDB5DD /* AchievementDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4910252E1E3F00BDB5DD /* AchievementDTO.swift */; };
 		08CB4976252E202F00BDB5DD /* HabitStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4975252E202F00BDB5DD /* HabitStorage.swift */; };
 		08CB4987252E256000BDB5DD /* HabitStorage+Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4986252E256000BDB5DD /* HabitStorage+Habit.swift */; };
-		08CB498C252E258200BDB5DD /* HabitStorage+Checkpoint in Sources */ = {isa = PBXBuildFile; fileRef = 08CB498B252E258200BDB5DD /* HabitStorage+Checkpoint */; };
-		08CB4991252E25A000BDB5DD /* HabitStorage+Achievement in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4990252E25A000BDB5DD /* HabitStorage+Achievement */; };
+		08CB499F252E264800BDB5DD /* HabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB499E252E264800BDB5DD /* HabitRepository.swift */; };
+		08CB49A4252E265A00BDB5DD /* CheckpointsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB49A3252E265A00BDB5DD /* CheckpointsRepository.swift */; };
+		08CB49A9252E266B00BDB5DD /* AchievementsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB49A8252E266B00BDB5DD /* AchievementsRepository.swift */; };
+		08CB4A872532F44F00BDB5DD /* V1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4A862532F44F00BDB5DD /* V1.swift */; };
+		08CB4B40253300DC00BDB5DD /* HabitStorage+Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4B3E253300DC00BDB5DD /* HabitStorage+Checkpoint.swift */; };
+		08CB4B41253300DC00BDB5DD /* HabitStorage+Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4B3F253300DC00BDB5DD /* HabitStorage+Achievement.swift */; };
 		08DA7D8A24C853F200CC52A9 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8924C853F200CC52A9 /* KeychainManager.swift */; };
 		08DA7D8C24C88B4400CC52A9 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8B24C88B4400CC52A9 /* URLRequest.swift */; };
 		08DA7D8F24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8E24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift */; };
@@ -216,7 +224,6 @@
 		B0B3A37C24126097007B2F21 /* HabitTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */; };
 		B0BB451A2486B7FF00D248BE /* AchievementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0BB45192486B7FF00D248BE /* AchievementView.xib */; };
 		B0BEFC60243A188B0020D377 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0BEFC5F243A188B0020D377 /* GoogleService-Info.plist */; };
-		B0BEFC62243A1A1E0020D377 /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A35F24126093007B2F21 /* HabitTracker.xcdatamodeld */; };
 		B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEFC6E243A29B40020D377 /* HomeViewController.swift */; };
 		B0BEFC76243A2A1B0020D377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BEFC74243A2A1B0020D377 /* LaunchScreen.storyboard */; };
 		B0DDCB012455680E004223DB /* DurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDCB002455680E004223DB /* DurationView.swift */; };
@@ -250,19 +257,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0810654625336C1B0002B7F6 /* DTOConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOConvertible.swift; sourceTree = "<group>"; };
+		0810655325337AD50002B7F6 /* Frequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
+		0810655A25337D310002B7F6 /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
+		08106562253384E20002B7F6 /* CheckpointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointModel.swift; sourceTree = "<group>"; };
 		084941BE24C6DB1000A0D9DE /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		0875B6E324BB263200F2982D /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowModel.swift; sourceTree = "<group>"; };
 		08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButtonModel.swift; sourceTree = "<group>"; };
 		08C695C324CDF07900BDBEA2 /* CAShapeLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAShapeLayer.swift; sourceTree = "<group>"; };
-		08CB4903252E1E2E00BDB5DD /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
-		08CB490B252E1E3600BDB5DD /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
-		08CB4910252E1E3F00BDB5DD /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
+		08CB4903252E1E2E00BDB5DD /* HabitDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDTO.swift; sourceTree = "<group>"; };
+		08CB490B252E1E3600BDB5DD /* CheckpointDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointDTO.swift; sourceTree = "<group>"; };
+		08CB4910252E1E3F00BDB5DD /* AchievementDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDTO.swift; sourceTree = "<group>"; };
 		08CB4975252E202F00BDB5DD /* HabitStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStorage.swift; sourceTree = "<group>"; };
 		08CB4986252E256000BDB5DD /* HabitStorage+Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HabitStorage+Habit.swift"; sourceTree = "<group>"; };
-		08CB498B252E258200BDB5DD /* HabitStorage+Checkpoint */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HabitStorage+Checkpoint"; sourceTree = "<group>"; };
-		08CB4990252E25A000BDB5DD /* HabitStorage+Achievement */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HabitStorage+Achievement"; sourceTree = "<group>"; };
+		08CB499E252E264800BDB5DD /* HabitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRepository.swift; sourceTree = "<group>"; };
+		08CB49A3252E265A00BDB5DD /* CheckpointsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointsRepository.swift; sourceTree = "<group>"; };
+		08CB49A8252E266B00BDB5DD /* AchievementsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsRepository.swift; sourceTree = "<group>"; };
+		08CB4A862532F44F00BDB5DD /* V1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V1.swift; sourceTree = "<group>"; };
+		08CB4B3E253300DC00BDB5DD /* HabitStorage+Checkpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HabitStorage+Checkpoint.swift"; sourceTree = "<group>"; };
+		08CB4B3F253300DC00BDB5DD /* HabitStorage+Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HabitStorage+Achievement.swift"; sourceTree = "<group>"; };
 		08DA7D8924C853F200CC52A9 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		08DA7D8B24C88B4400CC52A9 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		08DA7D8E24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpointAccessPlugin.swift; sourceTree = "<group>"; };
@@ -457,7 +472,6 @@
 		B0AFA6CD24B35D0D00B5DA45 /* HabitTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTitleView.xib; sourceTree = "<group>"; };
 		B0B3A35324126092007B2F21 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B3A35624126093007B2F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0B3A36024126093007B2F21 /* HabitTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitTracker.xcdatamodel; sourceTree = "<group>"; };
 		B0B3A36724126097007B2F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0B3A36C24126097007B2F21 /* HabitTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B3A37024126097007B2F21 /* HabitTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerTests.swift; sourceTree = "<group>"; };
@@ -509,6 +523,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0810655825337D0A0002B7F6 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				08CB4903252E1E2E00BDB5DD /* HabitDTO.swift */,
+				08CB490B252E1E3600BDB5DD /* CheckpointDTO.swift */,
+				08CB4910252E1E3F00BDB5DD /* AchievementDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		0810655925337D170002B7F6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0810655A25337D310002B7F6 /* HabitModel.swift */,
+				08106562253384E20002B7F6 /* CheckpointModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		0875B6E224BB262000F2982D /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,8 +570,12 @@
 		08CB4901252E1E1800BDB5DD /* HabitStorage */ = {
 			isa = PBXGroup;
 			children = (
+				08CB4A852532F44100BDB5DD /* Versions */,
 				08CB4902252E1E2100BDB5DD /* Models */,
 				08CB4982252E255000BDB5DD /* HabitStorage */,
+				08CB499E252E264800BDB5DD /* HabitRepository.swift */,
+				08CB49A3252E265A00BDB5DD /* CheckpointsRepository.swift */,
+				08CB49A8252E266B00BDB5DD /* AchievementsRepository.swift */,
 			);
 			path = HabitStorage;
 			sourceTree = "<group>";
@@ -546,9 +583,8 @@
 		08CB4902252E1E2100BDB5DD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				08CB4903252E1E2E00BDB5DD /* HabitModel.swift */,
-				08CB490B252E1E3600BDB5DD /* Checkpoint.swift */,
-				08CB4910252E1E3F00BDB5DD /* AchievementModel.swift */,
+				0810655925337D170002B7F6 /* Entities */,
+				0810655825337D0A0002B7F6 /* DTO */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -557,11 +593,19 @@
 			isa = PBXGroup;
 			children = (
 				08CB4975252E202F00BDB5DD /* HabitStorage.swift */,
+				08CB4B3F253300DC00BDB5DD /* HabitStorage+Achievement.swift */,
+				08CB4B3E253300DC00BDB5DD /* HabitStorage+Checkpoint.swift */,
 				08CB4986252E256000BDB5DD /* HabitStorage+Habit.swift */,
-				08CB498B252E258200BDB5DD /* HabitStorage+Checkpoint */,
-				08CB4990252E25A000BDB5DD /* HabitStorage+Achievement */,
 			);
 			path = HabitStorage;
+			sourceTree = "<group>";
+		};
+		08CB4A852532F44100BDB5DD /* Versions */ = {
+			isa = PBXGroup;
+			children = (
+				08CB4A862532F44F00BDB5DD /* V1.swift */,
+			);
+			path = Versions;
 			sourceTree = "<group>";
 		};
 		08DA7D8D24C88B6500CC52A9 /* Plugins */ = {
@@ -846,6 +890,7 @@
 				B077F9BA245D97E500FAFFB6 /* Maskable.swift */,
 				B077F9BB245D97E500FAFFB6 /* InfoDisplayable.swift */,
 				B077F9BD245D97E500FAFFB6 /* LoaderViewDisplayable.swift */,
+				0810654625336C1B0002B7F6 /* DTOConvertible.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -973,6 +1018,7 @@
 			isa = PBXGroup;
 			children = (
 				B07BFE2F24544B9800D2D18F /* Habit.swift */,
+				0810655325337AD50002B7F6 /* Frequency.swift */,
 				B02110F42465A0FC005BF1E2 /* Challenge.swift */,
 				08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */,
 			);
@@ -1233,7 +1279,6 @@
 				B0B3A36724126097007B2F21 /* Info.plist */,
 				B0BEFC5F243A188B0020D377 /* GoogleService-Info.plist */,
 				B0BEFC74243A2A1B0020D377 /* LaunchScreen.storyboard */,
-				B0B3A35F24126093007B2F21 /* HabitTracker.xcdatamodeld */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -1609,16 +1654,17 @@
 				08DA7D9424C88BB600CC52A9 /* PluginType.swift in Sources */,
 				08EDA4A524C487E900F9DDFC /* Parameters.swift in Sources */,
 				B0DDCB0A24556FBB004223DB /* Formatter.swift in Sources */,
+				0810654725336C1B0002B7F6 /* DTOConvertible.swift in Sources */,
 				08EDA4AB24C48B4E00F9DDFC /* Config.swift in Sources */,
 				B02110F124654F27005BF1E2 /* UIColor.swift in Sources */,
 				B07BFE4C24544C4A00D2D18F /* UIView.swift in Sources */,
 				B05FC1CF245D810100F4C214 /* StringBuilder.swift in Sources */,
-				B0BEFC62243A1A1E0020D377 /* HabitTracker.xcdatamodeld in Sources */,
 				B077F9AB245D947400FAFFB6 /* InputCodeView.swift in Sources */,
 				08C695BC24CDE55700BDBEA2 /* ShadowModel.swift in Sources */,
 				B07BFE78245488CF00D2D18F /* BaseInputView.swift in Sources */,
-				08CB490C252E1E3600BDB5DD /* Checkpoint.swift in Sources */,
+				08CB490C252E1E3600BDB5DD /* CheckpointDTO.swift in Sources */,
 				B091F53F2483DD8E0040F0EE /* AchievementView.swift in Sources */,
+				08CB49A4252E265A00BDB5DD /* CheckpointsRepository.swift in Sources */,
 				B07BFE3024544B9800D2D18F /* Habit.swift in Sources */,
 				08EDA49924C487BC00F9DDFC /* NetworkProvider.swift in Sources */,
 				B0DDCB11245575DF004223DB /* ScheduleView.swift in Sources */,
@@ -1641,10 +1687,13 @@
 				B02110F324659C6D005BF1E2 /* ChallengeCell.swift in Sources */,
 				0875B6E424BB263200F2982D /* Notifications.swift in Sources */,
 				B07BFE5724544C4B00D2D18F /* UIImage.swift in Sources */,
+				08CB49A9252E266B00BDB5DD /* AchievementsRepository.swift in Sources */,
 				B07BFE6F245460AE00D2D18F /* Array.swift in Sources */,
 				B07BFD8224542C6800D2D18F /* Colors.swift in Sources */,
+				08CB499F252E264800BDB5DD /* HabitRepository.swift in Sources */,
 				08DA7D9D24C9BB4B00CC52A9 /* SharedMethods.swift in Sources */,
-				08CB4911252E1E3F00BDB5DD /* AchievementModel.swift in Sources */,
+				08CB4911252E1E3F00BDB5DD /* AchievementDTO.swift in Sources */,
+				08CB4B41253300DC00BDB5DD /* HabitStorage+Achievement.swift in Sources */,
 				B07BFE7D24548BAE00D2D18F /* Closures.swift in Sources */,
 				08EDA49B24C487BC00F9DDFC /* NetworkProvider+Error.swift in Sources */,
 				08DA7DA224C9BE1700CC52A9 /* NetworkRequestType.swift in Sources */,
@@ -1653,6 +1702,7 @@
 				B0DDCB0C24557459004223DB /* UITextField.swift in Sources */,
 				B08355842466E3E50043CB8A /* HabitIcon.swift in Sources */,
 				B0EC35E0248B937A0075FBA6 /* DateHeader.swift in Sources */,
+				08CB4B40253300DC00BDB5DD /* HabitStorage+Checkpoint.swift in Sources */,
 				B0835591246727550043CB8A /* CalendarViewController.swift in Sources */,
 				B08355A5246759030043CB8A /* StatisticsViewController.swift in Sources */,
 				B07BFD8624543B7E00D2D18F /* HabitsViewController.swift in Sources */,
@@ -1666,7 +1716,7 @@
 				B077F9BF245D97E500FAFFB6 /* Maskable.swift in Sources */,
 				08DA7D8C24C88B4400CC52A9 /* URLRequest.swift in Sources */,
 				08CB4987252E256000BDB5DD /* HabitStorage+Habit.swift in Sources */,
-				08CB4904252E1E2E00BDB5DD /* HabitModel.swift in Sources */,
+				08CB4904252E1E2E00BDB5DD /* HabitDTO.swift in Sources */,
 				B07BFE5D24544C4B00D2D18F /* UIApplication.swift in Sources */,
 				B083558D246717350043CB8A /* HabitViewController.swift in Sources */,
 				B08355872466E4080043CB8A /* IconCellViewModel.swift in Sources */,
@@ -1676,7 +1726,6 @@
 				B0AFA6CC24B35CF800B5DA45 /* HabitTitleView.swift in Sources */,
 				B07BFE712454612C00D2D18F /* HabitCell.swift in Sources */,
 				B08355892466E41A0043CB8A /* IconCell.swift in Sources */,
-				08CB4991252E25A000BDB5DD /* HabitStorage+Achievement in Sources */,
 				B083559A246748640043CB8A /* HabitBanner.swift in Sources */,
 				B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */,
 				B0DDCB012455680E004223DB /* DurationView.swift in Sources */,
@@ -1687,6 +1736,7 @@
 				08DA7DA824C9C26400CC52A9 /* ErrorModel.swift in Sources */,
 				B0235DA4246606D200F91DF0 /* ColorButton.swift in Sources */,
 				B07BFE5624544C4B00D2D18F /* UIButton.swift in Sources */,
+				0810655425337AD50002B7F6 /* Frequency.swift in Sources */,
 				B047295B245D71FD00F3458F /* OnboardingViewController.swift in Sources */,
 				B077F9C0245D97E500FAFFB6 /* InfoDisplayable.swift in Sources */,
 				B04DE763248D4A8800E2971D /* AskMarkViewController.swift in Sources */,
@@ -1699,8 +1749,8 @@
 				08DA7DA624C9C22A00CC52A9 /* ErrorCode.swift in Sources */,
 				B077F9C6245D981200FAFFB6 /* MessageManager.swift in Sources */,
 				B08355812466B9100043CB8A /* IconsViewController.swift in Sources */,
-				08CB498C252E258200BDB5DD /* HabitStorage+Checkpoint in Sources */,
 				B07BFE63245459B200D2D18F /* StringAttribute.swift in Sources */,
+				08CB4A872532F44F00BDB5DD /* V1.swift in Sources */,
 				B03495F6245EDC6B00C11283 /* NumberRegistrationViewController.swift in Sources */,
 				B077F9B3245D94B500FAFFB6 /* NumberConfirmationViewController.swift in Sources */,
 				B0DDCB0824556FBB004223DB /* Date.swift in Sources */,
@@ -1711,6 +1761,7 @@
 				B02110EF24654175005BF1E2 /* DoneHabitButton.swift in Sources */,
 				B07BFE5224544C4A00D2D18F /* UICollectionView.swift in Sources */,
 				B077F9BE245D97E500FAFFB6 /* ErrorDisplayable.swift in Sources */,
+				0810655B25337D310002B7F6 /* HabitModel.swift in Sources */,
 				08C695C124CDF02000BDBEA2 /* RoundedShadowButtonModel.swift in Sources */,
 				B0DDCB0E24557538004223DB /* String.swift in Sources */,
 				08EDA4A724C487E900F9DDFC /* Route.swift in Sources */,
@@ -1722,6 +1773,7 @@
 				B0A6B3112498F4FB0079AF72 /* SelectImagesViewController.swift in Sources */,
 				08DA7D8F24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift in Sources */,
 				B047295A245D71FD00F3458F /* OnboardingPageViewController.swift in Sources */,
+				08106563253384E20002B7F6 /* CheckpointModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2050,19 +2102,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B0B3A35F24126093007B2F21 /* HabitTracker.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B0B3A36024126093007B2F21 /* HabitTracker.xcdatamodel */,
-			);
-			currentVersion = B0B3A36024126093007B2F21 /* HabitTracker.xcdatamodel */;
-			path = HabitTracker.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B0B3A34B24126092007B2F21 /* Project object */;
 }

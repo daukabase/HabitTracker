@@ -64,6 +64,18 @@ extension Formatter {
         return formatter
     }()
     
+    static let ddMMYYYYHHmm: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "dd-MM-yyyy HH:mm"
+        return formatter
+    }()
+    
+    static var storingFormat: DateFormatter {
+        return ddMMYYYYHHmm
+    }
+    
     static let HHmm: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current

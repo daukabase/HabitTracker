@@ -21,6 +21,10 @@ public extension Result {
         }
     }
     
+    var value: Success? {
+        return success
+    }
+    
     var failure: Failure? {
         switch self {
         case .success:
@@ -28,6 +32,18 @@ public extension Result {
         case let .failure(value):
             return value
         }
+    }
+    
+    var error: Failure? {
+        return failure
+    }
+    
+    var isSucceed: Bool {
+        return success != nil
+    }
+    
+    var isError: Bool {
+        return failure != nil
     }
     
 }
