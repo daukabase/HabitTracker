@@ -33,7 +33,7 @@ extension CheckpointModel: DTODecodable {
         
         return CheckpointModel(id: entry.id,
                                habitId: entry.habitId,
-                               date: entry.date,
+                               date: entry.dateString,
                                isDone: entry.isDone)
     }
     

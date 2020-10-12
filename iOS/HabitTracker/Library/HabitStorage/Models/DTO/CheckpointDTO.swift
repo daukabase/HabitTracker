@@ -17,12 +17,40 @@ final class CheckpointDTO: CoreStoreObject {
     @Field.Stored("habitId")
     var habitId: String = ""
     
-    @Field.Stored("date")
+    @Field.Stored("dateString")
     // DD.MM.yyyy
-    var date: String = "16.12.1991"
+    var dateString: String = "16.12.1991"
     
     @Field.Stored("isDone")
     var isDone: Bool = false
     
+    @Field.Virtual(
+        "isToday",
+        customGetter: { object, field in
+            let date = object.$dateString.value.date(with: .storingFormat)
+            
+            return date?.isToday ?? false
+        }
+    )
+    var isToday: Bool
+    
 }
 
+
+struct CheckpointWhereCause: AnyWhereClause {
+    
+    var predicate: NSPredicate
+    
+    init(_ predicate: NSPredicate) {
+        self.predicate = predicate
+    }
+    
+    init(value: Bool) {
+        self.init(NSPredicate(value: value))
+    }
+    
+    func applyToFetchRequest<T>(_ fetchRequest: NSFetchRequest<T>) where T : NSFetchRequestResult {
+        fetchRequest.predicate = self.predicate
+    }
+    
+}
