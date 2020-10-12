@@ -34,6 +34,13 @@ final class CheckpointDTO: CoreStoreObject {
     )
     var isToday: Bool
     
+    func mutate(using checkpoint: CheckpointModel) {
+        self.id = checkpoint.id
+        self.habitId = checkpoint.habitId
+        self.dateString = checkpoint.date
+        self.isDone = checkpoint.isDone
+    }
+    
 }
 
 

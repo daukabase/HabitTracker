@@ -12,6 +12,7 @@ import CoreStore
 protocol CheckpointStorageAbstract {
     static func getCheckpointsForToday(completion: Closure<RResult<[CheckpointModel]>>)
     static func setCompleted(checkpoint: CheckpointModel, completion: BoolClosure?)
+    static func set(checkpoints: [CheckpointModel], completion: BoolClosure?)
     static func getCheckpoints(for habitId: String, completion: Closure<RResult<[CheckpointModel]>>)
 }
 
@@ -36,6 +37,17 @@ extension HabitStorage: CheckpointStorageAbstract {
             let model = try transaction.fetchOne(From<CheckpointDTO>().where(\.$id == checkpoint.id))
             model?.isDone = true
         } completion: { result in
+            completion?(result.isSucceed)
+        }
+    }
+    
+    static func set(checkpoints: [CheckpointModel], completion: BoolClosure?) {
+        dataStack.perform { transaction in
+            checkpoints.forEach { checkpointModel in
+                let model = transaction.create(Into<CheckpointDTO>())
+                model.mutate(using: checkpointModel)
+            }
+        } completion: { (result) in
             completion?(result.isSucceed)
         }
     }
