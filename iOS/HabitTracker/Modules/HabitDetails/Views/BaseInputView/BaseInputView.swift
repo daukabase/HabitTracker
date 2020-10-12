@@ -19,8 +19,12 @@ final class BaseInputView: UIView {
         ]
     }
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var textField: UITextField!
+    var text: String {
+        return textField.text ?? ""
+    }
+    
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var textField: UITextField!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -14,6 +14,10 @@ class IconsViewController: UIViewController {
     let spacing: CGFloat = 12
     let itemsCountForOneRow: CGFloat = 6
     
+    var selectedIcon: HabitIcon {
+        return icons.first { $0.isSelected }?.habitIcon ?? .meditation
+    }
+    
     private lazy var icons = HabitIcon.allCases.enumerated().map { (index, icon) -> IconCellViewModel in
         IconCellViewModel(isSelected: index == 0, selectedColor: color, habitIcon: icon)
     }

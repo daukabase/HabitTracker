@@ -152,10 +152,19 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
     @objc
     private func didTapActionButton() {
         startLoading(isTransparentBackground: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
-            guard let self = self else {
-                return
-            }
+        let days = Array(scheduleView.selectedDays)
+        let frequency = Frequency.weekly(days)
+        
+        let habit = HabitModel(id: UUID().uuidString,
+                               title: titleInputView.text,
+                               notes: notesInputView.text,
+                               frequence: frequency,
+                               colorHex: colorsViewController.selectedColor.toHexString(),
+                               icon: iconsViewController.selectedIcon.rawValue,
+                               startDate: durationView.startDate.string(with: .storingFormat),
+                               durationDays: durationView.durationDays)
+        
+        HabitStorage.create(habit: habit) { (isCreated) in
             self.endLoading()
             self.navigationController?.popToRootViewController(animated: true)
         }

@@ -11,14 +11,15 @@ import UIKit
 final class DurationView: UIView {
     
     private(set) var startDate: Date = Date()
+    private(set) lazy var durationDays: Int = suggestedDays
     
-    let suggestedDays = 21
-    var suggestedDaysIndex: Int? {
+    private let suggestedDays = 21
+    private var suggestedDaysIndex: Int? {
         return durationDaysArray.enumerated().first { (index, value) -> Bool in
             return value == suggestedDays
         }?.offset
     }
-    let durationDaysArray: [Int] = [5, 7, 13, 21, 48, 66, 85, 256]
+    private let durationDaysArray: [Int] = [5, 7, 13, 21, 48, 66, 85, 256]
     
     lazy var datePicker: UIDatePicker = {
         let picker = UIDatePicker(frame: .zero)
@@ -120,6 +121,7 @@ extension DurationView: UITextFieldDelegate {
 extension DurationView: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        durationDays = durationDaysArray[row]
         durationTextField.text = "\(durationDaysArray[row])"
     }
     
