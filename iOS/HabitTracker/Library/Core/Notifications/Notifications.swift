@@ -11,7 +11,12 @@ import UIKit
 import UserNotifications
 
 final class Notifications: NSObject {
- 
+    
+    private enum Constants {
+        static let calendarComponents: Set<Calendar.Component> = Set([.year, .month, .day, .hour, .minute])
+        static let checkpointNotificationActionPrefix = "checkpoint_of_habit_"
+    }
+    
     static let shared = Notifications()
     
     let notificationCenter = UNUserNotificationCenter.current()
@@ -25,7 +30,6 @@ final class Notifications: NSObject {
     }
     
     func notificationRequest() {
-        
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         
         notificationCenter.requestAuthorization(options: options) {
@@ -34,40 +38,39 @@ final class Notifications: NSObject {
                 print("User has declined notifications")
             }
         }
-        
     }
     
-    func scheduleNotification(notificationType: String) {
-        let userActions = "User Actions"
-        
-        let content = UNMutableNotificationContent() // Содержимое уведомления
-        
-        content.title = notificationType
-        content.body = "This is example how to create "
-        content.sound = UNNotificationSound.default
-        content.badge = 1
-        content.categoryIdentifier = userActions
-        
-        let identifier = "Local Notification"
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-
-        notificationCenter.add(request) { (error) in
-            if let error = error {
-                print("Error \(error.localizedDescription)")
-            }
-        }
-        
-        let doneAction = UNNotificationAction(identifier: .doneAction, title: "Mark As Done", options: [])
-        
-        let category = UNNotificationCategory(identifier: userActions,
-                                              actions: [doneAction],
-                                              intentIdentifiers: [],
-                                              options: [])
-        
-        notificationCenter.setNotificationCategories([category])
-    }
+//    func scheduleNotification(notificationType: String) {
+//        let userActions = "User Actions"
+//
+//        let content = UNMutableNotificationContent() // Содержимое уведомления
+//
+//        content.title = notificationType
+//        content.body = "This is example how to create "
+//        content.sound = UNNotificationSound.default
+//        content.badge = 1
+//        content.categoryIdentifier = userActions
+//
+//        let identifier = "Local Notification"
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//
+//        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+//
+//        notificationCenter.add(request) { (error) in
+//            if let error = error {
+//                print("Error \(error.localizedDescription)")
+//            }
+//        }
+//
+//        let doneAction = UNNotificationAction(identifier: .doneAction, title: "Mark As Done", options: [])
+//
+//        let category = UNNotificationCategory(identifier: userActions,
+//                                              actions: [doneAction],
+//                                              intentIdentifiers: [],
+//                                              options: [])
+//
+//        notificationCenter.setNotificationCategories([category])
+//    }
     
 }
 
@@ -94,7 +97,76 @@ extension Notifications: UNUserNotificationCenterDelegate {
         default:
             print("Unknown action")
         }
+        checkForCheckpointAction(for: response.actionIdentifier)
+        
         completionHandler()
     }
+    
+}
+
+
+extension Notifications {
+    
+    func setupNotification(for checkpoint: CheckpointModel, of habit: HabitModel) {
+        let content = getNotificationContent(for: habit)
+        let request = getRequest(for: checkpoint, content: content)
+        
+        notificationCenter.add(request) { (error) in
+            if let error = error {
+                print("Error \(error.localizedDescription)")
+            }
+        }
+        
+        let doneAction = UNNotificationAction(identifier: checkpoint.notificationId, title: "Mark As Done", options: [])
+        let category = UNNotificationCategory(identifier: .habitWithActionCategoryId,
+                                              actions: [doneAction],
+                                              intentIdentifiers: [],
+                                              options: [])
+        
+        notificationCenter.setNotificationCategories([category])
+    }
+    
+    private func generateNotificationActionId(for checkpoint: CheckpointModel) -> String {
+        return Constants.checkpointNotificationActionPrefix + checkpoint.notificationId
+    }
+    
+    private func checkForCheckpointAction(for actionIdentifier: String) {
+        guard actionIdentifier.hasPrefix(Constants.checkpointNotificationActionPrefix) else {
+            return
+        }
+        var checkpointId = actionIdentifier
+        checkpointId.removeFirst(Constants.checkpointNotificationActionPrefix.count)
+        
+        HabitStorage.setDoneCheckpoint(with: checkpointId, completion: nil)
+    }
+    
+    private func getNotificationContent(for habit: HabitModel) -> UNMutableNotificationContent {
+        let content = UNMutableNotificationContent() // Содержимое уведомления
+        
+        content.title = habit.title
+        content.body = habit.notes
+        content.sound = UNNotificationSound.default
+        // TODO: set badge number according to checkpoints count
+        content.badge = 0
+        content.categoryIdentifier = .habitWithActionCategoryId
+        
+        return content
+    }
+    
+    private func getRequest(for checkpoint: CheckpointModel, content: UNMutableNotificationContent) -> UNNotificationRequest {
+        var dateComponents = Calendar.current.dateComponents(Constants.calendarComponents,
+                                                             from: checkpoint.date!)
+        dateComponents.timeZone = .current
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents,
+                                                    repeats: false)
+        
+        
+        let request = UNNotificationRequest(identifier: checkpoint.notificationId,
+                                            content: content,
+                                            trigger: trigger)
+        return request
+    }
+ 
+    
     
 }

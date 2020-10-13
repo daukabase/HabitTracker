@@ -154,8 +154,8 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         startLoading(isTransparentBackground: true)
         let days = Array(scheduleView.selectedDays)
         let frequency = Frequency.weekly(days)
-        
-        let habit = HabitModel(id: UUID().uuidString,
+        let habitId = UUID().uuidString
+        let habit = HabitModel(id: habitId,
                                title: titleInputView.text,
                                notes: notesInputView.text,
                                frequence: frequency,
@@ -164,10 +164,67 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
                                startDate: durationView.startDate.string(with: .storingFormat),
                                durationDays: durationView.durationDays)
         
+        generateHabitBehavior(for: habit)
+        
         HabitStorage.create(habit: habit) { (isCreated) in
             self.endLoading()
             self.navigationController?.popToRootViewController(animated: true)
         }
+    }
+    
+    private func generateHabitBehavior(for habit: HabitModel) {
+        let checkpoints = generateCheckpoints(for: habit)
+        HabitStorage.set(checkpoints: checkpoints) { isSucceed in
+            guard isSucceed else { return }
+            
+            checkpoints.forEach { checkpointModel in
+                Notifications.shared.setupNotification(for: checkpointModel, of: habit)
+            }
+        }
+    }
+    
+    private func generateCheckpoints(for habit: HabitModel) -> [CheckpointModel] {
+        guard let startDate = habit.startDate.date(with: .storingFormat) else {
+            assertionFailure("Something wrong")
+            return []
+        }
+        let dates = generateDates(for: habit.frequence,
+                                  startDate: startDate,
+                                  durationDays: habit.durationDays)
+        
+        let checkpoints = dates.map { date -> CheckpointModel in
+            return CheckpointModel(id: UUID().uuidString,
+                                   habitId: habit.id,
+                                   date: date.string(with: .storingFormat),
+                                   isDone: false)
+        }
+        
+        return checkpoints
+    }
+    
+    private func generateDates(for frequency: Frequency, startDate: Date, durationDays: Int) -> [Date] {
+        var dates = [Date]()
+        switch frequency {
+        case let .weekly(days):
+            let days = Set(days)
+            
+            for dayCount in 0..<durationDays {
+                guard let date = Calendar.current.date(byAdding: .day, value: dayCount, to: startDate) else {
+                    assertionFailure("Something wrong")
+                    continue
+                }
+                
+                guard days.contains(date.day) else {
+                    continue
+                }
+                
+                dates.append(date)
+            }
+        case .daily:
+            fatalError("Not available")
+        }
+        
+        return dates
     }
     
 }

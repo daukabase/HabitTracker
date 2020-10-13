@@ -22,6 +22,17 @@ extension Date {
         return isSameDay(with: Date())
     }
     
+    var day: Day {
+        let indexOfDay = Calendar.current.component(.weekday, from: self) - 1
+        
+        guard let day = Day(rawValue: indexOfDay) else {
+            assertionFailure("It always should be initialized")
+            return .friday
+        }
+        
+        return day
+    }
+    
     /// Removes seconds minutes hours
     private var millisRemovedMinor: Int64 {
         return millisecondsSince1970 - (millisecondsSince1970 % (1000 * 3600 * 24))

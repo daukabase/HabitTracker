@@ -37,7 +37,7 @@ final class CheckpointDTO: CoreStoreObject {
     func mutate(using checkpoint: CheckpointModel) {
         self.id = checkpoint.id
         self.habitId = checkpoint.habitId
-        self.dateString = checkpoint.date
+        self.dateString = checkpoint.dateString
         self.isDone = checkpoint.isDone
     }
     

@@ -13,13 +13,21 @@ final class CheckpointModel {
     let id: String
     let habitId: String
     // DD.MM.yyyy
-    let date: String
+    let dateString: String
     let isDone: Bool
+    
+    var date: Date? {
+        return dateString.date(with: .storingFormat)
+    }
+    
+    var notificationId: String {
+        return id
+    }
     
     init(id: String, habitId: String, date: String, isDone: Bool) {
         self.id = id
         self.habitId = habitId
-        self.date = date
+        self.dateString = date
         self.isDone = isDone
     }
     
