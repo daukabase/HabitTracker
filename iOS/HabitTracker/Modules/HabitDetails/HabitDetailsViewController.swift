@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Promises
 
 final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable {
     
@@ -152,6 +153,46 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
     @objc
     private func didTapActionButton() {
         startLoading(isTransparentBackground: true)
+        
+        createHabit()
+    }
+    
+    private func createHabit() {
+        let habit = getHabit()
+        
+        createHabitPromise(habit: habit).then {
+            return self.generateHabitBehaviorPromise(habit: habit)
+        }.catch { error in
+            print(error.localizedDescription)
+        }.always { [weak self] in
+            self?.endLoading()
+            DispatchQueue.main.async {
+                self?.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+    }
+    
+    static let queue = DispatchQueue.global(qos: .userInteractive)
+    
+    private func createHabitPromise(habit: HabitModel) -> Promise<Void> {
+        return Promise<Void>(on: Self.queue) { fulfill, reject in
+            HabitStorage.create(habit: habit) { isSucceed in
+                isSucceed ? fulfill(Void()) : reject(HTError.storageOperation)
+            }
+        }
+    }
+    
+    
+    private func generateHabitBehaviorPromise(habit: HabitModel) -> Promise<Void> {
+        return Promise<Void>(on: Self.queue) { [weak self] fulfill, reject in
+            self?.generateHabitBehavior(for: habit) { isSucceed in
+                isSucceed ? fulfill(Void()) : reject(HTError.storageOperation)
+            }
+        }
+    }
+    
+    
+    private func getHabit() -> HabitModel {
         let days = Array(scheduleView.selectedDays)
         let frequency = Frequency.weekly(days)
         let habitId = UUID().uuidString
@@ -164,17 +205,15 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
                                startDate: durationView.startDate.string(with: .storingFormat),
                                durationDays: durationView.durationDays)
         
-        generateHabitBehavior(for: habit)
-        
-        HabitStorage.create(habit: habit) { (isCreated) in
-            self.endLoading()
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+        return habit
     }
     
-    private func generateHabitBehavior(for habit: HabitModel) {
+    private func generateHabitBehavior(for habit: HabitModel, completion: BoolClosure?) {
         let checkpoints = generateCheckpoints(for: habit)
         HabitStorage.set(checkpoints: checkpoints) { isSucceed in
+            defer {
+                completion?(isSucceed)
+            }
             guard isSucceed else { return }
             
             checkpoints.forEach { checkpointModel in

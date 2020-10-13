@@ -26,32 +26,7 @@ final class HomeViewController: SegementSlideViewController {
         return controller
     }()
     
-    var habits: [Habit] = [
-        Habit(title: "Wake up early",
-              notes: "Workout",
-              durationDays: 10,
-              startDate: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              colorHex: "#FF3367",
-              isCurrentCompleted: false,
-              habitIcon: .sleep),
-        Habit(title: "Evening meditation",
-              notes: "Relax",
-              durationDays: 10,
-              startDate: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              colorHex: "#50CBF5",
-              isCurrentCompleted: false,
-              habitIcon: .meditation),
-        Habit(title: "Running",
-              notes: "Abs",
-              durationDays: 10,
-              startDate: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              colorHex: "#916AC8",
-              isCurrentCompleted: false,
-              habitIcon: .running)
-    ]
+    var habits: [Habit] = []
     
     var challenges: [Challenge] = [
         Challenge(title: "Wake up early",

@@ -28,6 +28,7 @@
 		08CB4A872532F44F00BDB5DD /* V1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4A862532F44F00BDB5DD /* V1.swift */; };
 		08CB4B40253300DC00BDB5DD /* HabitStorage+Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4B3E253300DC00BDB5DD /* HabitStorage+Checkpoint.swift */; };
 		08CB4B41253300DC00BDB5DD /* HabitStorage+Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4B3F253300DC00BDB5DD /* HabitStorage+Achievement.swift */; };
+		08CD60A125362C1E008705EF /* HabitDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD60A025362C1E008705EF /* HabitDetailsInteractor.swift */; };
 		08DA7D8A24C853F200CC52A9 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8924C853F200CC52A9 /* KeychainManager.swift */; };
 		08DA7D8C24C88B4400CC52A9 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8B24C88B4400CC52A9 /* URLRequest.swift */; };
 		08DA7D8F24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8E24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift */; };
@@ -278,6 +279,7 @@
 		08CB4A862532F44F00BDB5DD /* V1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V1.swift; sourceTree = "<group>"; };
 		08CB4B3E253300DC00BDB5DD /* HabitStorage+Checkpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HabitStorage+Checkpoint.swift"; sourceTree = "<group>"; };
 		08CB4B3F253300DC00BDB5DD /* HabitStorage+Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HabitStorage+Achievement.swift"; sourceTree = "<group>"; };
+		08CD60A025362C1E008705EF /* HabitDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsInteractor.swift; sourceTree = "<group>"; };
 		08DA7D8924C853F200CC52A9 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		08DA7D8B24C88B4400CC52A9 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		08DA7D8E24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpointAccessPlugin.swift; sourceTree = "<group>"; };
@@ -573,9 +575,6 @@
 				08CB4A852532F44100BDB5DD /* Versions */,
 				08CB4902252E1E2100BDB5DD /* Models */,
 				08CB4982252E255000BDB5DD /* HabitStorage */,
-				08CB499E252E264800BDB5DD /* HabitRepository.swift */,
-				08CB49A3252E265A00BDB5DD /* CheckpointsRepository.swift */,
-				08CB49A8252E266B00BDB5DD /* AchievementsRepository.swift */,
 			);
 			path = HabitStorage;
 			sourceTree = "<group>";
@@ -606,6 +605,16 @@
 				08CB4A862532F44F00BDB5DD /* V1.swift */,
 			);
 			path = Versions;
+			sourceTree = "<group>";
+		};
+		08CD60A525362E1D008705EF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				08CB499E252E264800BDB5DD /* HabitRepository.swift */,
+				08CB49A3252E265A00BDB5DD /* CheckpointsRepository.swift */,
+				08CB49A8252E266B00BDB5DD /* AchievementsRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		08DA7D8D24C88B6500CC52A9 /* Plugins */ = {
@@ -1028,6 +1037,7 @@
 		B07BFE3124544C3300D2D18F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				08CD60A525362E1D008705EF /* Repository */,
 				08CB4901252E1E1800BDB5DD /* HabitStorage */,
 				B00123E5245F01BD001B5481 /* Core */,
 				B077F9B8245D97E500FAFFB6 /* Protocols */,
@@ -1096,6 +1106,7 @@
 			isa = PBXGroup;
 			children = (
 				B07BFE732454877300D2D18F /* HabitDetailsViewController.swift */,
+				08CD60A025362C1E008705EF /* HabitDetailsInteractor.swift */,
 				B0DDCAFD24549105004223DB /* Views */,
 			);
 			path = HabitDetails;
@@ -1735,6 +1746,7 @@
 				08DA7D8A24C853F200CC52A9 /* KeychainManager.swift in Sources */,
 				08DA7DA824C9C26400CC52A9 /* ErrorModel.swift in Sources */,
 				B0235DA4246606D200F91DF0 /* ColorButton.swift in Sources */,
+				08CD60A125362C1E008705EF /* HabitDetailsInteractor.swift in Sources */,
 				B07BFE5624544C4B00D2D18F /* UIButton.swift in Sources */,
 				0810655425337AD50002B7F6 /* Frequency.swift in Sources */,
 				B047295B245D71FD00F3458F /* OnboardingViewController.swift in Sources */,

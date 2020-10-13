@@ -20,11 +20,10 @@ protocol CheckpointStorageAbstract {
 extension HabitStorage: CheckpointStorageAbstract {
     
     static func getCheckpointsForToday(completion: (RResult<[CheckpointModel]>) -> Void) {
-        let _checkpoints = try? dataStack.fetchAll(
-            From<CheckpointDTO>().where({ (checkpoint) -> CheckpointWhereCause in
-                return CheckpointWhereCause(value: checkpoint.isToday)
-            })
-        ).compactMap { try? CheckpointModel.from(dto: $0) }
+        let _checkpoints = try? dataStack.fetchAll(From<CheckpointDTO>())
+            // TODO: Optimize it!!!
+            .compactMap { try? CheckpointModel.from(dto: $0) }
+            .filter { $0.isToday }
         
         guard let checkpoints = _checkpoints else {
             completion(.failure(HTError.serialization))

@@ -15,7 +15,7 @@ protocol ChallengeDelegate: class {
     func markAsDone()
 }
 
-final class HabitsViewController: UIViewController {
+final class HabitsViewController: UIViewController, LoaderViewDisplayable {
     
     // MARK: - Nested Types
     enum State {
@@ -64,9 +64,7 @@ final class HabitsViewController: UIViewController {
             make.bottom.equalToSuperview().offset(-24)
             make.size.equalTo(64)
         }
-        
-        let controller = HabitViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        loadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,6 +81,55 @@ final class HabitsViewController: UIViewController {
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
+    
+    // MARK: - Private Methods
+    private func loadData() {
+        startLoading()
+        
+        HabitStorage.getCheckpointsForToday { [weak self] result in
+            guard let checkpoints = result.value else {
+                self?.endLoading()
+                return
+            }
+            let group = DispatchGroup()
+            var habits = [Habit]()
+            
+            checkpoints.forEach {
+                let habitId = $0.habitId
+                group.enter()
+                HabitStorage.getHabit(for: habitId) { result in
+                    defer {
+                        group.leave()
+                    }
+                    guard
+                        let habit = result.value,
+                        case let Frequency.weekly(days) = habit.frequence,
+                        let startDate = habit.startDate.date(with: .storingFormat)
+                    else {
+                        return
+                    }
+                    
+                    let _habit = Habit(title: habit.title,
+                                      notes: habit.notes,
+                                      durationDays: habit.durationDays,
+                                      startDate: startDate,
+                                      schedule: days,
+                                      colorHex: habit.colorHex,
+                                      isCurrentCompleted: false,
+                                      habitIcon: habit.icon)
+                    
+                    habits.append(_habit)
+                }
+            }
+            
+            group.notify(queue: .main) {
+                self?.endLoading()
+                self?.state = .habit(items: habits)
+                self?.tableView.reloadData()
+            }
+        }
+    }
+
     
 }
 
@@ -110,8 +157,8 @@ extension HabitsViewController: UITableViewDelegate {
         case let .habit(items):
             if let cell = cell as? DoneHabitCell {
                 cell.configure(model: items[indexPath.row])
-                cell.onProgress = { isSelected in
-                    Notifications.shared.scheduleNotification(notificationType: "Test")
+                cell.onProgress = { _ in
+                    // TODO: implement
                 }
             }
         case let .challenge(items):

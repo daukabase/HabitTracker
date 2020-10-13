@@ -24,16 +24,6 @@ final class CheckpointDTO: CoreStoreObject {
     @Field.Stored("isDone")
     var isDone: Bool = false
     
-    @Field.Virtual(
-        "isToday",
-        customGetter: { object, field in
-            let date = object.$dateString.value.date(with: .storingFormat)
-            
-            return date?.isToday ?? false
-        }
-    )
-    var isToday: Bool
-    
     func mutate(using checkpoint: CheckpointModel) {
         self.id = checkpoint.id
         self.habitId = checkpoint.habitId

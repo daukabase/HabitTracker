@@ -42,6 +42,7 @@ final class HabitDTO: CoreStoreObject {
         self.frequency = try! habit.frequence.toDTO()
         self.icon = habit.icon.rawValue
         self.notes = habit.notes
+        self.title = habit.title
         self.startDate = habit.startDate
     }
     

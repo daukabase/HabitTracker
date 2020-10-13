@@ -24,6 +24,12 @@ final class CheckpointModel {
         return id
     }
     
+    var isToday: Bool {
+        let date = dateString.date(with: .storingFormat)
+        
+        return date?.isToday ?? false
+    }
+    
     init(id: String, habitId: String, date: String, isDone: Bool) {
         self.id = id
         self.habitId = habitId
