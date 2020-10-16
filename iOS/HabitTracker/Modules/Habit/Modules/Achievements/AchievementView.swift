@@ -21,7 +21,7 @@ struct GoalAchievement: AbstractAchievement {
     var description: String
     var image: UIImage?
     
-    init(completedDays: Int, totalDays: Int, description: String, image: UIImage) {
+    init(completedDays: Int, totalDays: Int, description: String = "Goal", image: UIImage = Asset.goal.image) {
         let indicatorValue = NSMutableAttributedString()
         let first: [StringAttribute] = [
             .font(FontFamily.Gilroy.semibold.font(size: 24)),
@@ -46,6 +46,24 @@ struct GoalAchievement: AbstractAchievement {
 }
 
 struct CommonAchievement: AbstractAchievement {
+    
+    static func getCurrentStreak(for days: Int) -> AbstractAchievement {
+        return CommonAchievement(numberOfDays: days,
+                                 description: "Current Streak",
+                                 image: Asset.order.image)
+    }
+    
+    static func getLongestStreak(for days: Int) -> AbstractAchievement {
+        return CommonAchievement(numberOfDays: days,
+                                 description: "Current Streak",
+                                 image: Asset.order.image)
+    }
+    
+    static func getTotalDone(for days: Int) -> AbstractAchievement {
+        return CommonAchievement(numberOfDays: days,
+                                 description: "Total done",
+                                 image: Asset.guard.image)
+    }
     
     var title: NSAttributedString?
     var description: String
