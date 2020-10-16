@@ -10,6 +10,9 @@ import UIKit
 
 final class HabitViewController: UIViewController {
 
+    // MARK: - Properties
+    private var habit: Habit?
+    
     // MARK: - Controllers
     private lazy var calendarViewController: CalendarViewController = {
         guard let controller = UIStoryboard.instantiate(ofType: CalendarViewController.self) else {
@@ -18,8 +21,6 @@ final class HabitViewController: UIViewController {
         
         return controller
     }()
-    
-    private lazy var statisticsViewController = StatisticsViewController()
     
     private lazy var achievementsViewController = AchievementsViewController()
     
@@ -81,6 +82,8 @@ final class HabitViewController: UIViewController {
     
     // MARK: - Internal Methods
     func setup(habit: Habit) {
+        self.habit = habit
+        achievementsViewController.setup(habitId: habit.id)
         habitTitleView.setup(title: habit.title,
                              image: habit.image,
                              color: habit.color)

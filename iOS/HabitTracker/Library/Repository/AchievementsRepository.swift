@@ -60,9 +60,7 @@ final class AchievementsRepository {
             if model.isDone {
                 currentSkreak += 1
                 maxStreak = max(currentSkreak, maxStreak)
-            } else if model.isToday {
-                break
-            } else if let date = model.date, date <= now {
+            } else if let date = model.date, date >= now {
                 break
             } else {
                 currentSkreak = 0

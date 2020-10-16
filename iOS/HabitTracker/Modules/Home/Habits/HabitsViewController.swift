@@ -110,7 +110,8 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
                         return
                     }
                     
-                    let _habit = Habit(title: habit.title,
+                    let _habit = Habit(id: habit.id,
+                                       title: habit.title,
                                       notes: habit.notes,
                                       durationDays: habit.durationDays,
                                       startDate: startDate,

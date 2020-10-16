@@ -29,7 +29,9 @@ final class HomeViewController: SegementSlideViewController {
     var habits: [Habit] = []
     
     var challenges: [Challenge] = [
-        Challenge(title: "Wake up early",
+        Challenge(
+            id: "",
+            title: "Wake up early",
               notes: "Workout",
               durationDays: 10,
               startDate: Date(),
@@ -37,7 +39,9 @@ final class HomeViewController: SegementSlideViewController {
               colorHex: "#FF3367",
               isCurrentCompleted: false,
               habitIcon: .sleep),
-        Challenge(title: "Evening meditation",
+        Challenge(
+            id: "",
+            title: "Evening meditation",
               notes: "Relax",
               durationDays: 10,
               startDate: Date(),
@@ -45,7 +49,9 @@ final class HomeViewController: SegementSlideViewController {
               colorHex: "#50CBF5",
               isCurrentCompleted: true,
               habitIcon: .apple),
-        Challenge(title: "Abs burning workout",
+        Challenge(
+            id: "",
+            title: "Abs burning workout",
               notes: "Abs",
               durationDays: 10,
               startDate: Date(),

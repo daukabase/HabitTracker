@@ -8,24 +8,36 @@
 
 import UIKit
 
-final class AchievementsViewController: UIViewController {
-
-    private var achievements: [AbstractAchievement] = [
-        CommonAchievement(numberOfDays: 2, description: "Current Streak", image: Asset.order.image),
-        CommonAchievement(numberOfDays: 3, description: "Longest Streak", image: Asset.trophy.image),
-        CommonAchievement(numberOfDays: 5, description: "Total done", image: Asset.guard.image),
-        GoalAchievement(completedDays: 6, totalDays: 8, description: "Goal", image: Asset.goal.image)
-    ]
+final class AchievementsViewController: UIViewController, ErrorDisplayable {
     
     @IBOutlet var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        achievements.forEach(add(achievement:))
         
         view.clipsToBounds = false
         stackView.clipsToBounds = false
+    }
+    
+    func setup(habitId: String) {
+        AchievementsRepository.shared.getAchievements(for: habitId) { (result) in
+            switch result {
+            case let .success(achevements):
+                self.setup(achevements)
+            case let .failure(error):
+                self.showError(describedBy: error)
+            }
+        }
+    }
+    
+    private func setup(_ achievements: [AbstractAchievement]) {
+        stackView.arrangedSubviews.forEach {
+            stackView.removeArrangedSubview($0)
+            NSLayoutConstraint.deactivate($0.constraints)
+            $0.removeFromSuperview()
+        }
+        achievements.forEach(add(achievement:))
     }
     
     private func add(achievement: AbstractAchievement) {

@@ -55,8 +55,8 @@ struct CommonAchievement: AbstractAchievement {
     
     static func getLongestStreak(for days: Int) -> AbstractAchievement {
         return CommonAchievement(numberOfDays: days,
-                                 description: "Current Streak",
-                                 image: Asset.order.image)
+                                 description: "Longest Streak",
+                                 image: Asset.trophy.image)
     }
     
     static func getTotalDone(for days: Int) -> AbstractAchievement {

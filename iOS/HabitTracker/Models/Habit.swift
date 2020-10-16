@@ -11,6 +11,7 @@ import UIKit
 
 class Habit {
     
+    let id: String
     var title: String
     var notes: String
     var startDate: Date
@@ -75,7 +76,8 @@ class Habit {
         isCurrentCompleted = false
     }
     
-    init(title: String,
+    init(id: String,
+         title: String,
          notes: String,
          durationDays: Int,
          startDate: Date,
@@ -83,7 +85,7 @@ class Habit {
          color: UIColor,
          isCurrentCompleted: Bool,
          habitIcon: HabitIcon) {
-        
+        self.id = id
         self.title = title
         self.notes = notes
         self.durationDays = durationDays
@@ -94,7 +96,8 @@ class Habit {
         self.habitIcon = habitIcon
     }
     
-    init(title: String,
+    init(id: String,
+         title: String,
          notes: String,
          durationDays: Int,
          startDate: Date,
@@ -102,6 +105,7 @@ class Habit {
          colorHex: String,
          isCurrentCompleted: Bool,
          habitIcon: HabitIcon) {
+        self.id = id
         self.title = title
         self.notes = notes
         self.durationDays = durationDays
