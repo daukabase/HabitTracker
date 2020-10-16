@@ -117,7 +117,8 @@ extension Notifications {
             }
         }
         
-        let doneAction = UNNotificationAction(identifier: checkpoint.notificationId, title: "Mark As Done", options: [])
+        let doneAction = UNNotificationAction(identifier: generateNotificationActionId(for: checkpoint),
+                                              title: "Mark As Done", options: [])
         let category = UNNotificationCategory(identifier: .habitWithActionCategoryId,
                                               actions: [doneAction],
                                               intentIdentifiers: [],
@@ -127,7 +128,7 @@ extension Notifications {
     }
     
     private func generateNotificationActionId(for checkpoint: CheckpointModel) -> String {
-        return Constants.checkpointNotificationActionPrefix + checkpoint.notificationId
+        return Constants.checkpointNotificationActionPrefix + checkpoint.id
     }
     
     private func checkForCheckpointAction(for actionIdentifier: String) {
@@ -137,7 +138,9 @@ extension Notifications {
         var checkpointId = actionIdentifier
         checkpointId.removeFirst(Constants.checkpointNotificationActionPrefix.count)
         
-        HabitStorage.setDoneCheckpoint(with: checkpointId, completion: nil)
+        HabitStorage.setDoneCheckpoint(with: checkpointId, completion: { isSucceed in
+            print("[DEBUG] \(isSucceed)")
+        })
     }
     
     private func getNotificationContent(for habit: HabitModel) -> UNMutableNotificationContent {
@@ -156,7 +159,7 @@ extension Notifications {
     private func getRequest(for checkpoint: CheckpointModel, content: UNMutableNotificationContent) -> UNNotificationRequest {
         var dateComponents = Calendar.current.dateComponents(Constants.calendarComponents,
                                                              from: checkpoint.date!)
-        dateComponents.timeZone = .current
+        dateComponents.timeZone = .autoupdatingCurrent
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents,
                                                     repeats: false)
         

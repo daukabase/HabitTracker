@@ -18,6 +18,7 @@ class Habit {
     var colorHex: String
     var isCurrentCompleted: Bool
     var habitIcon: HabitIcon
+    var checkpoint: CheckpointModel?
     
     var image: UIImage {
         return habitIcon.icon

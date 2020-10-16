@@ -55,18 +55,28 @@ final class DoneHabitCell: UITableViewCell {
         doneButton.isSelected = model.isCurrentCompleted
         
         doneButton.onClick = { [weak model, weak self] isSelected in
-            guard let model = model else {
+            guard let model = model, let checkpoint = model.checkpoint else {
                 return
             }
             self?.onProgress?(isSelected)
-            
-            if isSelected {
-                model.done()
-            } else {
-                model.undone()
+            let block = {
+                self?.progressIndicatorLabel.attributedText = model.completionAttributedText
+                self?.progressView.setProgress(model.progress, animated: true)
             }
-            self?.progressIndicatorLabel.attributedText = model.completionAttributedText
-            self?.progressView.setProgress(model.progress, animated: true)
+            if isSelected {
+                HabitStorage.setDone(checkpoint: checkpoint) { isSucceed in
+                    guard isSucceed else { return }
+                    model.done()
+                    block()
+                }
+            } else {
+                HabitStorage.setUndone(checkpoint: checkpoint) { isSucceed in
+                    guard isSucceed else { return }
+                    model.undone()
+                    block()
+                }
+            }
+            
         }
     }
     

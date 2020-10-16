@@ -96,6 +96,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
             
             checkpoints.forEach {
                 let habitId = $0.habitId
+                let checkpoint = $0
                 group.enter()
                 HabitStorage.getHabit(for: habitId) { result in
                     defer {
@@ -117,6 +118,13 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
                                       colorHex: habit.colorHex,
                                       isCurrentCompleted: false,
                                       habitIcon: habit.icon)
+                    _habit.checkpoint = checkpoint
+                    
+                    if checkpoint.isDone {
+                        _habit.done()
+                    } else {
+                        _habit.undone()
+                    }
                     
                     habits.append(_habit)
                 }

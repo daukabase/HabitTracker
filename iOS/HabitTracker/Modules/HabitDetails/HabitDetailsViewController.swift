@@ -74,6 +74,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         
         picker.datePickerMode = .time
         picker.isHidden = !remindView.isOn
+        picker.timeZone = .current
         
         return picker
     }()
@@ -159,9 +160,10 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
     
     private func createHabit() {
         let habit = getHabit()
+        let remindTime = remindView.isOn ? datePickerView.date : nil
         
         createHabitPromise(habit: habit).then {
-            return self.generateHabitBehaviorPromise(habit: habit)
+            return self.generateHabitBehaviorPromise(habit: habit, remindTime: remindTime)
         }.catch { error in
             print(error.localizedDescription)
         }.always { [weak self] in
@@ -183,9 +185,9 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
     }
     
     
-    private func generateHabitBehaviorPromise(habit: HabitModel) -> Promise<Void> {
+    private func generateHabitBehaviorPromise(habit: HabitModel, remindTime: Date?) -> Promise<Void> {
         return Promise<Void>(on: Self.queue) { [weak self] fulfill, reject in
-            self?.generateHabitBehavior(for: habit) { isSucceed in
+            self?.generateHabitBehavior(for: habit, remindTime: remindTime) { isSucceed in
                 isSucceed ? fulfill(Void()) : reject(HTError.storageOperation)
             }
         }
@@ -208,8 +210,9 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         return habit
     }
     
-    private func generateHabitBehavior(for habit: HabitModel, completion: BoolClosure?) {
-        let checkpoints = generateCheckpoints(for: habit)
+    private func generateHabitBehavior(for habit: HabitModel, remindTime: Date?, completion: BoolClosure?) {
+        let checkpoints = generateCheckpoints(for: habit, remindTime: remindTime)
+        
         HabitStorage.set(checkpoints: checkpoints) { isSucceed in
             defer {
                 completion?(isSucceed)
@@ -222,14 +225,15 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         }
     }
     
-    private func generateCheckpoints(for habit: HabitModel) -> [CheckpointModel] {
+    private func generateCheckpoints(for habit: HabitModel, remindTime: Date?) -> [CheckpointModel] {
         guard let startDate = habit.startDate.date(with: .storingFormat) else {
             assertionFailure("Something wrong")
             return []
         }
         let dates = generateDates(for: habit.frequence,
                                   startDate: startDate,
-                                  durationDays: habit.durationDays)
+                                  durationDays: habit.durationDays,
+                                  remindTime: remindTime)
         
         let checkpoints = dates.map { date -> CheckpointModel in
             return CheckpointModel(id: UUID().uuidString,
@@ -241,23 +245,43 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         return checkpoints
     }
     
-    private func generateDates(for frequency: Frequency, startDate: Date, durationDays: Int) -> [Date] {
+    private func generateDates(for frequency: Frequency,
+                               startDate: Date,
+                               durationDays: Int,
+                               remindTime: Date?) -> [Date] {
         var dates = [Date]()
+        let (hour, minute) = (remindTime?.hour, remindTime?.minute)
+        
         switch frequency {
         case let .weekly(days):
             let days = Set(days)
             
+            print("\n\n\nAllowed days: ", Array(days).reduce(" ", { $0 + " " + String(describing: $1) }))
             for dayCount in 0..<durationDays {
-                guard let date = Calendar.current.date(byAdding: .day, value: dayCount, to: startDate) else {
+                print("____________________________________________________________")
+                guard var date = Calendar.current.date(byAdding: .day, value: dayCount, to: startDate) else {
                     assertionFailure("Something wrong")
                     continue
                 }
-                
+                let dateString = date.string(with: .storingFormat)
+                print("Date to process: ", dateString)
+                print("Date day: ", date.day)
                 guard days.contains(date.day) else {
                     continue
                 }
                 
+                if let hour = hour,
+                   let minute = minute,
+                   let dateWithUpdatedTime = Calendar.current.date(bySettingHour: hour,
+                                                     minute: minute,
+                                                     second: .zero,
+                                                     of: date) {
+                    print("Date with updated time: ", dateWithUpdatedTime.string(with: .storingFormat))
+                    date = dateWithUpdatedTime
+                }
+                
                 dates.append(date)
+                print("Date added: ", date.string(with: .storingFormat))
             }
         case .daily:
             fatalError("Not available")

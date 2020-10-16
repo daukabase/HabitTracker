@@ -33,6 +33,18 @@ extension Date {
         return day
     }
     
+    var hour: Int {
+        return Calendar.current.component(.hour, from: self)
+    }
+    
+    var minute: Int {
+        return Calendar.current.component(.minute, from: self)
+    }
+    
+    var second: Int {
+        return Calendar.current.component(.second, from: self)
+    }
+    
     /// Removes seconds minutes hours
     private var millisRemovedMinor: Int64 {
         return millisecondsSince1970 - (millisecondsSince1970 % (1000 * 3600 * 24))
