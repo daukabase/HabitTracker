@@ -72,10 +72,6 @@ extension Formatter {
         return formatter
     }()
     
-    static var storingFormat: DateFormatter {
-        return ddMMYYYYHHmm
-    }
-    
     static let HHmm: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
@@ -91,5 +87,26 @@ extension Formatter {
         formatter.dateFormat = "E dd.MM"
         return formatter
     }()
+    
+    // MARK: - Date Storing
+    private static let storingDateFormatString = storingDateMajors + " " + storingDateMinors
+    private static let storingDateMajors = "dd-MM-yyyy"
+    private static let storingDateMinors = "HH:mm"
+    
+    static var storingFormat: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = storingDateFormatString
+        return formatter
+    }
+    
+    static var storingFormatWithoutMinors: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = storingDateMajors
+        return formatter
+    }
     
 }

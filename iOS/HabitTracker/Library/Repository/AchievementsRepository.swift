@@ -53,10 +53,17 @@ final class AchievementsRepository {
     
     // MARK: - Achevements Computing logic
     private func getStreaks(for checkpoints: [CheckpointModel]) -> (currentStreak: Int, longestStreak: Int) {
+        let sortedCheckpoints = checkpoints.sorted { (ch1, ch2) -> Bool in
+            guard let ch1Date = ch1.date, let ch2Date = ch2.date else {
+                return false
+            }
+            return ch1Date < ch2Date
+        }
+        
         let now = Date()
         var (currentSkreak, maxStreak) = (0, 0)
         
-        for model in checkpoints {
+        for model in sortedCheckpoints {
             if model.isDone {
                 currentSkreak += 1
                 maxStreak = max(currentSkreak, maxStreak)

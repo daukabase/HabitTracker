@@ -25,9 +25,10 @@ final class CheckpointModel {
     }
     
     var isToday: Bool {
-        let date = dateString.date(with: .storingFormat)
+        // This strange logic is used because I don't want to deal with timeZones
+        let todayDate = Date().string(with: .storingFormatWithoutMinors)
         
-        return date?.isToday ?? false
+        return dateString.hasPrefix(todayDate)
     }
     
     init(id: String, habitId: String, date: String, isDone: Bool) {

@@ -76,6 +76,10 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         picker.isHidden = !remindView.isOn
         picker.timeZone = .current
         
+        if #available(iOS 13.4, *) {
+            picker.preferredDatePickerStyle = .wheels
+        }
+        
         return picker
     }()
     

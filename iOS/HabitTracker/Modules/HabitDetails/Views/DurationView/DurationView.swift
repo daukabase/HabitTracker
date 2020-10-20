@@ -29,6 +29,10 @@ final class DurationView: UIView {
         picker.locale = Locale(identifier: "ru_RU")
         picker.addTarget(self, action: #selector(updateTextField), for: .valueChanged)
         
+        if #available(iOS 13.4, *) {
+            picker.preferredDatePickerStyle = .wheels
+        }
+        
         return picker
     }()
     
