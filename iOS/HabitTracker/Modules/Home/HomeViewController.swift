@@ -28,41 +28,10 @@ final class HomeViewController: SegementSlideViewController {
     
     var habits: [Habit] = []
     
-    var challenges: [Challenge] = [
-        Challenge(
-            id: "",
-            title: "Wake up early",
-              notes: "Workout",
-              durationDays: 10,
-              startDate: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              colorHex: "#FF3367",
-              isCurrentCompleted: false,
-              habitIcon: .sleep),
-        Challenge(
-            id: "",
-            title: "Evening meditation",
-              notes: "Relax",
-              durationDays: 10,
-              startDate: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              colorHex: "#50CBF5",
-              isCurrentCompleted: true,
-              habitIcon: .apple),
-        Challenge(
-            id: "",
-            title: "Abs burning workout",
-              notes: "Abs",
-              durationDays: 10,
-              startDate: Date(),
-              schedule: [.monday, .wednesday, .friday],
-              colorHex: "#916AC8",
-              isCurrentCompleted: false,
-              habitIcon: .running)
-    ]
+    var challenges: [Challenge] = []
     
     override var titlesInSwitcher: [String] {
-        return ["Habits", "Challenge", "Program"].map { $0.uppercased() }
+        return ["Habits", "Challenge"].map { $0.uppercased() }
     }
     
     override var switcherConfig: SegementSlideSwitcherConfig {

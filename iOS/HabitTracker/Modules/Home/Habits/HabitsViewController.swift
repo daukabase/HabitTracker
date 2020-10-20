@@ -94,40 +94,24 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
             let group = DispatchGroup()
             var habits = [Habit]()
             
-            checkpoints.forEach {
-                let habitId = $0.habitId
-                let checkpoint = $0
+            checkpoints.forEach { checkpoint in
                 group.enter()
-                HabitStorage.getHabit(for: habitId) { result in
-                    defer {
+                
+                HabitStorage.getHabit(for: checkpoint.habitId) { result in
+                    guard let self = self else {
                         group.leave()
-                    }
-                    guard
-                        let habit = result.value,
-                        case let Frequency.weekly(days) = habit.frequence,
-                        let startDate = habit.startDate.date(with: .storingFormat)
-                    else {
                         return
                     }
-                    
-                    let _habit = Habit(id: habit.id,
-                                       title: habit.title,
-                                      notes: habit.notes,
-                                      durationDays: habit.durationDays,
-                                      startDate: startDate,
-                                      schedule: days,
-                                      colorHex: habit.colorHex,
-                                      isCurrentCompleted: false,
-                                      habitIcon: habit.icon)
-                    _habit.checkpoint = checkpoint
-                    
-                    if checkpoint.isDone {
-                        _habit.done()
-                    } else {
-                        _habit.undone()
-                    }
-                    
-                    habits.append(_habit)
+                    self.getHabit(for: checkpoint.habitId, isDone: checkpoint.isDone, completion: { result in
+                        defer {
+                            group.leave()
+                        }
+                        guard let habit = result.value else {
+                            return
+                        }
+                        habit.checkpoint = checkpoint
+                        habits.append(habit)
+                    })
                 }
             }
             
@@ -139,7 +123,31 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
         }
     }
 
-    
+    func getHabit(for habitId: String, isDone: Bool, completion: @escaping Closure<RResult<Habit>>) {
+        HabitStorage.getHabit(for: habitId) { result in
+            guard
+                let habit = result.value,
+                case let Frequency.weekly(days) = habit.frequence,
+                let startDate = habit.startDate.date(with: .storingFormat)
+            else {
+                completion(.failure(HTError.serialization))
+                return
+            }
+            let _habit = Habit(id: habit.id,
+                               title: habit.title,
+                               notes: habit.notes,
+                               durationDays: habit.durationDays,
+                               startDate: startDate,
+                               schedule: days,
+                               colorHex: habit.colorHex,
+                               isCurrentCompleted: isDone,
+                               habitIcon: habit.icon,
+                               goal: (0, 0))
+            _habit.updateGoal {
+                completion(.success(_habit))
+            }
+        }
+    }
 }
 
 
@@ -164,7 +172,7 @@ extension HabitsViewController: UITableViewDelegate {
         
         switch state {
         case let .habit(items):
-            if let cell = cell as? DoneHabitCell {
+            if let cell = cell as? HabitCell {
                 cell.configure(model: items[indexPath.row])
                 cell.onProgress = { _ in
                     // TODO: implement
@@ -219,7 +227,7 @@ extension HabitsViewController.State {
     var cellType: UITableViewCell.Type {
         switch self {
         case .habit:
-            return DoneHabitCell.self
+            return HabitCell.self
         case .challenge:
             return ChallengeCell.self
         }

@@ -1,26 +1,35 @@
 //
-//  HabitCell.swift
+//  DoneHabitCell.swift
 //  HabitTracker
 //
-//  Created by Daulet on 4/25/20.
+//  Created by Daulet on 5/8/20.
 //  Copyright © 2020 Daulet. All rights reserved.
 //
 
 import UIKit
 
 final class HabitCell: UITableViewCell {
-
+    
+    var onProgress: BoolClosure?
     @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var daysLeftLabel: UILabel!
+    @IBOutlet private var doneButton: DoneHabitButton!
     @IBOutlet private var progressIndicatorLabel: UILabel!
     @IBOutlet private var progressView: UIProgressView!
-    @IBOutlet private var backgroundImageView: UIImageView!
+    @IBOutlet private var iconImageView: UIImageView!
+    @IBOutlet private var containerView: UIView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundImageView.roundCorners(.allCorners, radius: 24)
-        setupProgressViewLayer()
+        
         clipsToBounds = false
+        contentView.clipsToBounds = false
+        iconImageView.roundCorners(.allCorners, radius: iconImageView.frame.height / 2)
+        
+        containerView.layer.backgroundColor = UIColor.clear.cgColor
+        containerView.applyDropShadow()
+        
+        setupProgressViewLayer()
     }
     
     override func layoutSubviews() {
@@ -29,26 +38,43 @@ final class HabitCell: UITableViewCell {
     }
     
     func configure(model: Habit) {
-        let indicatorValue = NSMutableAttributedString()
-        let first: [StringAttribute] = [
-            .font(FontFamily.Gilroy.semibold.font(size: 18)),
-            .foregroundColor(ColorName.uiWhite.color)
-        ]
-        let second: [StringAttribute] = [
-            .font(FontFamily.Gilroy.semibold.font(size: 12)),
-            .foregroundColor(ColorName.uiWhite.color)
-        ]
-        
-        let firstText = "\(model.completedRepetitions)".with(attributes: first)
-        let secondText = "/\(model.totalRepetitions)".with(attributes: second)
-        
-        indicatorValue.append(firstText)
-        indicatorValue.append(secondText)
-        
         titleLabel.text = model.title
-        daysLeftLabel.text = "\(model.daysLeft) days left"
-        progressIndicatorLabel.attributedText = indicatorValue
-        backgroundImageView.image = model.image
+        progressIndicatorLabel.attributedText = model.completionAttributedText
+        iconImageView.image = model.image.filled(with: model.color)
+        
+        progressView.setProgress(model.progress, animated: true)
+        progressView.trackTintColor = model.color.withAlphaComponent(0.15)
+        progressView.progressTintColor = model.color
+        
+        doneButton.configure(color: model.color)
+        doneButton.isSelected = model.isCurrentCompleted
+        
+        doneButton.onClick = { [weak model, weak self] isSelected in
+            guard let model = model, let checkpoint = model.checkpoint else {
+                return
+            }
+            self?.onProgress?(isSelected)
+            let block = {
+                self?.progressIndicatorLabel.attributedText = model.completionAttributedText
+                self?.progressView.setProgress(model.progress, animated: true)
+            }
+            if isSelected {
+                HabitStorage.setDone(checkpoint: checkpoint) { isSucceed in
+                    guard isSucceed else { return }
+                    model.updateGoal {
+                        block()
+                    }
+                }
+            } else {
+                HabitStorage.setUndone(checkpoint: checkpoint) { isSucceed in
+                    guard isSucceed else { return }
+                    model.updateGoal {
+                        block()
+                    }
+                }
+            }
+            
+        }
     }
     
     private func setupProgressViewLayer() {

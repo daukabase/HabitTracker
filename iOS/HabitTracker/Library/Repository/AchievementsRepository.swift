@@ -9,6 +9,8 @@
 import Foundation
 import Promises
 
+typealias HabitGoal = (done: Int, total: Int)
+
 final class AchievementsRepository {
     
     // MARK: - Properties
@@ -19,6 +21,16 @@ final class AchievementsRepository {
         getCheckpointsPromise(for: habitId).then { checkpoints in
             let achievements = self.getAchievements(from: checkpoints)
             completion(.success(achievements))
+        }.catch { error in
+            completion(.failure(error))
+        }
+    }
+    
+    func getGoal(for habitId: String, completion: @escaping Closure<RResult<HabitGoal>>) {
+        getCheckpointsPromise(for: habitId).then { checkpoints in
+            let goal = self.getGoal(for: checkpoints)
+            
+            completion(.success((goal.done, goal.goal)))
         }.catch { error in
             completion(.failure(error))
         }

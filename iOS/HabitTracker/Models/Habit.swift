@@ -26,8 +26,8 @@ class Habit {
     }
     
     // TODO: remove mocks
-    let totalRepetitions: Int = Int.random(in: 19...24)
-    var completedRepetitions = Int.random(in: 7...13)
+    var totalRepetitions: Int = 0
+    var completedRepetitions: Int = 0
     
     private var durationDays: Int
     
@@ -66,36 +66,6 @@ class Habit {
         return Float(completedRepetitions) / Float(totalRepetitions)
     }
     
-    func done() {
-        completedRepetitions += 1
-        isCurrentCompleted = true
-    }
-    
-    func undone() {
-        completedRepetitions -= 1
-        isCurrentCompleted = false
-    }
-    
-    init(id: String,
-         title: String,
-         notes: String,
-         durationDays: Int,
-         startDate: Date,
-         schedule: [Day],
-         color: UIColor,
-         isCurrentCompleted: Bool,
-         habitIcon: HabitIcon) {
-        self.id = id
-        self.title = title
-        self.notes = notes
-        self.durationDays = durationDays
-        self.startDate = startDate
-        self.schedule = Set(schedule)
-        self.colorHex = color.toHexString()
-        self.isCurrentCompleted = isCurrentCompleted
-        self.habitIcon = habitIcon
-    }
-    
     init(id: String,
          title: String,
          notes: String,
@@ -104,7 +74,8 @@ class Habit {
          schedule: [Day],
          colorHex: String,
          isCurrentCompleted: Bool,
-         habitIcon: HabitIcon) {
+         habitIcon: HabitIcon,
+         goal: HabitGoal) {
         self.id = id
         self.title = title
         self.notes = notes
@@ -114,6 +85,43 @@ class Habit {
         self.colorHex = colorHex
         self.isCurrentCompleted = isCurrentCompleted
         self.habitIcon = habitIcon
+        self.totalRepetitions = goal.total
+        self.completedRepetitions = goal.done
+    }
+    
+    convenience init(id: String,
+         title: String,
+         notes: String,
+         durationDays: Int,
+         startDate: Date,
+         schedule: [Day],
+         color: UIColor,
+         isCurrentCompleted: Bool,
+         habitIcon: HabitIcon,
+         goal: HabitGoal) {
+        self.init(id: id,
+                  title: title,
+                    notes: notes,
+                    durationDays: durationDays,
+                    startDate: startDate,
+                    schedule: schedule,
+                    colorHex: color.toHexString(),
+                    isCurrentCompleted: isCurrentCompleted,
+                    habitIcon: habitIcon,
+                    goal: goal)
+    }
+    
+    func updateGoal(completion: EmptyClosure?) {
+        AchievementsRepository.shared.getGoal(for: id) { (result) in
+            defer {
+                completion?()
+            }
+            guard let goal = result.value else {
+                return
+            }
+            self.completedRepetitions = goal.done
+            self.totalRepetitions = goal.total
+        }
     }
     
 }

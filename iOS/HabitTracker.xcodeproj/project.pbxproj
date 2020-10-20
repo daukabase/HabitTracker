@@ -53,7 +53,7 @@
 		4EA764B9A5A082FEE3189F50 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */; };
 		B00123E8245F01CF001B5481 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */; };
 		B00123EA245F01F0001B5481 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E9245F01F0001B5481 /* Optional.swift */; };
-		B02110ED24653ECF005BF1E2 /* DoneHabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02110EC24653ECF005BF1E2 /* DoneHabitCell.swift */; };
+		B02110ED24653ECF005BF1E2 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02110EC24653ECF005BF1E2 /* HabitCell.swift */; };
 		B02110EF24654175005BF1E2 /* DoneHabitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02110EE24654175005BF1E2 /* DoneHabitButton.swift */; };
 		B02110F124654F27005BF1E2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02110F024654F27005BF1E2 /* UIColor.swift */; };
 		B02110F324659C6D005BF1E2 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02110F224659C6D005BF1E2 /* ChallengeCell.swift */; };
@@ -191,7 +191,6 @@
 		B07BFE6A24545C8A00D2D18F /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B07BFE6924545C8A00D2D18F /* Localizable.stringsdict */; };
 		B07BFE6C24545F6E00D2D18F /* UIRectCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE6B24545F6E00D2D18F /* UIRectCorner.swift */; };
 		B07BFE6F245460AE00D2D18F /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE6E245460AE00D2D18F /* Array.swift */; };
-		B07BFE712454612C00D2D18F /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE702454612B00D2D18F /* HabitCell.swift */; };
 		B07BFE752454877300D2D18F /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE732454877300D2D18F /* HabitDetailsViewController.swift */; };
 		B07BFE762454877300D2D18F /* HabitDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07BFE742454877300D2D18F /* HabitDetailsViewController.xib */; };
 		B07BFE78245488CF00D2D18F /* BaseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BFE77245488CF00D2D18F /* BaseInputView.swift */; };
@@ -305,7 +304,7 @@
 		60782BF2D6979E5586B6E980 /* Pods_HabitTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		B00123E9245F01F0001B5481 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
-		B02110EC24653ECF005BF1E2 /* DoneHabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneHabitCell.swift; sourceTree = "<group>"; };
+		B02110EC24653ECF005BF1E2 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		B02110EE24654175005BF1E2 /* DoneHabitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneHabitButton.swift; sourceTree = "<group>"; };
 		B02110F024654F27005BF1E2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B02110F224659C6D005BF1E2 /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
@@ -443,7 +442,6 @@
 		B07BFE6924545C8A00D2D18F /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		B07BFE6B24545F6E00D2D18F /* UIRectCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRectCorner.swift; sourceTree = "<group>"; };
 		B07BFE6E245460AE00D2D18F /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		B07BFE702454612B00D2D18F /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		B07BFE732454877300D2D18F /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
 		B07BFE742454877300D2D18F /* HabitDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitDetailsViewController.xib; sourceTree = "<group>"; };
 		B07BFE77245488CF00D2D18F /* BaseInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInputView.swift; sourceTree = "<group>"; };
@@ -773,8 +771,7 @@
 		B02110F72465CAD7005BF1E2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B07BFE702454612B00D2D18F /* HabitCell.swift */,
-				B02110EC24653ECF005BF1E2 /* DoneHabitCell.swift */,
+				B02110EC24653ECF005BF1E2 /* HabitCell.swift */,
 				B02110F224659C6D005BF1E2 /* ChallengeCell.swift */,
 			);
 			path = Cells;
@@ -1717,7 +1714,7 @@
 				B0835591246727550043CB8A /* CalendarViewController.swift in Sources */,
 				B08355A5246759030043CB8A /* StatisticsViewController.swift in Sources */,
 				B07BFD8624543B7E00D2D18F /* HabitsViewController.swift in Sources */,
-				B02110ED24653ECF005BF1E2 /* DoneHabitCell.swift in Sources */,
+				B02110ED24653ECF005BF1E2 /* HabitCell.swift in Sources */,
 				08DA7DA424C9C1CE00CC52A9 /* HError.swift in Sources */,
 				B02110F52465A0FC005BF1E2 /* Challenge.swift in Sources */,
 				B07BFE6C24545F6E00D2D18F /* UIRectCorner.swift in Sources */,
@@ -1735,7 +1732,6 @@
 				08DA7D9F24C9BBD400CC52A9 /* Collection.swift in Sources */,
 				B07BFE6024544C4B00D2D18F /* UIEdgeInsets.swift in Sources */,
 				B0AFA6CC24B35CF800B5DA45 /* HabitTitleView.swift in Sources */,
-				B07BFE712454612C00D2D18F /* HabitCell.swift in Sources */,
 				B08355892466E41A0043CB8A /* IconCell.swift in Sources */,
 				B083559A246748640043CB8A /* HabitBanner.swift in Sources */,
 				B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */,
