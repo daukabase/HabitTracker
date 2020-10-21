@@ -31,7 +31,7 @@ public struct AlertModel {
     public init(title: String,
                 message: String,
                 confirmationTitle: String,
-                onConfirm: Block?) {
+                onConfirm: EmptyClosure?) {
         let cancelAction: AlertAction = .cancel()
         let confirmAction = AlertAction(title: confirmationTitle, onAction: onConfirm)
         

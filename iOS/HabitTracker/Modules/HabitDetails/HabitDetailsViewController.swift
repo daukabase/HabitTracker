@@ -188,9 +188,15 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
     
     private func isAllDataFilled() -> Bool {
         let message = ""
-        if titleInputView.text.isEmpty {
-//            return "Title is empty"
+        guard
+            titleInputView.text.isEmpty ||
+                notesInputView.text.isEmpty || scheduleView.selectedDays.isEmpty else {
+            return true
         }
+        
+        
+        
+        return false
     }
     
     private func getHabit() -> HabitModel {

@@ -14,10 +14,10 @@ public final class AlertAction {
     public let title: String
     public let isPreferred: Bool
     public let style: UIAlertAction.Style
-    public let onAction: Block?
+    public let onAction: EmptyClosure?
     
     // MARK: - Initialization
-    public init(title: String, isPreferred: Bool = false, style: UIAlertAction.Style = .default, onAction: Block?) {
+    public init(title: String, isPreferred: Bool = false, style: UIAlertAction.Style = .default, onAction: EmptyClosure?) {
         self.title = title
         self.isPreferred = isPreferred
         self.style = style
@@ -32,7 +32,7 @@ public final class AlertAction {
     }
     
     // MARK: - Static Methods
-    static func cancel(title: String = L10n.Common.cancel, onAction: Block? = nil) -> AlertAction {
+    static func cancel(title: String = "Cancel", onAction: EmptyClosure? = nil) -> AlertAction {
         return AlertAction(title: title, isPreferred: false, style: .cancel, onAction: onAction)
     }
     
