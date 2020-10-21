@@ -32,13 +32,26 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
         return button
     }()
     
-    @IBOutlet var tableView: UITableView!
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        
+        refreshControl.addTarget(self, action: #selector(updateList), for: .valueChanged)
+        
+        return refreshControl
+    }()
+    
+    @IBOutlet private var tableView: UITableView!
     
     // MARK: - UIViewController
     override func loadView() {
         super.loadView()
         
         view.addSubview(addButton)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateList),
+                                               name: .updateHabits,
+                                               object: nil)
     }
     
     override func viewDidLoad() {
@@ -49,6 +62,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
         tableView.contentInset.top = 8
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.addSubview(refreshControl)
         
         addButton.addTarget(self, action: #selector(addHabitDidTap), for: .touchUpInside)
         
@@ -73,6 +87,11 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
         DispatchQueue.main.async {
             self.navigationController?.pushViewController(controller, animated: true)
         }
+    }
+    
+    @objc
+    private func updateList() {
+        loadData()
     }
     
     // MARK: - Private Methods
@@ -110,6 +129,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
             
             group.notify(queue: .main) {
                 self?.endLoading()
+                self?.refreshControl.endRefreshing()
                 self?.habits = habits
                 self?.tableView.reloadData()
             }

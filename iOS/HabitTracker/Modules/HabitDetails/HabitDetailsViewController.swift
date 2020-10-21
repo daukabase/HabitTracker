@@ -184,6 +184,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         interactor.create(habit: habit, remindTime: remindTime) { [weak self] result in
             self?.endLoading()
             DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .updateHabits, object: nil)
                 self?.navigationController?.popToRootViewController(animated: true)
             }
         }
