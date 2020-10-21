@@ -169,8 +169,11 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
     // MARK: - Actions
     @objc
     private func didTapActionButton() {
-        startLoading(isTransparentBackground: true)
+        guard isAllDataFilled() else {
+            return
+        }
         
+        startLoading(isTransparentBackground: true)
         createHabit()
     }
     
@@ -187,14 +190,13 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
     }
     
     private func isAllDataFilled() -> Bool {
-        let message = ""
         guard
             titleInputView.text.isEmpty ||
                 notesInputView.text.isEmpty || scheduleView.selectedDays.isEmpty else {
             return true
         }
         
-        
+        showAlert(title: "Oops", message: "Please, fill all data to continue")
         
         return false
     }
