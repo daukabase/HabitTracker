@@ -8,7 +8,11 @@
 
 import Foundation
 
-final class CheckpointsRepository {
+protocol CheckpointsRepositoryAbstract {
+    func setupCheckpoints(for habit: HabitModel, with remindTime: Date?, completion: BoolClosure?)
+}
+
+final class CheckpointsRepository: CheckpointsRepositoryAbstract {
     
     // MARK: - Properties
     static let shared = CheckpointsRepository()
@@ -18,14 +22,17 @@ final class CheckpointsRepository {
         
     }
     
-    // MARK: - Methods
-    func setupCheckpoints(for habit: HabitModel, completion: BoolClosure?) {
-        let checkpoints = generateCheckpoints(for: habit)
+    // MARK: - CheckpointsRepositoryAbstract
+    func setupCheckpoints(for habit: HabitModel,
+                          with remindTime: Date?,
+                          completion: BoolClosure?) {
+        let checkpoints = generateCheckpoints(for: habit, remindTime: remindTime)
+        
         HabitStorage.set(checkpoints: checkpoints) { isSucceed in
             defer {
                 completion?(isSucceed)
             }
-            guard isSucceed else { return }
+            guard isSucceed, remindTime != nil else { return }
             
             checkpoints.forEach { checkpointModel in
                 Notifications.shared.setupNotification(for: checkpointModel, of: habit)
@@ -34,14 +41,15 @@ final class CheckpointsRepository {
     }
     
     // MARK: - Private Methods
-    private func generateCheckpoints(for habit: HabitModel) -> [CheckpointModel] {
+    private func generateCheckpoints(for habit: HabitModel, remindTime: Date?) -> [CheckpointModel] {
         guard let startDate = habit.startDate.date(with: .storingFormat) else {
             assertionFailure("Something wrong")
             return []
         }
         let dates = generateDates(for: habit.frequence,
                                   startDate: startDate,
-                                  durationDays: habit.durationDays)
+                                  durationDays: habit.durationDays,
+                                  checkpointAppearTime: remindTime)
         
         let checkpoints = dates.map { date -> CheckpointModel in
             return CheckpointModel(id: UUID().uuidString,
@@ -53,23 +61,48 @@ final class CheckpointsRepository {
         return checkpoints
     }
     
-    private func generateDates(for frequency: Frequency, startDate: Date, durationDays: Int) -> [Date] {
+    private func generateDates(for frequency: Frequency,
+                               startDate: Date,
+                               durationDays: Int,
+                               checkpointAppearTime: Date?) -> [Date] {
+        let defaultAppearTime = (hour: 0, minute: 0)
         var dates = [Date]()
+        
+        let (hour, minute): (Int, Int) = {
+            guard let checkpointAppearTime = checkpointAppearTime else {
+                return defaultAppearTime
+            }
+            return (checkpointAppearTime.hour, checkpointAppearTime.minute)
+        }()
+        
         switch frequency {
         case let .weekly(days):
             let days = Set(days)
             
+            print("\n\n\nAllowed days: ", Array(days).reduce(" ", { $0 + " " + String(describing: $1) }))
             for dayCount in 0..<durationDays {
-                guard let date = Calendar.current.date(byAdding: .day, value: dayCount, to: startDate) else {
+                print("____________________________________________________________")
+                guard var date = Calendar.current.date(byAdding: .day, value: dayCount, to: startDate) else {
                     assertionFailure("Something wrong")
                     continue
                 }
-                
+                let dateString = date.string(with: .storingFormat)
+                print("Date to process: ", dateString)
+                print("Date day: ", date.day)
                 guard days.contains(date.day) else {
                     continue
                 }
                 
+                if let dateWithUpdatedTime = Calendar.current.date(bySettingHour: hour,
+                                                     minute: minute,
+                                                     second: .zero,
+                                                     of: date) {
+                    print("Date with updated time: ", dateWithUpdatedTime.string(with: .storingFormat))
+                    date = dateWithUpdatedTime
+                }
+                
                 dates.append(date)
+                print("Date added: ", date.string(with: .storingFormat))
             }
         case .daily:
             fatalError("Not available")
@@ -77,4 +110,5 @@ final class CheckpointsRepository {
         
         return dates
     }
+    
 }

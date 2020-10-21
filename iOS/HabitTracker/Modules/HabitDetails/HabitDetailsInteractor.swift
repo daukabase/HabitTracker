@@ -10,15 +10,14 @@ import Foundation
 import Promises
 
 protocol HabitDetailsInteractorInput {
-    func create(habit: HabitModel, completion: EmptyClosure?)
+    func create(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?)
 }
 
 final class HabitDetailsInteractor: HabitDetailsInteractorInput {
     
-    
     // MARK: - HabitDetailsInteractorInput
-    func create(habit: HabitModel, completion: EmptyClosure?) {
-        HabitRepository.shared.create(habit: habit, completion: completion)
+    func create(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?) {
+        HabitRepository.shared.create(habit: habit, remindTime: remindTime, completion: completion)
     }
     
 }

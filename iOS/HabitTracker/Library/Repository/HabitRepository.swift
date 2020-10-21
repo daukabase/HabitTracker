@@ -9,7 +9,11 @@
 import Foundation
 import Promises
 
-final class HabitRepository {
+protocol HabitRepositoryAbstract {
+    func create(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?)
+}
+
+final class HabitRepository: HabitRepositoryAbstract {
     
     // MARK: - Constants
     enum Constants {
@@ -17,19 +21,19 @@ final class HabitRepository {
     }
     
     // MARK: - Properties
-    static let shared = HabitRepository()
+    static let shared: HabitRepositoryAbstract = HabitRepository()
     
-    // MARK: - Methods
-    func create(habit: HabitModel, completion: EmptyClosure?) {
+    // MARK: - HabitRepositoryAbstract
+    func create(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?) {
         createHabitPromise(habit: habit).then {
-            return self.generateHabitBehaviorPromise(habit: habit)
+            return self.generateHabitBehaviorPromise(habit: habit, remindTime: remindTime)
+        }.then {
+            completion?(.success($0))
         }.catch { error in
-            print(error.localizedDescription)
-        }.always {
-            completion?()
+            completion?(.failure(error))
         }
     }
-    
+        
     // MARK: - Promises
     private func createHabitPromise(habit: HabitModel) -> Promise<Void> {
         return Promise<Void>(on: Constants.queue) { fulfill, reject in
@@ -43,9 +47,9 @@ final class HabitRepository {
         }
     }
     
-    private func generateHabitBehaviorPromise(habit: HabitModel) -> Promise<Void> {
+    private func generateHabitBehaviorPromise(habit: HabitModel, remindTime: Date?) -> Promise<Void> {
         return Promise<Void>(on: Constants.queue) { fulfill, reject in
-            CheckpointsRepository.shared.setupCheckpoints(for: habit) { isSucceed in
+            CheckpointsRepository.shared.setupCheckpoints(for: habit, with: remindTime) { isSucceed in
                 guard isSucceed else {
                     reject(HTError.storageOperation)
                     return

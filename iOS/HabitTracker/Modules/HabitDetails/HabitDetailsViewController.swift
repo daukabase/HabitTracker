@@ -11,6 +11,12 @@ import Promises
 
 final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable {
     
+    // MARK: - Properties
+    private static let queue = DispatchQueue.global(qos: .userInteractive)
+    
+    private var interactor: HabitDetailsInteractorInput = HabitDetailsInteractor()
+    
+    // MARK: - Views
     @IBOutlet var stackView: UIStackView!
     
     lazy var titleInputView: BaseInputView = {
@@ -94,6 +100,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         return saveButton
     }()
     
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -124,10 +131,12 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         return .lightContent
     }
     
+    // MARK: - UI Logic
     func changedSchedule() {
         chooseAllView.set(isOn: scheduleView.isAllSelected)
     }
     
+    // MARK: - Private Setup
     private func commonInit() {
         title = "Habit details"
         
@@ -155,6 +164,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         stackView.setCustomSpacing(38, after: saveButton)
     }
 
+    // MARK: - Actions
     @objc
     private func didTapActionButton() {
         startLoading(isTransparentBackground: true)
@@ -162,41 +172,17 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         createHabit()
     }
     
+    // MARK: - Private Methods
     private func createHabit() {
         let habit = getHabit()
         let remindTime = remindView.isOn ? datePickerView.date : nil
-        
-        createHabitPromise(habit: habit).then {
-            return self.generateHabitBehaviorPromise(habit: habit, remindTime: remindTime)
-        }.catch { error in
-            print(error.localizedDescription)
-        }.always { [weak self] in
+        interactor.create(habit: habit, remindTime: remindTime) { [weak self] result in
             self?.endLoading()
             DispatchQueue.main.async {
                 self?.navigationController?.popToRootViewController(animated: true)
             }
         }
     }
-    
-    static let queue = DispatchQueue.global(qos: .userInteractive)
-    
-    private func createHabitPromise(habit: HabitModel) -> Promise<Void> {
-        return Promise<Void>(on: Self.queue) { fulfill, reject in
-            HabitStorage.create(habit: habit) { isSucceed in
-                isSucceed ? fulfill(Void()) : reject(HTError.storageOperation)
-            }
-        }
-    }
-    
-    
-    private func generateHabitBehaviorPromise(habit: HabitModel, remindTime: Date?) -> Promise<Void> {
-        return Promise<Void>(on: Self.queue) { [weak self] fulfill, reject in
-            self?.generateHabitBehavior(for: habit, remindTime: remindTime) { isSucceed in
-                isSucceed ? fulfill(Void()) : reject(HTError.storageOperation)
-            }
-        }
-    }
-    
     
     private func getHabit() -> HabitModel {
         let days = Array(scheduleView.selectedDays)
@@ -213,85 +199,5 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         
         return habit
     }
-    
-    private func generateHabitBehavior(for habit: HabitModel, remindTime: Date?, completion: BoolClosure?) {
-        let checkpoints = generateCheckpoints(for: habit, remindTime: remindTime)
         
-        HabitStorage.set(checkpoints: checkpoints) { isSucceed in
-            defer {
-                completion?(isSucceed)
-            }
-            guard isSucceed else { return }
-            
-            checkpoints.forEach { checkpointModel in
-                Notifications.shared.setupNotification(for: checkpointModel, of: habit)
-            }
-        }
-    }
-    
-    private func generateCheckpoints(for habit: HabitModel, remindTime: Date?) -> [CheckpointModel] {
-        guard let startDate = habit.startDate.date(with: .storingFormat) else {
-            assertionFailure("Something wrong")
-            return []
-        }
-        let dates = generateDates(for: habit.frequence,
-                                  startDate: startDate,
-                                  durationDays: habit.durationDays,
-                                  remindTime: remindTime)
-        
-        let checkpoints = dates.map { date -> CheckpointModel in
-            return CheckpointModel(id: UUID().uuidString,
-                                   habitId: habit.id,
-                                   date: date.string(with: .storingFormat),
-                                   isDone: false)
-        }
-        
-        return checkpoints
-    }
-    
-    private func generateDates(for frequency: Frequency,
-                               startDate: Date,
-                               durationDays: Int,
-                               remindTime: Date?) -> [Date] {
-        var dates = [Date]()
-        let (hour, minute) = (remindTime?.hour, remindTime?.minute)
-        
-        switch frequency {
-        case let .weekly(days):
-            let days = Set(days)
-            
-            print("\n\n\nAllowed days: ", Array(days).reduce(" ", { $0 + " " + String(describing: $1) }))
-            for dayCount in 0..<durationDays {
-                print("____________________________________________________________")
-                guard var date = Calendar.current.date(byAdding: .day, value: dayCount, to: startDate) else {
-                    assertionFailure("Something wrong")
-                    continue
-                }
-                let dateString = date.string(with: .storingFormat)
-                print("Date to process: ", dateString)
-                print("Date day: ", date.day)
-                guard days.contains(date.day) else {
-                    continue
-                }
-                
-                if let hour = hour,
-                   let minute = minute,
-                   let dateWithUpdatedTime = Calendar.current.date(bySettingHour: hour,
-                                                     minute: minute,
-                                                     second: .zero,
-                                                     of: date) {
-                    print("Date with updated time: ", dateWithUpdatedTime.string(with: .storingFormat))
-                    date = dateWithUpdatedTime
-                }
-                
-                dates.append(date)
-                print("Date added: ", date.string(with: .storingFormat))
-            }
-        case .daily:
-            fatalError("Not available")
-        }
-        
-        return dates
-    }
-    
 }
