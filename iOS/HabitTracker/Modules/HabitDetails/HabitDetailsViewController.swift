@@ -17,29 +17,29 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
     private var interactor: HabitDetailsInteractorInput = HabitDetailsInteractor()
     
     // MARK: - Views
-    @IBOutlet var stackView: UIStackView!
+    @IBOutlet private var stackView: UIStackView!
     
-    lazy var titleInputView: BaseInputView = {
+    private lazy var titleInputView: BaseInputView = {
         let titleInputView = BaseInputView(frame: .zero)
         titleInputView.setup(title: "Title", placeholder: "Enter title")
         
         return titleInputView
     }()
     
-    lazy var notesInputView: BaseInputView = {
+    private lazy var notesInputView: BaseInputView = {
         let notesInputView = BaseInputView(frame: .zero)
         notesInputView.setup(title: "Notes", placeholder: "Description")
         
         return notesInputView
     }()
     
-    lazy var durationView: DurationView = {
+    private lazy var durationView: DurationView = {
         let durationView = DurationView(frame: .zero)
         durationView.setup(title: "Duration")
         return durationView
     }()
     
-    lazy var scheduleView: ScheduleView = {
+    private lazy var scheduleView: ScheduleView = {
         let scheduleView = ScheduleView(frame: .zero)
         scheduleView.titleLabel.text = "Schedule"
         scheduleView.onChange = { [weak self] in
@@ -48,7 +48,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         return scheduleView
     }()
     
-    lazy var chooseAllView: SwitchableView = {
+    private lazy var chooseAllView: SwitchableView = {
         let chooseAllView = SwitchableView(frame: .zero)
         chooseAllView.label.text = "Choose everyday"
         chooseAllView.onStateChanged = { [weak scheduleView] isOn in
@@ -61,7 +61,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         return chooseAllView
     }()
     
-    lazy var remindView: SwitchableView = {
+    private lazy var remindView: SwitchableView = {
         let remindView = SwitchableView(frame: .zero)
         remindView.label.text = "Remind me"
         remindView.onStateChanged = { isOn in
@@ -72,10 +72,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         return remindView
     }()
     
-    lazy var iconsViewController = IconsViewController()
-    lazy var colorsViewController = ColorsViewController()
-    
-    lazy var datePickerView: UIDatePicker = {
+    private lazy var datePickerView: UIDatePicker = {
         let picker = UIDatePicker(frame: .zero)
         
         picker.datePickerMode = .time
@@ -89,7 +86,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         return picker
     }()
     
-    lazy var saveButton: UIButton = {
+    private lazy var saveButton: UIButton = {
         let saveButton = UIButton(frame: .zero)
         saveButton.apply(style: .blue)
         saveButton.title = "Save"
@@ -99,6 +96,11 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         saveButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
         return saveButton
     }()
+    
+    // MARK: - Controllers
+    private lazy var iconsViewController = IconsViewController()
+    
+    private lazy var colorsViewController = ColorsViewController()
     
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -181,6 +183,13 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
             DispatchQueue.main.async {
                 self?.navigationController?.popToRootViewController(animated: true)
             }
+        }
+    }
+    
+    private func isAllDataFilled() -> Bool {
+        let message = ""
+        if titleInputView.text.isEmpty {
+//            return "Title is empty"
         }
     }
     
