@@ -17,15 +17,8 @@ protocol ChallengeDelegate: class {
 
 final class HabitsViewController: UIViewController, LoaderViewDisplayable {
     
-    // MARK: - Nested Types
-    enum State {
-        case habit(items: [Habit])
-        case challenge(items: [Challenge])
-    }
-    
     // MARK: - Properties
-    var state: State = .habit(items: [])
-    
+    var habits: [Habit] = []
     
     // MARK: - Views
     private lazy var addButton: RoundedShadowButton = {
@@ -117,7 +110,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
             
             group.notify(queue: .main) {
                 self?.endLoading()
-                self?.state = .habit(items: habits)
+                self?.habits = habits
                 self?.tableView.reloadData()
             }
         }
@@ -159,31 +152,14 @@ extension HabitsViewController: UITableViewDelegate {
     
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch state {
-        case let .habit(items):
-            return items.count
-        case let .challenge(items):
-            return items.count
-        }
+        return habits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(state.cellType, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: HabitCell.identifier, for: indexPath) as! HabitCell
         
-        switch state {
-        case let .habit(items):
-            if let cell = cell as? HabitCell {
-                cell.configure(model: items[indexPath.row])
-                cell.onProgress = { _ in
-                    // TODO: implement
-                }
-            }
-        case let .challenge(items):
-            if let cell = cell as? ChallengeCell {
-                cell.configure(model: items[indexPath.row])
-                cell.delegate = self
-            }
-        }
+        let habit = habits[indexPath.row]
+        cell.configure(model: habit)
         
         return cell
     }
@@ -197,10 +173,7 @@ extension HabitsViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let controller = HabitViewController()
-        
-        if case let HabitsViewController.State.habit(items) = state {
-            controller.setup(habit: items[indexPath.row])
-        }
+        controller.setup(habit: habits[indexPath.row])
         
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -216,21 +189,6 @@ extension HabitsViewController: ChallengeDelegate {
     
     func markAsDone() {
         navigationController?.pushViewController(MarkAsDoneViewController(), animated: true)
-    }
-    
-}
-
-
-extension HabitsViewController.State {
-    
-    // MARK: - State Properties
-    var cellType: UITableViewCell.Type {
-        switch self {
-        case .habit:
-            return HabitCell.self
-        case .challenge:
-            return ChallengeCell.self
-        }
     }
     
 }

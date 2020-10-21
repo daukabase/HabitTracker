@@ -14,21 +14,15 @@ final class HomeViewController: SegementSlideViewController {
         guard let controller = UIStoryboard.instantiate(ofType: HabitsViewController.self) else {
             fatalError()
         }
-        controller.state = .habit(items: self.habits)
+        
         return controller
     }()
     
-    lazy var challengesViewController: HabitsViewController = {
-        guard let controller = UIStoryboard.instantiate(ofType: HabitsViewController.self) else {
-            fatalError()
-        }
-        controller.state = .challenge(items: self.challenges)
+    lazy var challengesViewController: ChallengesViewController = {
+        let controller = ChallengesViewController()
+        
         return controller
     }()
-    
-    var habits: [Habit] = []
-    
-    var challenges: [Challenge] = []
     
     override var titlesInSwitcher: [String] {
         return ["Habits", "Challenge"].map { $0.uppercased() }
@@ -62,7 +56,6 @@ final class HomeViewController: SegementSlideViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: Asset.menu.image,
                                                            style: .plain,

@@ -53,7 +53,6 @@ final class HabitCell: UITableViewCell {
             guard let model = model, let checkpoint = model.checkpoint else {
                 return
             }
-            self?.onProgress?(isSelected)
             let block = {
                 self?.progressIndicatorLabel.attributedText = model.completionAttributedText
                 self?.progressView.setProgress(model.progress, animated: true)
