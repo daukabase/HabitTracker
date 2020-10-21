@@ -14,10 +14,10 @@ final class ChallengesViewController: UIViewController {
     lazy var infoLabel: UILabel = {
         let label = UILabel()
         
-        label.font = FontFamily.Gilroy.bold.font(size: 24)
+        label.font = FontFamily.Gilroy.bold.font(size: 17)
         label.numberOfLines = .zero
         label.textColor = ColorName.uiOrange.color
-        label.text = "Coming soon!\n🤩"
+        label.text = "Coming soon!🤩"
         label.textAlignment = .center
         
         return label
@@ -29,7 +29,7 @@ final class ChallengesViewController: UIViewController {
         view.addSubview(infoLabel)
         infoLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-24)
+            make.centerY.equalToSuperview().offset(-56)
             make.width.equalTo(UIScreen.main.bounds.width * 2 / 3)
         }
     }

@@ -62,7 +62,6 @@ final class HabitViewController: UIViewController {
         addChild(achievementsViewController)
      
         stackView.addArrangedSubview(calendarViewController.view)
-        stackView.addArrangedSubview(habitBanner)
         stackView.addArrangedSubview(achievementsViewController.view)
     }
     

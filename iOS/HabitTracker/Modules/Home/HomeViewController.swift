@@ -45,6 +45,10 @@ final class HomeViewController: SegementSlideViewController {
                                            badgeFontForCountType: FontFamily.Gilroy.medium.font(size: 16))
     }
 
+    override var bouncesType: BouncesType {
+        return .child
+    }
+    
     override func segementSlideContentViewController(at index: Int) -> SegementSlideContentScrollViewDelegate? {
         if index == 0 {
             return habitsViewController
