@@ -9,22 +9,70 @@
 import UIKit
 import JTAppleCalendar
 
+struct CalendarViewModel {
+    
+    private var dateCheckpointMap: [Date: CheckpointModel] = [:]
+    
+    let startDate: Date
+    let endDate: Date
+    let dates: [Date]
+    let themeColor: UIColor
+    let dateFormatter = Formatter.MMMyyyy
+    
+    func isDone(for date: Date) -> Bool {
+        print("[DEBUG] GET " + String(describing: date) + " " + (dateCheckpointMap[date.daySerialized]?.id ?? "NOPE"))
+        return dateCheckpointMap[date]?.isDone ?? false
+    }
+    
+    func isMissed(date: Date) -> Bool {
+        guard let checkpoint = dateCheckpointMap[date] else {
+            return false
+        }
+        return !checkpoint.isDone
+    }
+    
+    init(checkpoints: [CheckpointModel], color: UIColor) {
+        let dates = checkpoints
+            .filter { checkpoint in
+                guard let date = checkpoint.date else {
+                    return checkpoint.isDone
+                }
+                return checkpoint.isDone || date > Date()
+            }
+            .compactMap {
+                $0.date
+            }
+        
+        self.dates = dates
+        self.startDate = dates.min() ?? Date()
+        self.endDate = dates.max() ?? Date()
+        self.themeColor = color
+        
+        checkpoints.forEach { checkpoint in
+            guard let date = checkpoint.date else {
+                return
+            }
+            print("[DEBUG] Set " + String(describing: date) + checkpoint.id)
+            dateCheckpointMap[date] = checkpoint
+        }
+        
+    }
+    
+}
+
 final class CalendarViewController: UIViewController {
     
     // MARK: - Properties
-    private var dateFormatter: DateFormatter = Formatter.MMMyyyy
-    private var notDoneDates = Set<Date>()
-    private var doneDates = Set<Date>()
-    private var themeColor = UIColor.clear
     private var bufferColorSetup: Closure<UIColor>?
+    private var viewModel: CalendarViewModel = CalendarViewModel(checkpoints: [], color: .clear)
     
     // MARK: - Views
-    @IBOutlet var containerView: UIView!
-    @IBOutlet var doneDescriptionView: UIView!
-    @IBOutlet var notDoneDescriptionView: UIView!
-    @IBOutlet var calendarView: JTACMonthView!
-    @IBOutlet var roundViews: [UIView]!
-    @IBOutlet var backgroundedView: [UIView]!
+    @IBOutlet private var containerView: UIView!
+    @IBOutlet private var doneDescriptionView: UIView!
+    @IBOutlet private var notDoneDescriptionView: UIView!
+    @IBOutlet private var calendarView: JTACMonthView!
+    @IBOutlet private var roundViews: [UIView]!
+    @IBOutlet private var backgroundedView: [UIView]!
     
     // MARK: - Superview
     override func viewDidLoad() {
@@ -43,14 +91,22 @@ final class CalendarViewController: UIViewController {
         calendarView.showsHorizontalScrollIndicator = false
         
         roundViews.forEach { $0.round() }
-        applyMocks()
-        bufferColorSetup?(themeColor)
+        bufferColorSetup?(viewModel.themeColor)
     }
     
     // MARK: - Internal Methods
-    func setup(theme color: UIColor) {
-        self.themeColor = color
+    func setup(model: CalendarViewModel) {
+        self.viewModel = model
+        setup(theme: model.themeColor)
+        setup(dates: model.dates)
         
+        DispatchQueue.main.async {
+            self.calendarView.reloadData()
+        }
+    }
+    
+    // MARK: - Private Setup
+    private func setup(theme color: UIColor) {
         guard isViewLoaded else {
             bufferColorSetup = setup(theme:)
             return
@@ -64,53 +120,11 @@ final class CalendarViewController: UIViewController {
         }
     }
     
-    // MARK: - Private Methods
-    private func applyMocks() {
-        let startDate1 = "2020-05-26T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
-        let endDate1 = "2020-06-02T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
-        
-        let startDate2 = "2020-06-06T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
-        let endDate2 = "2020-06-15T15:33:37.471+0600".date(with: .iso8601)!.daySerialized
-        
-        let notDone1 = "2020-06-02T15:33:37.471+0000".date(with: .iso8601)!.daySerialized
-        let notDone2 = "2020-06-04T15:33:37.471+0000".date(with: .iso8601)!.daySerialized
-        
-        doneDates = Set(
-            Date.dates(from: startDate1, to: startDate2).map { $0.daySerialized }
-        )
-        notDoneDates = Set(
-            Date.dates(from: notDone1, to: notDone2)
-        )
-        
-        let intervals = [
-            (startDate1, endDate1),
-            (startDate2, endDate2)
-        ]
-        
-        setupCalendar(with: intervals)
-    }
-    
-    private func setupCalendar(with intervals: [(Date, Date)]) {
-        let dates = getDates(by: intervals)
-        
+    private func setup(dates: [Date]) {
         DispatchQueue.main.async {
             self.calendarView.reloadData()
             self.calendarView.selectDates(dates, triggerSelectionDelegate: true, keepSelectionIfMultiSelectionAllowed: true)
         }
-    }
-    
-    private func getDates(by intervals: [(Date, Date)]) -> [Date] {
-        let dates = intervals.reduce([]) { (result, args) -> [Date] in
-            let (date1, date2) = args
-            
-            if date1 < date2 {
-                return result + Date.dates(from: date1.daySerialized, to: date2.daySerialized)
-            }
-            
-            return result
-        }
-        
-        return dates
     }
     
 }
@@ -145,7 +159,7 @@ extension CalendarViewController: JTACMonthViewDelegate {
     func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView {
         let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "DateHeader", for: indexPath) as! DateHeader
         
-        header.monthTitle.text = dateFormatter.string(from: range.start)
+        header.monthTitle.text = viewModel.dateFormatter.string(from: range.start)
         
         return header
     }
@@ -160,8 +174,8 @@ extension CalendarViewController: JTACMonthViewDataSource {
     
     // MARK: - JTACMonthViewDataSource
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
-        let startDate = "2020-05-06T15:33:37.471+0600".date(with: .iso8601)!
-        let endDate = Date()
+        let startDate = viewModel.startDate
+        let endDate = viewModel.endDate
         
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
@@ -184,20 +198,21 @@ private extension CalendarViewController {
         let state: DateCell.State
         
         let isToday = Calendar.current.isDateInToday(cellState.date)
-        let isNotDoneDay = notDoneDates.contains(cellState.date.daySerialized)
-        let isDone = doneDates.contains(cellState.date.daySerialized)
+        let isDone = viewModel.isDone(for: cellState.date)
+        let missedDay = viewModel.isMissed(date: cellState.date)
         
         if isToday {
             state = .today(position: cellState.selectedPosition())
         } else if cellState.isSelected {
+            print("[DEBUG] \(cellState.date) ++++ \(isDone)")
             state = .selected(position: cellState.selectedPosition(), isDone: isDone)
-        } else if isNotDoneDay {
+        } else if missedDay {
             state = .notDone
         } else {
             state = .default(isCurrentMonth: cellState.dateBelongsTo == .thisMonth)
         }
         
-        cell.set(state: state, with: themeColor)
+        cell.set(state: state, with: viewModel.themeColor)
         cell.set(text: cellState.text)
         cell.layoutIfNeeded()
     }

@@ -87,7 +87,14 @@ final class HabitViewController: UIViewController {
         habitTitleView.setup(title: habit.title,
                              image: habit.image,
                              color: habit.color)
-        calendarViewController.setup(theme: habit.color)
+        HabitStorage.getCheckpoints(for: habit.id) { (result) in
+            guard let checkpoints = result.value else {
+                return
+            }
+            let model = CalendarViewModel(checkpoints: checkpoints, color: habit.color)
+            
+            self.calendarViewController.setup(model: model)
+        }
     }
     
     // MARK: - Private Actions
