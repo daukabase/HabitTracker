@@ -40,38 +40,6 @@ final class Notifications: NSObject {
         }
     }
     
-//    func scheduleNotification(notificationType: String) {
-//        let userActions = "User Actions"
-//
-//        let content = UNMutableNotificationContent() // Содержимое уведомления
-//
-//        content.title = notificationType
-//        content.body = "This is example how to create "
-//        content.sound = UNNotificationSound.default
-//        content.badge = 1
-//        content.categoryIdentifier = userActions
-//
-//        let identifier = "Local Notification"
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-//
-//        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-//
-//        notificationCenter.add(request) { (error) in
-//            if let error = error {
-//                print("Error \(error.localizedDescription)")
-//            }
-//        }
-//
-//        let doneAction = UNNotificationAction(identifier: .doneAction, title: "Mark As Done", options: [])
-//
-//        let category = UNNotificationCategory(identifier: userActions,
-//                                              actions: [doneAction],
-//                                              intentIdentifiers: [],
-//                                              options: [])
-//
-//        notificationCenter.setNotificationCategories([category])
-//    }
-    
 }
 
 extension UserDefaultsStorage {

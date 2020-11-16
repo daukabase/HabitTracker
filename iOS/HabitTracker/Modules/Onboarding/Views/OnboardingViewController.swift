@@ -60,6 +60,12 @@ final class OnboardingViewController: UIViewController {
                                               title: L10n.Onboarding.Auth.title,
                                               description: L10n.Onboarding.Auth.description),
                                   to: stackView)
+        case .getStarted:
+            UserDefaultsStorage.isOnboardingCompleted = true
+            setupPresentationGetStarted(info: .init(image: Asset.onboarding1.image,
+                                                    title: L10n.Onboarding.GetStarted.title,
+                                                    description: L10n.Onboarding.GetStarted.description),
+                                        to: stackView)
         }
     }
     
@@ -108,6 +114,46 @@ final class OnboardingViewController: UIViewController {
         }
         
         stackView.addArrangedSubview(label)
+    }
+    
+    @objc
+    private func didClickGetStarted() {
+        
+    }
+    
+    private func setupPresentationGetStarted(info: PresentationInfo, to stackView: UIStackView) {
+        let lastSubview = setupPresentation(info: info, to: stackView)
+        stackView.setCustomSpacing(38, after: lastSubview)
+        
+        let buttonContainer = UIView(frame: .zero)
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 50))
+        button.autoresizingMask = [.flexibleWidth]
+        button.title = "Get started"
+        button.snp.makeConstraints { (make) in
+            make.height.equalTo(50)
+        }
+        button.apply(style: .orange)
+        button.addTarget(self, action: #selector(didClickGetStarted), for: .touchUpInside)
+        
+        buttonContainer.addSubview(button)
+        buttonContainer.snp.makeConstraints { (make) in
+            make.edges.equalTo(button)
+        }
+        
+        let buttonShadowColor = UIColor(red: 254/255,
+                                        green: 128/255,
+                                        blue: 92/255,
+                                        alpha: 0.24)
+        
+        buttonContainer.layer.backgroundColor = UIColor.clear.cgColor
+        buttonContainer.applyDropShadow(color: buttonShadowColor,
+                               opacity: 1,
+                               offset: CGSize(width: 0, height: 4),
+                               radius: 20,
+                               scale: true)
+        
+        stackView.addArrangedSubview(button)
+        stackView.setCustomSpacing(16, after: button)
     }
     
     @discardableResult

@@ -111,6 +111,27 @@ class Habit {
                     goal: goal)
     }
     
+    convenience init?(habit: HabitModel, checkpoint: CheckpointModel) {
+        guard
+            case let Frequency.weekly(days) = habit.frequence,
+            let startDate = habit.startDate.date(with: .storingFormat)
+        else {
+            return nil
+        }
+        self.init(id: habit.id,
+                  title: habit.title,
+                  notes: habit.notes,
+                  durationDays: habit.durationDays,
+                  startDate: startDate,
+                  schedule: days,
+                  colorHex: habit.colorHex,
+                  isCurrentCompleted: checkpoint.isDone,
+                  habitIcon: habit.icon,
+                  goal: (0, 0))
+        
+        self.checkpoint = checkpoint
+    }
+    
     func updateGoal(completion: EmptyClosure?) {
         AchievementsRepository.shared.getGoal(for: id) { (result) in
             defer {

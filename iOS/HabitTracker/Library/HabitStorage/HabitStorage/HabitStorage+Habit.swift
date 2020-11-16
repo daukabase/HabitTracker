@@ -14,6 +14,7 @@ protocol HabitStorageAbstract {
     static func create(habit: HabitModel, completion: BoolClosure?)
     static func edit(habit: HabitModel, completion: BoolClosure?)
     static func delete(habit: HabitModel, completion: BoolClosure?)
+    static func getTotalHabits(completion: Closure<RResult<[HabitModel]>>?)
 }
 
 
@@ -61,6 +62,16 @@ extension HabitStorage: HabitStorageAbstract {
             completion?(result.isSucceed)
         }
 
+    }
+    
+    static func getTotalHabits(completion: Closure<RResult<[HabitModel]>>?) {
+        guard let habitRaws = try? dataStack.fetchAll(From<HabitDTO>()) else {
+            completion?(.failure(HTError.fetchError))
+            return
+        }
+        
+        let habits = habitRaws.compactMap { try? HabitModel.from(dto: $0) }
+        completion?(.success(habits))
     }
     
 }

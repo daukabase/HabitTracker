@@ -15,5 +15,12 @@
 "Onboarding.Goal.title" = "Forward to the Goal";
 "Onboarding.Goal.description" = "Already have a goal and want to reach it?\n A few clicks and you can get a little closer to it. ";
 
+"Onboarding.GetStarted.title" = "Enjoy your application";
+"Onboarding.GetStarted.description" = "Become better version of yourself";
+
 "Onboarding.Auth.title" = "Let’s Start!";
 "Onboarding.Auth.description" = "So now if you are motivated enough and ready to achieve your goals, let’s create an account and start your first habit. ";
+
+"Home.Habit.Message.noToday" = "For today there is no habits yet";
+"Home.Habit.Message.noHabits" = "You don't have Habits yet";
+"Home.Challenge.Message.comingSoon" = "Coming soon! 🤩";

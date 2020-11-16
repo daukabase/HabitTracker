@@ -25,14 +25,6 @@ final class HabitViewController: UIViewController {
     private lazy var achievementsViewController = AchievementsViewController()
     
     // MARK: - Views
-    private lazy var imageView: UIImageView = {
-        let image = UIImageView(frame: .zero)
-        
-        image.image = Asset.habitInfo.image
-        
-        return image
-    }()
-    
     private lazy var habitBanner: HabitBanner = {
         let view = HabitBanner()
         

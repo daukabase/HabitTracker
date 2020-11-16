@@ -23,7 +23,7 @@ def analitycs
 end
 
 def interface
-  pod 'SegementSlide', '~> 2.2.1'
+  pod 'SegementSlide', '~> 3.0.1'
   pod 'JTAppleCalendar'
   pod 'YPImagePicker'
 end

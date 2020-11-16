@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .init(type: .goal),
             .init(type: .track),
             .init(type: .challenge),
-            .init(type: .auth),
+            .init(type: .getStarted),
         ])
         window?.rootViewController = UINavigationController(rootViewController: controller)
     }

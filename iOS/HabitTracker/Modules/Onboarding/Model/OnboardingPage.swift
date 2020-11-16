@@ -13,6 +13,7 @@ enum OnboardingType: CaseIterable {
     case challenge
     case goal
     case auth
+    case getStarted
 }
 
 struct OnboardingPage {

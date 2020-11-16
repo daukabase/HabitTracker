@@ -8,9 +8,9 @@
 
 import SegementSlide
 
-final class HomeViewController: SegementSlideViewController {
+final class HomeViewController: SegementSlideDefaultViewController {
     
-    lazy var habitsViewController: HabitsViewController = {
+    private lazy var habitsViewController: HabitsViewController = {
         guard let controller = UIStoryboard.instantiate(ofType: HabitsViewController.self) else {
             fatalError()
         }
@@ -18,18 +18,26 @@ final class HomeViewController: SegementSlideViewController {
         return controller
     }()
     
-    lazy var challengesViewController: ChallengesViewController = {
-        let controller = ChallengesViewController()
+    private lazy var challengesViewController = ChallengesViewController()
+    
+    private lazy var addHabitButton: RoundedShadowButton = {
+        let model = RoundedShadowButtonModel(shadowModel: .blueButton,
+                                             radius: 32,
+                                             backgroundColor: ColorName.uiBlue.color)
+        let button = RoundedShadowButton(model: model, frame: .zero)
         
-        return controller
+        button.setImage(Asset.add.image, for: .normal)
+        
+        return button
     }()
     
+    // MARK: - SegementSlideDefaultViewController
     override var titlesInSwitcher: [String] {
         return ["Habits", "Challenge"].map { $0.uppercased() }
     }
     
-    override var switcherConfig: SegementSlideSwitcherConfig {
-        return SegementSlideSwitcherConfig(type: .tab,
+    override var switcherConfig: SegementSlideDefaultSwitcherConfig {
+        return SegementSlideDefaultSwitcherConfig(type: .tab,
                                            horizontalMargin: 16,
                                            horizontalSpace: 32,
                                            normalTitleFont: FontFamily.Gilroy.medium.font(size: 16),
@@ -58,20 +66,23 @@ final class HomeViewController: SegementSlideViewController {
         return nil
     }
     
+    override func didSelectContentViewController(at index: Int) {
+        let isHabit = index == .zero
+        if isHabit {
+            animateAddButtonAppear()
+        } else {
+            animateAddButtonHide()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: Asset.menu.image,
-                                                           style: .plain,
-                                                           target: self,
-                                                           action: #selector(menuItemDidTap))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.filter.image,
-                                                            style: .done,
-                                                            target: self,
-                                                            action: #selector(filterItemDidTap))
+        commonInit()
+        setupMenuItems()
         
+        defaultSelectedIndex = 0
         reloadData()
-        scrollToSlide(at: 0, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,6 +93,20 @@ final class HomeViewController: SegementSlideViewController {
         navigationController?.navigationBar.tintColor = ColorName.uiGrayPrimary.color
     }
 
+    private func setupMenuItems() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: Asset.menu.image,
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(menuItemDidTap))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.filter.image,
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(filterItemDidTap))
+        
+    }
+    
+    
+    // MARK: - Private Actions
     @objc
     private func menuItemDidTap() {
         
@@ -90,6 +115,41 @@ final class HomeViewController: SegementSlideViewController {
     @objc
     private func filterItemDidTap() {
         
+    }
+    
+    @objc
+    private func addHabitDidTap() {
+        let controller = HabitDetailsViewController()
+        controller.modalPresentationStyle = .fullScreen
+        
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    // MARK: - Private Methods
+    private func commonInit() {
+        view.addSubview(addHabitButton)
+        
+        addHabitButton.addTarget(self, action: #selector(addHabitDidTap), for: .touchUpInside)
+        
+        addHabitButton.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-24)
+            make.size.equalTo(64)
+        }
+    }
+    
+    private func animateAddButtonHide() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: { [weak addHabitButton] in
+            addHabitButton?.alpha = 0
+        }, completion: nil)
+    }
+    
+    private func animateAddButtonAppear() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: { [weak addHabitButton] in
+            addHabitButton?.alpha = 1
+        }, completion: nil)
     }
     
 }
