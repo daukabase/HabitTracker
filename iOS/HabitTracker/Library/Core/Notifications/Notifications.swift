@@ -40,6 +40,15 @@ final class Notifications: NSObject {
         }
     }
     
+    func checkDeviceCanReceiveNotifications(completion: @escaping Closure<Bool>) {
+        notificationCenter.getNotificationSettings { settings in
+            let receiveEnabled = settings.authorizationStatus != .denied
+            DispatchQueue.main.async {
+                completion(receiveEnabled)
+            }
+        }
+    }
+    
 }
 
 extension UserDefaultsStorage {

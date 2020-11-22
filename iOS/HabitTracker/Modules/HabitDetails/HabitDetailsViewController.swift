@@ -64,13 +64,50 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
     private lazy var remindView: SwitchableView = {
         let remindView = SwitchableView(frame: .zero)
         remindView.label.text = "Remind me"
-        remindView.onStateChanged = { isOn in
-            UIView.animate(withDuration: 0.3) {
-                self.datePickerView.isHidden = !isOn
+        remindView.onStateChanged = { [weak remindView, weak self] isOn in
+            remindView?.startLoading()
+            Notifications.shared.checkDeviceCanReceiveNotifications { enabled in
+                defer {
+                    remindView?.endLoading()
+                }
+                if enabled {
+                    UIView.animate(withDuration: 0.3) {
+                        self?.datePickerView.isHidden = !isOn
+                    }
+                } else {
+                    // set old state
+                    remindView?.set(isOn: !isOn)
+                    Notifications.shared.notificationRequest()
+                }
             }
+            
         }
         return remindView
     }()
+    
+    private func handleRemindViewStateUpdate() {
+        guard remindView.isOn else {
+            configureDatePicker(for: remindView.isOn)
+            return
+        }
+        
+        remindView.startLoading()
+        Notifications.shared.checkDeviceCanReceiveNotifications { [weak self] enabled in
+            guard let strongSelf = self, enabled else {
+                self?.remindView.set(isOn: false)
+                return
+            }
+            
+            strongSelf.configureDatePicker(for: strongSelf.remindView.isOn)
+            strongSelf.remindView.endLoading()
+        }
+    }
+    
+    private func configureDatePicker(for remindEnabled: Bool) {
+        UIView.animate(withDuration: 0.3) {
+            self.datePickerView.isHidden = remindEnabled
+        }
+    }
     
     private lazy var datePickerView: UIDatePicker = {
         let picker = UIDatePicker(frame: .zero)

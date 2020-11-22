@@ -50,7 +50,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
         super.viewDidLoad()
         
         commonInit()
-        loadData()
+        loadData(isInitial: true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,7 +60,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
     // MARK: - Actions
     @objc
     private func updateList() {
-        loadData()
+        loadData(isInitial: false)
     }
     
     // MARK: - Private Methods
@@ -76,8 +76,10 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
         emptyMessageLabel.textColor = ColorName.textSecondary.color
     }
     
-    private func loadData() {
-        startLoading()
+    private func loadData(isInitial: Bool) {
+        if isInitial {
+            startLoading()
+        }
         
         HabitStorage.getCheckpointsForToday { [weak self] result in
             guard let checkpoints = result.value else {
@@ -172,35 +174,5 @@ extension HabitsViewController: UITableViewDataSource {
         
         navigationController?.pushViewController(controller, animated: true)
     }
-//    
-//    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-//        guard let cell = tableView.cellForRow(at: indexPath) else {
-//            return
-//        }
-//        shrink(down: true, cell: cell)
-//    }
-//    
-//    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-//        guard let cell = tableView.cellForRow(at: indexPath) else {
-//            return
-//        }
-//        shrink(down: false, cell: cell)
-//    }
-//    
-//    func shrink(down: Bool, cell: UITableViewCell) {
-//        UIView.animate(
-//            withDuration: 1.0,
-//            delay: 0.0,
-//            options: [.allowUserInteraction],
-//            animations: {
-//                guard down else {
-//                    cell.transform = .identity
-//                    return
-//                }
-//                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-//            },
-//            completion: nil
-//        )
-//    }
     
 }

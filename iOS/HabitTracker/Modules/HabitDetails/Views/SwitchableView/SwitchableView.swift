@@ -43,6 +43,12 @@ final class SwitchableView: UIView {
         return view
     }()
     
+    lazy var loaderView: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .gray)
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -53,7 +59,7 @@ final class SwitchableView: UIView {
     }
     
     func commonInit() {
-        [label, switchView, lineView].forEach(addSubview)
+        [label, switchView, loaderView, lineView].forEach(addSubview)
         
         switchView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
@@ -72,7 +78,26 @@ final class SwitchableView: UIView {
             make.height.equalTo(1)
         }
         
+        loaderView.snp.makeConstraints { make in
+            make.center.equalTo(switchView)
+        }
+        
         switchView.addTarget(self, action: #selector(setState(_:)), for: .valueChanged)
+    }
+    
+    
+    func set(isOn: Bool) {
+        switchView.setOn(isOn, animated: true)
+    }
+    
+    func startLoading() {
+        loaderView.startAnimating()
+        switchView.isHidden = true
+    }
+    
+    func endLoading() {
+        loaderView.stopAnimating()
+        switchView.isHidden = false
     }
     
     @objc
@@ -80,7 +105,4 @@ final class SwitchableView: UIView {
         onStateChanged?(switchView.isOn)
     }
     
-    func set(isOn: Bool) {
-        switchView.setOn(isOn, animated: true)
-    }
 }
