@@ -71,6 +71,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         tableView.addSubview(refreshControl)
+        tableView.delaysContentTouches = false
         
         emptyMessageLabel.textColor = ColorName.textSecondary.color
     }
@@ -171,5 +172,35 @@ extension HabitsViewController: UITableViewDataSource {
         
         navigationController?.pushViewController(controller, animated: true)
     }
+//    
+//    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+//        guard let cell = tableView.cellForRow(at: indexPath) else {
+//            return
+//        }
+//        shrink(down: true, cell: cell)
+//    }
+//    
+//    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+//        guard let cell = tableView.cellForRow(at: indexPath) else {
+//            return
+//        }
+//        shrink(down: false, cell: cell)
+//    }
+//    
+//    func shrink(down: Bool, cell: UITableViewCell) {
+//        UIView.animate(
+//            withDuration: 1.0,
+//            delay: 0.0,
+//            options: [.allowUserInteraction],
+//            animations: {
+//                guard down else {
+//                    cell.transform = .identity
+//                    return
+//                }
+//                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+//            },
+//            completion: nil
+//        )
+//    }
     
 }

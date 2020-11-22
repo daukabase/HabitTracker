@@ -8,9 +8,11 @@
 
 import UIKit
 
-final class HabitCell: UITableViewCell {
+final class HabitCell: ShrinkableCell {
     
     var onProgress: BoolClosure?
+    
+    // MARK: - Views
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var doneButton: DoneHabitButton!
     @IBOutlet private var progressIndicatorLabel: UILabel!
@@ -18,7 +20,7 @@ final class HabitCell: UITableViewCell {
     @IBOutlet private var iconImageView: UIImageView!
     @IBOutlet private var containerView: UIView!
     
-
+    // MARK: - Superview
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -37,6 +39,7 @@ final class HabitCell: UITableViewCell {
         setupProgressViewLayer()
     }
     
+    // MARK: - Methods
     func configure(model: Habit) {
         titleLabel.text = model.title
         progressIndicatorLabel.attributedText = model.completionAttributedText

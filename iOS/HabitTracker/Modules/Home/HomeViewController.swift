@@ -92,6 +92,14 @@ final class HomeViewController: SegementSlideDefaultViewController {
         navigationController?.navigationBar.barTintColor = ColorName.uiWhite.color
         navigationController?.navigationBar.tintColor = ColorName.uiGrayPrimary.color
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
+    }
 
     private func setupMenuItems() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: Asset.menu.image,

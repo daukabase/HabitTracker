@@ -126,7 +126,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
             NSAttributedString.Key.font: FontFamily.Gilroy.medium.font(size: 24)!,
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
-        
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

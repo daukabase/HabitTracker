@@ -25,14 +25,13 @@ class RoundedShadowButton: UIButton {
     }
     
     private func addShadow() {
-        guard let model = model else {
+        guard let model = model, !model.shadowAdded else {
             return
         }
         let shadowLayer = CAShapeLayer(shadowModel: model.shadowModel,
                                        owner: bounds,
                                        cornerRadius: model.radius,
                                        backgroundColor: model.backgroundColor)
-        
         
         layer.insertSublayer(shadowLayer, at: 0)
         self.model?.shadowAdded = true

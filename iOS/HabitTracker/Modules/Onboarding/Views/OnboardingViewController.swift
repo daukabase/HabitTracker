@@ -61,7 +61,6 @@ final class OnboardingViewController: UIViewController {
                                               description: L10n.Onboarding.Auth.description),
                                   to: stackView)
         case .getStarted:
-            UserDefaultsStorage.isOnboardingCompleted = true
             setupPresentationGetStarted(info: .init(image: Asset.onboarding1.image,
                                                     title: L10n.Onboarding.GetStarted.title,
                                                     description: L10n.Onboarding.GetStarted.description),
@@ -118,7 +117,8 @@ final class OnboardingViewController: UIViewController {
     
     @objc
     private func didClickGetStarted() {
-        
+        UserDefaultsStorage.isOnboardingCompleted = true
+        routeToMainScreen()
     }
     
     private func setupPresentationGetStarted(info: PresentationInfo, to stackView: UIStackView) {
