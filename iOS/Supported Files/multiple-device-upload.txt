@@ -1,0 +1,5 @@
+Device ID	Device Name	Device Platform
+84b9291dbfa5159c2a0e3925db892902b25ee019	Yeskhat	ios
+407d48c69d747766dfb36a4a360390e6540423c0	Ayanna	ios
+00008030-001414C91132802E	Daulet	ios
+ac1acc7325f3f5b4cc53aa8d59f8c8b7ecb61c7b	Bota	ios
