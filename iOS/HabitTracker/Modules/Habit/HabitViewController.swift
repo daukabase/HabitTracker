@@ -36,6 +36,7 @@ final class HabitViewController: UIViewController {
     private lazy var habitTitleView = HabitTitleView(frame: .zero)
     
     @IBOutlet private var stackView: UIStackView!
+    @IBOutlet private var scrollView: UIScrollView!
     
     // MARK: - Superview
     override func viewDidLoad() {
@@ -49,12 +50,14 @@ final class HabitViewController: UIViewController {
             action: #selector(didTapRightBarButton(sender:))
         )
 
+        scrollView.contentInset.bottom = view.safeAreaInsets.bottom
         setBackButton(style: .dark)
         addChild(calendarViewController)
         addChild(achievementsViewController)
      
         stackView.addArrangedSubview(calendarViewController.view)
         stackView.addArrangedSubview(achievementsViewController.view)
+        stackView.clipsToBounds = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
