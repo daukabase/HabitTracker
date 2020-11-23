@@ -31,6 +31,13 @@ final class CheckpointModel {
         return dateString.hasPrefix(todayDate)
     }
     
+    var isMissed: Bool {
+        guard !isToday, !isDone, let date = date else {
+            return false
+        }
+        return date < Date()
+    }
+    
     init(id: String, habitId: String, date: String, isDone: Bool) {
         self.id = id
         self.habitId = habitId

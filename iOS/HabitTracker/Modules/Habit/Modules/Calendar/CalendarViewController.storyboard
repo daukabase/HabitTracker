@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nPS-dY-Lbq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nPS-dY-Lbq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +32,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiQ-zl-YJj">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="354"/>
                                         <subviews>
-                                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-ib-WCE" customClass="JTACMonthView" customModule="JTAppleCalendar">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-ib-WCE" customClass="JTACMonthView" customModule="JTAppleCalendar">
                                                 <rect key="frame" x="1" y="0.0" width="380" height="330"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="edM-7N-nTW">
@@ -65,7 +66,7 @@
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOq-kY-HNW">
                                                                     <rect key="frame" x="17.5" y="15.5" width="35" height="35"/>
-                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="35" id="6Yn-U8-wTp"/>
                                                                         <constraint firstAttribute="width" constant="35" id="EzZ-mx-xg3"/>
@@ -198,7 +199,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="eiQ-zl-YJj" firstAttribute="top" secondItem="bkF-vH-5Qr" secondAttribute="top" id="0gb-4z-V8c"/>
                                     <constraint firstAttribute="trailing" secondItem="eiQ-zl-YJj" secondAttribute="trailing" id="74F-14-Q1N"/>
@@ -272,7 +273,8 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ofZ-i3-ta7"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
                             <constraint firstItem="ofZ-i3-ta7" firstAttribute="bottom" secondItem="5u4-Qr-62F" secondAttribute="bottom" constant="16" id="6Ig-bu-W2v"/>
                             <constraint firstItem="bkF-vH-5Qr" firstAttribute="leading" secondItem="ofZ-i3-ta7" secondAttribute="leading" constant="16" id="AMZ-eT-lHc"/>
@@ -283,7 +285,6 @@
                             <constraint firstItem="5u4-Qr-62F" firstAttribute="centerX" secondItem="ofZ-i3-ta7" secondAttribute="centerX" id="wLe-sh-Mn4"/>
                             <constraint firstItem="ofZ-i3-ta7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5u4-Qr-62F" secondAttribute="trailing" constant="16" id="wPZ-UX-wfA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ofZ-i3-ta7"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -306,5 +307,11 @@
     </scenes>
     <resources>
         <image name="doneLittle" width="12" height="10"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

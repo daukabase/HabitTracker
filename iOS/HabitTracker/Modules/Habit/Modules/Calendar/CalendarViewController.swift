@@ -15,7 +15,7 @@ struct CalendarViewModel {
     
     let startDate: Date
     let endDate: Date
-    let dates: [Date]
+    let selectedDates: [Date]
     let themeColor: UIColor
     let dateFormatter = Formatter.MMMyyyy
     
@@ -25,10 +25,7 @@ struct CalendarViewModel {
     }
     
     func isMissed(date: Date) -> Bool {
-        guard let checkpoint = dateCheckpointMap[date] else {
-            return false
-        }
-        return !checkpoint.isDone
+        return dateCheckpointMap[date]?.isMissed ?? false
     }
     
     init(checkpoints: [CheckpointModel], color: UIColor) {
@@ -37,13 +34,16 @@ struct CalendarViewModel {
                 guard let date = checkpoint.date else {
                     return checkpoint.isDone
                 }
-                return checkpoint.isDone || date > Date()
+                // In selected ranges there are must be ONLY done/today/todo checkpoints
+                return checkpoint.isDone || checkpoint.isToday || date > Date()
             }
             .compactMap {
                 $0.date
             }
-        
-        self.dates = dates
+        print("______ NOT DONE ______")
+        print(checkpoints.filter { $0.isMissed }.compactMap { $0.date })
+        print("______  _______ ______")
+        self.selectedDates = dates
         self.startDate = dates.min() ?? Date()
         self.endDate = dates.max() ?? Date()
         self.themeColor = color
@@ -98,7 +98,7 @@ final class CalendarViewController: UIViewController {
     func setup(model: CalendarViewModel) {
         self.viewModel = model
         setup(theme: model.themeColor)
-        setup(dates: model.dates)
+        setup(dates: model.selectedDates)
         
         DispatchQueue.main.async {
             self.calendarView.reloadData()
@@ -198,13 +198,13 @@ private extension CalendarViewController {
         let state: DateCell.State
         
         let isToday = Calendar.current.isDateInToday(cellState.date)
-        let isDone = viewModel.isDone(for: cellState.date)
         let missedDay = viewModel.isMissed(date: cellState.date)
+        let isDone = viewModel.isDone(for: cellState.date)
         
-        if isToday {
+        if isToday && !isDone {
             state = .today(position: cellState.selectedPosition())
         } else if cellState.isSelected {
-            print("[DEBUG] \(cellState.date) ++++ \(isDone)")
+            // every selectedCellStates from past is done
             state = .selected(position: cellState.selectedPosition(), isDone: isDone)
         } else if missedDay {
             state = .notDone
