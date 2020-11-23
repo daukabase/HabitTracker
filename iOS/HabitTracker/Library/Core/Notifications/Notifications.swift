@@ -49,6 +49,23 @@ final class Notifications: NSObject {
         }
     }
     
+    func openAppInDeviceSettings() {
+        DispatchQueue.main.async {
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                  UIApplication.shared.canOpenURL(settingsUrl)
+            else {
+                return
+            }
+            
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { success in
+                    print("Settings opened: \(success)") // Prints true
+                })
+            } else {
+                UIApplication.shared.openURL(settingsUrl as URL)
+            }
+        }
+    }
 }
 
 extension UserDefaultsStorage {

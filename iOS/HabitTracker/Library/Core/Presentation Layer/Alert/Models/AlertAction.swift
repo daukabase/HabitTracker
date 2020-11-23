@@ -32,7 +32,7 @@ public final class AlertAction {
     }
     
     // MARK: - Static Methods
-    static func cancel(title: String = "Cancel", onAction: EmptyClosure? = nil) -> AlertAction {
+    static func cancel(title: String = L10n.Common.cancel, onAction: EmptyClosure? = nil) -> AlertAction {
         return AlertAction(title: title, isPreferred: false, style: .cancel, onAction: onAction)
     }
     

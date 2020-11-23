@@ -3,7 +3,12 @@
     "uiOrange": "#FE805C",
     "uiWhite": "#FFFFFF",
     "uiBlueSecondary": "#A5AFFB",
-    "uiBlueSecondary": "#A5AFFB",
+    "uiRed": "#FF3367",
+    "uiSkyBlue": "#50CBF5",
+    "uiViolet": "#916AC8",
+    "uiGreen": "#42C8B5",
+    "uiYellow": "#FFA25B",
+    "uiHabitBlue": "#6979F8",
     
     "uiGrayPrimary": "#50555C",
     "uiGraySecondary": "#A5A5A5",

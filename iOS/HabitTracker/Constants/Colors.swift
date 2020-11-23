@@ -42,12 +42,30 @@ public struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#a5a5a5"></span>
   /// Alpha: 100% <br/> (0xa5a5a5ff)
   public static let uiGraySecondary = ColorName(rgbaValue: 0xa5a5a5ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#42c8b5"></span>
+  /// Alpha: 100% <br/> (0x42c8b5ff)
+  public static let uiGreen = ColorName(rgbaValue: 0x42c8b5ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#6979f8"></span>
+  /// Alpha: 100% <br/> (0x6979f8ff)
+  public static let uiHabitBlue = ColorName(rgbaValue: 0x6979f8ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#fe805c"></span>
   /// Alpha: 100% <br/> (0xfe805cff)
   public static let uiOrange = ColorName(rgbaValue: 0xfe805cff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ff3367"></span>
+  /// Alpha: 100% <br/> (0xff3367ff)
+  public static let uiRed = ColorName(rgbaValue: 0xff3367ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#50cbf5"></span>
+  /// Alpha: 100% <br/> (0x50cbf5ff)
+  public static let uiSkyBlue = ColorName(rgbaValue: 0x50cbf5ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#916ac8"></span>
+  /// Alpha: 100% <br/> (0x916ac8ff)
+  public static let uiViolet = ColorName(rgbaValue: 0x916ac8ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
   /// Alpha: 100% <br/> (0xffffffff)
   public static let uiWhite = ColorName(rgbaValue: 0xffffffff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffa25b"></span>
+  /// Alpha: 100% <br/> (0xffa25bff)
+  public static let uiYellow = ColorName(rgbaValue: 0xffa25bff)
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

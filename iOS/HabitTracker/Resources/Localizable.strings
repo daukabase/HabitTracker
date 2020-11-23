@@ -6,6 +6,10 @@
   Copyright © 2020 Daulet. All rights reserved.
 */
 
+"Common.cancel" = "Cancel";
+"Common.enable" = "Enable";
+"Common.ok" = "OK";
+
 "Onboarding.Challenge.title" = "Challenge accepted!";
 "Onboarding.Challenge.description" = "Be a good friend and change life for the better not only for yourself. Invite friends to create a challenge and motivate each other.";
 
@@ -24,3 +28,6 @@
 "Home.Habit.Message.noToday" = "For today there is no habits yet";
 "Home.Habit.Message.noHabits" = "You don't have Habits yet";
 "Home.Challenge.Message.comingSoon" = "Coming soon! 🤩";
+
+"Habit.Notifications.disabled.title" = "Notifications";
+"Habit.Notifications.disabled.message" = "To use remind logic you need to enable notifications";

@@ -11,6 +11,26 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
 
+  internal enum Common {
+    /// Cancel
+    internal static let cancel = L10n.tr("Localizable", "Common.cancel")
+    /// Enable
+    internal static let enable = L10n.tr("Localizable", "Common.enable")
+    /// OK
+    internal static let ok = L10n.tr("Localizable", "Common.ok")
+  }
+
+  internal enum Habit {
+    internal enum Notifications {
+      internal enum Disabled {
+        /// To use remind logic you need to enable notifications
+        internal static let message = L10n.tr("Localizable", "Habit.Notifications.disabled.message")
+        /// Notifications
+        internal static let title = L10n.tr("Localizable", "Habit.Notifications.disabled.title")
+      }
+    }
+  }
+
   internal enum Home {
     internal enum Challenge {
       internal enum Message {

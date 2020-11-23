@@ -356,9 +356,9 @@ extension MessageBanner {
         let color: UIColor
         switch type {
         case .error:
-            color = UIColor.red
+            color = ColorName.uiRed.color
         case .info:
-            color = UIColor.green
+            color = ColorName.uiGreen.color
         }
         self.init(with: .colored(color))
         configureLabel(message: message)

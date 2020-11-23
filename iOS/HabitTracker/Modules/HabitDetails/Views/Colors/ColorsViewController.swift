@@ -16,12 +16,12 @@ final class ColorsViewController: UIViewController {
     private(set) lazy var selectedColor: UIColor = colors[0]
     
     private var colors: [UIColor] = [
-        UIColor(hexString: "#FF3367"),
-        UIColor(hexString: "#50CBF5"),
-        UIColor(hexString: "#916AC8"),
-        UIColor(hexString: "#42C8B5"),
-        UIColor(hexString: "#FFA25B"),
-        UIColor(hexString: "#6979F8")
+        ColorName.uiRed.color,
+        ColorName.uiSkyBlue.color,
+        ColorName.uiViolet.color,
+        ColorName.uiGreen.color,
+        ColorName.uiYellow.color,
+        ColorName.uiHabitBlue.color
     ]
     
     private lazy var label: UILabel = {

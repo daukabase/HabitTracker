@@ -9,7 +9,7 @@
 import UIKit
 import Promises
 
-final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable {
+final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable, InfoDisplayable {
     
     // MARK: - Properties
     private static let queue = DispatchQueue.global(qos: .userInteractive)
@@ -65,22 +65,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         let remindView = SwitchableView(frame: .zero)
         remindView.label.text = "Remind me"
         remindView.onStateChanged = { [weak remindView, weak self] isOn in
-            remindView?.startLoading()
-            Notifications.shared.checkDeviceCanReceiveNotifications { enabled in
-                defer {
-                    remindView?.endLoading()
-                }
-                if enabled {
-                    UIView.animate(withDuration: 0.3) {
-                        self?.datePickerView.isHidden = !isOn
-                    }
-                } else {
-                    // set old state
-                    remindView?.set(isOn: !isOn)
-                    Notifications.shared.notificationRequest()
-                }
-            }
-            
+            self?.handleRemindViewStateUpdate()
         }
         return remindView
     }()
@@ -94,13 +79,34 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable 
         remindView.startLoading()
         Notifications.shared.checkDeviceCanReceiveNotifications { [weak self] enabled in
             guard let strongSelf = self, enabled else {
-                self?.remindView.set(isOn: false)
+                self?.handleNotificationsDisabled()
                 return
             }
             
             strongSelf.configureDatePicker(for: strongSelf.remindView.isOn)
             strongSelf.remindView.endLoading()
         }
+    }
+    
+    private func handleNotificationsDisabled() {
+        remindView.endLoading()
+        remindView.set(isOn: false)
+        
+        displayNotificationPermission()
+    }
+    
+    private func displayNotificationPermission() {
+        let cancelAction: AlertAction = .cancel(title: L10n.Common.cancel, onAction: nil)
+        let enableAction: AlertAction = .init(
+            title: L10n.Common.enable,
+            isPreferred: true,
+            style: .default) {
+                Notifications.shared.openAppInDeviceSettings()
+            }
+        let model = AlertModel(title: L10n.Habit.Notifications.Disabled.title,
+                               message: L10n.Habit.Notifications.Disabled.message,
+                               actions: [enableAction, cancelAction])
+        showAlert(by: model)
     }
     
     private func configureDatePicker(for remindEnabled: Bool) {

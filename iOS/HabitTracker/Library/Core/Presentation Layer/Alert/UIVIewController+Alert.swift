@@ -25,14 +25,14 @@ extension UIViewController {
     }
     
     func showAlert(title: String, message: String, completion: EmptyClosure? = nil) {
-        let okAction: AlertAction = .cancel(title: "OK", onAction: nil)
+        let okAction: AlertAction = .cancel(title: L10n.Common.ok, onAction: nil)
         let model = AlertModel(title: title, message: message, actions: [okAction])
         
         showAlert(by: model, completion: completion)
     }
     
     func showAlert(title: String, message: String, confirmationTitle: String, onConfirm: EmptyClosure?, onCancel: EmptyClosure? = nil) {
-        let cancelAction: AlertAction = .cancel(title: "Cancel", onAction: onCancel)
+        let cancelAction: AlertAction = .cancel(title: L10n.Common.cancel, onAction: onCancel)
         let confirmAction = AlertAction(title: confirmationTitle, onAction: onConfirm)
         let model = AlertModel(title: title,
                                message: message,
