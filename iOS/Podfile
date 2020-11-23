@@ -11,6 +11,7 @@ def common_pods
   pod 'Moya'
   pod 'PromisesSwift'
   pod 'CoreStore', '~> 7.2'
+  pod "Haptica"
   
   # Security
   pod 'KeychainAccess'

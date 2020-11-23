@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haptica
 
 final class HabitCell: ShrinkableCell {
     
@@ -53,26 +54,25 @@ final class HabitCell: ShrinkableCell {
         doneButton.isSelected = model.isCurrentCompleted
         
         doneButton.onClick = { [weak model, weak self] isSelected in
+            Haptic.impact(.heavy).generate()
             guard let model = model, let checkpoint = model.checkpoint else {
                 return
             }
             let block = {
-                self?.progressIndicatorLabel.attributedText = model.completionAttributedText
-                self?.progressView.setProgress(model.progress, animated: true)
+                model.updateGoal {
+                    self?.progressIndicatorLabel.attributedText = model.completionAttributedText
+                    self?.progressView.setProgress(model.progress, animated: true)
+                }
             }
             if isSelected {
                 HabitStorage.setDone(checkpoint: checkpoint) { isSucceed in
                     guard isSucceed else { return }
-                    model.updateGoal {
-                        block()
-                    }
+                    block()
                 }
             } else {
                 HabitStorage.setUndone(checkpoint: checkpoint) { isSucceed in
                     guard isSucceed else { return }
-                    model.updateGoal {
-                        block()
-                    }
+                    block()
                 }
             }
             
@@ -82,7 +82,7 @@ final class HabitCell: ShrinkableCell {
     private func setupProgressViewLayer() {
         setupProgressIndicatorLayer()
         
-        let maskLayerPath = UIBezierPath(roundedRect: progressView.bounds, cornerRadius: 6)
+        let maskLayerPath = UIBezierPath(roundedRect: progressView.bounds, cornerRadius: progressView.frame.height / 2)
         let maskLayer = CAShapeLayer()
         maskLayer.frame = progressView.bounds
         maskLayer.path = maskLayerPath.cgPath
@@ -91,7 +91,7 @@ final class HabitCell: ShrinkableCell {
     }
     
     private func setupProgressIndicatorLayer() {
-        progressView.layer.sublayers?[safe: 1]?.cornerRadius = 4
+        progressView.layer.sublayers?[safe: 1]?.cornerRadius = progressView.frame.height / 2
         progressView.subviews[safe: 1]?.clipsToBounds = true
     }
     
