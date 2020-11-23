@@ -92,11 +92,22 @@ final class SwitchableView: UIView {
     
     func startLoading() {
         loaderView.startAnimating()
-        switchView.isHidden = true
+        
+        UIView.animate(withDuration: 0.1, animations: { [weak self] in
+            self?.switchView.alpha = 0
+        }, completion: { [weak self] _ in
+            self?.switchView.isHidden = true
+        })
     }
     
     func endLoading() {
         loaderView.stopAnimating()
+        
+        UIView.animate(withDuration: 0.1, animations: { [weak self] in
+            self?.switchView.alpha = 1
+        }, completion: { [weak self] _ in
+            self?.switchView.isHidden = false
+        })
         switchView.isHidden = false
     }
     

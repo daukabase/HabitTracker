@@ -70,51 +70,6 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         return remindView
     }()
     
-    private func handleRemindViewStateUpdate() {
-        guard remindView.isOn else {
-            configureDatePicker(for: remindView.isOn)
-            return
-        }
-        
-        remindView.startLoading()
-        Notifications.shared.checkDeviceCanReceiveNotifications { [weak self] enabled in
-            guard let strongSelf = self, enabled else {
-                self?.handleNotificationsDisabled()
-                return
-            }
-            
-            strongSelf.configureDatePicker(for: strongSelf.remindView.isOn)
-            strongSelf.remindView.endLoading()
-        }
-    }
-    
-    private func handleNotificationsDisabled() {
-        remindView.endLoading()
-        remindView.set(isOn: false)
-        
-        displayNotificationPermission()
-    }
-    
-    private func displayNotificationPermission() {
-        let cancelAction: AlertAction = .cancel(title: L10n.Common.cancel, onAction: nil)
-        let enableAction: AlertAction = .init(
-            title: L10n.Common.enable,
-            isPreferred: true,
-            style: .default) {
-                Notifications.shared.openAppInDeviceSettings()
-            }
-        let model = AlertModel(title: L10n.Habit.Notifications.Disabled.title,
-                               message: L10n.Habit.Notifications.Disabled.message,
-                               actions: [enableAction, cancelAction])
-        showAlert(by: model)
-    }
-    
-    private func configureDatePicker(for remindEnabled: Bool) {
-        UIView.animate(withDuration: 0.3) {
-            self.datePickerView.isHidden = remindEnabled
-        }
-    }
-    
     private lazy var datePickerView: UIDatePicker = {
         let picker = UIDatePicker(frame: .zero)
         
@@ -259,6 +214,55 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
                                durationDays: durationView.durationDays)
         
         return habit
+    }
+    
+    // MARK: - Remind View Logic
+    private func handleRemindViewStateUpdate() {
+        guard remindView.isOn else {
+            configureDatePicker(for: false)
+            return
+        }
+        
+        remindView.startLoading()
+        Notifications.shared.checkDeviceCanReceiveNotifications { [weak self] enabled in
+            let randomDelayTime = Int.random(in: 200...400)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(randomDelayTime)) {
+                guard let strongSelf = self, enabled else {
+                    self?.handleNotificationsDisabled()
+                    return
+                }
+                
+                strongSelf.configureDatePicker(for: true)
+                strongSelf.remindView.endLoading()
+            }
+        }
+    }
+    
+    private func handleNotificationsDisabled() {
+        remindView.endLoading()
+        remindView.set(isOn: false)
+        
+        displayNotificationPermission()
+    }
+    
+    private func displayNotificationPermission() {
+        let cancelAction: AlertAction = .cancel(title: L10n.Common.cancel, onAction: nil)
+        let enableAction: AlertAction = .init(
+            title: L10n.Common.enable,
+            isPreferred: true,
+            style: .default) {
+                Notifications.shared.openAppInDeviceSettings()
+            }
+        let model = AlertModel(title: L10n.Habit.Notifications.Disabled.title,
+                               message: L10n.Habit.Notifications.Disabled.message,
+                               actions: [enableAction, cancelAction])
+        showAlert(by: model)
+    }
+    
+    private func configureDatePicker(for remindEnabled: Bool) {
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.datePickerView.isHidden = !remindEnabled
+        }
     }
         
 }
