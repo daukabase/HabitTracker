@@ -31,3 +31,4 @@
 
 "Habit.Notifications.disabled.title" = "Notifications";
 "Habit.Notifications.disabled.message" = "To use remind logic you need to enable notifications";
+"Habit.Action.Edit.message" = "Edit";

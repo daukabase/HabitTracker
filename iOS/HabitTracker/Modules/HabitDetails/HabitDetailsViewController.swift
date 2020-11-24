@@ -11,10 +11,17 @@ import Promises
 
 final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable, InfoDisplayable {
     
+    // MARK: - Nested Types
+    enum Context {
+        case createNew
+        case edit(Habit)
+    }
+    
     // MARK: - Properties
     private static let queue = DispatchQueue.global(qos: .userInteractive)
     
     private var interactor: HabitDetailsInteractorInput = HabitDetailsInteractor()
+    private let context: Context
     
     // MARK: - Views
     @IBOutlet private var stackView: UIStackView!
@@ -41,7 +48,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     
     private lazy var scheduleView: ScheduleView = {
         let scheduleView = ScheduleView(frame: .zero)
-        scheduleView.titleLabel.text = "Schedule"
+        scheduleView.title = "Schedule"
         scheduleView.onChange = { [weak self] in
             self?.changedSchedule()
         }
@@ -111,6 +118,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         
         commonInit()
         setupViews()
+        setupContext()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -129,6 +137,17 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    // MARK: - Init
+    init(context: Context) {
+        self.context = context
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - UI Logic
@@ -214,6 +233,25 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
                                durationDays: durationView.durationDays)
         
         return habit
+    }
+    
+    private func setupContext() {
+        switch context {
+        case .createNew:
+            break
+        case let .edit(habit):
+            fillData(using: habit)
+        }
+    }
+    
+    private func fillData(using habit: Habit) {
+        titleInputView.text = habit.title
+        notesInputView.text = habit.notes
+        scheduleView.selectedDays = habit.schedule
+        colorsViewController.set(selected: habit.color)
+        iconsViewController.select(icon: habit.habitIcon)
+        iconsViewController.setup(color: habit.color)
+        durationView.set(startDate: habit.startDate, durationDays: habit.durationDays)
     }
     
     // MARK: - Remind View Logic

@@ -127,7 +127,7 @@ final class HomeViewController: SegementSlideDefaultViewController {
     
     @objc
     private func addHabitDidTap() {
-        let controller = HabitDetailsViewController()
+        let controller = HabitDetailsViewController(context: .createNew)
         controller.modalPresentationStyle = .fullScreen
         
         DispatchQueue.main.async {

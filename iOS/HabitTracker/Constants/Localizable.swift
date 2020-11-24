@@ -21,6 +21,12 @@ internal enum L10n {
   }
 
   internal enum Habit {
+    internal enum Action {
+      internal enum Edit {
+        /// Edit
+        internal static let message = L10n.tr("Localizable", "Habit.Action.Edit.message")
+      }
+    }
     internal enum Notifications {
       internal enum Disabled {
         /// To use remind logic you need to enable notifications

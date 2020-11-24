@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SnapKit
 
 final class ScheduleView: UIView {
     
+    // MARK: - Properties
     var onChange: EmptyClosure?
     
     var isAllSelected: Bool {
@@ -17,19 +19,25 @@ final class ScheduleView: UIView {
     }
     
     var selectedDays: Set<Day> {
-        var selectedDays = Set<Day>()
-        stackView.arrangedSubviews.forEach {
-            guard let dayButton = $0 as? DayButton, dayButton.isSelected else {
-                return
-            }
-            
-            selectedDays.insert(dayButton.day)
+        get {
+            getSelectedDays()
         }
-        return selectedDays
+        set {
+            set(selected: newValue)
+        }
     }
     
+    var title: String {
+        get {
+            return titleLabel.text ?? ""
+        }
+        set {
+            titleLabel.text = newValue
+        }
+    }
     
-    lazy var titleLabel: UILabel = {
+    // MARK: - Views
+    private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         
         label.font = FontFamily.Gilroy.regular.font(size: 16)
@@ -38,7 +46,7 @@ final class ScheduleView: UIView {
         return label
     }()
     
-    lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stack = UIStackView(frame: .zero)
         
         stack.axis = .horizontal
@@ -49,6 +57,7 @@ final class ScheduleView: UIView {
         return stack
     }()
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -59,7 +68,7 @@ final class ScheduleView: UIView {
         commonInit()
     }
     
-    
+    // MARK: - Internal Methods
     func selectAllDays() {
         stackView.arrangedSubviews.forEach {
             guard let dayButton = $0 as? DayButton else {
@@ -82,6 +91,7 @@ final class ScheduleView: UIView {
         layoutIfNeeded()
     }
     
+    // MARK: - Private Methods
     private func commonInit() {
         addSubview(titleLabel)
         addSubview(stackView)
@@ -111,6 +121,29 @@ final class ScheduleView: UIView {
         }
     }
     
+    private func set(selected days: Set<Day>) {
+        deselectAllDays()
+        
+        stackView.arrangedSubviews.forEach {
+            guard let dayButton = $0 as? DayButton, days.contains(dayButton.day) else {
+                return
+            }
+            
+            dayButton.isSelected = true
+        }
+        setNeedsLayout()
+    }
+    
+    private func getSelectedDays() -> Set<Day> {
+        var selectedDays = Set<Day>()
+        stackView.arrangedSubviews.forEach {
+            guard let dayButton = $0 as? DayButton, dayButton.isSelected else {
+                return
+            }
+            
+            selectedDays.insert(dayButton.day)
+        }
+        return selectedDays
+    }
+    
 }
-
-import SnapKit

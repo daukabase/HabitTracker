@@ -20,7 +20,12 @@ final class BaseInputView: UIView {
     }
     
     var text: String {
-        return textField.text ?? ""
+        get {
+            textField.text ?? ""
+        }
+        set {
+            textField.text = newValue
+        }
     }
     
     @IBOutlet private weak var titleLabel: UILabel!

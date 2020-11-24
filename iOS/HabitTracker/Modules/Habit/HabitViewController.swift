@@ -94,7 +94,25 @@ final class HabitViewController: UIViewController {
     // MARK: - Private Actions
     @objc
     private func didTapRightBarButton(sender: UIBarButtonItem) {
+        let modalController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
+        let action = AlertAction(title: L10n.Habit.Action.Edit.message) { [weak self, weak modalController] in
+            self?.handleEditAction()
+//            modalController?.dismiss(animated: false, completion: nil)
+        }
+        modalController.addAction(action.generateUiAlertAction())
+        present(modalController, animated: true, completion: nil)
+    }
+    
+    // MARK: - Private Methods
+    private func handleEditAction() {
+        guard let habit = habit else {
+            return
+        }
+        
+        let controller = HabitDetailsViewController(context: .edit(habit))
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }

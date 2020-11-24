@@ -10,6 +10,7 @@ import UIKit
 
 final class ColorsViewController: UIViewController {
     
+    // MARK: - Properties
     let spacing: CGFloat = 16
     var onColor: Closure<UIColor>?
     
@@ -24,6 +25,7 @@ final class ColorsViewController: UIViewController {
         ColorName.uiHabitBlue.color
     ]
     
+    // MARK: - Views
     private lazy var label: UILabel = {
         let label = UILabel(frame: .zero)
         
@@ -34,7 +36,7 @@ final class ColorsViewController: UIViewController {
         return label
     }()
     
-    lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stack = UIStackView(frame: .zero)
         
         stack.axis = .horizontal
@@ -45,6 +47,7 @@ final class ColorsViewController: UIViewController {
         return stack
     }()
     
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,36 +64,62 @@ final class ColorsViewController: UIViewController {
             make.height.equalTo(35)
         }
          
-        colors.forEach { (color) in
-            let button = ColorButton()
+        colors.forEach { color in
+            let button = generateButton(for: color)
             
-            let totalSpacingWidth = spacing * CGFloat(colors.count - 1)
-            let totalbuttonsWidth = view.frame.width - totalSpacingWidth
-            let buttonWidth = totalbuttonsWidth / CGFloat(colors.count)
-            button.size = buttonWidth
-            
-            button.configure(color: color)
-            button.onClick = { [weak self, weak button] isSelected in
-                guard let _button = button else {
-                    return
-                }
-                self?.selectedColor = _button.color
-                self?.onColor?(_button.color)
-                
-                self?.stackView.arrangedSubviews.forEach({ (view) in
-                    guard let button = view as? ColorButton else {
-                        return
-                    }
-                    button.isSelected = _button == button ? true : false
-                })
-                
-                self?.stackView.layoutIfNeeded()
-            }
-            if (color == selectedColor) {
-                button.isSelected = true
-            }
             stackView.addArrangedSubview(button)
         }
+    }
+    
+    // MARK: - Internal Methods
+    func set(selected color: UIColor) {
+        guard colors.contains(color) else {
+            return
+        }
+        
+        stackView.arrangedSubviews.forEach { view in
+            guard let button = view as? ColorButton else {
+                return
+            }
+            button.isSelected = button.color == color
+        }
+    }
+    
+    // MARK: - Private Methods
+    private func generateButton(for color: UIColor) -> ColorButton {
+        let button = ColorButton()
+        
+        let totalSpacingWidth = spacing * CGFloat(colors.count - 1)
+        let totalbuttonsWidth = view.frame.width - totalSpacingWidth
+        let buttonWidth = totalbuttonsWidth / CGFloat(colors.count)
+        button.size = buttonWidth
+        
+        button.configure(color: color)
+        button.onClick = { [weak self, weak button] _ in
+            self?.select(for: button)
+        }
+        if (color == selectedColor) {
+            button.isSelected = true
+        }
+        
+        return button
+    }
+    
+    private func select(for button: ColorButton?) {
+        guard let _button = button else {
+            return
+        }
+        selectedColor = _button.color
+        onColor?(_button.color)
+        
+        stackView.arrangedSubviews.forEach({ (view) in
+            guard let button = view as? ColorButton else {
+                return
+            }
+            button.isSelected = _button == button ? true : false
+        })
+        
+        stackView.layoutIfNeeded()
     }
     
 }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DurationView" customModule="HabitTracker" customModuleProvider="target">
             <connections>
+                <outlet property="calendarIconImageView" destination="bsf-IE-BQI" id="hJQ-38-GHn"/>
                 <outlet property="durationContentView" destination="Dwp-UI-fAM" id="ID6-aa-2pi"/>
                 <outlet property="durationTextField" destination="fmS-dm-h5e" id="NAj-fF-akg"/>
                 <outlet property="startTimeContentView" destination="gg4-fJ-u1J" id="TI6-Aj-DnB"/>
@@ -30,22 +32,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="700" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOy-ej-ap7">
-                    <rect key="frame" x="0.0" y="16" width="43" height="13"/>
+                    <rect key="frame" x="0.0" y="16" width="43" height="15"/>
                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="16"/>
                     <color key="textColor" red="0.94509803920000002" green="0.27450980390000002" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="Dwp-UI-fAM">
-                    <rect key="frame" x="18" y="45" width="82" height="36"/>
+                    <rect key="frame" x="18" y="47" width="82" height="36"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="21" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmS-dm-h5e">
-                            <rect key="frame" x="8" y="9" width="66" height="22.5"/>
+                            <rect key="frame" x="8" y="10.5" width="66" height="19.5"/>
                             <color key="textColor" red="0.3333996534" green="0.34847956899999999" blue="0.72141361240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstItem="fmS-dm-h5e" firstAttribute="centerY" secondItem="Dwp-UI-fAM" secondAttribute="centerY" constant="2" id="Ifl-nS-Gzr"/>
                         <constraint firstAttribute="height" constant="36" id="Wgq-Ep-yy9"/>
@@ -55,19 +57,19 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="gg4-fJ-u1J">
-                    <rect key="frame" x="136.5" y="45" width="178" height="36"/>
+                    <rect key="frame" x="136.5" y="47" width="178" height="36"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="bsf-IE-BQI">
                             <rect key="frame" x="128" y="8" width="20" height="20"/>
                         </imageView>
                         <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="20/06/20" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZM-Fn-WMH">
-                            <rect key="frame" x="30" y="9.5" width="73" height="21.5"/>
+                            <rect key="frame" x="30" y="11" width="82" height="18.5"/>
                             <color key="textColor" red="0.3333996534" green="0.34847956899999999" blue="0.72141361240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstItem="bsf-IE-BQI" firstAttribute="centerY" secondItem="gg4-fJ-u1J" secondAttribute="centerY" id="5Nf-2W-0fM"/>
                         <constraint firstItem="NZM-Fn-WMH" firstAttribute="leading" secondItem="gg4-fJ-u1J" secondAttribute="leading" constant="30" id="HWL-7S-WMy"/>
@@ -78,19 +80,20 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="starting data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzY-Ce-WLd">
-                    <rect key="frame" x="192" y="89" width="67.5" height="14"/>
+                    <rect key="frame" x="189.5" y="91" width="72.5" height="12"/>
                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                     <color key="textColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="501" text="days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDB-dc-ScD">
-                    <rect key="frame" x="46" y="89" width="26" height="14"/>
+                    <rect key="frame" x="46" y="91" width="26" height="12"/>
                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                     <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gg4-fJ-u1J" secondAttribute="trailing" constant="16" id="9dR-yT-qk0"/>
                 <constraint firstItem="MOy-ej-ap7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="U91-TM-TTC"/>
@@ -107,11 +110,16 @@
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="136.875" y="-130.45774647887325"/>
         </view>
     </objects>
     <resources>
         <image name="calendar" width="20" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

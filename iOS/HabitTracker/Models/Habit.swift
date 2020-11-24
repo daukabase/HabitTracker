@@ -12,24 +12,22 @@ import UIKit
 class Habit {
     
     let id: String
-    var title: String
-    var notes: String
-    var startDate: Date
-    var schedule: Set<Day>
-    var colorHex: String
+    let title: String
+    let notes: String
+    let startDate: Date
+    let schedule: Set<Day>
+    let colorHex: String
     var isCurrentCompleted: Bool
-    var habitIcon: HabitIcon
+    let habitIcon: HabitIcon
+    let durationDays: Int
     var checkpoint: CheckpointModel?
     
     var image: UIImage {
         return habitIcon.icon
     }
     
-    // TODO: remove mocks
-    var totalRepetitions: Int = 0
-    var completedRepetitions: Int = 0
-    
-    private var durationDays: Int
+    private(set) var totalRepetitions: Int = 0
+    private(set) var completedRepetitions: Int = 0
     
     var completionAttributedText: NSAttributedString {
         let indicatorValue = NSMutableAttributedString()

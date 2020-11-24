@@ -10,18 +10,27 @@ import UIKit
 
 final class DurationView: UIView {
     
-    private(set) var startDate: Date = Date()
-    private(set) lazy var durationDays: Int = suggestedDays
-    
-    private let suggestedDays = 21
-    private var suggestedDaysIndex: Int? {
-        return durationDaysArray.enumerated().first { (index, value) -> Bool in
-            return value == suggestedDays
-        }?.offset
+    // MARK: - Constants
+    enum Constants {
+        static let suggestedDays = durationDaysArray[suggestedDaysIndex]
+        static let suggestedDaysIndex = 3
+        static let durationDaysArray: [Int] = [5, 7, 13, 21, 48, 66, 85, 256]
     }
-    private let durationDaysArray: [Int] = [5, 7, 13, 21, 48, 66, 85, 256]
     
-    lazy var datePicker: UIDatePicker = {
+    // MARK: - Properties
+    private(set) var startDate: Date = Date() {
+        didSet {
+            updateUI()
+        }
+    }
+    private(set) var durationDays: Int = Constants.suggestedDays {
+        didSet {
+            updateDuration()
+        }
+    }
+    
+    // MARK: - Views
+    private lazy var datePicker: UIDatePicker = {
         let picker = UIDatePicker(frame: .zero)
         
         picker.minimumDate = Date()
@@ -36,14 +45,12 @@ final class DurationView: UIView {
         return picker
     }()
     
-    lazy var durationPickerView: UIPickerView = {
+    private lazy var durationPickerView: UIPickerView = {
         let picker = UIPickerView(frame: .zero)
         
         picker.delegate = self
         picker.dataSource = self
-        if let suggestedDaysIndex = suggestedDaysIndex {
-            picker.selectRow(suggestedDaysIndex, inComponent: 0, animated: false)
-        }
+        
         return picker
     }()
     
@@ -52,9 +59,11 @@ final class DurationView: UIView {
     @IBOutlet private var durationTextField: UITextField!
     @IBOutlet private var startTimeContentView: UIView!
     @IBOutlet private var startTimeTextField: UITextField!
+    @IBOutlet private var calendarIconImageView: UIImageView!
     
-    @IBOutlet var views: [UIView]!
+    @IBOutlet private var views: [UIView]!
 
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -65,12 +74,17 @@ final class DurationView: UIView {
         commonInit()
     }
     
+    // MARK: - Internal Methods
     func setup(title: String) {
         titleLabel.text = title
     }
     
-    // MARK: - Private methods
+    func set(startDate: Date, durationDays: Int) {
+        self.startDate = startDate
+        self.durationDays = durationDays
+    }
     
+    // MARK: - Private methods
     private func commonInit() {
         initFromNib()
         views.forEach { view in
@@ -80,29 +94,49 @@ final class DurationView: UIView {
             view.layer.borderWidth = 1
         }
         
-        setStartTitle(for: startDate)
-        datePicker.date = startDate
-        
         startTimeTextField.inputView = datePicker
         startTimeTextField.addDoneButtonOnKeyboard()
         startTimeTextField.tintColor = .clear
         
         durationTextField.placeholder = "0"
-        durationTextField.text = "\(suggestedDays)"
         durationTextField.tintColor = .clear
         durationTextField.addDoneButtonOnKeyboard()
         durationTextField.inputView = durationPickerView
+        
+        startDate = { startDate }()
+        durationDays = { durationDays }()
     }
     
     private func setStartTitle(for date: Date) {
         startTimeTextField.text = date.string(with: .ddMMYYYY)
+        guard date < Date() else {
+            return
+        }
+        startTimeTextField.isEnabled = false
+        startTimeTextField.textColor = ColorName.textSecondary.color
+        calendarIconImageView.image = Asset.calendar.image.filled(with: ColorName.textSecondary.color)
+    }
+    
+    private func updateUI() {
+        setStartTitle(for: startDate)
+        datePicker.date = startDate
+    }
+    
+    private func updateDuration() {
+        guard let durationIndex = Constants.durationDaysArray.first(where: { daysCount in
+            return daysCount == durationDays
+        }) else {
+            return
+        }
+        
+        durationTextField.text = "\(Constants.durationDaysArray[durationIndex])"
+        durationPickerView.selectRow(durationIndex, inComponent: 0, animated: false)
     }
     
     // MARK: - Actions
     @objc
     private func updateTextField(_ sender: Any?) {
-        startDate = datePicker.date
-        setStartTitle(for: datePicker.date)
+        updateUI()
     }
     
     @objc
@@ -125,8 +159,8 @@ extension DurationView: UITextFieldDelegate {
 extension DurationView: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        durationDays = durationDaysArray[row]
-        durationTextField.text = "\(durationDaysArray[row])"
+        durationDays = Constants.durationDaysArray[row]
+        durationTextField.text = "\(Constants.durationDaysArray[row])"
     }
     
 }
@@ -141,14 +175,14 @@ extension DurationView: UIPickerViewDataSource {
         if component == 1 {
             return 1
         }
-        return durationDaysArray.count
+        return Constants.durationDaysArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 1 {
             return "days"
         }
-        return String(durationDaysArray[row])
+        return String(Constants.durationDaysArray[row])
     }
     
 }

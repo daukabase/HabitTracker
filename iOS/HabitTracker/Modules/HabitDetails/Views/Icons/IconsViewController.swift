@@ -9,7 +9,7 @@
 import UIKit
 
 
-class IconsViewController: UIViewController {
+final class IconsViewController: UIViewController {
     
     let spacing: CGFloat = 12
     let itemsCountForOneRow: CGFloat = 6
@@ -91,6 +91,13 @@ class IconsViewController: UIViewController {
         self.color = color
         icons.forEach { (model) in
             model.selectedColor = color
+        }
+        collectionView.reloadData()
+    }
+    
+    func select(icon: HabitIcon) {
+        icons.forEach {
+            $0.isSelected = icon == $0.habitIcon
         }
         collectionView.reloadData()
     }
