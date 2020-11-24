@@ -94,7 +94,6 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     private lazy var saveButton: UIButton = {
         let saveButton = UIButton(frame: .zero)
         saveButton.apply(style: .blue)
-        saveButton.title = "Save"
         saveButton.snp.makeConstraints { (make) in
             make.height.equalTo(50)
         }
@@ -191,7 +190,12 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         }
         
         startLoading(isTransparentBackground: true)
-        createHabit()
+        switch context {
+        case .createNew:
+            createHabit()
+        case let .edit(habit):
+            editHabit(with: habit.id)
+        }
     }
     
     // MARK: - Private Methods
@@ -199,6 +203,19 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         let habit = getHabit()
         let remindTime = remindView.isOn ? datePickerView.date : nil
         interactor.create(habit: habit, remindTime: remindTime) { [weak self] result in
+            self?.endLoading()
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .updateHabits, object: nil)
+                self?.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+    }
+    
+    private func editHabit(with id: String) {
+        let habit = getHabit(with: id)
+        
+        let remindTime = remindView.isOn ? datePickerView.date : nil
+        interactor.edit(habit: habit, remindTime: remindTime) { [weak self] result in
             self?.endLoading()
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: .updateHabits, object: nil)
@@ -219,11 +236,10 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         return false
     }
     
-    private func getHabit() -> HabitModel {
+    private func getHabit(with id: String = UUID().uuidString) -> HabitModel {
         let days = Array(scheduleView.selectedDays)
         let frequency = Frequency.weekly(days)
-        let habitId = UUID().uuidString
-        let habit = HabitModel(id: habitId,
+        let habit = HabitModel(id: id,
                                title: titleInputView.text,
                                notes: notesInputView.text,
                                frequence: frequency,
@@ -238,8 +254,11 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     private func setupContext() {
         switch context {
         case .createNew:
-            break
+            title = "Habit details"
+            saveButton.title = "Save"
         case let .edit(habit):
+            title = "Edit Habit"
+            saveButton.title = "Edit"
             fillData(using: habit)
         }
     }

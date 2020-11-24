@@ -24,6 +24,7 @@ final class ScheduleView: UIView {
         }
         set {
             set(selected: newValue)
+            onChange?()
         }
     }
     

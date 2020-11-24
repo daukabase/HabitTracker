@@ -115,6 +115,7 @@ final class DurationView: UIView {
         startTimeTextField.isEnabled = false
         startTimeTextField.textColor = ColorName.textSecondary.color
         calendarIconImageView.image = Asset.calendar.image.filled(with: ColorName.textSecondary.color)
+        startTimeContentView.layer.borderColor = ColorName.textSecondary.color.cgColor
     }
     
     private func updateUI() {
@@ -123,7 +124,7 @@ final class DurationView: UIView {
     }
     
     private func updateDuration() {
-        guard let durationIndex = Constants.durationDaysArray.first(where: { daysCount in
+        guard let durationIndex = Constants.durationDaysArray.firstIndex(where: { daysCount in
             return daysCount == durationDays
         }) else {
             return

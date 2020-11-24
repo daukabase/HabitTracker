@@ -71,7 +71,9 @@ final class HabitViewController: UIViewController {
             NSAttributedString.Key.font: FontFamily.Gilroy.medium.font(size: 18)!,
             NSAttributedString.Key.foregroundColor: ColorName.textBlack.color
         ]
-        
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = ColorName.uiWhite.color
+        navigationController?.navigationBar.tintColor = ColorName.uiGrayPrimary.color
     }
     
     // MARK: - Internal Methods
@@ -96,11 +98,16 @@ final class HabitViewController: UIViewController {
     private func didTapRightBarButton(sender: UIBarButtonItem) {
         let modalController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let action = AlertAction(title: L10n.Habit.Action.Edit.message) { [weak self, weak modalController] in
-            self?.handleEditAction()
-//            modalController?.dismiss(animated: false, completion: nil)
-        }
-        modalController.addAction(action.generateUiAlertAction())
+        let editAction = UIAlertAction(
+            title: L10n.Habit.Action.Edit.message,
+            style: .default,
+            handler: { [weak self] _ in
+                self?.handleEditAction()
+        })
+        let cancelAction = UIAlertAction(title: L10n.Common.cancel, style: .cancel, handler: nil)
+        
+        [editAction, cancelAction].forEach(modalController.addAction)
+        
         present(modalController, animated: true, completion: nil)
     }
     

@@ -11,6 +11,7 @@ import Promises
 
 protocol HabitRepositoryAbstract {
     func create(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?)
+    func edit(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?)
     func getHabitViewModel(using checkpoint: CheckpointModel, completion: Closure<RResult<Habit>>?)
 }
 
@@ -33,6 +34,10 @@ final class HabitRepository: HabitRepositoryAbstract {
         }.catch { error in
             completion?(.failure(error))
         }
+    }
+    
+    func edit(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?) {
+        habit
     }
     
     func getHabitViewModel(using checkpoint: CheckpointModel, completion: Closure<RResult<Habit>>?) {

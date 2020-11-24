@@ -11,6 +11,7 @@ import Promises
 
 protocol HabitDetailsInteractorInput {
     func create(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?)
+    func edit(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?)
 }
 
 final class HabitDetailsInteractor: HabitDetailsInteractorInput {
@@ -18,6 +19,10 @@ final class HabitDetailsInteractor: HabitDetailsInteractorInput {
     // MARK: - HabitDetailsInteractorInput
     func create(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?) {
         HabitRepository.shared.create(habit: habit, remindTime: remindTime, completion: completion)
+    }
+    
+    func edit(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?) {
+        HabitRepository.shared.edit(habit: habit, remindTime: remindTime, completion: completion)
     }
     
 }
