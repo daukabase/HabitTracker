@@ -109,7 +109,7 @@ final class DurationView: UIView {
     
     private func setStartTitle(for date: Date) {
         startTimeTextField.text = date.string(with: .ddMMYYYY)
-        guard date < Date() else {
+        guard date < Date(), !Calendar.current.isDateInToday(date) else {
             return
         }
         startTimeTextField.isEnabled = false
