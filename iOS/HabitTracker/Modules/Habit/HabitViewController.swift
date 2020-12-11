@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HabitViewController: UIViewController {
+final class HabitViewController: UIViewController, LoaderViewDisplayable, ErrorDisplayable {
 
     // MARK: - Properties
     private var habit: Habit?
@@ -117,9 +117,31 @@ final class HabitViewController: UIViewController {
             return
         }
         
-        let controller = HabitDetailsViewController(context: .edit(habit))
+        let controller = HabitDetailsViewController(context: .edit(habit), delegate: self)
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+}
+
+extension HabitViewController: HabitDetailsDelegate {
+    
+    func didEndEditHabit() {
+        guard let habit = habit else {
+            return
+        }
+        startLoading()
+        
+        HabitRepository.shared.getHabitViewModel(by: habit.id,
+                                                 checkpoint: nil) { [weak self] result in
+            switch result {
+            case let .success(habit):
+                self?.setup(habit: habit)
+            case let .failure(error):
+                self?.showError(describedBy: error)
+            }
+            self?.endLoading()
+        }
     }
     
 }

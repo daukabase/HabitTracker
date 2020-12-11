@@ -9,6 +9,10 @@
 import UIKit
 import Promises
 
+protocol HabitDetailsDelegate: class {
+    func didEndEditHabit()
+}
+
 final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable, InfoDisplayable {
     
     // MARK: - Nested Types
@@ -18,6 +22,8 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     }
     
     // MARK: - Properties
+    weak var delegate: HabitDetailsDelegate?
+    
     private static let queue = DispatchQueue.global(qos: .userInteractive)
     
     private var interactor: HabitDetailsInteractorInput = HabitDetailsInteractor()
@@ -139,7 +145,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     }
     
     // MARK: - Init
-    init(context: Context) {
+    init(context: Context, delegate: HabitDetailsDelegate?) {
         self.context = context
         
         super.init(nibName: nil, bundle: nil)
@@ -220,6 +226,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: .updateHabits, object: nil)
                 self?.navigationController?.popToRootViewController(animated: true)
+                self?.delegate?.didEndEditHabit()
             }
         }
     }
@@ -245,7 +252,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
                                frequence: frequency,
                                colorHex: colorsViewController.selectedColor.toHexString(),
                                icon: iconsViewController.selectedIcon.rawValue,
-                               startDate: durationView.startDate.string(with: .storingFormat),
+                               startDate: durationView.startDate,
                                durationDays: durationView.durationDays)
         
         return habit
@@ -259,7 +266,16 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         case let .edit(habit):
             title = "Edit Habit"
             saveButton.title = "Edit"
-            fillData(using: habit)
+            setup(habit: habit)
+        }
+    }
+    
+    private func setup(habit: Habit) {
+        fillData(using: habit)
+        startLoading()
+        
+        setupRemindTime(for: habit) { [weak self] _ in
+            self?.endLoading()
         }
     }
     
@@ -271,6 +287,26 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         iconsViewController.select(icon: habit.habitIcon)
         iconsViewController.setup(color: habit.color)
         durationView.set(startDate: habit.startDate, durationDays: habit.durationDays)
+    }
+    
+    private func setupRemindTime(for habit: Habit, completion: Closure<RResult<Void>>?) {
+        interactor.loadRemindTime(for: habit) { [weak self] result in
+            defer {
+                completion?(.success(Void()))
+            }
+            guard let date = result.value else {
+                return
+            }
+            self?.set(remind: date)
+        }
+    }
+    
+    private func set(remind date: Date) {
+        defer {
+            handleRemindViewStateUpdate()
+        }
+        datePickerView.setDate(date, animated: true)
+        remindView.set(isOn: true)
     }
     
     // MARK: - Remind View Logic

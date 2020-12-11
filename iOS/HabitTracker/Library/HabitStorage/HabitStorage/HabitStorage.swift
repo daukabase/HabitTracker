@@ -39,8 +39,8 @@ public final class HabitStorage {
                 ],
                 versionLock: [
                     "AchievementModel": [0xc39e90d0741c975, 0xe71a6381a09b7888, 0xa833541370ee4aa3, 0xda95a97fd3f1049],
-                    "CheckpointModel": [0x35e2e5547be7c0e0, 0x75e38ad41603b4e3, 0x56729df7000d124f, 0xd4c7c4ecc80db42f],
-                    "HabitModel": [0xf348782e6e2c97c7, 0x821b42d63c70f350, 0x57852979813635e1, 0x60263cc376af59ee]
+                    "CheckpointModel": [0xafc18d69dd6fb4ff, 0xcf5d48cec90bc1cb, 0xb5875d01333664dd, 0x18d8d31b4521a2c],
+                    "HabitModel": [0xa582d0b06e7c90d9, 0xe42495295ae59c80, 0xba42a4525e376704, 0x6c99b54c7d8de6ff]
                 ]
             )
         )

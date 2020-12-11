@@ -26,8 +26,7 @@ final class HabitDTO: CoreStoreObject {
     var icon: String = HabitIcon.meditation.rawValue
     
     @Field.Stored("startDate")
-    // DD.MM.yyyy
-    var startDate: String = "16.12.1991"
+    var startDate: Date = Date()
     
     @Field.Stored("durationDays")
     var durationDays: Int = 0

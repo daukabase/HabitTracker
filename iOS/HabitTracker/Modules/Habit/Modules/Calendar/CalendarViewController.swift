@@ -31,11 +31,8 @@ struct CalendarViewModel {
     init(checkpoints: [CheckpointModel], color: UIColor) {
         let dates = checkpoints
             .filter { checkpoint in
-                guard let date = checkpoint.date else {
-                    return checkpoint.isDone
-                }
                 // In selected ranges there are must be ONLY done/today/todo checkpoints
-                return checkpoint.isDone || checkpoint.isToday || date > Date()
+                return checkpoint.isDone || checkpoint.isToday || checkpoint.date > Date()
             }
             .compactMap {
                 $0.date
@@ -49,18 +46,14 @@ struct CalendarViewModel {
         self.themeColor = color
         
         checkpoints.forEach { checkpoint in
-            guard let date = checkpoint.date else {
-                return
-            }
-            print("[DEBUG] Set " + String(describing: date) + checkpoint.id)
-            dateCheckpointMap[date] = checkpoint
+            print("[DEBUG] Set " + String(describing: checkpoint.date) + checkpoint.id)
+            dateCheckpointMap[checkpoint.date] = checkpoint
         }
-        
     }
     
 }
 
-final class CalendarViewController: UIViewController {
+final class CalendarViewController: UIViewController, LoaderViewDisplayable {
     
     // MARK: - Properties
     private var bufferColorSetup: Closure<UIColor>?
@@ -96,12 +89,14 @@ final class CalendarViewController: UIViewController {
     
     // MARK: - Internal Methods
     func setup(model: CalendarViewModel) {
+        startLoading()
         self.viewModel = model
         setup(theme: model.themeColor)
         setup(dates: model.selectedDates)
         
         DispatchQueue.main.async {
             self.calendarView.reloadData()
+            self.endLoading()
         }
     }
     

@@ -121,6 +121,15 @@ extension Notifications {
         notificationCenter.setNotificationCategories([category])
     }
     
+    func deleteNotifications(for checkpoints: [CheckpointModel]) {
+        let ids = checkpoints.map { $0.notificationId }
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: ids)
+    }
+    
+}
+
+private extension Notifications {
+    
     private func generateNotificationActionId(for checkpoint: CheckpointModel) -> String {
         return Constants.checkpointNotificationActionPrefix + checkpoint.id
     }
@@ -152,7 +161,7 @@ extension Notifications {
     
     private func getRequest(for checkpoint: CheckpointModel, content: UNMutableNotificationContent) -> UNNotificationRequest {
         var dateComponents = Calendar.current.dateComponents(Constants.calendarComponents,
-                                                             from: checkpoint.date!)
+                                                             from: checkpoint.date)
         dateComponents.timeZone = .autoupdatingCurrent
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents,
                                                     repeats: false)

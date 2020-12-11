@@ -19,7 +19,7 @@ final class CheckpointDTO: CoreStoreObject {
     
     @Field.Stored("dateString")
     // DD.MM.yyyy
-    var dateString: String = "16.12.1991"
+    var date: Date = Date()
     
     @Field.Stored("isDone")
     var isDone: Bool = false
@@ -27,7 +27,7 @@ final class CheckpointDTO: CoreStoreObject {
     func mutate(using checkpoint: CheckpointModel) {
         self.id = checkpoint.id
         self.habitId = checkpoint.habitId
-        self.dateString = checkpoint.dateString
+        self.date = checkpoint.date
         self.isDone = checkpoint.isDone
     }
     

@@ -96,5 +96,7 @@ Montserrat-ThinItalic.otf</string>
 	<string>https://google.com</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<false/>
 </dict>
 </plist>

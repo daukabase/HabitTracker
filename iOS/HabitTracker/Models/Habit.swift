@@ -109,10 +109,9 @@ class Habit {
                     goal: goal)
     }
     
-    convenience init?(habit: HabitModel, checkpoint: CheckpointModel) {
+    convenience init?(habit: HabitModel, checkpoint: CheckpointModel?) {
         guard
-            case let Frequency.weekly(days) = habit.frequence,
-            let startDate = habit.startDate.date(with: .storingFormat)
+            case let Frequency.weekly(days) = habit.frequence
         else {
             return nil
         }
@@ -120,10 +119,10 @@ class Habit {
                   title: habit.title,
                   notes: habit.notes,
                   durationDays: habit.durationDays,
-                  startDate: startDate,
+                  startDate: habit.startDate,
                   schedule: days,
                   colorHex: habit.colorHex,
-                  isCurrentCompleted: checkpoint.isDone,
+                  isCurrentCompleted: checkpoint?.isDone ?? false,
                   habitIcon: habit.icon,
                   goal: (0, 0))
         

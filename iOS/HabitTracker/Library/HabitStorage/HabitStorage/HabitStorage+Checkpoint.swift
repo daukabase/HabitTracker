@@ -102,7 +102,7 @@ private extension HabitStorage {
     
     // MARK: - Promises
     private static func getCheckpoints(for ids: [String]) -> Promise<[CheckpointDTO]> {
-        return Promise<[CheckpointDTO]>(on: .global(qos: .userInitiated)) { fulfill, reject in
+        return Promise<[CheckpointDTO]>(on: .main) { fulfill, reject in
             Self.getCheckpoints(for: ids) { result in
                 switch result {
                 case let .success(models):
@@ -115,7 +115,7 @@ private extension HabitStorage {
     }
     
     private static func delete(checkpoints: [CheckpointDTO]) -> Promise<Void> {
-        return Promise<Void>(on: .global(qos: .userInitiated)) { fulfill, reject in
+        return Promise<Void>(on: .main) { fulfill, reject in
             dataStack.perform { transaction in
                 transaction.delete(checkpoints)
             } completion: { result in

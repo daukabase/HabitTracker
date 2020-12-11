@@ -17,10 +17,10 @@ final class HabitModel {
     let colorHex: String
     let icon: HabitIcon
     // DD.MM.yyyy
-    let startDate: String
+    let startDate: Date
     let durationDays: Int
     
-    init(id: String, title: String, notes: String, frequence: Frequency, colorHex: String, icon: String, startDate: String, durationDays: Int) {
+    init(id: String, title: String, notes: String, frequence: Frequency, colorHex: String, icon: String, startDate: Date, durationDays: Int) {
         self.id = id
         self.title = title
         self.notes = notes
