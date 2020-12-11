@@ -54,7 +54,7 @@ final class HabitCell: ShrinkableCell {
         doneButton.isSelected = model.isCurrentCompleted
         
         doneButton.onClick = { [weak model, weak self] isSelected in
-            Haptic.impact(.heavy).generate()
+            Haptic.impact(.medium).generate()
             guard let model = model, let checkpoint = model.checkpoint else {
                 return
             }

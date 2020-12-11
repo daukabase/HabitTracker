@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreStore
+import Promises
 
 protocol CheckpointStorageAbstract {
     static func getCheckpointsForToday(completion: Closure<RResult<[CheckpointModel]>>)
@@ -16,7 +17,8 @@ protocol CheckpointStorageAbstract {
     static func setDoneCheckpoint(with id: String, completion: BoolClosure?)
     static func setUndone(checkpoint: CheckpointModel, completion: BoolClosure?)
     static func setUndoneCheckpoint(with id: String, completion: BoolClosure?)
-    static func getCheckpoints(for habitId: String, completion: Closure<RResult<[CheckpointModel]>>)
+    static func getCheckpoints(for habitId: String, completion:  @escaping Closure<RResult<[CheckpointModel]>>)
+    static func removeCheckpoints(with ids: [String], completion: @escaping Closure<RResult<Void>>)
 }
 
 extension HabitStorage: CheckpointStorageAbstract {
@@ -71,7 +73,7 @@ extension HabitStorage: CheckpointStorageAbstract {
         }
     }
     
-    static func getCheckpoints(for habitId: String, completion: (RResult<[CheckpointModel]>) -> Void) {
+    static func getCheckpoints(for habitId: String, completion: @escaping (RResult<[CheckpointModel]>) -> Void) {
         guard
             let dtos = try? dataStack.fetchAll(From<CheckpointDTO>().where(\.$habitId == habitId))
         else {
@@ -82,6 +84,91 @@ extension HabitStorage: CheckpointStorageAbstract {
             try? CheckpointModel.from(dto: $0)
         }
         completion(.success(models))
+    }
+    
+    static func removeCheckpoints(with ids: [String], completion: @escaping Closure<RResult<Void>>) {
+        getCheckpoints(for: ids).then { checkpoints -> Promise<Void> in
+            delete(checkpoints: checkpoints)
+        }.then(on: .main) {
+            completion(.success(Void()))
+        }.catch(on: .main) { error in
+            completion(.failure(error))
+        }
+    }
+    
+}
+
+private extension HabitStorage {
+    
+    // MARK: - Promises
+    private static func getCheckpoints(for ids: [String]) -> Promise<[CheckpointDTO]> {
+        return Promise<[CheckpointDTO]>(on: .global(qos: .userInitiated)) { fulfill, reject in
+            Self.getCheckpoints(for: ids) { result in
+                switch result {
+                case let .success(models):
+                    fulfill(models)
+                case let .failure(error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
+    private static func delete(checkpoints: [CheckpointDTO]) -> Promise<Void> {
+        return Promise<Void>(on: .global(qos: .userInitiated)) { fulfill, reject in
+            dataStack.perform { transaction in
+                transaction.delete(checkpoints)
+            } completion: { result in
+                switch result {
+                case .success:
+                    fulfill(Void())
+                case let .failure(error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
+    // MARK: - Checkpoints Getter Methods
+    private static func getCheckpoints(for ids: [String], completion: @escaping Closure<RResult<[CheckpointDTO]>>) {
+        let group = DispatchGroup()
+        var checkpoints = [CheckpointDTO?](repeating: nil,
+                                           count: ids.count)
+        var hasError = false
+        
+        for (index, id) in ids.enumerated() {
+            group.enter()
+            
+            getCheckpoint(for: id) { result in
+                group.leave()
+                
+                guard let model = result.success else {
+                    hasError = true
+                    return
+                }
+                
+                checkpoints[index] = model
+            }
+        }
+        
+        group.notify(queue: .main) {
+            guard !hasError else {
+                completion(.failure(HTError.fetchError))
+                return
+            }
+            let checkpoints = checkpoints.compactMap { $0 }
+            completion(.success(checkpoints))
+        }
+    }
+    
+    private static func getCheckpoint(for id: String, completion: @escaping Closure<RResult<CheckpointDTO>>) {
+        guard
+            let dtoModel = try? dataStack.fetchOne(From<CheckpointDTO>().where(\.$id == id))
+        else {
+            completion(.failure(HTError.fetchError))
+            return
+        }
+        completion(.success(dtoModel))
     }
     
 }

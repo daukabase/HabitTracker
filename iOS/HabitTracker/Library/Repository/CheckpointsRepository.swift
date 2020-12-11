@@ -10,6 +10,7 @@ import Foundation
 
 protocol CheckpointsRepositoryAbstract {
     func setupCheckpoints(for habit: HabitModel, with remindTime: Date?, completion: BoolClosure?)
+    func removeFutureCheckpoints(for habitId: String, completion: @escaping Closure<RResult<Void>>)
 }
 
 final class CheckpointsRepository: CheckpointsRepositoryAbstract {
@@ -36,6 +37,20 @@ final class CheckpointsRepository: CheckpointsRepositoryAbstract {
             
             checkpoints.forEach { checkpointModel in
                 Notifications.shared.setupNotification(for: checkpointModel, of: habit)
+            }
+        }
+    }
+    
+    func removeFutureCheckpoints(for habitId: String, completion: @escaping Closure<RResult<Void>>) {
+        HabitStorage.getCheckpoints(for: habitId) { result in
+            switch result {
+            case let .success(checkpoints):
+                let futureCheckpointsIds = self.getFuture(checkpoints: checkpoints).map { $0.id }
+                HabitStorage.removeCheckpoints(with: futureCheckpointsIds) { result in
+                    completion(result)
+                }
+            case let .failure(error):
+                completion(.failure(error))
             }
         }
     }
@@ -92,6 +107,10 @@ final class CheckpointsRepository: CheckpointsRepositoryAbstract {
                 guard days.contains(date.day) else {
                     continue
                 }
+                // shouldn't generate fututre dates
+                guard date.isToday || date > Date() else {
+                    continue
+                }
                 
                 if let dateWithUpdatedTime = Calendar.current.date(bySettingHour: hour,
                                                      minute: minute,
@@ -109,6 +128,15 @@ final class CheckpointsRepository: CheckpointsRepositoryAbstract {
         }
         
         return dates
+    }
+    
+    private func getFuture(checkpoints: [CheckpointModel]) -> [CheckpointModel] {
+        return checkpoints.filter { checkpoint in
+            guard let date = checkpoint.date, !checkpoint.isDone else {
+                return false
+            }
+            return date > Date()
+        }
     }
     
 }

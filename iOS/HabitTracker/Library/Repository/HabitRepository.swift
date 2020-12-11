@@ -37,7 +37,13 @@ final class HabitRepository: HabitRepositoryAbstract {
     }
     
     func edit(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?) {
-        habit
+        removeExtraCheckpoints(habitId: habit.id).then { _ -> Promise<Void> in
+            self.generateHabitBehaviorPromise(habit: habit, remindTime: remindTime)
+        }.then {
+            completion?(.success(Void()))
+        }.catch { error in
+            completion?(.failure(error))
+        }
     }
     
     func getHabitViewModel(using checkpoint: CheckpointModel, completion: Closure<RResult<Habit>>?) {
@@ -58,6 +64,18 @@ final class HabitRepository: HabitRepositoryAbstract {
     }
         
     // MARK: - Promises
+    private func removeExtraCheckpoints(habitId: String) -> Promise<Void> {
+        let promise = Promise<Void>.pending()
+        CheckpointsRepository.shared.removeFutureCheckpoints(for: habitId) { result in
+            guard result.isSucceed else {
+                promise.reject(HTError.storageOperation)
+                return
+            }
+            promise.fulfill(Void())
+        }
+        return promise
+    }
+    
     private func createHabitPromise(habit: HabitModel) -> Promise<Void> {
         return Promise<Void>(on: Constants.queue) { fulfill, reject in
             HabitStorage.create(habit: habit) { isSucceed in
