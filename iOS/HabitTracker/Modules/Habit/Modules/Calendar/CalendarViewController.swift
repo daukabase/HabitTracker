@@ -9,52 +9,6 @@
 import UIKit
 import JTAppleCalendar
 
-struct CalendarViewModel {
-    
-    private var dateCheckpointMap: [Date: CheckpointModel] = [:]
-    
-    let startDate: Date
-    let endDate: Date
-    let selectedDates: [Date]
-    let themeColor: UIColor
-    let dateFormatter = Formatter.MMMyyyy
-    
-    func isDone(for date: Date) -> Bool {
-        guard let checkpoint = dateCheckpointMap[date] else {
-            return false
-        }
-        print("[DEBUG] GET " + String(describing: date) + " " + checkpoint.id)
-        return checkpoint.isDone
-    }
-    
-    func isMissed(date: Date) -> Bool {
-        return dateCheckpointMap[date]?.isMissed ?? false
-    }
-    
-    init(checkpoints: [CheckpointModel], color: UIColor) {
-        let dates = checkpoints
-            .filter { checkpoint in
-                // In selected ranges there are must be ONLY done/today/todo checkpoints
-                return checkpoint.isDone || checkpoint.isToday || checkpoint.date > Date()
-            }
-            .compactMap {
-                $0.date
-            }
-        print("______ NOT DONE ______")
-        print(checkpoints.filter { $0.isMissed }.compactMap { $0.date })
-        print("______  _______ ______")
-        self.selectedDates = dates
-        self.startDate = dates.min() ?? Date()
-        self.endDate = dates.max() ?? Date()
-        self.themeColor = color
-        
-        checkpoints.forEach { checkpoint in
-            dateCheckpointMap[checkpoint.date] = checkpoint
-        }
-    }
-    
-}
-
 final class CalendarViewController: UIViewController, LoaderViewDisplayable {
     
     // MARK: - Properties
@@ -87,6 +41,7 @@ final class CalendarViewController: UIViewController, LoaderViewDisplayable {
         
         roundViews.forEach { $0.round() }
         bufferColorSetup?(viewModel.themeColor)
+        startLoading()
     }
     
     // MARK: - Internal Methods
@@ -95,32 +50,18 @@ final class CalendarViewController: UIViewController, LoaderViewDisplayable {
         self.viewModel = model
         setup(theme: model.themeColor)
         setup(dates: model.selectedDates)
-        
-        DispatchQueue.main.async {
-            self.endLoading()
-        }
     }
     
     // MARK: - Private Setup
     private func setup(theme color: UIColor) {
-        guard isViewLoaded else {
-            bufferColorSetup = setup(theme:)
-            return
-        }
-        
-        self.doneDescriptionView.backgroundColor = color
-        self.notDoneDescriptionView.backgroundColor = color.withAlphaComponent(0.15)
-        
-        DispatchQueue.main.async {
-            self.calendarView.reloadData()
-        }
+        doneDescriptionView.backgroundColor = color
+        notDoneDescriptionView.backgroundColor = color.withAlphaComponent(0.15)
     }
     
     private func setup(dates: [Date]) {
-        DispatchQueue.main.async {
-            self.calendarView.selectDates(dates, triggerSelectionDelegate: true, keepSelectionIfMultiSelectionAllowed: true)
-            self.calendarView.reloadData()
-        }
+        calendarView.selectDates(dates, triggerSelectionDelegate: true, keepSelectionIfMultiSelectionAllowed: true)
+        calendarView.reloadData()
+        endLoading()
     }
     
 }
