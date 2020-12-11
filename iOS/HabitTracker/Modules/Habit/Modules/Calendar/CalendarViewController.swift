@@ -95,7 +95,6 @@ final class CalendarViewController: UIViewController, LoaderViewDisplayable {
         setup(dates: model.selectedDates)
         
         DispatchQueue.main.async {
-            self.calendarView.reloadData()
             self.endLoading()
         }
     }
@@ -117,8 +116,8 @@ final class CalendarViewController: UIViewController, LoaderViewDisplayable {
     
     private func setup(dates: [Date]) {
         DispatchQueue.main.async {
-            self.calendarView.reloadData()
             self.calendarView.selectDates(dates, triggerSelectionDelegate: true, keepSelectionIfMultiSelectionAllowed: true)
+            self.calendarView.reloadData()
         }
     }
     

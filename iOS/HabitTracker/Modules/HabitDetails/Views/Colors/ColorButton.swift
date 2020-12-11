@@ -10,10 +10,10 @@ import UIKit
 
 final class ColorButton: UIButton {
     
-    var onClick: BoolClosure?
+    var onClick: Closure<HabitColor>?
     
     var size: CGFloat = 32
-    private(set) var color: UIColor = .clear
+    private(set) var habitColor = HabitColor.default
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,10 +45,11 @@ final class ColorButton: UIButton {
         addTarget(self, action: #selector(didTap), for: .touchUpInside)
     }
     
-    func configure(color: UIColor) {
-        self.color = color
-        let circle = UIImage.circle(diameter: size, borderColor: color, fillColor: color)
+    func configure(habitColor: HabitColor) {
+        self.habitColor = habitColor
         
+        let color = habitColor.color
+        let circle = UIImage.circle(diameter: size, borderColor: color, fillColor: color)
         let doneImage = UIImage.imageByCombiningImage(
             firstImage: UIImage.circle(diameter: size, borderColor: color, fillColor: color),
             withImage: Asset.doneNormal.image.resizedTo(size: CGSize(width: 14, height: 11))
@@ -56,14 +57,10 @@ final class ColorButton: UIButton {
         
         setBackgroundImage(circle, for: .normal)
         setBackgroundImage(doneImage, for: .selected)
-        
-        layoutIfNeeded()
     }
     
     @objc func didTap() {
-        isSelected.toggle()
-        layoutIfNeeded()
-        onClick?(isSelected)
+        onClick?(habitColor)
     }
     
 }

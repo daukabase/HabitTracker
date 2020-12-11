@@ -20,6 +20,10 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<false/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
@@ -94,9 +98,5 @@ Montserrat-ThinItalic.otf</string>
 	<string>Light</string>
 	<key>baseUrl</key>
 	<string>https://google.com</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
-	<key>FirebaseAutomaticScreenReportingEnabled</key>
-	<false/>
 </dict>
 </plist>

@@ -10,20 +10,25 @@ import UIKit
 
 final class ColorsViewController: UIViewController {
     
+    private enum Constants {
+        static let habitColors: [HabitColor] = HabitColor.allCases
+        static let initialSelectedColor = HabitColor.default
+        static let spacing: CGFloat = 16
+    }
+    
     // MARK: - Properties
-    let spacing: CGFloat = 16
     var onColor: Closure<UIColor>?
     
-    private(set) lazy var selectedColor: UIColor = colors[0]
-    
-    private var colors: [UIColor] = [
-        ColorName.uiRed.color,
-        ColorName.uiSkyBlue.color,
-        ColorName.uiViolet.color,
-        ColorName.uiGreen.color,
-        ColorName.uiYellow.color,
-        ColorName.uiHabitBlue.color
-    ]
+    var selectedColor: HabitColor {
+        for view in stackView.arrangedSubviews {
+            guard let button = view as? ColorButton, button.isSelected else {
+                continue
+            }
+            return button.habitColor
+        }
+        
+        return Constants.initialSelectedColor
+    }
     
     // MARK: - Views
     private lazy var label: UILabel = {
@@ -42,7 +47,7 @@ final class ColorsViewController: UIViewController {
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
-        stack.spacing = spacing
+        stack.spacing = Constants.spacing
         
         return stack
     }()
@@ -64,62 +69,50 @@ final class ColorsViewController: UIViewController {
             make.height.equalTo(35)
         }
          
-        colors.forEach { color in
+        Constants.habitColors.forEach { color in
             let button = generateButton(for: color)
             
             stackView.addArrangedSubview(button)
         }
+        
+        set(selected: Constants.initialSelectedColor)
     }
     
     // MARK: - Internal Methods
     func set(selected color: UIColor) {
-        guard colors.contains(color) else {
+        guard let habitColor = Constants.habitColors.first(where: { $0.color == color }) else {
             return
         }
-        
-        stackView.arrangedSubviews.forEach { view in
-            guard let button = view as? ColorButton else {
-                return
-            }
-            button.isSelected = button.color == color
-        }
+        set(selected: habitColor)
     }
     
     // MARK: - Private Methods
-    private func generateButton(for color: UIColor) -> ColorButton {
+    private func generateButton(for habitColor: HabitColor) -> ColorButton {
+        let totalSpacingWidth = Constants.spacing * CGFloat(Constants.habitColors.count - 1)
+        let totalbuttonsWidth = view.frame.width - totalSpacingWidth
+        let buttonWidth = totalbuttonsWidth / CGFloat(Constants.habitColors.count)
+        
         let button = ColorButton()
         
-        let totalSpacingWidth = spacing * CGFloat(colors.count - 1)
-        let totalbuttonsWidth = view.frame.width - totalSpacingWidth
-        let buttonWidth = totalbuttonsWidth / CGFloat(colors.count)
         button.size = buttonWidth
+        button.configure(habitColor: habitColor)
         
-        button.configure(color: color)
-        button.onClick = { [weak self, weak button] _ in
-            self?.select(for: button)
-        }
-        if (color == selectedColor) {
-            button.isSelected = true
+        button.onClick = { [weak self] habitColor in
+            self?.set(selected: habitColor)
         }
         
         return button
     }
     
-    private func select(for button: ColorButton?) {
-        guard let _button = button else {
-            return
-        }
-        selectedColor = _button.color
-        onColor?(_button.color)
+    private func set(selected habitColor: HabitColor) {
+        onColor?(habitColor.color)
         
-        stackView.arrangedSubviews.forEach({ (view) in
+        stackView.arrangedSubviews.forEach { view in
             guard let button = view as? ColorButton else {
                 return
             }
-            button.isSelected = _button == button ? true : false
-        })
-        
-        stackView.layoutIfNeeded()
+            button.isSelected = button.habitColor == habitColor
+        }
     }
-    
+        
 }

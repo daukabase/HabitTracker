@@ -116,14 +116,14 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        iconsViewController.setup(color: colorsViewController.selectedColor)
-        colorsViewController.onColor = { [weak iconsViewController] color in
-            iconsViewController?.setup(color: color)
-        }
-        
         commonInit()
         setupViews()
         setupContext()
+        
+        iconsViewController.setup(color: colorsViewController.selectedColor.color)
+        colorsViewController.onColor = { [weak iconsViewController] color in
+            iconsViewController?.setup(color: color)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -250,7 +250,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
                                title: titleInputView.text,
                                notes: notesInputView.text,
                                frequence: frequency,
-                               colorHex: colorsViewController.selectedColor.toHexString(),
+                               colorHex: colorsViewController.selectedColor.color.toHexString(),
                                icon: iconsViewController.selectedIcon.rawValue,
                                startDate: durationView.startDate,
                                durationDays: durationView.durationDays)
