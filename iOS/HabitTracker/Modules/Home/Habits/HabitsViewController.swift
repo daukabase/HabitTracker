@@ -90,7 +90,12 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable {
             self?.getHabits(for: checkpoints, completion: { habits in
                 self?.endLoading()
                 self?.refreshControl.endRefreshing()
-                self?.habits = habits
+                self?.habits = habits.sorted(by: { (h1, h2) -> Bool in
+                    guard let date1 = h1.checkpoint?.date, let date2 = h2.checkpoint?.date else {
+                        return false
+                    }
+                    return date1 < date2
+                })
             })
         }
     }

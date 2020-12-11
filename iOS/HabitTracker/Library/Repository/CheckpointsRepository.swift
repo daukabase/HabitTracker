@@ -86,9 +86,6 @@ final class CheckpointsRepository: CheckpointsRepositoryAbstract {
     
     private func getFuture(checkpoints: [CheckpointModel]) -> [CheckpointModel] {
         return checkpoints.filter { checkpoint in
-            guard !checkpoint.isDone else {
-                return false
-            }
             return checkpoint.date > Date() || checkpoint.isToday
         }
     }
