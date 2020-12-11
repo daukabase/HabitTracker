@@ -19,7 +19,7 @@ extension Date {
     }
     
     var isToday: Bool {
-        return isSameDay(with: Date())
+        return Calendar.current.isDateInToday(self)
     }
     
     var day: Day {

@@ -20,8 +20,11 @@ struct CalendarViewModel {
     let dateFormatter = Formatter.MMMyyyy
     
     func isDone(for date: Date) -> Bool {
-        print("[DEBUG] GET " + String(describing: date) + " " + (dateCheckpointMap[date.daySerialized]?.id ?? "NOPE"))
-        return dateCheckpointMap[date]?.isDone ?? false
+        guard let checkpoint = dateCheckpointMap[date] else {
+            return false
+        }
+        print("[DEBUG] GET " + String(describing: date) + " " + checkpoint.id)
+        return checkpoint.isDone
     }
     
     func isMissed(date: Date) -> Bool {
@@ -46,7 +49,6 @@ struct CalendarViewModel {
         self.themeColor = color
         
         checkpoints.forEach { checkpoint in
-            print("[DEBUG] Set " + String(describing: checkpoint.date) + checkpoint.id)
             dateCheckpointMap[checkpoint.date] = checkpoint
         }
     }
