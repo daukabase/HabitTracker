@@ -11,6 +11,7 @@ import Firebase
 import UserNotifications
 import Fabric
 import IQKeyboardManagerSwift
+import BackgroundTasks
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         setupAppearence()
         setupNotifications()
+        
+        return true
+    }
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        if #available(iOS 13.0, *) {
+            BackgroundTaskManager.shared.registerBackgroundTask()
+        }
         
         return true
     }

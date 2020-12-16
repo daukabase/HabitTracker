@@ -23,6 +23,7 @@
 		0861655925409F410008B65D /* UIVIewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0861655325409F410008B65D /* UIVIewController+Alert.swift */; };
 		0875B6E424BB263200F2982D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0875B6E324BB263200F2982D /* Notifications.swift */; };
 		087621C4256ACA8C006243D6 /* ShrinkableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087621C3256ACA8C006243D6 /* ShrinkableCell.swift */; };
+		08A4FD92258A904F003A387A /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FD91258A904F003A387A /* BackgroundTaskManager.swift */; };
 		08C695BC24CDE55700BDBEA2 /* ShadowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */; };
 		08C695BE24CDF00300BDBEA2 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */; };
 		08C695C124CDF02000BDBEA2 /* RoundedShadowButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */; };
@@ -282,6 +283,7 @@
 		0861655325409F410008B65D /* UIVIewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Alert.swift"; sourceTree = "<group>"; };
 		0875B6E324BB263200F2982D /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		087621C3256ACA8C006243D6 /* ShrinkableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkableCell.swift; sourceTree = "<group>"; };
+		08A4FD91258A904F003A387A /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
 		08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowModel.swift; sourceTree = "<group>"; };
 		08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButtonModel.swift; sourceTree = "<group>"; };
@@ -745,6 +747,7 @@
 				084941BE24C6DB1000A0D9DE /* AuthToken.swift */,
 				08EDA4AA24C48B4E00F9DDFC /* Config.swift */,
 				08DA7D8924C853F200CC52A9 /* KeychainManager.swift */,
+				08A4FD91258A904F003A387A /* BackgroundTaskManager.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -1780,6 +1783,7 @@
 				B07BFD8224542C6800D2D18F /* Colors.swift in Sources */,
 				087621C4256ACA8C006243D6 /* ShrinkableCell.swift in Sources */,
 				08CB499F252E264800BDB5DD /* HabitRepository.swift in Sources */,
+				08A4FD92258A904F003A387A /* BackgroundTaskManager.swift in Sources */,
 				08DA7D9D24C9BB4B00CC52A9 /* SharedMethods.swift in Sources */,
 				084A783B2583F26E00FADDCC /* HabitColor.swift in Sources */,
 				08CB4911252E1E3F00BDB5DD /* AchievementDTO.swift in Sources */,
