@@ -57,6 +57,7 @@ internal enum Asset {
   internal static let filter = ImageAsset(name: "filter")
   internal static let menu = ImageAsset(name: "menu")
   internal static let plus = ImageAsset(name: "plus")
+  internal static let settings = ImageAsset(name: "settings")
   internal static let trash = ImageAsset(name: "trash")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

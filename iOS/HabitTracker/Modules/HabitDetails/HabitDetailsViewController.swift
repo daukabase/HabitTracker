@@ -128,16 +128,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = ColorName.uiBlue.color
-        navigationController?.navigationBar.roundCorners([.bottomLeft, .bottomRight], radius: 24)
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: FontFamily.Gilroy.medium.font(size: 24)!,
-            NSAttributedString.Key.foregroundColor: UIColor.white
-        ]
-        setNeedsStatusBarAppearanceUpdate()
+        setupNavigation()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

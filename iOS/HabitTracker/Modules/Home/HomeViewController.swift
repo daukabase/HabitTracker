@@ -101,28 +101,12 @@ final class HomeViewController: SegementSlideDefaultViewController {
         }
     }
 
-    private func setupMenuItems() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: Asset.menu.image,
-                                                           style: .plain,
-                                                           target: self,
-                                                           action: #selector(menuItemDidTap))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.filter.image,
-                                                            style: .done,
-                                                            target: self,
-                                                            action: #selector(filterItemDidTap))
-        
-    }
-    
-    
     // MARK: - Private Actions
     @objc
-    private func menuItemDidTap() {
+    private func settingsItemDidTap() {
+        let controller = SettingsTableViewController()
         
-    }
-    
-    @objc
-    private func filterItemDidTap() {
-        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc
@@ -146,6 +130,13 @@ final class HomeViewController: SegementSlideDefaultViewController {
             make.bottom.equalToSuperview().offset(-24)
             make.size.equalTo(64)
         }
+    }
+    
+    private func setupMenuItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.settings.image,
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(settingsItemDidTap))
     }
     
     private func animateAddButtonHide() {
