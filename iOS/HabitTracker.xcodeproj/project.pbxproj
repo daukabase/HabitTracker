@@ -745,9 +745,9 @@
 			isa = PBXGroup;
 			children = (
 				084941BE24C6DB1000A0D9DE /* AuthToken.swift */,
+				08A4FD91258A904F003A387A /* BackgroundTaskManager.swift */,
 				08EDA4AA24C48B4E00F9DDFC /* Config.swift */,
 				08DA7D8924C853F200CC52A9 /* KeychainManager.swift */,
-				08A4FD91258A904F003A387A /* BackgroundTaskManager.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";

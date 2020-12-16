@@ -40,28 +40,28 @@ final class OnboardingViewController: UIViewController {
     private func configureContent() {
         switch page.type {
         case .challenge:
-            setupPresentation(info: .init(image: Asset.onboarding1.image,
+            setupPresentation(info: .init(image: Asset.challenge.image,
                                           title: L10n.Onboarding.Challenge.title,
                                           description: L10n.Onboarding.Challenge.description),
                               to: stackView)
         case .goal:
-            setupPresentation(info: .init(image: Asset.onboarding1.image,
+            setupPresentation(info: .init(image: Asset.forward.image,
                                           title: L10n.Onboarding.Goal.title,
                                           description: L10n.Onboarding.Goal.description),
                               to: stackView)
         case .track:
-            setupPresentation(info: .init(image: Asset.onboarding1.image,
+            setupPresentation(info: .init(image: Asset.habitTrack.image,
                                           title: L10n.Onboarding.Track.title,
                                           description: L10n.Onboarding.Track.description),
                               to: stackView)
         case .auth:
             UserDefaultsStorage.isOnboardingCompleted = true
-            setupPresentationAuth(info: .init(image: Asset.onboarding1.image,
+            setupPresentationAuth(info: .init(image: Asset.getStarted.image,
                                               title: L10n.Onboarding.Auth.title,
                                               description: L10n.Onboarding.Auth.description),
                                   to: stackView)
         case .getStarted:
-            setupPresentationGetStarted(info: .init(image: Asset.onboarding1.image,
+            setupPresentationGetStarted(info: .init(image: Asset.getStarted.image,
                                                     title: L10n.Onboarding.GetStarted.title,
                                                     description: L10n.Onboarding.GetStarted.description),
                                         to: stackView)
