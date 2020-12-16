@@ -126,15 +126,27 @@ extension Notifications {
         notificationCenter.removePendingNotificationRequests(withIdentifiers: ids)
     }
     
+    func removeAllExtraNotifications() {
+        HabitStorage.getAllCheckpointsIds { [weak self] result in
+            DispatchQueue.global(qos: .background).async {
+                guard let checkpointIds = result.value else {
+                    return
+                }
+                
+                self?.removeNotificationsNotRelated(to: checkpointIds)
+            }
+        }
+    }
+    
 }
 
 private extension Notifications {
     
-    private func generateNotificationActionId(for checkpoint: CheckpointModel) -> String {
+    func generateNotificationActionId(for checkpoint: CheckpointModel) -> String {
         return Constants.checkpointNotificationActionPrefix + checkpoint.id
     }
     
-    private func checkForCheckpointAction(for actionIdentifier: String) {
+    func checkForCheckpointAction(for actionIdentifier: String) {
         guard actionIdentifier.hasPrefix(Constants.checkpointNotificationActionPrefix) else {
             return
         }
@@ -146,7 +158,7 @@ private extension Notifications {
         })
     }
     
-    private func getNotificationContent(for habit: HabitModel) -> UNMutableNotificationContent {
+    func getNotificationContent(for habit: HabitModel) -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent() // Содержимое уведомления
         
         content.title = habit.title
@@ -159,7 +171,7 @@ private extension Notifications {
         return content
     }
     
-    private func getRequest(for checkpoint: CheckpointModel, content: UNMutableNotificationContent) -> UNNotificationRequest {
+    func getRequest(for checkpoint: CheckpointModel, content: UNMutableNotificationContent) -> UNNotificationRequest {
         var dateComponents = Calendar.current.dateComponents(Constants.calendarComponents,
                                                              from: checkpoint.date)
         dateComponents.timeZone = .autoupdatingCurrent
@@ -173,6 +185,20 @@ private extension Notifications {
         return request
     }
  
+    func removeNotificationsNotRelated(to checkpointsIds: Set<String>) {
+        var idsOfPendingNotificationsToRemove = [String]()
+        
+        notificationCenter.getPendingNotificationRequests { requests in
+            requests.forEach { request in
+                guard !checkpointsIds.contains(request.identifier) else {
+                    return
+                }
+                idsOfPendingNotificationsToRemove.append(request.identifier)
+            }
+        }
+        
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: idsOfPendingNotificationsToRemove)
+    }
     
     
 }

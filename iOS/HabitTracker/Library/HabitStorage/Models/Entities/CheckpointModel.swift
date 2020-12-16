@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class CheckpointModel {
+final class CheckpointModel: Hashable {
     
     let id: String
     let habitId: String
@@ -36,6 +36,15 @@ final class CheckpointModel {
         self.habitId = habitId
         self.date = date
         self.isDone = isDone
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(date)
+    }
+    
+    static func == (lhs: CheckpointModel, rhs: CheckpointModel) -> Bool {
+        return lhs.id == rhs.id
     }
     
 }

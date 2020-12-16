@@ -19,6 +19,8 @@ protocol CheckpointStorageAbstract {
     static func setUndoneCheckpoint(with id: String, completion: BoolClosure?)
     static func getCheckpoints(for habitId: String, completion:  @escaping Closure<RResult<[CheckpointModel]>>)
     static func removeCheckpoints(with ids: [String], completion: @escaping Closure<RResult<Void>>)
+    static func getAllCheckpoints(completion: @escaping (RResult<Set<CheckpointModel>>) -> Void)
+    static func getAllCheckpointsIds(completion: @escaping (RResult<Set<String>>) -> Void)
 }
 
 extension HabitStorage: CheckpointStorageAbstract {
@@ -84,6 +86,41 @@ extension HabitStorage: CheckpointStorageAbstract {
             try? CheckpointModel.from(dto: $0)
         }
         completion(.success(models))
+    }
+    
+    static func getAllCheckpoints(completion: @escaping (RResult<Set<CheckpointModel>>) -> Void) {
+        guard
+            let dtos = try? dataStack.fetchAll(From<CheckpointDTO>())
+        else {
+            completion(.failure(HTError.fetchError))
+            return
+        }
+        var checkpointsSet = Set<CheckpointModel>()
+        
+        dtos.forEach { dto in
+            guard let checkpoint = try? CheckpointModel.from(dto: dto) else {
+                return
+            }
+            checkpointsSet.insert(checkpoint)
+        }
+        
+        completion(.success(checkpointsSet))
+    }
+    
+    static func getAllCheckpointsIds(completion: @escaping (RResult<Set<String>>) -> Void) {
+        guard
+            let dtos = try? dataStack.fetchAll(From<CheckpointDTO>())
+        else {
+            completion(.failure(HTError.fetchError))
+            return
+        }
+        var checkpointsIds = Set<String>()
+        
+        dtos.forEach { dto in
+            checkpointsIds.insert(dto.id)
+        }
+        
+        completion(.success(checkpointsIds))
     }
     
     static func removeCheckpoints(with ids: [String], completion: @escaping Closure<RResult<Void>>) {
