@@ -137,6 +137,7 @@ final class DurationView: UIView {
     // MARK: - Actions
     @objc
     private func updateTextField(_ sender: Any?) {
+        startDate = datePicker.date
         updateUI()
     }
     
