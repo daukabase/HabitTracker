@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OMk-PD-aLb">
-                                <rect key="frame" x="0.0" y="107" width="414" height="789"/>
+                                <rect key="frame" x="0.0" y="86" width="414" height="810"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HabitCell" rowHeight="106" id="fbN-RX-VbW" customClass="HabitCell" customModule="HabitTracker" customModuleProvider="target">
@@ -389,35 +389,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WFO-Rw-FHL">
-                                <rect key="frame" x="16" y="60" width="382" height="32"/>
-                                <segments>
-                                    <segment title="Due today"/>
-                                    <segment title="All habits"/>
-                                </segments>
-                                <connections>
-                                    <action selector="onSegmentChange:" destination="hS7-It-5DD" eventType="valueChanged" id="yR7-Kc-ax1"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="08s-0c-JXv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OMk-PD-aLb" firstAttribute="top" secondItem="WFO-Rw-FHL" secondAttribute="bottom" constant="16" id="2SG-gg-Gix"/>
                             <constraint firstItem="aeI-OG-9nf" firstAttribute="centerX" secondItem="08s-0c-JXv" secondAttribute="centerX" id="3ih-VG-CI9"/>
                             <constraint firstItem="OMk-PD-aLb" firstAttribute="leading" secondItem="08s-0c-JXv" secondAttribute="leading" id="9pq-3h-2YY"/>
-                            <constraint firstItem="08s-0c-JXv" firstAttribute="trailing" secondItem="WFO-Rw-FHL" secondAttribute="trailing" constant="16" id="FYj-Jc-HJo"/>
+                            <constraint firstItem="OMk-PD-aLb" firstAttribute="top" secondItem="08s-0c-JXv" secondAttribute="top" constant="42" id="Hs6-vR-KHF"/>
                             <constraint firstItem="aeI-OG-9nf" firstAttribute="centerY" secondItem="08s-0c-JXv" secondAttribute="centerY" constant="-86" id="U1Y-ii-GMN"/>
                             <constraint firstItem="aeI-OG-9nf" firstAttribute="width" secondItem="IBi-Y1-v6k" secondAttribute="width" constant="-64" id="Wma-PU-Ogo"/>
                             <constraint firstAttribute="bottom" secondItem="OMk-PD-aLb" secondAttribute="bottom" id="aLj-jN-cvC"/>
-                            <constraint firstItem="WFO-Rw-FHL" firstAttribute="leading" secondItem="08s-0c-JXv" secondAttribute="leading" constant="16" id="uTQ-ji-UO3"/>
-                            <constraint firstItem="WFO-Rw-FHL" firstAttribute="top" secondItem="08s-0c-JXv" secondAttribute="top" constant="16" id="v1f-73-eTh"/>
                             <constraint firstItem="08s-0c-JXv" firstAttribute="trailing" secondItem="OMk-PD-aLb" secondAttribute="trailing" id="ykG-9Y-Chk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emptyMessageLabel" destination="aeI-OG-9nf" id="9fw-qL-Wlo"/>
-                        <outlet property="segmentedView" destination="WFO-Rw-FHL" id="r6v-yl-txH"/>
                         <outlet property="tableView" destination="OMk-PD-aLb" id="Emw-Aq-rKY"/>
                     </connections>
                 </viewController>

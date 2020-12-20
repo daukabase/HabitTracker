@@ -14,9 +14,9 @@ final class HabitsInteractor {
         HabitStorage.getTotalHabits { result in
             switch result {
             case let .success(models):
-                let habits = models.compactMap { Habit(habit: $0, checkpoint: nil) }
-                
-                completion(.success(habits))
+                HabitRepository.shared.getHabitViewModels(using: models) { habits in
+                    completion(.success(habits))
+                }
             case let .failure(error):
                 completion(.failure(error))
             }
@@ -28,7 +28,7 @@ final class HabitsInteractor {
             switch result {
             case let .success(checkpoints):
                 getHabits(for: checkpoints) { habits in
-                    completion(.success(habits))
+                    completion(.success(habits.sortedByDate()))
                 }
             case let .failure(error):
                 completion(.failure(error))
@@ -54,13 +54,7 @@ final class HabitsInteractor {
         }
         
         group.notify(queue: .main) {
-            let habits = habits.sorted { (h1, h2) -> Bool in
-                guard let date1 = h1.checkpoint?.date, let date2 = h2.checkpoint?.date else {
-                    return false
-                }
-                return date1 < date2
-            }
-            completion(habits)
+            completion(habits.sortedByDate())
         }
     }
     

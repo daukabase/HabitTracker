@@ -12,8 +12,10 @@ import Promises
 protocol HabitRepositoryAbstract {
     func create(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?)
     func edit(habit: HabitModel, remindTime: Date?, completion: Closure<RResult<Void>>?)
-    func getHabitViewModel(using checkpoint: CheckpointModel, completion: Closure<RResult<Habit>>?)
     func getHabitViewModel(by habitId: String, checkpoint: CheckpointModel?, completion: Closure<RResult<Habit>>?)
+    func getHabitViewModel(using checkpoint: CheckpointModel, completion: Closure<RResult<Habit>>?)
+    func getHabitViewModel(using habit: HabitModel, and checkpoint: CheckpointModel?, completion: Closure<RResult<Habit>>?)
+    func getHabitViewModels(using habits: [HabitModel], completion: Closure<[Habit]>?)
 }
 
 final class HabitRepository: HabitRepositoryAbstract {
@@ -58,17 +60,52 @@ final class HabitRepository: HabitRepositoryAbstract {
     func getHabitViewModel(by habitId: String, checkpoint: CheckpointModel?, completion: Closure<RResult<Habit>>?) {
         HabitStorage.getHabit(for: habitId) { result in
             guard
-                let _habit = result.value,
-                let habit = Habit(habit: _habit, checkpoint: checkpoint)
+                let habitModel = result.value
             else {
                 completion?(.failure(HTError.serialization))
                 return
             }
             
-            habit.checkpoint = checkpoint
-            habit.updateGoal {
-                completion?(.success(habit))
+            getHabitViewModel(using: habitModel, and: checkpoint) { result in
+                switch result {
+                case let .success(habit):
+                    completion?(.success(habit))
+                case let .failure(error):
+                    completion?(.failure(error))
+                }
             }
+        }
+    }
+    
+    func getHabitViewModel(using habit: HabitModel, and checkpoint: CheckpointModel?, completion: Closure<RResult<Habit>>?) {
+        guard let habit = Habit(habit: habit, checkpoint: checkpoint) else {
+            completion?(.failure(HTError.fetchError))
+            return
+        }
+        habit.checkpoint = checkpoint
+        habit.updateGoal(completion: {
+            completion?(.success(habit))
+        })
+    }
+    
+    func getHabitViewModels(using habits: [HabitModel], completion: Closure<[Habit]>?) {
+        let group = DispatchGroup()
+        var viewModels = [Habit?](repeating: nil, count: habits.count)
+        
+        habits.enumerated().forEach { (index, habitModel) in
+            group.enter()
+            getHabitViewModel(using: habitModel, and: nil) { result in
+                switch result {
+                case let .success(habit):
+                    viewModels[index] = habit
+                case let .failure(error):
+                    assertionFailure("Error should not exist \(error.localizedDescription)")
+                }
+                group.leave()
+            }
+        }
+        group.notify(queue: .main) {
+            completion?(viewModels.compactMap { $0 })
         }
     }
     

@@ -22,3 +22,17 @@ extension Array {
         return Array(self[range.startIndex..<Swift.min(range.endIndex, count)])
     }
 }
+
+extension Array where Element == Habit {
+    
+    func sortedByDate() -> [Habit] {
+        return self.sorted { (h1, h2) -> Bool in
+            guard let date1 = h1.checkpoint?.date, let date2 = h2.checkpoint?.date else {
+                return false
+            }
+            return date1 < date2
+        }
+    }
+    
+}
+ 

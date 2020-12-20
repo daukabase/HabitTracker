@@ -10,6 +10,8 @@ import UIKit
 
 final class HabitModel {
     
+    static let empty = HabitModel(id: "", title: "", notes: "", frequence: .weekly([]), colorHex: "", icon: "", startDate: Date(), durationDays: 0)
+    
     let id: String
     let title: String
     let notes: String

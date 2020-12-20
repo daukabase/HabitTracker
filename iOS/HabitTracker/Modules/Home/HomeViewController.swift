@@ -42,6 +42,12 @@ final class HomeViewController: SegementSlideDefaultViewController {
     }
     
     override var switcherConfig: SegementSlideDefaultSwitcherConfig {
+        let count = CGFloat(titlesInSwitcher.count)
+        let spacing: CGFloat = 24
+        let corners = spacing * 2
+        let spacingBetweenSegments = (spacing - 1) / count
+        let indicatorWidth = (UIScreen.main.bounds.width - corners - spacingBetweenSegments) / count
+        
         return SegementSlideDefaultSwitcherConfig(type: .tab,
                                            horizontalMargin: 16,
                                            horizontalSpace: 32,
@@ -49,7 +55,7 @@ final class HomeViewController: SegementSlideDefaultViewController {
                                            selectedTitleFont: FontFamily.Gilroy.medium.font(size: 16),
                                            normalTitleColor: ColorName.textSecondary.color,
                                            selectedTitleColor: ColorName.textPrimary.color,
-                                           indicatorWidth: 86,
+                                           indicatorWidth: indicatorWidth,
                                            indicatorHeight: 4,
                                            indicatorColor: ColorName.uiBlue.color,
                                            badgeHeightForPointType: 0,

@@ -10,7 +10,7 @@ import UIKit
 
 struct CalendarViewModel {
     
-    private var dateCheckpointMap: [Date: CheckpointModel] = [:]
+    private var dateCheckpointMap: [DateDayKey: CheckpointModel] = [:]
     
     let startDate: Date
     let endDate: Date
@@ -19,14 +19,16 @@ struct CalendarViewModel {
     let dateFormatter = Formatter.MMMyyyy
     
     func isDone(for date: Date) -> Bool {
-        guard let checkpoint = dateCheckpointMap[date] else {
+        let key = DateDayKey(date: date)
+        guard let checkpoint = dateCheckpointMap[key] else {
             return false
         }
         return checkpoint.isDone
     }
     
     func isMissed(date: Date) -> Bool {
-        return dateCheckpointMap[date]?.isMissed ?? false
+        let key = DateDayKey(date: date)
+        return dateCheckpointMap[key]?.isMissed ?? false
     }
     
     init(checkpoints: [CheckpointModel], color: UIColor) {
@@ -48,8 +50,30 @@ struct CalendarViewModel {
         self.themeColor = color
         
         checkpoints.forEach { checkpoint in
-            dateCheckpointMap[checkpoint.date] = checkpoint
+            dateCheckpointMap[DateDayKey(date: checkpoint.date)] = checkpoint
         }
     }
     
+}
+
+private extension CalendarViewModel {
+    
+    struct DateDayKey: Hashable {
+        
+        private let dateString: String
+        
+        init(date: Date) {
+            self.dateString = date.string(with: .ddMMYYYY)
+        }
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(dateString)
+        }
+        
+        static func ==(lhs: DateDayKey, rhs: DateDayKey) -> Bool {
+            return lhs.dateString == rhs.dateString
+        }
+        
+    }
+
 }

@@ -34,6 +34,8 @@
 		08A4FDC6258F7693003A387A /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDC5258F7693003A387A /* CellType.swift */; };
 		08A4FDCF258F76EF003A387A /* HabitDisplayCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDCE258F76EF003A387A /* HabitDisplayCellViewModel.swift */; };
 		08A4FDD4258F7DBA003A387A /* HabitsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDD3258F7DBA003A387A /* HabitsInteractor.swift */; };
+		08A4FDDA258FEE52003A387A /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDD9258FEE52003A387A /* FilterView.swift */; };
+		08A4FDE2258FF4CD003A387A /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDE1258FF4CD003A387A /* UIStackView.swift */; };
 		08C695BC24CDE55700BDBEA2 /* ShadowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */; };
 		08C695BE24CDF00300BDBEA2 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */; };
 		08C695C124CDF02000BDBEA2 /* RoundedShadowButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */; };
@@ -304,6 +306,8 @@
 		08A4FDC5258F7693003A387A /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
 		08A4FDCE258F76EF003A387A /* HabitDisplayCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDisplayCellViewModel.swift; sourceTree = "<group>"; };
 		08A4FDD3258F7DBA003A387A /* HabitsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsInteractor.swift; sourceTree = "<group>"; };
+		08A4FDD9258FEE52003A387A /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		08A4FDE1258FF4CD003A387A /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowModel.swift; sourceTree = "<group>"; };
 		08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButtonModel.swift; sourceTree = "<group>"; };
@@ -677,6 +681,14 @@
 			path = HabitDisplayCell;
 			sourceTree = "<group>";
 		};
+		08A4FDD8258FEE37003A387A /* FilterView */ = {
+			isa = PBXGroup;
+			children = (
+				08A4FDD9258FEE52003A387A /* FilterView.swift */,
+			);
+			path = FilterView;
+			sourceTree = "<group>";
+		};
 		08C695BF24CDF00800BDBEA2 /* RoundedShadowButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,6 +1010,7 @@
 				B077F9AC245D948100FAFFB6 /* InputCode */,
 				08C695BF24CDF00800BDBEA2 /* RoundedShadowButton */,
 				B05FC1CC245D805F00F4C214 /* ActionableLabel.swift */,
+				08A4FDD8258FEE37003A387A /* FilterView */,
 				087621C2256ACA82006243D6 /* Cells */,
 			);
 			path = "Reusable Layer";
@@ -1207,6 +1220,7 @@
 				B07BFE4724544C4A00D2D18F /* UINavigationController.swift */,
 				B07BFE4924544C4A00D2D18F /* UIEdgeInsets.swift */,
 				B07BFE4A24544C4A00D2D18F /* UIStoryboard.swift */,
+				08A4FDE1258FF4CD003A387A /* UIStackView.swift */,
 				B02110F024654F27005BF1E2 /* UIColor.swift */,
 			);
 			path = UIKit;
@@ -1875,6 +1889,7 @@
 				B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */,
 				B07BFE2E24544B8B00D2D18F /* Days.swift in Sources */,
 				B077F9BF245D97E500FAFFB6 /* Maskable.swift in Sources */,
+				08A4FDDA258FEE52003A387A /* FilterView.swift in Sources */,
 				08DA7D8C24C88B4400CC52A9 /* URLRequest.swift in Sources */,
 				08CB4987252E256000BDB5DD /* HabitStorage+Habit.swift in Sources */,
 				08CB4904252E1E2E00BDB5DD /* HabitDTO.swift in Sources */,
@@ -1920,6 +1935,7 @@
 				084A78432584009B00FADDCC /* CalendarViewModel.swift in Sources */,
 				08A4FDD4258F7DBA003A387A /* HabitsInteractor.swift in Sources */,
 				B077F9B3245D94B500FAFFB6 /* NumberConfirmationViewController.swift in Sources */,
+				08A4FDE2258FF4CD003A387A /* UIStackView.swift in Sources */,
 				B0DDCB0824556FBB004223DB /* Date.swift in Sources */,
 				08DA7D9724C88BD100CC52A9 /* Header.swift in Sources */,
 				B0472957245D71FD00F3458F /* OnboardingPage.swift in Sources */,

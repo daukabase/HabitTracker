@@ -11,9 +11,7 @@ import Haptica
 
 final class HabitCellViewModel: HabitDisplayCellViewModel {
     
-    // MARK: - Stored Properties
-    var onProgressUpdate: EmptyClosure?
-    
+    // MARK: - Computed Properties
     var isCheckpointForTodayCompleted: Bool {
         return habit.isCurrentCompleted
     }

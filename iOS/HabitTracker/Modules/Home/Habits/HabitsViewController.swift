@@ -33,7 +33,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
     private let interactor: HabitsInteractor = HabitsInteractor()
     
     private var isCheckpointsSegmentSelected: Bool {
-        return segmentedView.selectedSegmentIndex == 0
+        return filterView.selectedSegmentIndex == 1
     }
     
     // MARK: - Views
@@ -45,7 +45,24 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
         return refreshControl
     }()
     
-    @IBOutlet private var segmentedView: UISegmentedControl!
+    private lazy var filterView: FilterView = {
+        let view = FilterView()
+        
+        view.setup(segments: [
+            FilterSegmentViewModel(title: "All habits", isSelected: false),
+            FilterSegmentViewModel(title: "Due today", isSelected: true)
+        ])
+        
+        view.onChange = { [weak self] in
+            Haptic.impact(.medium).generate()
+            DispatchQueue.main.async {
+                self?.loadData(isInitial: false)
+            }
+        }
+        
+        return view
+    }()
+    
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var emptyMessageLabel: UILabel!
     
@@ -64,10 +81,14 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
         
         commonInit()
         loadData(isInitial: true)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+        view.addSubview(filterView)
+        
+        filterView.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(12)
+            make.height.equalTo(28)
+        }
     }
     
     // MARK: - Actions
@@ -146,22 +167,12 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
             self?.emptyMessageLabel.text = text
         }
         
-        self.view.isUserInteractionEnabled = false
         UIView.transition(with: tableView, duration: 0.2, options: .transitionCrossDissolve, animations: {
             self.tableView.reloadData()
-        }, completion: { _ in
-            self.view.isUserInteractionEnabled = true
-        })
-    }
-    
-    // MARK: - Private Acitons
-    @IBAction
-    private func onSegmentChange(_ sender: UISegmentedControl) {
-        loadData(isInitial: true)
+        }, completion: nil)
     }
     
 }
-
 
 extension HabitsViewController: SegementSlideContentScrollViewDelegate {
     // MARK: - SegementSlideContentScrollViewDelegate

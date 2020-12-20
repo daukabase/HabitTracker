@@ -13,6 +13,9 @@ class HabitDisplayCellViewModel: ConfigurableCellViewModel {
     // MARK: - ConfigurableCellViewModel
     var cellType: CellType = .habitInfo
     
+    // MARK: - Callbacks
+    var onProgressUpdate: EmptyClosure?
+    
     // MARK: - Constants
     let color: UIColor
     let coloredImage: UIImage
@@ -37,7 +40,7 @@ class HabitDisplayCellViewModel: ConfigurableCellViewModel {
         
         [firstText, secondText].forEach(indicatorValue.append)
         
-        return  indicatorValue
+        return indicatorValue
     }
     
     var progress: Float {
