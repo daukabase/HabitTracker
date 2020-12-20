@@ -41,43 +41,6 @@ final class HabitCell: ShrinkableCell {
     }
     
     // MARK: - Methods
-    func configure(model: Habit) {
-        titleLabel.text = model.title
-        progressIndicatorLabel.attributedText = model.completionAttributedText
-        iconImageView.image = model.image.filled(with: model.color)
-        
-        progressView.setProgress(model.progress, animated: true)
-        progressView.trackTintColor = model.color.withAlphaComponent(0.15)
-        progressView.progressTintColor = model.color
-        
-        doneButton.configure(color: model.color)
-        doneButton.isSelected = model.isCurrentCompleted
-        
-        doneButton.onClick = { [weak model, weak self] isSelected in
-            Haptic.impact(.medium).generate()
-            guard let model = model, let checkpoint = model.checkpoint else {
-                return
-            }
-            let block = {
-                model.updateGoal {
-                    self?.progressIndicatorLabel.attributedText = model.completionAttributedText
-                    self?.progressView.setProgress(model.progress, animated: true)
-                }
-            }
-            if isSelected {
-                HabitStorage.setDone(checkpoint: checkpoint) { isSucceed in
-                    guard isSucceed else { return }
-                    block()
-                }
-            } else {
-                HabitStorage.setUndone(checkpoint: checkpoint) { isSucceed in
-                    guard isSucceed else { return }
-                    block()
-                }
-            }
-            
-        }
-    }
     
     private func setupProgressViewLayer() {
         setupProgressIndicatorLayer()
@@ -93,6 +56,40 @@ final class HabitCell: ShrinkableCell {
     private func setupProgressIndicatorLayer() {
         progressView.layer.sublayers?[safe: 1]?.cornerRadius = progressView.frame.height / 2
         progressView.subviews[safe: 1]?.clipsToBounds = true
+    }
+    
+}
+
+extension HabitCell: ConfigurableCell {
+    
+    // MARK: - Configureable
+    func configure(using viewModel: ConfigurableCellViewModel) {
+        guard let viewModel = viewModel as? HabitCellViewModel else {
+            return
+        }
+        
+        titleLabel.text = viewModel.title
+        
+        progressIndicatorLabel.attributedText = viewModel.progressAttributedText
+        iconImageView.image = viewModel.coloredImage
+        
+        progressView.setProgress(viewModel.progress, animated: true)
+        progressView.trackTintColor = viewModel.color.withAlphaComponent(0.15)
+        progressView.progressTintColor = viewModel.color
+            
+        doneButton.configure(color: viewModel.color)
+        doneButton.isSelected = viewModel.isCheckpointForTodayCompleted
+        
+        viewModel.onProgressUpdate = { [weak viewModel, weak self] in
+            guard let viewModel = viewModel else {
+                return
+            }
+            self?.progressIndicatorLabel.attributedText = viewModel.progressAttributedText
+            self?.progressView.setProgress(viewModel.progress, animated: true)
+        }
+        doneButton.onClick = { [weak viewModel] isSelected in
+            viewModel?.set(isSelected: isSelected)
+        }
     }
     
 }

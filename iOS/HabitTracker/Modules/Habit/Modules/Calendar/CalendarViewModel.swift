@@ -32,6 +32,9 @@ struct CalendarViewModel {
     init(checkpoints: [CheckpointModel], color: UIColor) {
         let dates = checkpoints
             .filter { checkpoint in
+                if checkpoint.isMissed {
+                    return false
+                }
                 // In selected ranges there are must be ONLY done/today/todo checkpoints
                 return checkpoint.isDone || checkpoint.isToday || checkpoint.date > Date()
             }

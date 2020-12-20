@@ -11,6 +11,17 @@ import UIKit
 
 class Habit {
     
+    static let empty = Habit(id: "",
+                             title: "",
+                             notes: "",
+                             durationDays: 0,
+                             startDate: Date(),
+                             schedule: [],
+                             color: UIColor.clear,
+                             isCurrentCompleted: false,
+                             habitIcon: .apple,
+                             goal: (0, 0))
+    
     let id: String
     let title: String
     let notes: String
@@ -22,46 +33,15 @@ class Habit {
     let durationDays: Int
     var checkpoint: CheckpointModel?
     
+    private(set) var totalRepetitions: Int = 0
+    private(set) var completedRepetitions: Int = 0
+    
     var image: UIImage {
         return habitIcon.icon
     }
     
-    private(set) var totalRepetitions: Int = 0
-    private(set) var completedRepetitions: Int = 0
-    
-    var completionAttributedText: NSAttributedString {
-        let indicatorValue = NSMutableAttributedString()
-        
-        let first: [StringAttribute] = [
-            .font(FontFamily.Gilroy.semibold.font(size: 18)),
-            .foregroundColor(color)
-        ]
-        let second: [StringAttribute] = [
-            .font(FontFamily.Gilroy.regular.font(size: 12)),
-            .foregroundColor(color)
-        ]
-        
-        let firstText = "\(completedRepetitions)".with(attributes: first)
-        let secondText = "/\(totalRepetitions)".with(attributes: second)
-        
-        [firstText, secondText].forEach(indicatorValue.append)
-        
-        return  indicatorValue
-    }
-    
-    var daysLeft: Int {
-        return 4
-    }
-    
     var color: UIColor {
         return UIColor(hexString: colorHex)
-    }
-    
-    var progress: Float {
-        guard totalRepetitions != 0 else {
-            return 0
-        }
-        return Float(completedRepetitions) / Float(totalRepetitions)
     }
     
     init(id: String,

@@ -27,6 +27,13 @@
 		08A4FD9C258A97BB003A387A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FD9A258A97BB003A387A /* SettingsTableViewController.swift */; };
 		08A4FD9D258A97BB003A387A /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FD9B258A97BB003A387A /* SettingsTableViewCell.swift */; };
 		08A4FDA2258A99AD003A387A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDA1258A99AD003A387A /* Bundle.swift */; };
+		08A4FDAA258F54E7003A387A /* HabitDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDA9258F54E7003A387A /* HabitDisplayCell.swift */; };
+		08A4FDB3258F75AA003A387A /* HabitCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDB2258F75AA003A387A /* HabitCellViewModel.swift */; };
+		08A4FDB9258F7672003A387A /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDB8258F7672003A387A /* ConfigurableCell.swift */; };
+		08A4FDC1258F7684003A387A /* ConfigurableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDC0258F7684003A387A /* ConfigurableCellViewModel.swift */; };
+		08A4FDC6258F7693003A387A /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDC5258F7693003A387A /* CellType.swift */; };
+		08A4FDCF258F76EF003A387A /* HabitDisplayCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDCE258F76EF003A387A /* HabitDisplayCellViewModel.swift */; };
+		08A4FDD4258F7DBA003A387A /* HabitsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDD3258F7DBA003A387A /* HabitsInteractor.swift */; };
 		08C695BC24CDE55700BDBEA2 /* ShadowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */; };
 		08C695BE24CDF00300BDBEA2 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */; };
 		08C695C124CDF02000BDBEA2 /* RoundedShadowButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */; };
@@ -290,6 +297,13 @@
 		08A4FD9A258A97BB003A387A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		08A4FD9B258A97BB003A387A /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		08A4FDA1258A99AD003A387A /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		08A4FDA9258F54E7003A387A /* HabitDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDisplayCell.swift; sourceTree = "<group>"; };
+		08A4FDB2258F75AA003A387A /* HabitCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCellViewModel.swift; sourceTree = "<group>"; };
+		08A4FDB8258F7672003A387A /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
+		08A4FDC0258F7684003A387A /* ConfigurableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCellViewModel.swift; sourceTree = "<group>"; };
+		08A4FDC5258F7693003A387A /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		08A4FDCE258F76EF003A387A /* HabitDisplayCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDisplayCellViewModel.swift; sourceTree = "<group>"; };
+		08A4FDD3258F7DBA003A387A /* HabitsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsInteractor.swift; sourceTree = "<group>"; };
 		08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowModel.swift; sourceTree = "<group>"; };
 		08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButtonModel.swift; sourceTree = "<group>"; };
@@ -635,6 +649,34 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		08A4FDAE258F759F003A387A /* HabitCell */ = {
+			isa = PBXGroup;
+			children = (
+				B02110EC24653ECF005BF1E2 /* HabitCell.swift */,
+				08A4FDB2258F75AA003A387A /* HabitCellViewModel.swift */,
+			);
+			path = HabitCell;
+			sourceTree = "<group>";
+		};
+		08A4FDB7258F7663003A387A /* ConfigurableCell */ = {
+			isa = PBXGroup;
+			children = (
+				08A4FDB8258F7672003A387A /* ConfigurableCell.swift */,
+				08A4FDC0258F7684003A387A /* ConfigurableCellViewModel.swift */,
+				08A4FDC5258F7693003A387A /* CellType.swift */,
+			);
+			path = ConfigurableCell;
+			sourceTree = "<group>";
+		};
+		08A4FDCA258F76E4003A387A /* HabitDisplayCell */ = {
+			isa = PBXGroup;
+			children = (
+				08A4FDA9258F54E7003A387A /* HabitDisplayCell.swift */,
+				08A4FDCE258F76EF003A387A /* HabitDisplayCellViewModel.swift */,
+			);
+			path = HabitDisplayCell;
+			sourceTree = "<group>";
+		};
 		08C695BF24CDF00800BDBEA2 /* RoundedShadowButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -859,7 +901,8 @@
 		B02110F72465CAD7005BF1E2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B02110EC24653ECF005BF1E2 /* HabitCell.swift */,
+				08A4FDAE258F759F003A387A /* HabitCell */,
+				08A4FDCA258F76E4003A387A /* HabitDisplayCell */,
 				B02110F224659C6D005BF1E2 /* ChallengeCell.swift */,
 			);
 			path = Cells;
@@ -982,6 +1025,7 @@
 		B077F9B8245D97E500FAFFB6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				08A4FDB7258F7663003A387A /* ConfigurableCell */,
 				B077F9B9245D97E500FAFFB6 /* ErrorDisplayable.swift */,
 				B077F9BA245D97E500FAFFB6 /* Maskable.swift */,
 				B077F9BB245D97E500FAFFB6 /* InfoDisplayable.swift */,
@@ -1411,6 +1455,7 @@
 			isa = PBXGroup;
 			children = (
 				B07BFD8424543B7E00D2D18F /* HabitsViewController.swift */,
+				08A4FDD3258F7DBA003A387A /* HabitsInteractor.swift */,
 				B02110F62465CAC3005BF1E2 /* Views */,
 			);
 			path = Habits;
@@ -1769,7 +1814,9 @@
 				08C695BC24CDE55700BDBEA2 /* ShadowModel.swift in Sources */,
 				B07BFE78245488CF00D2D18F /* BaseInputView.swift in Sources */,
 				08CB490C252E1E3600BDB5DD /* CheckpointDTO.swift in Sources */,
+				08A4FDC1258F7684003A387A /* ConfigurableCellViewModel.swift in Sources */,
 				B091F53F2483DD8E0040F0EE /* AchievementView.swift in Sources */,
+				08A4FDB9258F7672003A387A /* ConfigurableCell.swift in Sources */,
 				08CB49A4252E265A00BDB5DD /* CheckpointsRepository.swift in Sources */,
 				B07BFE3024544B9800D2D18F /* Habit.swift in Sources */,
 				08EDA49924C487BC00F9DDFC /* NetworkProvider.swift in Sources */,
@@ -1795,6 +1842,7 @@
 				B02110F324659C6D005BF1E2 /* ChallengeCell.swift in Sources */,
 				0875B6E424BB263200F2982D /* Notifications.swift in Sources */,
 				B07BFE5724544C4B00D2D18F /* UIImage.swift in Sources */,
+				08A4FDB3258F75AA003A387A /* HabitCellViewModel.swift in Sources */,
 				08CB49A9252E266B00BDB5DD /* AchievementsRepository.swift in Sources */,
 				B07BFE6F245460AE00D2D18F /* Array.swift in Sources */,
 				08368C4D2540A28500B5AE33 /* ChallengesViewController.swift in Sources */,
@@ -1811,6 +1859,7 @@
 				08DA7DA224C9BE1700CC52A9 /* NetworkRequestType.swift in Sources */,
 				B077F9C7245D981200FAFFB6 /* MessageBanner.swift in Sources */,
 				08EDA4A624C487E900F9DDFC /* SugarTargetType.swift in Sources */,
+				08A4FDCF258F76EF003A387A /* HabitDisplayCellViewModel.swift in Sources */,
 				B0DDCB0C24557459004223DB /* UITextField.swift in Sources */,
 				B08355842466E3E50043CB8A /* HabitIcon.swift in Sources */,
 				B0EC35E0248B937A0075FBA6 /* DateHeader.swift in Sources */,
@@ -1836,6 +1885,7 @@
 				08DA7D9F24C9BBD400CC52A9 /* Collection.swift in Sources */,
 				B07BFE6024544C4B00D2D18F /* UIEdgeInsets.swift in Sources */,
 				08A4FDA2258A99AD003A387A /* Bundle.swift in Sources */,
+				08A4FDC6258F7693003A387A /* CellType.swift in Sources */,
 				B0AFA6CC24B35CF800B5DA45 /* HabitTitleView.swift in Sources */,
 				B08355892466E41A0043CB8A /* IconCell.swift in Sources */,
 				08A4FD9D258A97BB003A387A /* SettingsTableViewCell.swift in Sources */,
@@ -1846,6 +1896,7 @@
 				08C695BE24CDF00300BDBEA2 /* RoundedShadowButton.swift in Sources */,
 				B07BFE5A24544C4B00D2D18F /* UISwitch.swift in Sources */,
 				08DA7D8A24C853F200CC52A9 /* KeychainManager.swift in Sources */,
+				08A4FDAA258F54E7003A387A /* HabitDisplayCell.swift in Sources */,
 				08DA7DA824C9C26400CC52A9 /* ErrorModel.swift in Sources */,
 				B0235DA4246606D200F91DF0 /* ColorButton.swift in Sources */,
 				08CD60A125362C1E008705EF /* HabitDetailsInteractor.swift in Sources */,
@@ -1867,6 +1918,7 @@
 				08CB4A872532F44F00BDB5DD /* V1.swift in Sources */,
 				B03495F6245EDC6B00C11283 /* NumberRegistrationViewController.swift in Sources */,
 				084A78432584009B00FADDCC /* CalendarViewModel.swift in Sources */,
+				08A4FDD4258F7DBA003A387A /* HabitsInteractor.swift in Sources */,
 				B077F9B3245D94B500FAFFB6 /* NumberConfirmationViewController.swift in Sources */,
 				B0DDCB0824556FBB004223DB /* Date.swift in Sources */,
 				08DA7D9724C88BD100CC52A9 /* Header.swift in Sources */,

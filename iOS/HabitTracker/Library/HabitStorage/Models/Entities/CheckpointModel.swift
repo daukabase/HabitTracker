@@ -25,10 +25,8 @@ final class CheckpointModel: Hashable {
     }
     
     var isMissed: Bool {
-        guard !isToday, !isDone else {
-            return false
-        }
-        return date < Date()
+        let isPastCheckpoint = !isToday && date < Date()
+        return isPastCheckpoint && !isDone
     }
     
     init(id: String, habitId: String, date: Date, isDone: Bool) {

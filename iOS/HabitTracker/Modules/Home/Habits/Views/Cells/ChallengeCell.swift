@@ -67,10 +67,8 @@ final class ChallengeCell: UITableViewCell {
     
     func configure(model: Challenge) {
         titleLabel.text = model.title
-        progressIndicatorLabel.attributedText = model.completionAttributedText
         iconImageView.image = model.image.filled(with: model.color)
         
-        progressView.setProgress(model.progress, animated: true)
         progressView.trackTintColor = model.color.withAlphaComponent(0.15)
         progressView.progressTintColor = model.color
     }
