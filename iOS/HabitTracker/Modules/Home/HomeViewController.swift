@@ -43,7 +43,7 @@ final class HomeViewController: SegementSlideDefaultViewController {
     
     override var switcherConfig: SegementSlideDefaultSwitcherConfig {
         let count = CGFloat(titlesInSwitcher.count)
-        let spacing: CGFloat = 24
+        let spacing: CGFloat = 32
         let corners = spacing * 2
         let spacingBetweenSegments = (spacing - 1) / count
         let indicatorWidth = (UIScreen.main.bounds.width - corners - spacingBetweenSegments) / count

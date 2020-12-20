@@ -73,7 +73,7 @@ final class AchievementsRepository {
         var (currentSkreak, maxStreak) = (0, 0)
         
         for model in sortedCheckpoints {
-            if model.date >= now {
+            if model.date >= now && !model.isToday {
                 break
             } else if model.isDone {
                 currentSkreak += 1
