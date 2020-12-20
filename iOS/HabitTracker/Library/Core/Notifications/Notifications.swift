@@ -26,7 +26,6 @@ final class Notifications: NSObject {
         super.init()
         notificationCenter.delegate = self
         
-        print("[LET] check - \(UserDefaultsStorage.count)")
         configure()
     }
     
@@ -146,7 +145,6 @@ private extension Notifications {
     
     func hanldeCheckpointAction(for request: UNNotificationRequest) {
         HabitStorage.setDoneCheckpoint(with: request.identifier, completion: { isSucceed in
-            print("[DEBUG] \(isSucceed)")
             NotificationCenter.default.post(name: .updateHabits, object: nil)
         })
     }

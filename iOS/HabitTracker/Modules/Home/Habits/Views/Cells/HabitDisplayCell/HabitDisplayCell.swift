@@ -64,6 +64,12 @@ extension HabitDisplayCell: ConfigurableCell {
         }
         titleLabel.text = viewModel.title
         
+        progressIndicatorLabel.attributedText = viewModel.progressAttributedText
+        iconImageView.image = viewModel.coloredImage
+        
+        progressView.setProgress(viewModel.progress, animated: true)
+        progressView.trackTintColor = viewModel.color.withAlphaComponent(0.15)
+        progressView.progressTintColor = viewModel.color
     }
     
 }

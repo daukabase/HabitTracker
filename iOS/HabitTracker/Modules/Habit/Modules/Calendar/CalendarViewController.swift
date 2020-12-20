@@ -138,8 +138,6 @@ private extension CalendarViewController {
         let missedDay = viewModel.isMissed(date: cellState.date)
         let isDone = viewModel.isDone(for: cellState.date)
         
-        
-        print("DEBUG " + String(missedDay))
         if isToday && !isDone {
             state = .today(position: cellState.selectedPosition())
         } else if cellState.isSelected {

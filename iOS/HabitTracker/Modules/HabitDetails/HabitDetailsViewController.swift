@@ -8,6 +8,7 @@
 
 import UIKit
 import Promises
+import Haptica
 
 protocol HabitDetailsDelegate: class {
     func didEndEditHabit()
@@ -193,6 +194,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         case let .edit(habit):
             editHabit(with: habit.id)
         }
+        Haptic.impact(.heavy).generate()
     }
     
     // MARK: - Private Methods

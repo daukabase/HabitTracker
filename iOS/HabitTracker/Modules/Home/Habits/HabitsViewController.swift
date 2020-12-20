@@ -9,6 +9,7 @@
 import UIKit
 import SegementSlide
 import PinLayout
+import Haptica
 
 protocol ChallengeDelegate: class {
     func askMark()
@@ -79,7 +80,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
     private func commonInit() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.contentInset.top = 8
+        tableView.contentInset.top = 0
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         tableView.addSubview(refreshControl)
@@ -145,7 +146,12 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
             self?.emptyMessageLabel.text = text
         }
         
-        tableView.reloadData()
+        self.view.isUserInteractionEnabled = false
+        UIView.transition(with: tableView, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            self.tableView.reloadData()
+        }, completion: { _ in
+            self.view.isUserInteractionEnabled = true
+        })
     }
     
     // MARK: - Private Acitons
@@ -188,7 +194,7 @@ extension HabitsViewController: UITableViewDataSource {
         guard let viewModel = rows[indexPath.row] as? HabitDisplayCellViewModel else {
             return
         }
-        
+        Haptic.impact(.light).generate()
         let controller = HabitViewController()
         controller.setup(habit: viewModel.habit)
         

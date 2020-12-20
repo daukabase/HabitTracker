@@ -7,8 +7,13 @@
 //
 
 import SegementSlide
+import Haptica
 
 final class HomeViewController: SegementSlideDefaultViewController {
+    
+    enum Constants {
+        static let addHabitButtonAnimationDuration = 0.3
+    }
     
     private lazy var habitsViewController: HabitsViewController = {
         guard let controller = UIStoryboard.instantiate(ofType: HabitsViewController.self) else {
@@ -111,6 +116,7 @@ final class HomeViewController: SegementSlideDefaultViewController {
     
     @objc
     private func addHabitDidTap() {
+        Haptic.impact(.medium).generate()
         let controller = HabitDetailsViewController(context: .createNew, delegate: nil)
         controller.modalPresentationStyle = .fullScreen
         
@@ -140,13 +146,13 @@ final class HomeViewController: SegementSlideDefaultViewController {
     }
     
     private func animateAddButtonHide() {
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: { [weak addHabitButton] in
+        UIView.animate(withDuration: Constants.addHabitButtonAnimationDuration, delay: 0, options: .curveEaseInOut, animations: { [weak addHabitButton] in
             addHabitButton?.alpha = 0
         }, completion: nil)
     }
     
     private func animateAddButtonAppear() {
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: { [weak addHabitButton] in
+        UIView.animate(withDuration: Constants.addHabitButtonAnimationDuration, delay: 0, options: .curveEaseInOut, animations: { [weak addHabitButton] in
             addHabitButton?.alpha = 1
         }, completion: nil)
     }

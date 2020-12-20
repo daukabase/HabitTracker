@@ -53,12 +53,9 @@ extension Frequency: DTOConvertible {
     init?(type: String, value: String) {
         if type == Constants.daily, let dailyFreq = Int(value) {
             self = .daily(every: dailyFreq)
-            debugPrint("INIT \(Constants.daily)")
             return
         }
-        debugPrint("NOT \(Constants.daily)")
         guard type == Constants.weekly else {
-            debugPrint("NOT \(Constants.weekly)")
             return nil
         }
         
@@ -70,10 +67,8 @@ extension Frequency: DTOConvertible {
         }
         
         guard !days.isEmpty else {
-            debugPrint("NOT enought days = \(days.count)")
             return nil
         }
-        debugPrint("INIT \(Constants.weekly)")
         self = .weekly(days)
     }
     
