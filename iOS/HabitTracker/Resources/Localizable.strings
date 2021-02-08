@@ -14,7 +14,7 @@
 "Onboarding.Challenge.description" = "Be a good friend and change life for the better not only for yourself. Invite friends to create a challenge and motivate each other";
 
 "Onboarding.Track.title" = "Track your Habits";
-"Onboarding.Track.description" = "Creat habits that you what to start and keep track of your progress";
+"Onboarding.Track.description" = "Creat Habits that you want to start and keep track of your progress";
 
 "Onboarding.Goal.title" = "Forward to the Goal";
 "Onboarding.Goal.description" = "Already have a goal and want to reach it?\n A few clicks and you can get a little closer to it";
@@ -26,9 +26,9 @@
 "Onboarding.GetStarted.description" = "Become better version of yourself";
 
 "Onboarding.Auth.title" = "Let’s Start!";
-"Onboarding.Auth.description" = "So now if you are motivated enough and ready to achieve your goals, let’s create an account and start your first habit";
+"Onboarding.Auth.description" = "So now if you are motivated enough and ready to achieve your goals, let’s create an account and start your first Habit";
 
-"Home.Habit.Message.noToday" = "For today there is no habits yet";
+"Home.Habit.Message.noToday" = "For today there are no Habits yet";
 "Home.Habit.Message.noHabits" = "You don't have Habits yet";
 "Home.Challenge.Message.comingSoon" = "Coming soon! 🤩";
 

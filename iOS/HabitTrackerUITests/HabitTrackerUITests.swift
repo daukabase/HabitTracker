@@ -12,6 +12,10 @@ class HabitTrackerUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        let app = XCUIApplication()
+        setupSnapshot(app)
+        app.launch()
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
@@ -40,4 +44,29 @@ class HabitTrackerUITests: XCTestCase {
             }
         }
     }
+    
+    func takeScreenShots() {
+        let app = XCUIApplication()
+        XCUIDevice.shared.orientation = .portrait
+        snapshot(“1-Login”) // Takes screenshot of Login screen
+        
+        let textFieldUserName = app.textFields[“userName”]
+        textFieldUserName.tap()
+        sleep(1)
+        textFieldUserName.typeText(“abc@gmail.com”)
+        
+        let textFieldPassword = app.secureTextFields[“passwordText”]
+        textFieldPassword.tap()
+        sleep(1)
+        textFieldPassword.typeText(“Abc@123456”)
+        
+        sleep(1)
+        app.buttons[“Login”].tap()
+        sleep(8)
+        snapshot(“2-CustomerList”)
+        // Takes screenshot of CustomerList     screen.
+     }
+    
+    
+    
 }

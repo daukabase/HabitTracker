@@ -23,7 +23,16 @@ extension Date {
     }
     
     var day: Day {
-        let indexOfDay = Calendar.current.component(.weekday, from: self) - 1
+        let weekday = Calendar.current.component(.weekday, from: self)
+        let indexOfDay: Int
+        
+        if weekday > 2 {
+            indexOfDay = Calendar.current.component(.weekday, from: self) - 2
+        } else if weekday == 1 { // sunday
+            indexOfDay = 6
+        } else {
+            indexOfDay = 0
+        }
         
         guard let day = Day(rawValue: indexOfDay) else {
             assertionFailure("It always should be initialized")

@@ -59,7 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let controller = OnboardingPageViewController(with: [
             .init(type: .goal),
             .init(type: .track),
-            .init(type: .challenge),
             .init(type: .getStarted),
         ])
         window?.rootViewController = UINavigationController(rootViewController: controller)

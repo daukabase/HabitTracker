@@ -49,19 +49,19 @@ final class HomeViewController: SegementSlideDefaultViewController {
         let indicatorWidth = (UIScreen.main.bounds.width - corners - spacingBetweenSegments) / count
         
         return SegementSlideDefaultSwitcherConfig(type: .tab,
-                                           horizontalMargin: 16,
-                                           horizontalSpace: 32,
-                                           normalTitleFont: FontFamily.Gilroy.medium.font(size: 16),
-                                           selectedTitleFont: FontFamily.Gilroy.medium.font(size: 16),
-                                           normalTitleColor: ColorName.textSecondary.color,
-                                           selectedTitleColor: ColorName.textPrimary.color,
-                                           indicatorWidth: indicatorWidth,
-                                           indicatorHeight: 4,
-                                           indicatorColor: ColorName.uiBlue.color,
-                                           badgeHeightForPointType: 0,
-                                           badgeHeightForCountType: 0,
-                                           badgeHeightForCustomType: 0,
-                                           badgeFontForCountType: FontFamily.Gilroy.medium.font(size: 16))
+                                                  horizontalMargin: 16,
+                                                  horizontalSpace: 32,
+                                                  normalTitleFont: FontFamily.Gilroy.medium.font(size: 16),
+                                                  selectedTitleFont: FontFamily.Gilroy.medium.font(size: 16),
+                                                  normalTitleColor: ColorName.textSecondary.color,
+                                                  selectedTitleColor: ColorName.textPrimary.color,
+                                                  indicatorWidth: indicatorWidth,
+                                                  indicatorHeight: 4,
+                                                  indicatorColor: ColorName.uiBlue.color,
+                                                  badgeHeightForPointType: 0,
+                                                  badgeHeightForCountType: 0,
+                                                  badgeHeightForCustomType: 0,
+                                                  badgeFontForCountType: FontFamily.Gilroy.medium.font(size: 16))
     }
 
     override var bouncesType: BouncesType {
