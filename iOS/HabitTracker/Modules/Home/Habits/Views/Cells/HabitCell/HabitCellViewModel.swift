@@ -24,16 +24,15 @@ final class HabitCellViewModel: HabitDisplayCellViewModel {
     }
     
     // MARK: - Methods
-    func set(isSelected: Bool) {
+    func set(isSelected: Bool, completion: EmptyClosure?) {
         guard let checkpoint = habit.checkpoint else {
             return
         }
-        Haptic.impact(.medium).generate()
         
         let toogleCheckpointCompletion: BoolClosure = { [weak self] isSucceed in
             guard isSucceed else { return }
             self?.habit.updateGoal {
-                self?.onProgressUpdate?()
+                completion?()
             }
         }
         

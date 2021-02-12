@@ -19,11 +19,29 @@ class HabitDisplayCellViewModel: ConfigurableCellViewModel {
     // MARK: - Constants
     let color: UIColor
     let coloredImage: UIImage
+    let image: UIImage
     let title: String
     let habit: Habit
     
     // MARK: - Computed Properties
-    var progressAttributedText: NSAttributedString {
+    var progress: Float {
+        guard habit.totalRepetitions != 0 else {
+            return 0
+        }
+        return Float(habit.completedRepetitions) / Float(habit.totalRepetitions)
+    }
+    
+    // MARK: Init
+    init(habit: Habit) {
+        self.habit = habit
+        self.title = habit.title
+        self.color = habit.color
+        self.coloredImage = habit.image.filled(with: color)
+        self.image = habit.image
+    }
+    
+    // MARK: - Methdos
+    func progressAttributedText(color: UIColor) -> NSAttributedString {
         let indicatorValue = NSMutableAttributedString()
         
         let first: [StringAttribute] = [
@@ -41,21 +59,6 @@ class HabitDisplayCellViewModel: ConfigurableCellViewModel {
         [firstText, secondText].forEach(indicatorValue.append)
         
         return indicatorValue
-    }
-    
-    var progress: Float {
-        guard habit.totalRepetitions != 0 else {
-            return 0
-        }
-        return Float(habit.completedRepetitions) / Float(habit.totalRepetitions)
-    }
-    
-    // MARK: Init
-    init(habit: Habit) {
-        self.habit = habit
-        self.title = habit.title
-        self.color = habit.color
-        self.coloredImage = habit.image.filled(with: color)
     }
     
 }

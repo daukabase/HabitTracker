@@ -11,14 +11,20 @@ import Haptica
 
 final class HabitCell: ShrinkableCell {
     
+    typealias State = HabitAbstractCellState
+    
+    // MARK: - Properties
     var onProgress: BoolClosure?
     
+    private lazy var state: State = NotDoneHabitState(cell: self)
+    private weak var model: HabitCellViewModel?
+    
     // MARK: - Views
-    @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var doneButton: DoneHabitButton!
-    @IBOutlet private var progressIndicatorLabel: UILabel!
-    @IBOutlet private var progressView: UIProgressView!
-    @IBOutlet private var iconImageView: UIImageView!
+    @IBOutlet internal var titleLabel: UILabel!
+    @IBOutlet internal var doneButton: DoneHabitButton!
+    @IBOutlet internal var progressIndicatorLabel: UILabel!
+    @IBOutlet internal var progressView: UIProgressView!
+    @IBOutlet internal var iconImageView: UIImageView!
     @IBOutlet private var containerView: UIView!
     
     // MARK: - Superview
@@ -33,6 +39,10 @@ final class HabitCell: ShrinkableCell {
         containerView.applyDropShadow()
         
         setupProgressViewLayer()
+        
+        doneButton.onClick = { [weak self] isSelected in
+            self?.onChange(isSelected: isSelected)
+        }
     }
     
     override func layoutSubviews() {
@@ -40,8 +50,12 @@ final class HabitCell: ShrinkableCell {
         setupProgressViewLayer()
     }
     
-    // MARK: - Methods
+    // MARK: - Internal Methods
+    func changeState(state: State) {
+        self.state = state
+    }
     
+    // MARK: - Private Methods
     private func setupProgressViewLayer() {
         setupProgressIndicatorLayer()
         
@@ -58,6 +72,31 @@ final class HabitCell: ShrinkableCell {
         progressView.subviews[safe: 1]?.clipsToBounds = true
     }
     
+    private func onChange(isSelected: Bool) {
+        Haptic.impact(.medium).generate()
+        
+        model?.set(isSelected: isSelected) { [weak self] in
+            self?.makeAction(for: isSelected)
+        }
+    }
+    
+    private func makeAction(for isSelected: Bool) {
+        if isSelected {
+            state.setDone(viewModel: model)
+        } else {
+            state.setUndone(viewModel: model)
+        }
+    }
+    
+    private func setState(isSelected: Bool) {
+        if isSelected {
+            state = NotDoneHabitState(cell: self)
+        } else {
+            state = DoneHabitState(cell: self)
+        }
+        makeAction(for: isSelected)
+    }
+    
 }
 
 extension HabitCell: ConfigurableCell {
@@ -67,29 +106,91 @@ extension HabitCell: ConfigurableCell {
         guard let viewModel = viewModel as? HabitCellViewModel else {
             return
         }
+        self.model = viewModel
         
         titleLabel.text = viewModel.title
+        setState(isSelected: viewModel.isCheckpointForTodayCompleted)
+    }
+    
+}
+
+
+class HabitAbstractCellState {
+    
+    let cell: HabitCell
+    
+    init(cell: HabitCell) {
+        self.cell = cell
+    }
+    
+    func setDone(viewModel: HabitCellViewModel?) {
         
-        progressIndicatorLabel.attributedText = viewModel.progressAttributedText
-        iconImageView.image = viewModel.coloredImage
+    }
+    
+    func setUndone(viewModel: HabitCellViewModel?) {
         
-        progressView.setProgress(viewModel.progress, animated: true)
-        progressView.trackTintColor = viewModel.color.withAlphaComponent(0.15)
-        progressView.progressTintColor = viewModel.color
-            
-        doneButton.configure(color: viewModel.color)
-        doneButton.isSelected = viewModel.isCheckpointForTodayCompleted
+    }
+    
+}
+
+final class NotDoneHabitState: HabitAbstractCellState {
+    
+    override func setDone(viewModel: HabitCellViewModel?) {
+        guard let viewModel = viewModel else { return }
         
-        viewModel.onProgressUpdate = { [weak viewModel, weak self] in
-            guard let viewModel = viewModel else {
-                return
-            }
-            self?.progressIndicatorLabel.attributedText = viewModel.progressAttributedText
-            self?.progressView.setProgress(viewModel.progress, animated: true)
+        UIView.animate(withDuration: 0.5) {
+            self.setupUI(using: viewModel)
+            self.cell.layoutIfNeeded()
         }
-        doneButton.onClick = { [weak viewModel] isSelected in
-            viewModel?.set(isSelected: isSelected)
+        
+        cell.changeState(state: DoneHabitState(cell: cell))
+    }
+    
+    private func setupUI(using viewModel: HabitCellViewModel) {
+        cell.progressView.trackTintColor = viewModel.color.withAlphaComponent(0.15)
+        cell.progressView.progressTintColor = viewModel.color
+        
+        cell.progressView.setProgress(viewModel.progress, animated: true)
+        
+        cell.doneButton.configure(color: viewModel.color)
+        cell.doneButton.isSelected = true
+        
+        cell.progressIndicatorLabel.attributedText = viewModel.progressAttributedText(color: viewModel.color)
+        
+        cell.iconImageView.image = viewModel.coloredImage
+    }
+    
+}
+
+final class DoneHabitState: HabitAbstractCellState {
+    
+    override func setUndone(viewModel: HabitCellViewModel?) {
+        guard let viewModel = viewModel else { return }
+        
+        UIView.animate(withDuration: 0.5) {
+            self.setupUI(using: viewModel)
+            self.cell.layoutIfNeeded()
         }
+        
+        cell.changeState(state: NotDoneHabitState(cell: cell))
+    }
+    
+    private func setupUI(using viewModel: HabitCellViewModel) {
+        let grayColor = ColorName.uiGraySecondary.color
+        
+        cell.progressView.trackTintColor = grayColor.withAlphaComponent(0.15)
+        cell.progressView.progressTintColor = grayColor
+        
+        cell.progressView.setProgress(viewModel.progress, animated: true)
+        
+        cell.doneButton.configure(color: grayColor)
+        cell.doneButton.isSelected = false
+        
+        cell.progressIndicatorLabel.attributedText = viewModel.progressAttributedText(color: grayColor)
+        
+        cell.iconImageView.image = viewModel.image.filled(with: grayColor)
+        
+        cell.setNeedsLayout()
     }
     
 }

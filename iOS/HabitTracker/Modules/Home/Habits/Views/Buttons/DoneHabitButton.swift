@@ -53,12 +53,12 @@ final class DoneHabitButton: UIButton {
         setBackgroundImage(circle, for: .normal)
         setBackgroundImage(doneImage, for: .selected)
         
-        layoutIfNeeded()
+        setNeedsLayout()
     }
     
     @objc func didTap() {
         isSelected.toggle()
-        layoutIfNeeded()
+        setNeedsLayout()
         onClick?(isSelected)
     }
     
