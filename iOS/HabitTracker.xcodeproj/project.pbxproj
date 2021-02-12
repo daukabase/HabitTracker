@@ -14,6 +14,9 @@
 		08368C4D2540A28500B5AE33 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08368C4C2540A28500B5AE33 /* ChallengesViewController.swift */; };
 		08368C552540A6EE00B5AE33 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08368C542540A6EE00B5AE33 /* Notification.Name.swift */; };
 		08368C752541771C00B5AE33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08368C742541771B00B5AE33 /* GoogleService-Info.plist */; };
+		0848540E25D6C28700EC60EE /* HabitAbstractCellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848540D25D6C28700EC60EE /* HabitAbstractCellState.swift */; };
+		0848541325D6C29A00EC60EE /* NotDoneHabitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848541225D6C29A00EC60EE /* NotDoneHabitState.swift */; };
+		0848541825D6C2B600EC60EE /* DoneHabitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848541725D6C2B600EC60EE /* DoneHabitState.swift */; };
 		084941BF24C6DB1000A0D9DE /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084941BE24C6DB1000A0D9DE /* AuthToken.swift */; };
 		084A780F2583BB3100FADDCC /* CheckpointDateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084A780E2583BB3100FADDCC /* CheckpointDateGenerator.swift */; };
 		084A783B2583F26E00FADDCC /* HabitColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084A783A2583F26E00FADDCC /* HabitColor.swift */; };
@@ -286,6 +289,9 @@
 		08368C4C2540A28500B5AE33 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		08368C542540A6EE00B5AE33 /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
 		08368C742541771B00B5AE33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0848540D25D6C28700EC60EE /* HabitAbstractCellState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitAbstractCellState.swift; sourceTree = "<group>"; };
+		0848541225D6C29A00EC60EE /* NotDoneHabitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDoneHabitState.swift; sourceTree = "<group>"; };
+		0848541725D6C2B600EC60EE /* DoneHabitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneHabitState.swift; sourceTree = "<group>"; };
 		084941BE24C6DB1000A0D9DE /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		084A780E2583BB3100FADDCC /* CheckpointDateGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointDateGenerator.swift; sourceTree = "<group>"; };
 		084A783A2583F26E00FADDCC /* HabitColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitColor.swift; sourceTree = "<group>"; };
@@ -594,6 +600,16 @@
 			path = Challenges;
 			sourceTree = "<group>";
 		};
+		0848540425D6C26F00EC60EE /* State */ = {
+			isa = PBXGroup;
+			children = (
+				0848541725D6C2B600EC60EE /* DoneHabitState.swift */,
+				0848540D25D6C28700EC60EE /* HabitAbstractCellState.swift */,
+				0848541225D6C29A00EC60EE /* NotDoneHabitState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		084A78392583F26300FADDCC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,6 +672,7 @@
 		08A4FDAE258F759F003A387A /* HabitCell */ = {
 			isa = PBXGroup;
 			children = (
+				0848540425D6C26F00EC60EE /* State */,
 				B02110EC24653ECF005BF1E2 /* HabitCell.swift */,
 				08A4FDB2258F75AA003A387A /* HabitCellViewModel.swift */,
 			);
@@ -1825,6 +1842,7 @@
 				B07BFE4C24544C4A00D2D18F /* UIView.swift in Sources */,
 				B05FC1CF245D810100F4C214 /* StringBuilder.swift in Sources */,
 				B077F9AB245D947400FAFFB6 /* InputCodeView.swift in Sources */,
+				0848540E25D6C28700EC60EE /* HabitAbstractCellState.swift in Sources */,
 				08C695BC24CDE55700BDBEA2 /* ShadowModel.swift in Sources */,
 				B07BFE78245488CF00D2D18F /* BaseInputView.swift in Sources */,
 				08CB490C252E1E3600BDB5DD /* CheckpointDTO.swift in Sources */,
@@ -1914,6 +1932,7 @@
 				08A4FDAA258F54E7003A387A /* HabitDisplayCell.swift in Sources */,
 				08DA7DA824C9C26400CC52A9 /* ErrorModel.swift in Sources */,
 				B0235DA4246606D200F91DF0 /* ColorButton.swift in Sources */,
+				0848541825D6C2B600EC60EE /* DoneHabitState.swift in Sources */,
 				08CD60A125362C1E008705EF /* HabitDetailsInteractor.swift in Sources */,
 				B07BFE5624544C4B00D2D18F /* UIButton.swift in Sources */,
 				0810655425337AD50002B7F6 /* Frequency.swift in Sources */,
@@ -1949,6 +1968,7 @@
 				08C695C124CDF02000BDBEA2 /* RoundedShadowButtonModel.swift in Sources */,
 				B0DDCB0E24557538004223DB /* String.swift in Sources */,
 				08EDA4A724C487E900F9DDFC /* Route.swift in Sources */,
+				0848541325D6C29A00EC60EE /* NotDoneHabitState.swift in Sources */,
 				B07BFE5E24544C4B00D2D18F /* UINavigationController.swift in Sources */,
 				08EDA49C24C487BC00F9DDFC /* Network.swift in Sources */,
 				B077F9C2245D97E500FAFFB6 /* LoaderViewDisplayable.swift in Sources */,
