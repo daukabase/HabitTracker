@@ -138,6 +138,8 @@ final class NotDoneHabitState: HabitAbstractCellState {
     override func setDone(viewModel: HabitCellViewModel?) {
         guard let viewModel = viewModel else { return }
         
+        cell.progressIndicatorLabel.attributedText = viewModel.progressAttributedText(color: viewModel.color)
+        
         UIView.animate(withDuration: 0.5) {
             self.setupUI(using: viewModel)
             self.cell.layoutIfNeeded()
@@ -155,8 +157,6 @@ final class NotDoneHabitState: HabitAbstractCellState {
         cell.doneButton.configure(color: viewModel.color)
         cell.doneButton.isSelected = true
         
-        cell.progressIndicatorLabel.attributedText = viewModel.progressAttributedText(color: viewModel.color)
-        
         cell.iconImageView.image = viewModel.coloredImage
     }
     
@@ -164,8 +164,12 @@ final class NotDoneHabitState: HabitAbstractCellState {
 
 final class DoneHabitState: HabitAbstractCellState {
     
+    private let grayColor = ColorName.uiGraySecondary.color
+    
     override func setUndone(viewModel: HabitCellViewModel?) {
         guard let viewModel = viewModel else { return }
+        
+        cell.progressIndicatorLabel.attributedText = viewModel.progressAttributedText(color: grayColor)
         
         UIView.animate(withDuration: 0.5) {
             self.setupUI(using: viewModel)
@@ -176,8 +180,6 @@ final class DoneHabitState: HabitAbstractCellState {
     }
     
     private func setupUI(using viewModel: HabitCellViewModel) {
-        let grayColor = ColorName.uiGraySecondary.color
-        
         cell.progressView.trackTintColor = grayColor.withAlphaComponent(0.15)
         cell.progressView.progressTintColor = grayColor
         
@@ -186,11 +188,7 @@ final class DoneHabitState: HabitAbstractCellState {
         cell.doneButton.configure(color: grayColor)
         cell.doneButton.isSelected = false
         
-        cell.progressIndicatorLabel.attributedText = viewModel.progressAttributedText(color: grayColor)
-        
         cell.iconImageView.image = viewModel.image.filled(with: grayColor)
-        
-        cell.setNeedsLayout()
     }
     
 }
