@@ -46,11 +46,13 @@ class HabitDisplayCellViewModel: ConfigurableCellViewModel {
         
         let first: [StringAttribute] = [
             .font(FontFamily.Gilroy.semibold.font(size: 18)),
-            .foregroundColor(color)
+            .foregroundColor(color),
+            .aligment(.left)
         ]
         let second: [StringAttribute] = [
             .font(FontFamily.Gilroy.regular.font(size: 12)),
-            .foregroundColor(color)
+            .foregroundColor(color),
+            .aligment(.left)
         ]
         
         let firstText = "\(habit.completedRepetitions)".with(attributes: first)
