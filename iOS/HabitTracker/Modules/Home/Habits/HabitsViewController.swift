@@ -212,7 +212,7 @@ extension HabitsViewController: UITableViewDataSource {
         navigationController?.pushViewController(controller, animated: true)
         
         
-        if Target.current == .uiTest {
+        if Target.current == .fastlaneUiTest {
             controller.setup(habit: FastlaneData.TestData.Habits.run)
         } else {
             controller.setup(habit: viewModel.habit)

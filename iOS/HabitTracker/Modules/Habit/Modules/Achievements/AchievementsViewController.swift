@@ -32,7 +32,7 @@ final class AchievementsViewController: UIViewController, ErrorDisplayable {
             return
         }
         
-        guard Target.current != .uiTest else {
+        guard Target.current != .fastlaneUiTest else {
             setup(FastlaneData.TestData.Achievements.testData)   
             return
         }

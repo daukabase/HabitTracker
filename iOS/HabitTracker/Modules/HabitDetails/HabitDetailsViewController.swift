@@ -265,7 +265,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     }
     
     private func fillDataIfTest() {
-        guard Target.current == .uiTest else {
+        guard Target.current == .fastlaneUiTest else {
             return
         }
         

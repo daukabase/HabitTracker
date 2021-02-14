@@ -8,27 +8,43 @@
 
 import Foundation
 
+struct Env {
+    
+    static var isFastlane: Bool {
+        #if DEBUG
+            print("DEBUG")
+            let dic = ProcessInfo.processInfo.environment
+            if let forceProduction = dic["forceProduction"] , forceProduction == "true" {
+                return true
+            }
+            return false
+        #elseif ADHOC
+            print("ADHOC")
+            return false
+        #else
+            print("PRODUCTION")
+            return true
+        #endif
+    }
+    
+}
+
 public enum Target: CaseIterable {
 
     public static var current = getTarget()
     
-    case main
-    case unitTest
-    case uiTest
+    case debug
+    case release
+    case fastlaneUiTest
     
     private static func getTarget() -> Self {
-        let name = Bundle.main.infoDictionary?["CFBundleName"] as! String
-        switch name {
-        case "HabitTracker":
-            return .main
-        case "HabitTrackerTests":
-            return .unitTest
-        case "HabitTrackerUITests":
-            return .uiTest
-        default:
-            assertionFailure("target name should always match")
-            return .main
-        }
+        #if FASTLANE
+            return .fastlaneUiTest
+        #elseif DEBUG
+            return .debug
+        #else
+            return .release
+        #endif
     }
     
 }

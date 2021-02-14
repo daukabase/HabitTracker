@@ -34,15 +34,4 @@ extension Day {
         }
     }
     
-    func isIn(_ date: Date) -> Bool {
-        // return range from 1 to 7
-        let indexOfDay = Calendar.current.component(.weekday, from: date) - 1
-        let val = (indexOfDay - 2) % 7
-        (indexOfDay - 1)
-        
-        return self.rawValue == indexOfDay
-        
-        
-    }
-    
 }

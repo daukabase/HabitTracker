@@ -1,14 +1,14 @@
 # Uncomment the lines below you want to change by removing the # in the beginning
 
+launch_arguments([
+  "-firstName Felix -lastName Krause"
+])
+
 # A list of devices you want to take the screenshots from
 devices([
-   "iPhone 8",
-#   "iPhone 8 Plus",
    "iPhone SE (1st generation)",
-   "iPhone X"
-#   "iPad Pro (12.9-inch)",
-#   "iPad Pro (9.7-inch)",
-#   "Apple TV 1080p"
+   "iPhone 8",
+   "iPhone 11"
 ])
 
 languages([
@@ -28,7 +28,7 @@ output_directory("./fastlane/screenshots")
 clear_previous_screenshots(true)
 
 # Remove the '#' to set the status bar to 9:41 AM, and show full battery and reception.
-override_status_bar(true)
+# override_status_bar(true)
 
 # Arguments to pass to the app on launch. See https://docs.fastlane.tools/actions/snapshot/#launch-arguments
 # launch_arguments(["-favColor red"])

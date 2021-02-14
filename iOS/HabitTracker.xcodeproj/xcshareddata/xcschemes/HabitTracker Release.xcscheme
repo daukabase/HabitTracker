@@ -33,8 +33,18 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B0B3A37624126097007B2F21"
-               BuildableName = "HabitTrackerUITests.xctest"
-               BlueprintName = "HabitTrackerUITests"
+               BuildableName = "FastlaneScreenshots.xctest"
+               BlueprintName = "FastlaneScreenshots"
+               ReferencedContainer = "container:HabitTracker.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0868DD0025D9A3FF005C6585"
+               BuildableName = "FastlaneUITests.xctest"
+               BlueprintName = "FastlaneUITests"
                ReferencedContainer = "container:HabitTracker.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -1,16 +1,14 @@
 //
-//  HabitTrackerUITests.swift
-//  HabitTrackerUITests
+//  FastlaneUITests.swift
+//  FastlaneUITests
 //
-//  Created by Daulet on 3/6/20.
-//  Copyright © 2020 Daulet. All rights reserved.
+//  Created by Daulet Almagambetov on 2/15/21.
+//  Copyright © 2021 Daulet. All rights reserved.
 //
 
 import XCTest
 
-class HabitTrackerUITests: XCTestCase {
-
-    private var app: XCUIApplication?
+class FastlaneUITests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,7 +21,7 @@ class HabitTrackerUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testExample() {
         let app = XCUIApplication()
         

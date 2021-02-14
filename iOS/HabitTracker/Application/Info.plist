@@ -107,5 +107,7 @@ Montserrat-ThinItalic.otf</string>
 	<string>Light</string>
 	<key>baseUrl</key>
 	<string>https://google.com</string>
+	<key>CURRENT_SCHEME_NAME</key>
+	<string>$(CURRENT_SCHEME_NAME)</string>
 </dict>
 </plist>
