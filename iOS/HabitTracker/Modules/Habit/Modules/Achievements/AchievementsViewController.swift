@@ -12,15 +12,31 @@ final class AchievementsViewController: UIViewController, ErrorDisplayable {
     
     @IBOutlet var stackView: UIStackView!
     
+    var execteOfLoad: EmptyClosure?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         view.clipsToBounds = false
         stackView.clipsToBounds = false
+        execteOfLoad?()
     }
     
     func setup(habitId: String) {
+        guard isViewLoaded else {
+            execteOfLoad = { [weak self] in
+                self?.setup(habitId: habitId)
+            }
+            
+            return
+        }
+        
+        guard Target.current != .uiTest else {
+            setup(FastlaneData.TestData.Achievements.testData)   
+            return
+        }
+        
         AchievementsRepository.shared.getAchievements(for: habitId) { (result) in
             switch result {
             case let .success(achevements):

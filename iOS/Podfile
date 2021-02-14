@@ -26,7 +26,6 @@ end
 def interface
   pod 'SegementSlide', '~> 3.0.1'
   pod 'JTAppleCalendar'
-  pod 'YPImagePicker'
   pod 'SloppySwiper'
 end
 

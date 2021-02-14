@@ -205,11 +205,19 @@ extension HabitsViewController: UITableViewDataSource {
         guard let viewModel = rows[indexPath.row] as? HabitDisplayCellViewModel else {
             return
         }
+        
         Haptic.impact(.light).generate()
         let controller = HabitViewController()
-        controller.setup(habit: viewModel.habit)
         
         navigationController?.pushViewController(controller, animated: true)
+        
+        
+        if Target.current == .uiTest {
+            controller.setup(habit: FastlaneData.TestData.Habits.run)
+        } else {
+            controller.setup(habit: viewModel.habit)
+        }
+        
     }
     
 }

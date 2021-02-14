@@ -83,14 +83,7 @@ final class HabitViewController: UIViewController, LoaderViewDisplayable, ErrorD
         habitTitleView.setup(title: habit.title,
                              image: habit.image,
                              color: habit.color)
-        HabitStorage.getCheckpoints(for: habit.id) { (result) in
-            guard let checkpoints = result.value else {
-                return
-            }
-            let model = CalendarViewModel(checkpoints: checkpoints, color: habit.color)
-            
-            self.calendarViewController.setup(model: model)
-        }
+        setupCheckpoints(for: habit)
     }
     
     // MARK: - Private Actions
@@ -112,6 +105,24 @@ final class HabitViewController: UIViewController, LoaderViewDisplayable, ErrorD
     }
     
     // MARK: - Private Methods
+    private func setupCheckpoints(for habit: Habit) {
+        guard Target.current != .uiTest else {
+            let model = CalendarViewModel(checkpoints: FastlaneData.TestData.Checkpoints.checkpoints, color: habit.color)
+            
+            calendarViewController.setup(model: model)
+            return
+        }
+        
+        HabitStorage.getCheckpoints(for: habit.id) { result in
+            guard let checkpoints = result.value else {
+                return
+            }
+            let model = CalendarViewModel(checkpoints: checkpoints, color: habit.color)
+            
+            self.calendarViewController.setup(model: model)
+        }
+    }
+    
     private func handleEditAction() {
         guard let habit = habit else {
             return

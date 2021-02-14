@@ -200,7 +200,7 @@ final class OnboardingViewController: UIViewController {
     
     private func routeToMainScreen() {
         guard let window = UIApplication.shared.keyWindow else { return }
-        window.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        window.rootViewController = ScreenSwipableNavigationController(rootViewController: HomeViewController())
         
         UIView.transition(with: window,
                           duration: 0.3,

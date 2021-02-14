@@ -162,7 +162,7 @@ extension DurationView: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         durationDays = Constants.durationDaysArray[row]
-        durationTextField.text = "\(Constants.durationDaysArray[row])"
+        durationTextField.text = "\(Constants.durationDaysArray[row]) days"
     }
     
 }

@@ -60,17 +60,6 @@ extension UIViewController {
         targetViewController?.navigationItem.backBarButtonItem = backItem
     }
     
-    // Установить NavigationController для UIViewController
-    open func wrapToNavigationController() -> UINavigationController {
-        let navigationController = UINavigationController(rootViewController: self)
-        navigationController.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: FontFamily.Gilroy.medium.font(size: 24)!,
-            NSAttributedString.Key.foregroundColor: UIColor.white
-        ]
-
-        return navigationController
-    }
-    
     func heightNavigationBlock() -> CGFloat {
         let navigationBarHeight = (navigationController?.navigationBar.frame.height ?? 0)
         let height = UIApplication.shared.statusBarFrame.height + navigationBarHeight

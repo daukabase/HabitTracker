@@ -11,6 +11,11 @@ import Foundation
 final class HabitsInteractor {
     
     func getTotalHabits(completion: @escaping Closure<RResult<[Habit]>>) {
+        if Target.current == .uiTest {
+            completion(.success(FastlaneData.TestData.Habits.testData))
+            return
+        }
+        
         HabitStorage.getTotalHabits { result in
             switch result {
             case let .success(models):
@@ -24,6 +29,11 @@ final class HabitsInteractor {
     }
     
     func getCheckpointsForToday(completion: @escaping Closure<RResult<[Habit]>>) {
+        if Target.current == .uiTest {
+            completion(.success(FastlaneData.TestData.Habits.testData))
+            return
+        }
+
         HabitStorage.getCheckpointsForToday { result in
             switch result {
             case let .success(checkpoints):

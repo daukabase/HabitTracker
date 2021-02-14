@@ -256,11 +256,20 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         case .createNew:
             title = "Habit details"
             saveButton.title = "Save"
+            fillDataIfTest()
         case let .edit(habit):
             title = "Edit Habit"
             saveButton.title = "Edit"
             setup(habit: habit)
         }
+    }
+    
+    private func fillDataIfTest() {
+        guard Target.current == .uiTest else {
+            return
+        }
+        
+        setup(habit: FastlaneData.TestData.Habits.run)
     }
     
     private func setup(habit: Habit) {

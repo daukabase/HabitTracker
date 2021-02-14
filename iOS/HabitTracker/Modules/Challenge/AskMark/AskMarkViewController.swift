@@ -24,11 +24,11 @@ final class AskMarkViewController: UIViewController {
     @IBOutlet var backgroundedViews: [UIView]!
     
     lazy var selectedImagesController: UIViewController = {
-        guard let controller = UIStoryboard.instantiate(ofType: SelectImagesViewController.self) else {
-            fatalError()
-        }
+//        guard let controller = UIStoryboard.instantiate(ofType: SelectImagesViewController.self) else {
+//            fatalError()
+//        }
         
-        return controller
+        return UIViewController()
     }()
     
     
