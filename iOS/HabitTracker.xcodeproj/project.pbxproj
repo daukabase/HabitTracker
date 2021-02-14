@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0805E12225D8359800F8C914 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805E12125D8359700F8C914 /* SnapshotHelper.swift */; };
 		0810654725336C1B0002B7F6 /* DTOConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810654625336C1B0002B7F6 /* DTOConvertible.swift */; };
 		0810655425337AD50002B7F6 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810655325337AD50002B7F6 /* Frequency.swift */; };
 		0810655B25337D310002B7F6 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810655A25337D310002B7F6 /* HabitModel.swift */; };
@@ -282,6 +283,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0805E12125D8359700F8C914 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		0810654625336C1B0002B7F6 /* DTOConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOConvertible.swift; sourceTree = "<group>"; };
 		0810655325337AD50002B7F6 /* Frequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 		0810655A25337D310002B7F6 /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
@@ -1430,6 +1432,7 @@
 			isa = PBXGroup;
 			children = (
 				B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */,
+				0805E12125D8359700F8C914 /* SnapshotHelper.swift */,
 				B0B3A37D24126097007B2F21 /* Info.plist */,
 			);
 			path = HabitTrackerUITests;
@@ -1994,6 +1997,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B3A37C24126097007B2F21 /* HabitTrackerUITests.swift in Sources */,
+				0805E12225D8359800F8C914 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2145,7 +2149,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Daulet Almagambetov (6MJ6BZN9Z9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = JNA8QM22SG;
 				INFOPLIST_FILE = HabitTracker/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2169,7 +2173,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Daulet Almagambetov (JNA8QM22SG)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = JNA8QM22SG;
 				INFOPLIST_FILE = HabitTracker/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

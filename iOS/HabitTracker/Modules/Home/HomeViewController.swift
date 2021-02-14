@@ -30,7 +30,7 @@ final class HomeViewController: SegementSlideDefaultViewController {
                                              radius: 32,
                                              backgroundColor: ColorName.uiBlue.color)
         let button = RoundedShadowButton(model: model, frame: .zero)
-        
+        button.accessibilityIdentifier = "Add habit button"
         button.setImage(Asset.add.image, for: .normal)
         
         return button

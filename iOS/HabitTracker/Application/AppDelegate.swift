@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         #if DEBUG
-//            UserDefaultsStorage.isOnboardingCompleted = false
+            UserDefaultsStorage.isOnboardingCompleted = true
         #endif
         
         UserDefaultsStorage.isOnboardingCompleted ? routeToHome() : routeToOnboarding()

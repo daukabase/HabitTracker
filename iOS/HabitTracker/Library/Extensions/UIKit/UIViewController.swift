@@ -41,7 +41,12 @@ extension UIViewController {
 
         let backItem = UIBarButtonItem()
         backItem.title = ""
-
+        backItem.accessibilityIdentifier = "Navbar Back"
+        
+        if #available(iOS 14.0, *) {
+            backItem.menu = nil
+        }
+        
         switch style {
         case .light:
             backItem.tintColor = ColorName.uiWhite.color
