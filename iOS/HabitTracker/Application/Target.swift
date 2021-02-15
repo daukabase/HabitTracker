@@ -41,7 +41,7 @@ public enum Target: CaseIterable {
         #if FASTLANE
             return .fastlaneUiTest
         #elseif DEBUG
-            return .fastlaneUiTest
+            return .debug
         #else
             return .release
         #endif
