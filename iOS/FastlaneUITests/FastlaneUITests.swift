@@ -34,7 +34,8 @@ class FastlaneUITests: XCTestCase {
         app.navigationBars["Habit details"].buttons["Back"].tap()
         
         // 3 - Habit
-        app.scrollViews.otherElements.scrollViews.otherElements.tables/*@START_MENU_TOKEN@*/.cells.progressIndicators["Progress"]/*[[".cells.progressIndicators[\"Progress\"]",".progressIndicators[\"Progress\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.tap()
+        app.scrollViews.otherElements.scrollViews.otherElements.tables/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Running at 7 am")/*[[".cells.containing(.staticText, identifier:\"4\/21\")",".cells.containing(.staticText, identifier:\"Running at 7 am\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.progressIndicators["Progress"].tap()
+        
         snapshot("02DHabit")
     }
 

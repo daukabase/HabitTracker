@@ -36,12 +36,16 @@ extension SettingsViewModel.CellType {
             return ""
         case .rate:
             return "Оцените нас в App Store"
+        case .privacy:
+            return "Политика конфиденциальности"
+        case .terms:
+            return "Условия эксплуатации"
         }
     }
     
     var icon: UIImage? {
         switch self {
-        case .rate, .empty:
+        case .rate, .empty, .privacy, .terms:
             return nil
         }
     }
@@ -51,7 +55,7 @@ extension SettingsViewModel.CellType {
 struct SettingsViewModel {
     
     enum CellType: String {
-        case rate, empty
+        case rate, empty, privacy, terms
     }
     
     
@@ -65,7 +69,7 @@ struct SettingsViewModel {
         switch type {
         case .main:
             items = [
-                .rate
+                .rate, .privacy, .terms
             ]
         }
         self.view?.reload()
@@ -202,9 +206,20 @@ extension SettingsTableViewController: UITableViewDelegate, UITableViewDataSourc
             break
         case .rate:
             rateOnAppStore()
+        case .privacy:
+            showWeb(type: .privacy)
+        case .terms:
+            showWeb(type: .terms)
         }
     }
     
+    private func showWeb(type: DisplayWebContentType) {
+        let controller = DisplayWebPageViewController()
+        
+        controller.content = type
+        
+        present(controller, animated: true, completion: nil)
+    }
 }
 
 private extension SettingsTableViewController {

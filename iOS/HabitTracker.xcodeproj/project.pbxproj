@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -59,6 +59,7 @@
 		08CB4A872532F44F00BDB5DD /* V1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4A862532F44F00BDB5DD /* V1.swift */; };
 		08CB4B40253300DC00BDB5DD /* HabitStorage+Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4B3E253300DC00BDB5DD /* HabitStorage+Checkpoint.swift */; };
 		08CB4B41253300DC00BDB5DD /* HabitStorage+Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB4B3F253300DC00BDB5DD /* HabitStorage+Achievement.swift */; };
+		08CCA3F925DA90AE001237A0 /* DisplayWebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CCA3F825DA90AE001237A0 /* DisplayWebPageViewController.swift */; };
 		08CD60A125362C1E008705EF /* HabitDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD60A025362C1E008705EF /* HabitDetailsInteractor.swift */; };
 		08DA7D8A24C853F200CC52A9 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8924C853F200CC52A9 /* KeychainManager.swift */; };
 		08DA7D8C24C88B4400CC52A9 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA7D8B24C88B4400CC52A9 /* URLRequest.swift */; };
@@ -251,7 +252,6 @@
 		B0AFA6CE24B35D0D00B5DA45 /* HabitTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0AFA6CD24B35D0D00B5DA45 /* HabitTitleView.xib */; };
 		B0B3A35724126093007B2F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A35624126093007B2F21 /* AppDelegate.swift */; };
 		B0B3A37124126097007B2F21 /* HabitTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37024126097007B2F21 /* HabitTrackerTests.swift */; };
-		B0B3A37C24126097007B2F21 /* HabitTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */; };
 		B0BB451A2486B7FF00D248BE /* AchievementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0BB45192486B7FF00D248BE /* AchievementView.xib */; };
 		B0BEFC70243A29B40020D377 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEFC6E243A29B40020D377 /* HomeViewController.swift */; };
 		B0BEFC76243A2A1B0020D377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BEFC74243A2A1B0020D377 /* LaunchScreen.storyboard */; };
@@ -277,13 +277,6 @@
 			remoteInfo = HabitTracker;
 		};
 		B0B3A36D24126097007B2F21 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0B3A34B24126092007B2F21 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B0B3A35224126092007B2F21;
-			remoteInfo = HabitTracker;
-		};
-		B0B3A37824126097007B2F21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0B3A34B24126092007B2F21 /* Project object */;
 			proxyType = 1;
@@ -347,6 +340,7 @@
 		08CB4A862532F44F00BDB5DD /* V1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V1.swift; sourceTree = "<group>"; };
 		08CB4B3E253300DC00BDB5DD /* HabitStorage+Checkpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HabitStorage+Checkpoint.swift"; sourceTree = "<group>"; };
 		08CB4B3F253300DC00BDB5DD /* HabitStorage+Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HabitStorage+Achievement.swift"; sourceTree = "<group>"; };
+		08CCA3F825DA90AE001237A0 /* DisplayWebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayWebPageViewController.swift; sourceTree = "<group>"; };
 		08CD60A025362C1E008705EF /* HabitDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsInteractor.swift; sourceTree = "<group>"; };
 		08DA7D8924C853F200CC52A9 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		08DA7D8B24C88B4400CC52A9 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
@@ -546,9 +540,6 @@
 		B0B3A36C24126097007B2F21 /* HabitTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B3A37024126097007B2F21 /* HabitTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerTests.swift; sourceTree = "<group>"; };
 		B0B3A37224126097007B2F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0B3A37724126097007B2F21 /* FastlaneScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastlaneScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerUITests.swift; sourceTree = "<group>"; };
-		B0B3A37D24126097007B2F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0BB45192486B7FF00D248BE /* AchievementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementView.xib; sourceTree = "<group>"; };
 		B0BEFC6E243A29B40020D377 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B0BEFC75243A2A1B0020D377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -582,13 +573,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B0B3A36924126097007B2F21 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0B3A37424126097007B2F21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -699,6 +683,7 @@
 		08A4FD99258A97BB003A387A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				08CCA3F725DA90AE001237A0 /* DisplayWebPageViewController */,
 				08A4FD9A258A97BB003A387A /* SettingsTableViewController.swift */,
 				08A4FD9B258A97BB003A387A /* SettingsTableViewCell.swift */,
 			);
@@ -795,6 +780,14 @@
 				08CB4A862532F44F00BDB5DD /* V1.swift */,
 			);
 			path = Versions;
+			sourceTree = "<group>";
+		};
+		08CCA3F725DA90AE001237A0 /* DisplayWebPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				08CCA3F825DA90AE001237A0 /* DisplayWebPageViewController.swift */,
+			);
+			path = DisplayWebPageViewController;
 			sourceTree = "<group>";
 		};
 		08CD60A525362E1D008705EF /* Repository */ = {
@@ -1425,7 +1418,6 @@
 			children = (
 				B0B3A35524126092007B2F21 /* HabitTracker */,
 				B0B3A36F24126097007B2F21 /* HabitTrackerTests */,
-				B0B3A37A24126097007B2F21 /* HabitTrackerUITests */,
 				0868DD0225D9A3FF005C6585 /* FastlaneUITests */,
 				B0B3A35424126092007B2F21 /* Products */,
 				7C759B7654B854B73EED1F5B /* Pods */,
@@ -1438,7 +1430,6 @@
 			children = (
 				B0B3A35324126092007B2F21 /* HabitTracker.app */,
 				B0B3A36C24126097007B2F21 /* HabitTrackerTests.xctest */,
-				B0B3A37724126097007B2F21 /* FastlaneScreenshots.xctest */,
 				0868DD0125D9A3FF005C6585 /* FastlaneUITests.xctest */,
 			);
 			name = Products;
@@ -1464,15 +1455,6 @@
 				B0B3A37224126097007B2F21 /* Info.plist */,
 			);
 			path = HabitTrackerTests;
-			sourceTree = "<group>";
-		};
-		B0B3A37A24126097007B2F21 /* HabitTrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B0B3A37B24126097007B2F21 /* HabitTrackerUITests.swift */,
-				B0B3A37D24126097007B2F21 /* Info.plist */,
-			);
-			path = HabitTrackerUITests;
 			sourceTree = "<group>";
 		};
 		B0B76A0624A50E39007E7F6F /* SelectImages */ = {
@@ -1652,24 +1634,6 @@
 			productReference = B0B3A36C24126097007B2F21 /* HabitTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B0B3A37624126097007B2F21 /* FastlaneScreenshots */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B0B3A38624126097007B2F21 /* Build configuration list for PBXNativeTarget "FastlaneScreenshots" */;
-			buildPhases = (
-				B0B3A37324126097007B2F21 /* Sources */,
-				B0B3A37424126097007B2F21 /* Frameworks */,
-				B0B3A37524126097007B2F21 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B0B3A37924126097007B2F21 /* PBXTargetDependency */,
-			);
-			name = FastlaneScreenshots;
-			productName = HabitTrackerUITests;
-			productReference = B0B3A37724126097007B2F21 /* FastlaneScreenshots.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1691,10 +1655,6 @@
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = B0B3A35224126092007B2F21;
 					};
-					B0B3A37624126097007B2F21 = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = B0B3A35224126092007B2F21;
-					};
 				};
 			};
 			buildConfigurationList = B0B3A34E24126092007B2F21 /* Build configuration list for PBXProject "HabitTracker" */;
@@ -1712,7 +1672,6 @@
 			targets = (
 				B0B3A35224126092007B2F21 /* HabitTracker */,
 				B0B3A36B24126097007B2F21 /* HabitTrackerTests */,
-				B0B3A37624126097007B2F21 /* FastlaneScreenshots */,
 				0868DD0025D9A3FF005C6585 /* FastlaneUITests */,
 			);
 		};
@@ -1844,13 +1803,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0B3A37524126097007B2F21 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1972,6 +1924,7 @@
 				08EDA4A624C487E900F9DDFC /* SugarTargetType.swift in Sources */,
 				08A4FDCF258F76EF003A387A /* HabitDisplayCellViewModel.swift in Sources */,
 				B0DDCB0C24557459004223DB /* UITextField.swift in Sources */,
+				08CCA3F925DA90AE001237A0 /* DisplayWebPageViewController.swift in Sources */,
 				B08355842466E3E50043CB8A /* HabitIcon.swift in Sources */,
 				B0EC35E0248B937A0075FBA6 /* DateHeader.swift in Sources */,
 				08CB4B40253300DC00BDB5DD /* HabitStorage+Checkpoint.swift in Sources */,
@@ -2070,14 +2023,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0B3A37324126097007B2F21 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0B3A37C24126097007B2F21 /* HabitTrackerUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2090,12 +2035,6 @@
 			isa = PBXTargetDependency;
 			target = B0B3A35224126092007B2F21 /* HabitTracker */;
 			targetProxy = B0B3A36D24126097007B2F21 /* PBXContainerItemProxy */;
-		};
-		B0B3A37924126097007B2F21 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = B0B3A35224126092007B2F21 /* HabitTracker */;
-			targetProxy = B0B3A37824126097007B2F21 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2216,29 +2155,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HabitTracker.app/HabitTracker";
-			};
-			name = FastlaneScreenshots;
-		};
-		0868DC7825D98402005C6585 /* FastlaneScreenshots */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_SCHEME_NAME = FastlaneScreenshots;
-				DEVELOPMENT_TEAM = JNA8QM22SG;
-				INFOPLIST_FILE = HabitTrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = HabitTracker.HabitTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = FASTLANE;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HabitTracker;
 			};
 			name = FastlaneScreenshots;
 		};
@@ -2514,51 +2430,6 @@
 			};
 			name = Release;
 		};
-		B0B3A38724126097007B2F21 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_SCHEME_NAME = Debug;
-				DEVELOPMENT_TEAM = JNA8QM22SG;
-				INFOPLIST_FILE = HabitTrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = HabitTracker.HabitTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = FASTLANE;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HabitTracker;
-			};
-			name = Debug;
-		};
-		B0B3A38824126097007B2F21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_SCHEME_NAME = Release;
-				DEVELOPMENT_TEAM = JNA8QM22SG;
-				INFOPLIST_FILE = HabitTrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = HabitTracker.HabitTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HabitTracker;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2598,16 +2469,6 @@
 				B0B3A38424126097007B2F21 /* Debug */,
 				0868DC7725D98402005C6585 /* FastlaneScreenshots */,
 				B0B3A38524126097007B2F21 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B0B3A38624126097007B2F21 /* Build configuration list for PBXNativeTarget "FastlaneScreenshots" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B0B3A38724126097007B2F21 /* Debug */,
-				0868DC7825D98402005C6585 /* FastlaneScreenshots */,
-				B0B3A38824126097007B2F21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
