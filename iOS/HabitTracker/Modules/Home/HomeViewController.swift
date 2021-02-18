@@ -9,7 +9,7 @@
 import SegementSlide
 import Haptica
 
-final class HomeViewController: SegementSlideDefaultViewController {
+class HabitsHomeViewController: UIViewController {
     
     enum Constants {
         static let addHabitButtonAnimationDuration = 0.3
@@ -23,8 +23,6 @@ final class HomeViewController: SegementSlideDefaultViewController {
         return controller
     }()
     
-    private lazy var challengesViewController = ChallengesViewController()
-    
     private lazy var addHabitButton: RoundedShadowButton = {
         let model = RoundedShadowButtonModel(shadowModel: .blueButton,
                                              radius: 32,
@@ -36,64 +34,12 @@ final class HomeViewController: SegementSlideDefaultViewController {
         return button
     }()
     
-    // MARK: - SegementSlideDefaultViewController
-    override var titlesInSwitcher: [String] {
-        return ["Habits", "Challenge"].map { $0.uppercased() }
-    }
-    
-    override var switcherConfig: SegementSlideDefaultSwitcherConfig {
-        let count = CGFloat(titlesInSwitcher.count)
-        let spacing: CGFloat = 32
-        let corners = spacing * 2
-        let spacingBetweenSegments = (spacing - 1) / count
-        let indicatorWidth = (UIScreen.main.bounds.width - corners - spacingBetweenSegments) / count
-        
-        return SegementSlideDefaultSwitcherConfig(type: .tab,
-                                                  horizontalMargin: 16,
-                                                  horizontalSpace: 32,
-                                                  normalTitleFont: FontFamily.Gilroy.medium.font(size: 16),
-                                                  selectedTitleFont: FontFamily.Gilroy.medium.font(size: 16),
-                                                  normalTitleColor: ColorName.textSecondary.color,
-                                                  selectedTitleColor: ColorName.textPrimary.color,
-                                                  indicatorWidth: indicatorWidth,
-                                                  indicatorHeight: 4,
-                                                  indicatorColor: ColorName.uiBlue.color,
-                                                  badgeHeightForPointType: 0,
-                                                  badgeHeightForCountType: 0,
-                                                  badgeHeightForCustomType: 0,
-                                                  badgeFontForCountType: FontFamily.Gilroy.medium.font(size: 16))
-    }
-
-    override var bouncesType: BouncesType {
-        return .child
-    }
-    
-    override func segementSlideContentViewController(at index: Int) -> SegementSlideContentScrollViewDelegate? {
-        if index == 0 {
-            return habitsViewController
-        } else if index == 1 {
-            return challengesViewController
-        }
-        return nil
-    }
-    
-    override func didSelectContentViewController(at index: Int) {
-        let isHabit = index == .zero
-        if isHabit {
-            animateAddButtonAppear()
-        } else {
-            animateAddButtonHide()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
         commonInit()
         setupMenuItems()
-        
-        defaultSelectedIndex = 0
-        reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -133,7 +79,9 @@ final class HomeViewController: SegementSlideDefaultViewController {
     
     // MARK: - Private Methods
     private func commonInit() {
+        view.addSubview(habitsViewController.view)
         view.addSubview(addHabitButton)
+        
         
         addHabitButton.addTarget(self, action: #selector(addHabitDidTap), for: .touchUpInside)
         
@@ -141,6 +89,9 @@ final class HomeViewController: SegementSlideDefaultViewController {
             make.right.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-24)
             make.size.equalTo(64)
+        }
+        habitsViewController.view.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -162,5 +113,5 @@ final class HomeViewController: SegementSlideDefaultViewController {
             addHabitButton?.alpha = 1
         }, completion: nil)
     }
-    
+
 }
