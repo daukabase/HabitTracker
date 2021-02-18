@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import SegementSlide
-import PinLayout
 import Haptica
 
 protocol ChallengeDelegate: class {
@@ -127,7 +125,10 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
         interactor.getCheckpointsForToday { [weak self] result in
             switch result {
             case let .success(habits):
-                self?.rows = habits.map { HabitCellViewModel(habit: $0) }
+                self?.rows = habits.map {
+                    let isToday = habits.first!.checkpoint?.isToday ?? false
+                    return isToday ? HabitCellViewModel(habit: $0) : HabitDisplayCellViewModel(habit: $0)
+                }
             case let .failure(error):
                 self?.showError(describedBy: error)
             }
@@ -173,10 +174,6 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
         }, completion: nil)
     }
     
-}
-
-extension HabitsViewController: SegementSlideContentScrollViewDelegate {
-    // MARK: - SegementSlideContentScrollViewDelegate
 }
 
 extension HabitsViewController: UITableViewDelegate {

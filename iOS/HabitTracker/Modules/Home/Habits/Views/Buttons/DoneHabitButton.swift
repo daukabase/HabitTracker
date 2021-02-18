@@ -6,8 +6,7 @@
 //  Copyright © 2020 Daulet. All rights reserved.
 //
 
-import Foundation
-import PinLayout
+import UIKit
 
 final class DoneHabitButton: UIButton {
     
@@ -26,7 +25,6 @@ final class DoneHabitButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        pin.width(frame.height)
         layer.cornerRadius = frame.height / 2
     }
     
@@ -40,6 +38,10 @@ final class DoneHabitButton: UIButton {
         clipsToBounds = true
         
         addTarget(self, action: #selector(didTap), for: .touchUpInside)
+        
+        snp.makeConstraints { make in
+            make.width.equalTo(snp.height)
+        }
     }
     
     func configure(color: UIColor) {

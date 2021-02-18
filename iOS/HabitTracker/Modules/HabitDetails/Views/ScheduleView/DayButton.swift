@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PinLayout
 
 class DayButton: UIButton {
     
@@ -30,11 +29,8 @@ class DayButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        
-        pin.width(frame.height)
         layer.cornerRadius = frame.height / 2
-        
-        titleLabel?.pin.sizeToFit().center()
+        titleLabel?.sizeToFit()
     }
     
     func commonInit() {
@@ -49,6 +45,10 @@ class DayButton: UIButton {
         
         titleLabel?.font = FontFamily.Gilroy.regular.font(size: 18)
         addTarget(self, action: #selector(didTap), for: .touchUpInside)
+        
+        snp.makeConstraints { make in
+            make.width.equalTo(self.snp.height)
+        }
     }
     
     @objc func didTap() {

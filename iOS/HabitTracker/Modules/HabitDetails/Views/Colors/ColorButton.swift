@@ -28,7 +28,6 @@ final class ColorButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        pin.width(frame.height)
         layer.cornerRadius = frame.height / 2
     }
     
@@ -43,6 +42,10 @@ final class ColorButton: UIButton {
         clipsToBounds = true
         
         addTarget(self, action: #selector(didTap), for: .touchUpInside)
+        
+        snp.makeConstraints { make in
+            make.width.equalTo(snp.height)
+        }
     }
     
     func configure(habitColor: HabitColor) {

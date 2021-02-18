@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SegementSlide
+
 
 final class ChallengesViewController: UIViewController {
     
@@ -34,8 +34,4 @@ final class ChallengesViewController: UIViewController {
         }
     }
     
-}
-
-extension ChallengesViewController: SegementSlideContentScrollViewDelegate {
-    // MARK: - SegementSlideContentScrollViewDelegate
 }

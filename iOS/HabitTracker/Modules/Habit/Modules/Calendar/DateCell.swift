@@ -8,7 +8,6 @@
 
 import UIKit
 import JTAppleCalendar
-import PinLayout
 
 class DateCell: JTACDayCell {
     

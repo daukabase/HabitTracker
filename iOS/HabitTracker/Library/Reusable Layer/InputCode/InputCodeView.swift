@@ -6,6 +6,7 @@
 //  Copyright © 2019 daukabase. All rights reserved.
 //
 
+import PinLayout
 import UIKit
 
 final class InputCodeView: UIView {

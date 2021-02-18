@@ -79,7 +79,6 @@ PODS:
   - PromisesObjC (1.2.11)
   - PromisesSwift (1.2.11):
     - PromisesObjC (= 1.2.11)
-  - SegementSlide (3.0.1)
   - SloppySwiper (0.6)
   - SnapKit (5.0.1)
 
@@ -96,7 +95,6 @@ DEPENDENCIES:
   - Moya
   - PinLayout (~> 1.8.7)
   - PromisesSwift
-  - SegementSlide (~> 3.0.1)
   - SloppySwiper
   - SnapKit
 
@@ -124,7 +122,6 @@ SPEC REPOS:
     - PinLayout
     - PromisesObjC
     - PromisesSwift
-    - SegementSlide
     - SloppySwiper
     - SnapKit
 
@@ -151,10 +148,9 @@ SPEC CHECKSUMS:
   PinLayout: e41a50260a76508b7a7fcee8955c76639adc69bc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   PromisesSwift: fed4eb6f7a29846a22624d1b86b77e1dedb88724
-  SegementSlide: 83b56ffb66b9c0edc4e4f2a74229309c62915db3
   SloppySwiper: 37e38f6da8df5c805914c6f32ec6ec8da63abe7c
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 7ebad6f34ca5ce160662ff86ab96f68e4d5dea04
+PODFILE CHECKSUM: c4b6782e6f46b4bb467ca69e28c339cb61144e34
 
 COCOAPODS: 1.9.3

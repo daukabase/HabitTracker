@@ -102,7 +102,7 @@ final class HabitsInteractor {
         }
         
         group.notify(queue: .main) {
-            completion(habits.sortedByDate())
+            completion(habits)
         }
     }
     

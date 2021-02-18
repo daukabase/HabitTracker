@@ -6,7 +6,7 @@
 //  Copyright © 2020 Daulet. All rights reserved.
 //
 
-import SegementSlide
+
 import Haptica
 
 class HomeViewController: UIViewController {

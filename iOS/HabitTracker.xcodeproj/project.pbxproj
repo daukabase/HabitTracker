@@ -2121,6 +2121,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				CURRENT_SCHEME_NAME = "";
 				DEVELOPMENT_TEAM = JNA8QM22SG;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = HabitTracker/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2347,6 +2348,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				CURRENT_SCHEME_NAME = "";
 				DEVELOPMENT_TEAM = JNA8QM22SG;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = HabitTracker/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2372,6 +2374,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				CURRENT_SCHEME_NAME = "";
 				DEVELOPMENT_TEAM = JNA8QM22SG;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = HabitTracker/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

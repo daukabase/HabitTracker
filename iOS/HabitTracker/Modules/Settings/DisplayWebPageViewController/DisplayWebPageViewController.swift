@@ -6,7 +6,7 @@
 
 import UIKit
 import WebKit
-import PinLayout
+
 
 enum DisplayWebContentType {
     case terms
@@ -64,8 +64,6 @@ class DisplayWebPageViewController: UIViewController, WKNavigationDelegate {
             width: 28,
             height: 28)
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
-        
-        webView.pin.all().marginTop(view.safeAreaInsets.top)
     }
     
     @objc
@@ -95,6 +93,10 @@ class DisplayWebPageViewController: UIViewController, WKNavigationDelegate {
 
         view.addSubview(webView)
         view.addSubview(closeButton)
+        
+        webView.snp.makeConstraints { make in
+            make.edges.equalTo(self.view.safeAreaLayoutGuide)
+        }
     }
     
 }
