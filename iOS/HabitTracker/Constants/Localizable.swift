@@ -37,6 +37,53 @@ internal enum L10n {
     }
   }
 
+  internal enum HabitDetails {
+    internal enum Create {
+      /// Create
+      internal static let action = L10n.tr("Localizable", "HabitDetails.Create.action")
+      /// Create Habit
+      internal static let title = L10n.tr("Localizable", "HabitDetails.Create.title")
+    }
+    internal enum Duration {
+      /// Duration
+      internal static let title = L10n.tr("Localizable", "HabitDetails.Duration.title")
+    }
+    internal enum Edit {
+      /// Save
+      internal static let action = L10n.tr("Localizable", "HabitDetails.Edit.action")
+      /// Edit Habit
+      internal static let title = L10n.tr("Localizable", "HabitDetails.Edit.title")
+    }
+    internal enum Info {
+      /// Please, enter title
+      internal static let enterTitle = L10n.tr("Localizable", "HabitDetails.Info.enterTitle")
+      /// Please, select schedule
+      internal static let scheduleTitle = L10n.tr("Localizable", "HabitDetails.Info.scheduleTitle")
+    }
+    internal enum Notes {
+      /// Description
+      internal static let placeholder = L10n.tr("Localizable", "HabitDetails.Notes.placeholder")
+      /// Notes
+      internal static let title = L10n.tr("Localizable", "HabitDetails.Notes.title")
+    }
+    internal enum Reminder {
+      /// Remind me
+      internal static let remindMe = L10n.tr("Localizable", "HabitDetails.Reminder.remindMe")
+    }
+    internal enum Schedule {
+      /// Choose every day
+      internal static let chooseAll = L10n.tr("Localizable", "HabitDetails.Schedule.chooseAll")
+      /// Schedule
+      internal static let title = L10n.tr("Localizable", "HabitDetails.Schedule.title")
+    }
+    internal enum Title {
+      /// Enter title
+      internal static let placeholder = L10n.tr("Localizable", "HabitDetails.Title.placeholder")
+      /// Title
+      internal static let title = L10n.tr("Localizable", "HabitDetails.Title.title")
+    }
+  }
+
   internal enum Home {
     internal enum Challenge {
       internal enum Message {
@@ -48,7 +95,7 @@ internal enum L10n {
       internal enum Message {
         /// You don't have Habits yet
         internal static let noHabits = L10n.tr("Localizable", "Home.Habit.Message.noHabits")
-        /// For today there is no habits yet
+        /// For today there are no Habits yet
         internal static let noToday = L10n.tr("Localizable", "Home.Habit.Message.noToday")
       }
     }
@@ -56,7 +103,7 @@ internal enum L10n {
 
   internal enum Onboarding {
     internal enum Auth {
-      /// So now if you are motivated enough and ready to achieve your goals, let’s create an account and start your first habit
+      /// So now if you are motivated enough and ready to achieve your goals, let’s create an account and start your first Habit
       internal static let description = L10n.tr("Localizable", "Onboarding.Auth.description")
       /// Let’s Start!
       internal static let title = L10n.tr("Localizable", "Onboarding.Auth.title")
@@ -80,7 +127,7 @@ internal enum L10n {
       internal static let title = L10n.tr("Localizable", "Onboarding.Goal.title")
     }
     internal enum Track {
-      /// Creat habits that you what to start and keep track of your progress
+      /// Creat Habits that you want to start and keep track of your progress
       internal static let description = L10n.tr("Localizable", "Onboarding.Track.description")
       /// Track your Habits
       internal static let title = L10n.tr("Localizable", "Onboarding.Track.title")

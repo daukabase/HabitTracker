@@ -35,27 +35,29 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     
     private lazy var titleInputView: BaseInputView = {
         let titleInputView = BaseInputView(frame: .zero)
-        titleInputView.setup(title: "Title", placeholder: "Enter title")
+        titleInputView.setup(title: L10n.HabitDetails.Title.title,
+                             placeholder: L10n.HabitDetails.Title.placeholder)
         
         return titleInputView
     }()
     
     private lazy var notesInputView: BaseInputView = {
         let notesInputView = BaseInputView(frame: .zero)
-        notesInputView.setup(title: "Notes", placeholder: "Description")
+        notesInputView.setup(title: L10n.HabitDetails.Notes.title,
+                             placeholder: L10n.HabitDetails.Notes.placeholder)
         
         return notesInputView
     }()
     
     private lazy var durationView: DurationView = {
         let durationView = DurationView(frame: .zero)
-        durationView.setup(title: "Duration")
+        durationView.setup(title: L10n.HabitDetails.Duration.title)
         return durationView
     }()
     
     private lazy var scheduleView: ScheduleView = {
         let scheduleView = ScheduleView(frame: .zero)
-        scheduleView.title = "Schedule"
+        scheduleView.title = L10n.HabitDetails.Schedule.title
         scheduleView.onChange = { [weak self] in
             self?.changedSchedule()
         }
@@ -64,7 +66,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     
     private lazy var chooseAllView: SwitchableView = {
         let chooseAllView = SwitchableView(frame: .zero)
-        chooseAllView.label.text = "Choose everyday"
+        chooseAllView.label.text = L10n.HabitDetails.Schedule.chooseAll
         chooseAllView.onStateChanged = { [weak scheduleView] isOn in
             if isOn {
                 scheduleView?.selectAllDays()
@@ -77,7 +79,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     
     private lazy var remindView: SwitchableView = {
         let remindView = SwitchableView(frame: .zero)
-        remindView.label.text = "Remind me"
+        remindView.label.text = L10n.HabitDetails.Reminder.remindMe
         remindView.onStateChanged = { [weak remindView, weak self] isOn in
             self?.handleRemindViewStateUpdate()
         }
@@ -154,8 +156,6 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     
     // MARK: - Private Setup
     private func commonInit() {
-        title = "Habit details"
-        
         setBackButton(style: .orange)
     }
     
@@ -225,15 +225,17 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     }
     
     private func isAllDataFilled() -> Bool {
-        guard
-            titleInputView.text.isEmpty ||
-                notesInputView.text.isEmpty || scheduleView.selectedDays.isEmpty else {
-            return true
+        if titleInputView.text.isEmpty {
+            showAlert(title: "", message: L10n.HabitDetails.Info.enterTitle)
+            return false
         }
         
-        showAlert(title: "Oops", message: "Please, fill all data to continue")
+        if scheduleView.selectedDays.isEmpty {
+            showAlert(title: "", message: L10n.HabitDetails.Info.scheduleTitle)
+            return false
+        }
         
-        return false
+        return true
     }
     
     private func getHabit(with id: String = UUID().uuidString) -> HabitModel {
@@ -254,12 +256,12 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     private func setupContext() {
         switch context {
         case .createNew:
-            title = "Habit details"
-            saveButton.title = "Save"
+            title = L10n.HabitDetails.Create.title
+            saveButton.title = L10n.HabitDetails.Create.action
             fillDataIfTest()
         case let .edit(habit):
-            title = "Edit Habit"
-            saveButton.title = "Edit"
+            title = L10n.HabitDetails.Edit.title
+            saveButton.title = L10n.HabitDetails.Edit.action
             setup(habit: habit)
         }
     }

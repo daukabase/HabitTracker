@@ -35,3 +35,25 @@
 "Habit.Notifications.disabled.title" = "Notifications";
 "Habit.Notifications.disabled.message" = "To use remind logic you need to enable notifications";
 "Habit.Action.Edit.message" = "Edit";
+
+"HabitDetails.Duration.title" = "Duration";
+
+"HabitDetails.Create.title" = "Create Habit";
+"HabitDetails.Create.action" = "Create";
+
+"HabitDetails.Edit.title" = "Edit Habit";
+"HabitDetails.Edit.action" = "Save";
+
+"HabitDetails.Info.enterTitle" = "Please, enter title";
+"HabitDetails.Info.scheduleTitle" = "Please, select schedule";
+
+"HabitDetails.Notes.title" = "Notes";
+"HabitDetails.Notes.placeholder" = "Description";
+
+"HabitDetails.Reminder.remindMe" = "Remind me";
+
+"HabitDetails.Schedule.chooseAll" = "Choose every day";
+"HabitDetails.Schedule.title" = "Schedule";
+
+"HabitDetails.Title.title" = "Title";
+"HabitDetails.Title.placeholder" = "Enter title";
