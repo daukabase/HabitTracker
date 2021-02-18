@@ -123,3 +123,16 @@ class Habit {
     }
     
 }
+
+extension Habit: Equatable, Hashable {
+    
+    // MARK: - Equatable & Hashable
+    static func ==(lhs: Habit, rhs: Habit) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+}

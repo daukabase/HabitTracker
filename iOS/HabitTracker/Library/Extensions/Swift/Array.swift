@@ -25,7 +25,7 @@ extension Array {
 
 extension Array where Element == Habit {
     
-    func sortedByDate() -> [Habit] {
+    func sortedByRemindTime() -> [Habit] {
         return self.sorted { (h1, h2) -> Bool in
             guard let date1 = h1.checkpoint?.date, let date2 = h2.checkpoint?.date else {
                 return false

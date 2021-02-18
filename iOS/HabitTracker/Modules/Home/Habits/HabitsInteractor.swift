@@ -11,6 +11,42 @@ import Foundation
 final class HabitsInteractor {
     
     func getTotalHabits(completion: @escaping Closure<RResult<[Habit]>>) {
+        Self._getTotalHabits { result in
+            guard case let .success(habits) = result else {
+                completion(result)
+                return
+            }
+            
+            self.additionalSetup(for: habits) { result in
+                guard case let .success(habits) = result else {
+                    completion(result)
+                    return
+                }
+                completion(.success(habits.sortedByRemindTime()))
+            }
+        }
+    }
+    
+    func getCheckpointsForToday(completion: @escaping Closure<RResult<[Habit]>>) {
+        if Target.current == .fastlaneUiTest {
+            completion(.success(FastlaneData.TestData.Habits.testData))
+            return
+        }
+
+        HabitStorage.getCheckpointsForToday { result in
+            switch result {
+            case let .success(checkpoints):
+                getHabits(for: checkpoints) { habits in
+                    completion(.success(habits.sortedByRemindTime()))
+                }
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    // MARK: - Private Methods
+    private static func _getTotalHabits(completion: @escaping Closure<RResult<[Habit]>>) {
         if Target.current == .fastlaneUiTest {
             completion(.success(FastlaneData.TestData.Habits.testData))
             return
@@ -28,22 +64,24 @@ final class HabitsInteractor {
         }
     }
     
-    func getCheckpointsForToday(completion: @escaping Closure<RResult<[Habit]>>) {
-        if Target.current == .fastlaneUiTest {
-            completion(.success(FastlaneData.TestData.Habits.testData))
-            return
-        }
-
-        HabitStorage.getCheckpointsForToday { result in
-            switch result {
-            case let .success(checkpoints):
-                getHabits(for: checkpoints) { habits in
-                    completion(.success(habits.sortedByDate()))
-                }
-            case let .failure(error):
-                completion(.failure(error))
+    private func additionalSetup(for habits: [Habit], completion: @escaping Closure<RResult<[Habit]>>) {
+        getCheckpointsForToday {  result in
+            guard case let .success(todayHabits) = result else {
+                completion(result)
+                return
             }
+            Self.mergeHabitsWithoutDuplicates(habits, todayHabits, completion: completion)
         }
+    }
+    
+    private static func mergeHabitsWithoutDuplicates(_ lhs: [Habit],
+                                                     _ rhs: [Habit],
+                                                     completion: @escaping Closure<RResult<[Habit]>>) {
+        var uniqueHabits = Set(lhs)
+        
+        rhs.forEach { uniqueHabits.insert($0) }
+        
+        completion(.success(Array(uniqueHabits)))
     }
     
     private func getHabits(for checkpoints: [CheckpointModel], completion: @escaping Closure<[Habit]>) {

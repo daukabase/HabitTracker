@@ -9,7 +9,7 @@
 import SegementSlide
 import Haptica
 
-class HabitsHomeViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     enum Constants {
         static let addHabitButtonAnimationDuration = 0.3
@@ -79,6 +79,8 @@ class HabitsHomeViewController: UIViewController {
     
     // MARK: - Private Methods
     private func commonInit() {
+        addChild(habitsViewController)
+        
         view.addSubview(habitsViewController.view)
         view.addSubview(addHabitButton)
         

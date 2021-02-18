@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func routeToHome() {
-        let controller = HabitsHomeViewController()
+        let controller = HomeViewController()
         
         window?.rootViewController = UINavigationController(rootViewController: controller)
     }

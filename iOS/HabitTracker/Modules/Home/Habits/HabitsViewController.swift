@@ -141,6 +141,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
             switch result {
             case let .success(habits):
                 self?.rows = habits.map { HabitDisplayCellViewModel(habit: $0) }
+                
             case let .failure(error):
                 self?.showError(describedBy: error)
             }

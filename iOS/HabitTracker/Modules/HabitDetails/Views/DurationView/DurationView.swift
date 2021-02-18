@@ -130,8 +130,12 @@ final class DurationView: UIView {
             return
         }
         
-        durationTextField.text = "\(Constants.durationDaysArray[durationIndex])"
+        set(durationDays: Constants.durationDaysArray[durationIndex])
         durationPickerView.selectRow(durationIndex, inComponent: 0, animated: false)
+    }
+    
+    private func set(durationDays: Int) {
+        durationTextField.text = "\(durationDays) days"
     }
     
     // MARK: - Actions
@@ -162,7 +166,7 @@ extension DurationView: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         durationDays = Constants.durationDaysArray[row]
-        durationTextField.text = "\(Constants.durationDaysArray[row]) days"
+        set(durationDays: Constants.durationDaysArray[row])
     }
     
 }
