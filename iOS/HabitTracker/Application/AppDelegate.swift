@@ -40,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        NotificationCenter.default.post(name: .updateHabits, object: nil)
+    }
+    
     private func setupNotifications() {
         Notifications.shared.notificationRequest()
     }
