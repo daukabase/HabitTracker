@@ -12,6 +12,7 @@ import Promises
 
 protocol CheckpointStorageAbstract {
     static func getCheckpointsForToday(completion: Closure<RResult<[CheckpointModel]>>)
+    static func getCheckpoint(with id: String, completion: @escaping Closure<RResult<CheckpointModel>>)
     static func set(checkpoints: [CheckpointModel], completion: BoolClosure?)
     static func setDone(checkpoint: CheckpointModel, completion: BoolClosure?)
     static func setDoneCheckpoint(with id: String, completion: BoolClosure?)
@@ -36,6 +37,23 @@ extension HabitStorage: CheckpointStorageAbstract {
             return
         }
         completion(.success(checkpoints))
+    }
+    
+    static func getCheckpoint(with id: String, completion: @escaping Closure<RResult<CheckpointModel>>) {
+        dataStack.perform { (transaction) in
+            guard let dtoModel = try transaction.fetchOne(From<CheckpointDTO>().where(\.$id == id)) else {
+                throw HTError.fetchError
+            }
+            
+            let model = try CheckpointModel.from(dto: dtoModel)
+            
+            completion(.success(model))
+        } completion: { result in
+            guard case let .failure(error) = result else {
+                return
+            }
+            completion(.failure(error))
+        }
     }
     
     static func setUndone(checkpoint: CheckpointModel, completion: BoolClosure?) {

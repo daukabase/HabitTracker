@@ -41,7 +41,7 @@ final class HabitCell: ShrinkableCell {
         setupProgressViewLayer()
         
         doneButton.onClick = { [weak self] isSelected in
-            self?.onChange(isSelected: isSelected)
+            self?.doneButtonDidClicked(isSelected: isSelected)
         }
     }
     
@@ -72,7 +72,7 @@ final class HabitCell: ShrinkableCell {
         progressView.subviews[safe: 1]?.clipsToBounds = true
     }
     
-    private func onChange(isSelected: Bool) {
+    private func doneButtonDidClicked(isSelected: Bool) {
         Haptic.impact(.medium).generate()
         
         model?.set(isSelected: isSelected) { [weak self] in
@@ -95,6 +95,7 @@ final class HabitCell: ShrinkableCell {
             state = DoneHabitState(cell: self)
         }
         makeAction(for: isSelected)
+        self.setNeedsLayout()
     }
     
 }

@@ -17,11 +17,11 @@ class HabitAbstractCellState {
     }
     
     func setDone(viewModel: HabitCellViewModel?) {
-        
+        assertionFailure()
     }
     
     func setUndone(viewModel: HabitCellViewModel?) {
-        
+        assertionFailure()
     }
     
 }

@@ -12,12 +12,12 @@ import Haptica
 final class HabitCellViewModel: HabitDisplayCellViewModel {
     
     // MARK: - Computed Properties
-    var isCheckpointForTodayCompleted: Bool {
-        return habit.isCurrentCompleted
-    }
+    private(set) var isCheckpointForTodayCompleted: Bool
     
     // MARK: Init
     override init(habit: Habit) {
+        isCheckpointForTodayCompleted = habit.isCurrentCompleted
+        
         super.init(habit: habit)
         
         self.cellType = .habitActionable
@@ -31,6 +31,7 @@ final class HabitCellViewModel: HabitDisplayCellViewModel {
         
         let toogleCheckpointCompletion: BoolClosure = { [weak self] isSucceed in
             guard isSucceed else { return }
+            self?.isCheckpointForTodayCompleted = isSelected
             self?.habit.updateGoal {
                 completion?()
             }
