@@ -14,7 +14,7 @@ final class ChallengeCell: UITableViewCell {
     
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var progressIndicatorLabel: UILabel!
-    @IBOutlet private var progressView: UIProgressView!
+    @IBOutlet private var progressView: RoundedProgressView!
     @IBOutlet private var iconImageView: UIImageView!
     @IBOutlet private var containerView: UIView!
     @IBOutlet private var askMarkContainerView: UIView!
@@ -51,18 +51,7 @@ final class ChallengeCell: UITableViewCell {
         iconImageView.roundCorners(.allCorners, radius: iconImageView.frame.height / 2)
         
         containerView.layer.backgroundColor = UIColor.clear.cgColor
-        containerView.applyDropShadow()//color: UIColor.black.withAlphaComponent(0.06),
-//                                      opacity: 1,
-//                                      offset: CGSize(width: 0, height: 4),
-//                                      radius: 26,
-//                                      scale: true)
-        
-        setupProgressViewLayer()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupProgressViewLayer()
+        containerView.applyDropShadow()
     }
     
     func configure(model: Challenge) {
@@ -71,22 +60,6 @@ final class ChallengeCell: UITableViewCell {
         
         progressView.trackTintColor = model.color.withAlphaComponent(0.15)
         progressView.progressTintColor = model.color
-    }
-    
-    private func setupProgressViewLayer() {
-        setupProgressIndicatorLayer()
-        
-        let maskLayerPath = UIBezierPath(roundedRect: progressView.bounds, cornerRadius: 6)
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = progressView.bounds
-        maskLayer.path = maskLayerPath.cgPath
-        progressView.layer.mask = maskLayer
-        progressView.layoutIfNeeded()
-    }
-    
-    private func setupProgressIndicatorLayer() {
-        progressView.layer.sublayers?[safe: 1]?.cornerRadius = 4
-        progressView.subviews[safe: 1]?.clipsToBounds = true
     }
     
     @IBAction

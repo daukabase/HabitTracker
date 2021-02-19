@@ -9,11 +9,6 @@
 import UIKit
 import Haptica
 
-protocol ChallengeDelegate: class {
-    func askMark()
-    func markAsDone()
-}
-
 final class HabitsViewController: UIViewController, LoaderViewDisplayable, ErrorDisplayable {
     
     enum Row {
@@ -175,9 +170,9 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
     
 }
 
-extension HabitsViewController: UITableViewDelegate {
+extension HabitsViewController: UITableViewDataSource {
     
-    // MARK: - UITableViewDelegate
+    // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rows.count
     }
@@ -195,9 +190,9 @@ extension HabitsViewController: UITableViewDelegate {
     
 }
 
-extension HabitsViewController: UITableViewDataSource {
+extension HabitsViewController: UITableViewDelegate {
     
-    // MARK: - UITableViewDataSource
+    // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewModel = rows[indexPath.row] as? HabitDisplayCellViewModel else {
             return

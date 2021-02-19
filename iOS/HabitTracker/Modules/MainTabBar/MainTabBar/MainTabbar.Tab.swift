@@ -57,7 +57,11 @@ extension MainTabBarController {
             case .habit:
                 return UINavigationController(rootViewController: HomeViewController())
             case .challenge:
-                return UINavigationController(rootViewController: ChallengesViewController())
+                guard let controller = UIStoryboard.instantiate(ofType: ChallengesViewController.self) else {
+                    fatalError()
+                }
+                
+                return UINavigationController(rootViewController: controller)
             case .settings:
                 return UINavigationController(rootViewController: SettingsTableViewController())
             }

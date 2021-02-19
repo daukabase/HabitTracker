@@ -45,6 +45,7 @@
 		08A4FDD4258F7DBA003A387A /* HabitsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDD3258F7DBA003A387A /* HabitsInteractor.swift */; };
 		08A4FDDA258FEE52003A387A /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDD9258FEE52003A387A /* FilterView.swift */; };
 		08A4FDE2258FF4CD003A387A /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4FDE1258FF4CD003A387A /* UIStackView.swift */; };
+		08C0B66725E072C30053CB72 /* ChallengesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C0B66625E072C30053CB72 /* ChallengesViewController.storyboard */; };
 		08C695BC24CDE55700BDBEA2 /* ShadowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */; };
 		08C695BE24CDF00300BDBEA2 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */; };
 		08C695C124CDF02000BDBEA2 /* RoundedShadowButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */; };
@@ -330,6 +331,7 @@
 		08A4FDD3258F7DBA003A387A /* HabitsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsInteractor.swift; sourceTree = "<group>"; };
 		08A4FDD9258FEE52003A387A /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		08A4FDE1258FF4CD003A387A /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		08C0B66625E072C30053CB72 /* ChallengesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengesViewController.storyboard; sourceTree = "<group>"; };
 		08C695BB24CDE55700BDBEA2 /* ShadowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowModel.swift; sourceTree = "<group>"; };
 		08C695BD24CDF00300BDBEA2 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		08C695C024CDF02000BDBEA2 /* RoundedShadowButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButtonModel.swift; sourceTree = "<group>"; };
@@ -621,6 +623,7 @@
 			isa = PBXGroup;
 			children = (
 				08368C4C2540A28500B5AE33 /* ChallengesViewController.swift */,
+				08C0B66B25E073210053CB72 /* View */,
 			);
 			path = Challenges;
 			sourceTree = "<group>";
@@ -741,6 +744,15 @@
 				08A4FDD9258FEE52003A387A /* FilterView.swift */,
 			);
 			path = FilterView;
+			sourceTree = "<group>";
+		};
+		08C0B66B25E073210053CB72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08C0B66625E072C30053CB72 /* ChallengesViewController.storyboard */,
+				B02110F224659C6D005BF1E2 /* ChallengeCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		08C695BF24CDF00800BDBEA2 /* RoundedShadowButton */ = {
@@ -927,19 +939,11 @@
 		08EEEA4525E059AF00BB6C2C /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				08EEEA4725E059AF00BB6C2C /* MainTabBar */,
-			);
-			name = MainTabBar;
-			path = MainTabBar/MainTabBar;
-			sourceTree = "<group>";
-		};
-		08EEEA4725E059AF00BB6C2C /* MainTabBar */ = {
-			isa = PBXGroup;
-			children = (
 				08EEEA4D25E059AF00BB6C2C /* MainTabBarController.swift */,
 				08EEEA5E25E0621F00BB6C2C /* MainTabbar.Tab.swift */,
 			);
-			path = MainTabBar;
+			name = MainTabBar;
+			path = MainTabBar/MainTabBar;
 			sourceTree = "<group>";
 		};
 		64F7F70D4529C52AF00E2B49 /* Frameworks */ = {
@@ -996,7 +1000,6 @@
 			children = (
 				08A4FDAE258F759F003A387A /* HabitCell */,
 				08A4FDCA258F76E4003A387A /* HabitDisplayCell */,
-				B02110F224659C6D005BF1E2 /* ChallengeCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1059,6 +1062,7 @@
 		B04DE760248D4A6B00E2971D /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				08368C4B2540A27500B5AE33 /* Challenges */,
 				B04DE766248D4C6F00E2971D /* MarkAsDone */,
 				B04DE765248D4A8D00E2971D /* AskMark */,
 			);
@@ -1535,7 +1539,6 @@
 			isa = PBXGroup;
 			children = (
 				B0BEFC6E243A29B40020D377 /* HomeViewController.swift */,
-				08368C4B2540A27500B5AE33 /* Challenges */,
 				B0BEFC7C243A2FE80020D377 /* Habits */,
 			);
 			path = Home;
@@ -1728,6 +1731,7 @@
 			files = (
 				B0AFA6CE24B35D0D00B5DA45 /* HabitTitleView.xib in Resources */,
 				B07BFDDD2454463D00D2D18F /* Gilroy-SemiboldItalic.ttf in Resources */,
+				08C0B66725E072C30053CB72 /* ChallengesViewController.storyboard in Resources */,
 				B08355A6246759030043CB8A /* StatisticsViewController.xib in Resources */,
 				B07BFE132454463D00D2D18F /* Gilroy-Semibold.woff in Resources */,
 				B07BFE262454463D00D2D18F /* Gilroy-HeavyItalic.eot in Resources */,
