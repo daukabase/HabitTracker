@@ -29,11 +29,11 @@ extension MainTabBarController {
         var image: UIImage? {
             switch self {
             case .habit:
-                return nil
+                return Asset.habitItem.image
             case .challenge:
-                return nil
+                return Asset.challengeItem.image
             case .settings:
-                return nil
+                return Asset.settingsItem.image
             }
         }
         
