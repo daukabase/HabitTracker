@@ -27,7 +27,7 @@ final class HabitCell: ShrinkableCell {
     @IBOutlet internal var titleLabel: UILabel!
     @IBOutlet internal var doneButton: DoneHabitButton!
     @IBOutlet internal var progressIndicatorLabel: UILabel!
-    @IBOutlet internal var progressView: UIProgressView!
+    @IBOutlet internal var progressView: RoundedProgressView!
     @IBOutlet internal var iconImageView: UIImageView!
     @IBOutlet private var containerView: UIView!
     
@@ -42,7 +42,7 @@ final class HabitCell: ShrinkableCell {
         containerView.layer.backgroundColor = UIColor.clear.cgColor
         containerView.applyDropShadow()
         
-        setupProgressViewLayer()
+//        setupProgressViewLayer()
         
         doneButton.onClick = { [weak self] isSelected in
             self?.doneButtonDidClicked(isSelected: isSelected)
@@ -55,12 +55,12 @@ final class HabitCell: ShrinkableCell {
     }
     
     // MARK: - Private Methods
-    private func setupProgressViewLayer() {
-        progressView.layer.cornerRadius = Constansts.progressViewHeight / 2
-        progressView.clipsToBounds = true
-        
-        setupProgressIndicatorLayer()
-    }
+//    private func setupProgressViewLayer() {
+//        progressView.layer.cornerRadius = Constansts.progressViewHeight / 2
+//        progressView.clipsToBounds = true
+//
+//        setupProgressIndicatorLayer()
+//    }
     
     private func setupProgressIndicatorLayer() {
         progressView.layer.sublayers?[safe: 1]?.cornerRadius = 6

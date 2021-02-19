@@ -25,7 +25,6 @@ class MarkAsDoneViewController: UIViewController {
         title = "Mark As Done"
     }
     
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

@@ -60,7 +60,7 @@
                                                                     <color key="textColor" red="0.23137254901960785" green="0.25490196078431371" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="VIh-20-IzW">
+                                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="VIh-20-IzW" customClass="RoundedProgressView" customModule="HabitTracker" customModuleProvider="target">
                                                                     <rect key="frame" x="60" y="51" width="243" height="13"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="12" id="j7e-OC-V43"/>
@@ -155,7 +155,7 @@
                                                                     <color key="textColor" red="0.23137254900000001" green="0.25490196079999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Yqy-W5-kBh">
+                                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Yqy-W5-kBh" customClass="RoundedProgressView" customModule="HabitTracker" customModuleProvider="target">
                                                                     <rect key="frame" x="25" y="51" width="278" height="13"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="12" id="gGe-nU-h9W"/>

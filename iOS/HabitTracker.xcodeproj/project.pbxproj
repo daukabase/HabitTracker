@@ -83,6 +83,7 @@
 		08EDA4A624C487E900F9DDFC /* SugarTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA4A224C487E900F9DDFC /* SugarTargetType.swift */; };
 		08EDA4A724C487E900F9DDFC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA4A324C487E900F9DDFC /* Route.swift */; };
 		08EDA4AB24C48B4E00F9DDFC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA4AA24C48B4E00F9DDFC /* Config.swift */; };
+		08EEEA3525E056F100BB6C2C /* RoundedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEA3425E056F100BB6C2C /* RoundedProgressView.swift */; };
 		2B2F3C140B98CB8A61BD4CED /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D7E65639B8F424CDE3A566 /* Pods_HabitTracker.framework */; };
 		B00123E8245F01CF001B5481 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */; };
 		B00123EA245F01F0001B5481 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E9245F01F0001B5481 /* Optional.swift */; };
@@ -365,6 +366,7 @@
 		08EDA4A224C487E900F9DDFC /* SugarTargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarTargetType.swift; sourceTree = "<group>"; };
 		08EDA4A324C487E900F9DDFC /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		08EDA4AA24C48B4E00F9DDFC /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		08EEEA3425E056F100BB6C2C /* RoundedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedProgressView.swift; sourceTree = "<group>"; };
 		150D1837D83D47BFAC59CBE7 /* Pods-HabitTracker.fastlanescreenshots.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.fastlanescreenshots.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.fastlanescreenshots.xcconfig"; sourceTree = "<group>"; };
 		40F28EB77F731506B9056F24 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		4443BEEFAC83A43B02F6AD1A /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1069,6 +1071,7 @@
 				B05FC1CC245D805F00F4C214 /* ActionableLabel.swift */,
 				08A4FDD8258FEE37003A387A /* FilterView */,
 				087621C2256ACA82006243D6 /* Cells */,
+				08EEEA3425E056F100BB6C2C /* RoundedProgressView.swift */,
 			);
 			path = "Reusable Layer";
 			sourceTree = "<group>";
@@ -1937,6 +1940,7 @@
 				08A4FDCF258F76EF003A387A /* HabitDisplayCellViewModel.swift in Sources */,
 				B0DDCB0C24557459004223DB /* UITextField.swift in Sources */,
 				08CCA3F925DA90AE001237A0 /* DisplayWebPageViewController.swift in Sources */,
+				08EEEA3525E056F100BB6C2C /* RoundedProgressView.swift in Sources */,
 				B08355842466E3E50043CB8A /* HabitIcon.swift in Sources */,
 				B0EC35E0248B937A0075FBA6 /* DateHeader.swift in Sources */,
 				08CB4B40253300DC00BDB5DD /* HabitStorage+Checkpoint.swift in Sources */,
