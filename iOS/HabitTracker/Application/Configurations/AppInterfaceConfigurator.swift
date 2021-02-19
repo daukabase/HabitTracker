@@ -43,10 +43,19 @@ final class AppInterfaceConfigurator {
     }
     
     private func _routeToHome(animated: Bool) {
-        let controller = HomeViewController()
-        setupRoot(viewController: controller, animated: animated)
+        let controller = MainTabBarController()
         
-        window.rootViewController = UINavigationController(rootViewController: controller)
+        window.rootViewController = controller
+        
+        guard animated else {
+            return
+        }
+        
+        UIView.transition(with: window,
+                          duration: 0.3,
+                          options: .transitionCrossDissolve,
+                          animations: {},
+                          completion: nil)
     }
     
     private func setupRoot(viewController: UIViewController, animated: Bool) {

@@ -39,13 +39,12 @@ class HomeViewController: UIViewController {
         
         view.backgroundColor = .white
         commonInit()
-        setupMenuItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barTintColor = ColorName.uiWhite.color
         navigationController?.navigationBar.tintColor = ColorName.uiGrayPrimary.color
     }

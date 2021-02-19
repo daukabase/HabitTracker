@@ -84,6 +84,8 @@
 		08EDA4A724C487E900F9DDFC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA4A324C487E900F9DDFC /* Route.swift */; };
 		08EDA4AB24C48B4E00F9DDFC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDA4AA24C48B4E00F9DDFC /* Config.swift */; };
 		08EEEA3525E056F100BB6C2C /* RoundedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEA3425E056F100BB6C2C /* RoundedProgressView.swift */; };
+		08EEEA5325E059AF00BB6C2C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEA4D25E059AF00BB6C2C /* MainTabBarController.swift */; };
+		08EEEA5F25E0621F00BB6C2C /* MainTabbar.Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEA5E25E0621F00BB6C2C /* MainTabbar.Tab.swift */; };
 		2B2F3C140B98CB8A61BD4CED /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D7E65639B8F424CDE3A566 /* Pods_HabitTracker.framework */; };
 		B00123E8245F01CF001B5481 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E7245F01CF001B5481 /* UserDefaultsStorage.swift */; };
 		B00123EA245F01F0001B5481 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00123E9245F01F0001B5481 /* Optional.swift */; };
@@ -367,6 +369,8 @@
 		08EDA4A324C487E900F9DDFC /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		08EDA4AA24C48B4E00F9DDFC /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		08EEEA3425E056F100BB6C2C /* RoundedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedProgressView.swift; sourceTree = "<group>"; };
+		08EEEA4D25E059AF00BB6C2C /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		08EEEA5E25E0621F00BB6C2C /* MainTabbar.Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbar.Tab.swift; sourceTree = "<group>"; };
 		150D1837D83D47BFAC59CBE7 /* Pods-HabitTracker.fastlanescreenshots.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.fastlanescreenshots.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.fastlanescreenshots.xcconfig"; sourceTree = "<group>"; };
 		40F28EB77F731506B9056F24 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		4443BEEFAC83A43B02F6AD1A /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -918,6 +922,24 @@
 				08EDA4A324C487E900F9DDFC /* Route.swift */,
 			);
 			path = Moya;
+			sourceTree = "<group>";
+		};
+		08EEEA4525E059AF00BB6C2C /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				08EEEA4725E059AF00BB6C2C /* MainTabBar */,
+			);
+			name = MainTabBar;
+			path = MainTabBar/MainTabBar;
+			sourceTree = "<group>";
+		};
+		08EEEA4725E059AF00BB6C2C /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				08EEEA4D25E059AF00BB6C2C /* MainTabBarController.swift */,
+				08EEEA5E25E0621F00BB6C2C /* MainTabbar.Tab.swift */,
+			);
+			path = MainTabBar;
 			sourceTree = "<group>";
 		};
 		64F7F70D4529C52AF00E2B49 /* Frameworks */ = {
@@ -1496,6 +1518,7 @@
 		B0BEFC66243A1B650020D377 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				08EEEA4525E059AF00BB6C2C /* MainTabBar */,
 				B04DE760248D4A6B00E2971D /* Challenge */,
 				B083558A246717100043CB8A /* Habit */,
 				B03495F4245EDC4700C11283 /* NumberRegistration */,
@@ -1941,6 +1964,7 @@
 				B0DDCB0C24557459004223DB /* UITextField.swift in Sources */,
 				08CCA3F925DA90AE001237A0 /* DisplayWebPageViewController.swift in Sources */,
 				08EEEA3525E056F100BB6C2C /* RoundedProgressView.swift in Sources */,
+				08EEEA5F25E0621F00BB6C2C /* MainTabbar.Tab.swift in Sources */,
 				B08355842466E3E50043CB8A /* HabitIcon.swift in Sources */,
 				B0EC35E0248B937A0075FBA6 /* DateHeader.swift in Sources */,
 				08CB4B40253300DC00BDB5DD /* HabitStorage+Checkpoint.swift in Sources */,
@@ -2028,6 +2052,7 @@
 				08DA7D8F24C88B7100CC52A9 /* AuthEndpointAccessPlugin.swift in Sources */,
 				B047295A245D71FD00F3458F /* OnboardingPageViewController.swift in Sources */,
 				08106563253384E20002B7F6 /* CheckpointModel.swift in Sources */,
+				08EEEA5325E059AF00BB6C2C /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
