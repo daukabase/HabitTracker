@@ -11,6 +11,7 @@
 		0810655425337AD50002B7F6 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810655325337AD50002B7F6 /* Frequency.swift */; };
 		0810655B25337D310002B7F6 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810655A25337D310002B7F6 /* HabitModel.swift */; };
 		08106563253384E20002B7F6 /* CheckpointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08106562253384E20002B7F6 /* CheckpointModel.swift */; };
+		0830031E25DFC24600ED1D51 /* AppInterfaceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830031D25DFC24600ED1D51 /* AppInterfaceConfigurator.swift */; };
 		08368C4D2540A28500B5AE33 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08368C4C2540A28500B5AE33 /* ChallengesViewController.swift */; };
 		08368C552540A6EE00B5AE33 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08368C542540A6EE00B5AE33 /* Notification.Name.swift */; };
 		08368C752541771C00B5AE33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08368C742541771B00B5AE33 /* GoogleService-Info.plist */; };
@@ -290,6 +291,7 @@
 		0810655325337AD50002B7F6 /* Frequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 		0810655A25337D310002B7F6 /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
 		08106562253384E20002B7F6 /* CheckpointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointModel.swift; sourceTree = "<group>"; };
+		0830031D25DFC24600ED1D51 /* AppInterfaceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInterfaceConfigurator.swift; sourceTree = "<group>"; };
 		08368C4C2540A28500B5AE33 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		08368C542540A6EE00B5AE33 /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
 		08368C742541771B00B5AE33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -599,6 +601,14 @@
 				08106562253384E20002B7F6 /* CheckpointModel.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		0830031C25DFC23D00ED1D51 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				0830031D25DFC24600ED1D51 /* AppInterfaceConfigurator.swift */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		08368C4B2540A27500B5AE33 /* Challenges */ = {
@@ -1470,6 +1480,7 @@
 		B0BEFC5E243A18400020D377 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0830031C25DFC23D00ED1D51 /* Configurations */,
 				B0B3A35624126093007B2F21 /* AppDelegate.swift */,
 				B0B3A36724126097007B2F21 /* Info.plist */,
 				B0BEFC74243A2A1B0020D377 /* LaunchScreen.storyboard */,
@@ -1883,6 +1894,7 @@
 				08CB49A4252E265A00BDB5DD /* CheckpointsRepository.swift in Sources */,
 				B07BFE3024544B9800D2D18F /* Habit.swift in Sources */,
 				08EDA49924C487BC00F9DDFC /* NetworkProvider.swift in Sources */,
+				0830031E25DFC24600ED1D51 /* AppInterfaceConfigurator.swift in Sources */,
 				B0DDCB11245575DF004223DB /* ScheduleView.swift in Sources */,
 				B07BFE5824544C4B00D2D18F /* UIViewController.swift in Sources */,
 				084A780F2583BB3100FADDCC /* CheckpointDateGenerator.swift in Sources */,
@@ -2118,7 +2130,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Daulet Almagambetov (6MJ6BZN9Z9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				CURRENT_SCHEME_NAME = "";
 				DEVELOPMENT_TEAM = JNA8QM22SG;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2128,7 +2140,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.challenge.me.kz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Challenge.me Development";
@@ -2345,7 +2357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Daulet Almagambetov (6MJ6BZN9Z9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				CURRENT_SCHEME_NAME = "";
 				DEVELOPMENT_TEAM = JNA8QM22SG;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2355,7 +2367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.challenge.me.kz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Challenge.me Development";
@@ -2371,7 +2383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Daulet Almagambetov (JNA8QM22SG)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				CURRENT_SCHEME_NAME = "";
 				DEVELOPMENT_TEAM = JNA8QM22SG;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2381,7 +2393,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.challenge.me.kz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Challenge.me Ad hoc";

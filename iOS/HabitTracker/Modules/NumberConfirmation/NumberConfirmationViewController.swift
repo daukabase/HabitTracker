@@ -124,14 +124,7 @@ private extension NumberConfirmationViewController {
     }
     
     private func routeToMainScreen() {
-        guard let window = UIApplication.shared.keyWindow else { return }
-        window.rootViewController = UINavigationController(rootViewController: HomeViewController())
-        
-        UIView.transition(with: window,
-                          duration: 0.7,
-                          options: .transitionCrossDissolve,
-                          animations: {},
-                          completion: nil)
+        AppInterfaceConfigurator.shared.routeToHome()
     }
     
 }

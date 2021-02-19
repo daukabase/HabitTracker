@@ -199,30 +199,15 @@ final class OnboardingViewController: UIViewController {
     }
     
     private func routeToMainScreen() {
-        guard let window = UIApplication.shared.keyWindow else { return }
-        window.rootViewController = ScreenSwipableNavigationController(rootViewController: HomeViewController())
-        
-        UIView.transition(with: window,
-                          duration: 0.3,
-                          options: .transitionCrossDissolve,
-                          animations: {},
-                          completion: nil)
+        AppInterfaceConfigurator.shared.routeToHome()
     }
     
     private func routeToSignIn() {
-        guard let controller = UIStoryboard.instantiate(ofType: NumberRegistrationViewController.self) else {
-            return
-        }
         
-        navigationController?.pushViewController(controller, animated: true)
     }
     
     private func routeToSignUp() {
-        guard let controller = UIStoryboard.instantiate(ofType: NumberRegistrationViewController.self) else {
-            return
-        }
         
-        navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc

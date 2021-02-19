@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        setupRootView()
+        AppInterfaceConfigurator.shared.configure()
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
@@ -48,32 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Notifications.shared.notificationRequest()
     }
     
-    private func setupRootView() {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        
-        #if DEBUG
-            UserDefaultsStorage.isOnboardingCompleted = true
-        #endif
-        
-        UserDefaultsStorage.isOnboardingCompleted ? routeToHome() : routeToOnboarding()
-    }
-    
-    private func routeToOnboarding() {
-        let controller = OnboardingPageViewController(with: [
-            .init(type: .goal),
-            .init(type: .track),
-            .init(type: .getStarted),
-        ])
-        window?.rootViewController = UINavigationController(rootViewController: controller)
-    }
-    
-    private func routeToHome() {
-        let controller = HomeViewController()
-        
-        window?.rootViewController = UINavigationController(rootViewController: controller)
-    }
-    
     private func setupAppearence() {
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().backgroundColor = .clear
@@ -84,9 +58,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension String {
     static let doneAction = "habit_done_action"
-}
-
-struct UserDefaultsStorage {
-    @UserDefaultsBacked(key: "isOnboardingCompleted", defaultValue: false)
-    static var isOnboardingCompleted: Bool
 }

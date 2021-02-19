@@ -24,6 +24,8 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>CURRENT_SCHEME_NAME</key>
+	<string>$(CURRENT_SCHEME_NAME)</string>
 	<key>FirebaseAutomaticScreenReportingEnabled</key>
 	<false/>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -107,7 +109,5 @@ Montserrat-ThinItalic.otf</string>
 	<string>Light</string>
 	<key>baseUrl</key>
 	<string>https://google.com</string>
-	<key>CURRENT_SCHEME_NAME</key>
-	<string>$(CURRENT_SCHEME_NAME)</string>
 </dict>
 </plist>
