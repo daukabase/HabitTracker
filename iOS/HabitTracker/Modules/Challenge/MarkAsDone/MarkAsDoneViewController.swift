@@ -22,25 +22,27 @@ class MarkAsDoneViewController: UIViewController {
                                radius: 20,
                                scale: true)
         setBackButton(style: .orange)
-        title = "Mark As Done"
+        title = "Rate members"
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = ColorName.uiBlue.color
+        navigationController?.view.backgroundColor = .clear
         navigationController?.navigationBar.roundCorners([.bottomLeft, .bottomRight], radius: 24)
         navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: FontFamily.Gilroy.medium.font(size: 24)!,
-            NSAttributedString.Key.foregroundColor: UIColor.white
+            NSAttributedString.Key.font: FontFamily.Gilroy.medium.font(size: 18)!,
+            NSAttributedString.Key.foregroundColor: ColorName.textBlack.color
         ]
-        
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = ColorName.uiWhite.color
+        navigationController?.navigationBar.tintColor = ColorName.uiGrayPrimary.color
     }
+    
 }
