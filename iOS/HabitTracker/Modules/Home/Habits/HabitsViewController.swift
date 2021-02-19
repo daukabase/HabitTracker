@@ -125,10 +125,7 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
         interactor.getCheckpointsForToday { [weak self] result in
             switch result {
             case let .success(habits):
-                self?.rows = habits.map {
-                    let isToday = habits.first!.checkpoint?.isToday ?? false
-                    return isToday ? HabitCellViewModel(habit: $0) : HabitDisplayCellViewModel(habit: $0)
-                }
+                self?.rows = habits.map { HabitCellViewModel(habit: $0) }
             case let .failure(error):
                 self?.showError(describedBy: error)
             }
@@ -141,8 +138,10 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
         interactor.getTotalHabits { [weak self] result in
             switch result {
             case let .success(habits):
-                self?.rows = habits.map { HabitDisplayCellViewModel(habit: $0) }
-                
+                self?.rows = habits.map {
+                    let isToday = habits.first!.checkpoint?.isToday ?? false
+                    return isToday ? HabitCellViewModel(habit: $0) : HabitDisplayCellViewModel(habit: $0)
+                }
             case let .failure(error):
                 self?.showError(describedBy: error)
             }
@@ -216,6 +215,14 @@ extension HabitsViewController: UITableViewDataSource {
             controller.setup(habit: viewModel.habit)
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 106
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 106
     }
     
 }

@@ -11,6 +11,10 @@ import Haptica
 
 final class HabitCell: ShrinkableCell {
     
+    private enum Constansts {
+        static let progressViewHeight: CGFloat = 12
+    }
+    
     typealias State = HabitAbstractCellState
     
     // MARK: - Properties
@@ -45,11 +49,6 @@ final class HabitCell: ShrinkableCell {
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupProgressViewLayer()
-    }
-    
     // MARK: - Internal Methods
     func changeState(state: State) {
         self.state = state
@@ -57,18 +56,14 @@ final class HabitCell: ShrinkableCell {
     
     // MARK: - Private Methods
     private func setupProgressViewLayer() {
-        setupProgressIndicatorLayer()
+        progressView.layer.cornerRadius = Constansts.progressViewHeight / 2
+        progressView.clipsToBounds = true
         
-        let maskLayerPath = UIBezierPath(roundedRect: progressView.bounds, cornerRadius: progressView.frame.height / 2)
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = progressView.bounds
-        maskLayer.path = maskLayerPath.cgPath
-        progressView.layer.mask = maskLayer
-        progressView.layoutIfNeeded()
+        setupProgressIndicatorLayer()
     }
     
     private func setupProgressIndicatorLayer() {
-        progressView.layer.sublayers?[safe: 1]?.cornerRadius = progressView.frame.height / 2
+        progressView.layer.sublayers?[safe: 1]?.cornerRadius = 6
         progressView.subviews[safe: 1]?.clipsToBounds = true
     }
     
