@@ -131,7 +131,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigation()
+        setupNavigation(style: .blue)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -156,7 +156,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     
     // MARK: - Private Setup
     private func commonInit() {
-        setBackButton(style: .orange)
+        setBackButton(style: .light)
     }
     
     private func setupViews() {

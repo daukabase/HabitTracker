@@ -63,17 +63,9 @@ final class HabitViewController: UIViewController, LoaderViewDisplayable, ErrorD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.view.backgroundColor = .clear
-        navigationController?.navigationBar.roundCorners([.bottomLeft, .bottomRight], radius: 24)
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: FontFamily.Gilroy.medium.font(size: 18)!,
-            NSAttributedString.Key.foregroundColor: ColorName.textBlack.color
-        ]
+        setupNavigation(style: .light)
+        
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.barTintColor = ColorName.uiWhite.color
-        navigationController?.navigationBar.tintColor = ColorName.uiGrayPrimary.color
     }
     
     // MARK: - Internal Methods

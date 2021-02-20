@@ -45,9 +45,8 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        setupNavigation(style: .light)
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.barTintColor = ColorName.uiWhite.color
-        navigationController?.navigationBar.tintColor = ColorName.uiGrayPrimary.color
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

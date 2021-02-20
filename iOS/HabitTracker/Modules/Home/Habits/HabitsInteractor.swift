@@ -70,18 +70,12 @@ final class HabitsInteractor {
                 completion(result)
                 return
             }
-            Self.mergeHabitsWithoutDuplicates(habits, todayHabits, completion: completion)
+            var uniqueHabits = Set(todayHabits)
+            
+            habits.forEach { uniqueHabits.insert($0) }
+            
+            completion(.success(Array(uniqueHabits)))
         }
-    }
-    
-    private static func mergeHabitsWithoutDuplicates(_ lhs: [Habit],
-                                                     _ rhs: [Habit],
-                                                     completion: @escaping Closure<RResult<[Habit]>>) {
-        var uniqueHabits = Set(lhs)
-        
-        rhs.forEach { uniqueHabits.insert($0) }
-        
-        completion(.success(Array(uniqueHabits)))
     }
     
     private func getHabits(for checkpoints: [CheckpointModel], completion: @escaping Closure<[Habit]>) {

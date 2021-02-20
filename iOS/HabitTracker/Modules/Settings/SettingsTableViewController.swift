@@ -132,7 +132,7 @@ class SettingsTableViewController: UIViewController, LoaderViewDisplayable, Erro
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigation()
+        setupNavigation(style: .blue)
     }
     
     private func commonInit() {
