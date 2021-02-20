@@ -42,8 +42,6 @@ final class HabitCell: ShrinkableCell {
         containerView.layer.backgroundColor = UIColor.clear.cgColor
         containerView.applyDropShadow()
         
-//        setupProgressViewLayer()
-        
         doneButton.onClick = { [weak self] isSelected in
             self?.doneButtonDidClicked(isSelected: isSelected)
         }
@@ -55,18 +53,6 @@ final class HabitCell: ShrinkableCell {
     }
     
     // MARK: - Private Methods
-//    private func setupProgressViewLayer() {
-//        progressView.layer.cornerRadius = Constansts.progressViewHeight / 2
-//        progressView.clipsToBounds = true
-//
-//        setupProgressIndicatorLayer()
-//    }
-    
-    private func setupProgressIndicatorLayer() {
-        progressView.layer.sublayers?[safe: 1]?.cornerRadius = 6
-        progressView.subviews[safe: 1]?.clipsToBounds = true
-    }
-    
     private func doneButtonDidClicked(isSelected: Bool) {
         Haptic.impact(.medium).generate()
         

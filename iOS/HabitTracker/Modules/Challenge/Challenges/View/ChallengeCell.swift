@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ChallengeCell: UITableViewCell {
+final class ChallengeCell: ShrinkableCell {
     
     weak var delegate: ChallengeDelegate?
     

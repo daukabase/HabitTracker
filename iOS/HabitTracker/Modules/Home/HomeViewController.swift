@@ -87,7 +87,7 @@ class HomeViewController: UIViewController {
         addHabitButton.addTarget(self, action: #selector(addHabitDidTap), for: .touchUpInside)
         
         addHabitButton.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(-16)
+            make.right.equalToSuperview().offset(-24)
             make.bottom.equalToSuperview().offset(-24)
             make.size.equalTo(64)
         }

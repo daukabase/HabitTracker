@@ -177,7 +177,7 @@
                                             <outlet property="markDoneContainerView" destination="Vd0-B9-XVy" id="9nv-8U-qOf"/>
                                             <outlet property="progressIndicatorLabel" destination="263-nh-t8q" id="7CL-u9-iOm"/>
                                             <outlet property="progressView" destination="GAn-gJ-oPG" id="LgQ-XY-FrR"/>
-                                            <outlet property="titleLabel" destination="ORE-9r-97t" id="Bpa-L4-sxm"/>
+                                            <outlet property="titleLabel" destination="ORE-9r-97t" id="nM4-b0-yJh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
