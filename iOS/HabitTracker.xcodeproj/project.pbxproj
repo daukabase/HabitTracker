@@ -11,6 +11,8 @@
 		0810655425337AD50002B7F6 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810655325337AD50002B7F6 /* Frequency.swift */; };
 		0810655B25337D310002B7F6 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810655A25337D310002B7F6 /* HabitModel.swift */; };
 		08106563253384E20002B7F6 /* CheckpointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08106562253384E20002B7F6 /* CheckpointModel.swift */; };
+		082858D525E139F600146689 /* PickerUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082858D425E139F600146689 /* PickerUsageView.swift */; };
+		082858DB25E13A5F00146689 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082858DA25E13A5F00146689 /* ToolbarPickerView.swift */; };
 		0830031E25DFC24600ED1D51 /* AppInterfaceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830031D25DFC24600ED1D51 /* AppInterfaceConfigurator.swift */; };
 		08368C4D2540A28500B5AE33 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08368C4C2540A28500B5AE33 /* ChallengesViewController.swift */; };
 		08368C552540A6EE00B5AE33 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08368C542540A6EE00B5AE33 /* Notification.Name.swift */; };
@@ -292,6 +294,8 @@
 		0810655325337AD50002B7F6 /* Frequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 		0810655A25337D310002B7F6 /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
 		08106562253384E20002B7F6 /* CheckpointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointModel.swift; sourceTree = "<group>"; };
+		082858D425E139F600146689 /* PickerUsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerUsageView.swift; sourceTree = "<group>"; };
+		082858DA25E13A5F00146689 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 		0830031D25DFC24600ED1D51 /* AppInterfaceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInterfaceConfigurator.swift; sourceTree = "<group>"; };
 		08368C4C2540A28500B5AE33 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		08368C542540A6EE00B5AE33 /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
@@ -603,6 +607,22 @@
 				08106562253384E20002B7F6 /* CheckpointModel.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		082858D325E139CB00146689 /* PickerUsageView */ = {
+			isa = PBXGroup;
+			children = (
+				082858D425E139F600146689 /* PickerUsageView.swift */,
+			);
+			path = PickerUsageView;
+			sourceTree = "<group>";
+		};
+		082858D925E13A4D00146689 /* ToolbarPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				082858DA25E13A5F00146689 /* ToolbarPickerView.swift */,
+			);
+			path = ToolbarPickerView;
 			sourceTree = "<group>";
 		};
 		0830031C25DFC23D00ED1D51 /* Configurations */ = {
@@ -1065,6 +1085,7 @@
 		B05FC1CB245D803E00F4C214 /* Reusable Layer */ = {
 			isa = PBXGroup;
 			children = (
+				082858D925E13A4D00146689 /* ToolbarPickerView */,
 				B077F9C3245D981200FAFFB6 /* MessageBanner */,
 				B077F9AC245D948100FAFFB6 /* InputCode */,
 				08C695BF24CDF00800BDBEA2 /* RoundedShadowButton */,
@@ -1532,6 +1553,7 @@
 			isa = PBXGroup;
 			children = (
 				B07BFE742454877300D2D18F /* HabitDetailsViewController.xib */,
+				082858D325E139CB00146689 /* PickerUsageView */,
 				B083557E2466B8C70043CB8A /* Icons */,
 				B047294A245C393E00F3458F /* Colors */,
 				B0DDCB182455A27C004223DB /* SwitchableView */,
@@ -2001,8 +2023,10 @@
 				08CB4A872532F44F00BDB5DD /* V1.swift in Sources */,
 				B03495F6245EDC6B00C11283 /* NumberRegistrationViewController.swift in Sources */,
 				084A78432584009B00FADDCC /* CalendarViewModel.swift in Sources */,
+				082858DB25E13A5F00146689 /* ToolbarPickerView.swift in Sources */,
 				08A4FDD4258F7DBA003A387A /* HabitsInteractor.swift in Sources */,
 				B077F9B3245D94B500FAFFB6 /* NumberConfirmationViewController.swift in Sources */,
+				082858D525E139F600146689 /* PickerUsageView.swift in Sources */,
 				08A4FDE2258FF4CD003A387A /* UIStackView.swift in Sources */,
 				B0DDCB0824556FBB004223DB /* Date.swift in Sources */,
 				08DA7D9724C88BD100CC52A9 /* Header.swift in Sources */,

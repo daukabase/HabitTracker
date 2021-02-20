@@ -8,6 +8,7 @@
 
 "Common.cancel" = "Cancel";
 "Common.enable" = "Enable";
+"Common.done" = "Done";
 "Common.ok" = "OK";
 
 "Onboarding.Challenge.title" = "Challenge accepted!";

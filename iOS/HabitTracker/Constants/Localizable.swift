@@ -14,6 +14,8 @@ internal enum L10n {
   internal enum Common {
     /// Cancel
     internal static let cancel = L10n.tr("Localizable", "Common.cancel")
+    /// Done
+    internal static let done = L10n.tr("Localizable", "Common.done")
     /// Enable
     internal static let enable = L10n.tr("Localizable", "Common.enable")
     /// OK

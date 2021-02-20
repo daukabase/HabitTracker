@@ -32,13 +32,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="700" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOy-ej-ap7">
-                    <rect key="frame" x="0.0" y="16" width="43" height="15"/>
+                    <rect key="frame" x="0.0" y="16" width="43" height="16"/>
                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="16"/>
                     <color key="textColor" red="0.94509803920000002" green="0.27450980390000002" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="Dwp-UI-fAM">
-                    <rect key="frame" x="18" y="47" width="82" height="36"/>
+                    <rect key="frame" x="18" y="59" width="82" height="36"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="21" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmS-dm-h5e">
                             <rect key="frame" x="8" y="10.5" width="66" height="19.5"/>
@@ -57,7 +57,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="gg4-fJ-u1J">
-                    <rect key="frame" x="136.5" y="47" width="178" height="36"/>
+                    <rect key="frame" x="136.5" y="59" width="178" height="36"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="bsf-IE-BQI">
                             <rect key="frame" x="128" y="8" width="20" height="20"/>
@@ -80,13 +80,13 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="starts at" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzY-Ce-WLd">
-                    <rect key="frame" x="202.5" y="91" width="46" height="12"/>
+                    <rect key="frame" x="202.5" y="39" width="46" height="12"/>
                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                     <color key="textColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="501" text="ends in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDB-dc-ScD">
-                    <rect key="frame" x="39.5" y="91" width="39" height="12"/>
+                    <rect key="frame" x="39.5" y="39" width="39" height="12"/>
                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                     <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -96,16 +96,16 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gg4-fJ-u1J" secondAttribute="trailing" constant="16" id="9dR-yT-qk0"/>
+                <constraint firstItem="Dwp-UI-fAM" firstAttribute="top" secondItem="MOy-ej-ap7" secondAttribute="bottom" constant="27" id="Blr-fP-AUy"/>
+                <constraint firstItem="Dwp-UI-fAM" firstAttribute="top" secondItem="IDB-dc-ScD" secondAttribute="bottom" constant="8" symbolic="YES" id="EsP-6K-mRz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Dwp-UI-fAM" secondAttribute="bottom" constant="16" id="K2j-jL-2w4"/>
                 <constraint firstItem="MOy-ej-ap7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="U91-TM-TTC"/>
                 <constraint firstItem="gg4-fJ-u1J" firstAttribute="leading" secondItem="Dwp-UI-fAM" secondAttribute="trailing" priority="750" constant="36.5" id="W5v-Gp-KKa"/>
-                <constraint firstItem="IDB-dc-ScD" firstAttribute="top" secondItem="Dwp-UI-fAM" secondAttribute="bottom" constant="8" id="Y2B-lJ-iOb"/>
-                <constraint firstItem="xzY-Ce-WLd" firstAttribute="top" secondItem="gg4-fJ-u1J" secondAttribute="bottom" constant="8" id="Ylj-Jn-DKD"/>
                 <constraint firstItem="MOy-ej-ap7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZA5-qf-igV"/>
-                <constraint firstItem="Dwp-UI-fAM" firstAttribute="top" secondItem="MOy-ej-ap7" secondAttribute="bottom" constant="16" id="ehc-zK-c0p"/>
                 <constraint firstItem="IDB-dc-ScD" firstAttribute="centerX" secondItem="Dwp-UI-fAM" secondAttribute="centerX" id="fut-uf-fRv"/>
                 <constraint firstItem="gg4-fJ-u1J" firstAttribute="centerY" secondItem="Dwp-UI-fAM" secondAttribute="centerY" id="hhR-24-erJ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="IDB-dc-ScD" secondAttribute="bottom" constant="8" id="l40-NZ-niw"/>
                 <constraint firstItem="xzY-Ce-WLd" firstAttribute="centerX" secondItem="gg4-fJ-u1J" secondAttribute="centerX" id="m2y-t7-gKE"/>
+                <constraint firstItem="gg4-fJ-u1J" firstAttribute="top" secondItem="xzY-Ce-WLd" secondAttribute="bottom" constant="8" symbolic="YES" id="pMP-B1-tcd"/>
                 <constraint firstItem="Dwp-UI-fAM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="seL-po-hbd"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
