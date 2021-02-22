@@ -45,12 +45,10 @@ final class AppInterfaceConfigurator {
     private func _routeToHome(animated: Bool) {
         let controller = HomeViewController()
         setupRoot(viewController: controller, animated: animated)
-        
-        window.rootViewController = UINavigationController(rootViewController: controller)
     }
     
     private func setupRoot(viewController: UIViewController, animated: Bool) {
-        window.rootViewController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = PreferredNavigationController(rootViewController: viewController)
         
         guard animated else {
             return

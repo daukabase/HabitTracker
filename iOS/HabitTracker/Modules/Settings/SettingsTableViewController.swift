@@ -135,6 +135,10 @@ class SettingsTableViewController: UIViewController, LoaderViewDisplayable, Erro
         setupNavigation(style: .blue)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private func commonInit() {
         title = moduleType.title
         

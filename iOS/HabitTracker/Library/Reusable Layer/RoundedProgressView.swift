@@ -8,49 +8,62 @@
 
 import UIKit
 
-class RoundedProgressView: UIProgressView {
+@IBDesignable
+class RoundedProgressView: UIView {
     
     // MARK: - Constants
     private enum Constants {
         static let progressViewHeight: CGFloat = 12
+        static let radius = progressViewHeight / 2
+        static let minimumProgressWidth = radius
     }
     
+    // MARK: - Properties
+    @IBInspectable var progressTintColor: UIColor? = .gray
+    @IBInspectable var trackTintColor: UIColor? = .gray {
+        didSet {
+            self.backgroundColor = trackTintColor
+        }
+    }
+    
+    private(set) var progress: CGFloat = 0.5 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    private let progressLayer = CALayer()
+    
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        commmonInit()
+        layer.addSublayer(progressLayer)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        commmonInit()
+        layer.addSublayer(progressLayer)
     }
     
-    // MARK: - UIProgressView
-    override func awakeFromNib() {
-        super.awakeFromNib()
-//        commmonInit()
-    }
-    
-    // MARK: - Private Methods
-    private func commmonInit() {
-        snp.makeConstraints { make in
-            make.height.equalTo(Constants.progressViewHeight)
-        }
-        setupProgressViewLayer()
-    }
-    
-    private func setupProgressViewLayer() {
-        layer.cornerRadius = Constants.progressViewHeight / 2
-        clipsToBounds = true
+    // MARK: - SuperView
+    override func draw(_ rect: CGRect) {
         
-        setupProgressIndicatorLayer()
+        let backgroundMask = CAShapeLayer()
+        backgroundMask.path = UIBezierPath(roundedRect: rect, cornerRadius: Constants.radius).cgPath
+        layer.mask = backgroundMask
+        
+        let progressWidth = max(Constants.minimumProgressWidth, rect.width * progress)
+        let progressRect = CGRect(origin: .zero, size: CGSize(width: progressWidth, height: rect.height))
+        progressLayer.frame = progressRect
+        progressLayer.cornerRadius = Constants.radius
+        progressLayer.backgroundColor = progressTintColor?.cgColor
     }
     
-    private func setupProgressIndicatorLayer() {
-        layer.sublayers?[safe: 1]?.cornerRadius = 6
-        subviews[safe: 1]?.clipsToBounds = true
+    // MARK: - Methods
+    func setProgress(_ value: Float) {
+        self.progress = CGFloat(value)
     }
     
 }

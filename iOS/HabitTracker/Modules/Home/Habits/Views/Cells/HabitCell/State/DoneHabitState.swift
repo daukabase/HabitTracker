@@ -29,7 +29,7 @@ final class DoneHabitState: HabitAbstractCellState {
         cell.progressView.trackTintColor = grayColor.withAlphaComponent(0.15)
         cell.progressView.progressTintColor = grayColor
         
-        cell.progressView.setProgress(viewModel.progress, animated: true)
+        cell.progressView.setProgress(viewModel.progress)
         
         cell.doneButton.configure(color: grayColor)
         cell.doneButton.isSelected = false

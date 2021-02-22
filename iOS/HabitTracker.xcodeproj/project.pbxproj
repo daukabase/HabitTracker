@@ -13,6 +13,10 @@
 		08106563253384E20002B7F6 /* CheckpointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08106562253384E20002B7F6 /* CheckpointModel.swift */; };
 		082858D525E139F600146689 /* PickerUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082858D425E139F600146689 /* PickerUsageView.swift */; };
 		082858DB25E13A5F00146689 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082858DA25E13A5F00146689 /* ToolbarPickerView.swift */; };
+		082858E025E3D39900146689 /* StartDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082858DF25E3D39900146689 /* StartDateView.swift */; };
+		082858E525E3D3B700146689 /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082858E425E3D3B700146689 /* DurationPickerView.swift */; };
+		082858EA25E3D3D500146689 /* TitleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082858E925E3D3D500146689 /* TitleContentView.swift */; };
+		082858F525E3E1FB00146689 /* PreferredNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082858F425E3E1FB00146689 /* PreferredNavigationController.swift */; };
 		0830031E25DFC24600ED1D51 /* AppInterfaceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830031D25DFC24600ED1D51 /* AppInterfaceConfigurator.swift */; };
 		08368C4D2540A28500B5AE33 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08368C4C2540A28500B5AE33 /* ChallengesViewController.swift */; };
 		08368C552540A6EE00B5AE33 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08368C542540A6EE00B5AE33 /* Notification.Name.swift */; };
@@ -296,6 +300,10 @@
 		08106562253384E20002B7F6 /* CheckpointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointModel.swift; sourceTree = "<group>"; };
 		082858D425E139F600146689 /* PickerUsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerUsageView.swift; sourceTree = "<group>"; };
 		082858DA25E13A5F00146689 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
+		082858DF25E3D39900146689 /* StartDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDateView.swift; sourceTree = "<group>"; };
+		082858E425E3D3B700146689 /* DurationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
+		082858E925E3D3D500146689 /* TitleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleContentView.swift; sourceTree = "<group>"; };
+		082858F425E3E1FB00146689 /* PreferredNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferredNavigationController.swift; sourceTree = "<group>"; };
 		0830031D25DFC24600ED1D51 /* AppInterfaceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInterfaceConfigurator.swift; sourceTree = "<group>"; };
 		08368C4C2540A28500B5AE33 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		08368C542540A6EE00B5AE33 /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
@@ -609,12 +617,15 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		082858D325E139CB00146689 /* PickerUsageView */ = {
+		082858D325E139CB00146689 /* Picker */ = {
 			isa = PBXGroup;
 			children = (
 				082858D425E139F600146689 /* PickerUsageView.swift */,
+				082858E425E3D3B700146689 /* DurationPickerView.swift */,
+				082858DF25E3D39900146689 /* StartDateView.swift */,
+				082858E925E3D3D500146689 /* TitleContentView.swift */,
 			);
-			path = PickerUsageView;
+			path = Picker;
 			sourceTree = "<group>";
 		};
 		082858D925E13A4D00146689 /* ToolbarPickerView */ = {
@@ -1093,6 +1104,7 @@
 				08A4FDD8258FEE37003A387A /* FilterView */,
 				087621C2256ACA82006243D6 /* Cells */,
 				08EEEA3425E056F100BB6C2C /* RoundedProgressView.swift */,
+				082858F425E3E1FB00146689 /* PreferredNavigationController.swift */,
 			);
 			path = "Reusable Layer";
 			sourceTree = "<group>";
@@ -1553,7 +1565,7 @@
 			isa = PBXGroup;
 			children = (
 				B07BFE742454877300D2D18F /* HabitDetailsViewController.xib */,
-				082858D325E139CB00146689 /* PickerUsageView */,
+				082858D325E139CB00146689 /* Picker */,
 				B083557E2466B8C70043CB8A /* Icons */,
 				B047294A245C393E00F3458F /* Colors */,
 				B0DDCB182455A27C004223DB /* SwitchableView */,
@@ -1934,6 +1946,7 @@
 				B00123EA245F01F0001B5481 /* Optional.swift in Sources */,
 				B0A6B31624992A960079AF72 /* SelectImageCell.swift in Sources */,
 				B091F53C2483DC7B0040F0EE /* AchievementsViewController.swift in Sources */,
+				082858EA25E3D3D500146689 /* TitleContentView.swift in Sources */,
 				08C695C424CDF07900BDBEA2 /* CAShapeLayer.swift in Sources */,
 				08CB4976252E202F00BDB5DD /* HabitStorage.swift in Sources */,
 				B07BFE752454877300D2D18F /* HabitDetailsViewController.swift in Sources */,
@@ -1945,6 +1958,7 @@
 				08A4FDB3258F75AA003A387A /* HabitCellViewModel.swift in Sources */,
 				08CB49A9252E266B00BDB5DD /* AchievementsRepository.swift in Sources */,
 				B07BFE6F245460AE00D2D18F /* Array.swift in Sources */,
+				082858F525E3E1FB00146689 /* PreferredNavigationController.swift in Sources */,
 				08368C4D2540A28500B5AE33 /* ChallengesViewController.swift in Sources */,
 				B07BFD8224542C6800D2D18F /* Colors.swift in Sources */,
 				087621C4256ACA8C006243D6 /* ShrinkableCell.swift in Sources */,
@@ -1953,6 +1967,7 @@
 				08DA7D9D24C9BB4B00CC52A9 /* SharedMethods.swift in Sources */,
 				084A783B2583F26E00FADDCC /* HabitColor.swift in Sources */,
 				08CB4911252E1E3F00BDB5DD /* AchievementDTO.swift in Sources */,
+				082858E525E3D3B700146689 /* DurationPickerView.swift in Sources */,
 				08CB4B41253300DC00BDB5DD /* HabitStorage+Achievement.swift in Sources */,
 				B07BFE7D24548BAE00D2D18F /* Closures.swift in Sources */,
 				08EDA49B24C487BC00F9DDFC /* NetworkProvider+Error.swift in Sources */,
@@ -1998,6 +2013,7 @@
 				B04DE769248D4C8300E2971D /* MarkAsDoneViewController.swift in Sources */,
 				08C695BE24CDF00300BDBEA2 /* RoundedShadowButton.swift in Sources */,
 				B07BFE5A24544C4B00D2D18F /* UISwitch.swift in Sources */,
+				082858E025E3D39900146689 /* StartDateView.swift in Sources */,
 				08DA7D8A24C853F200CC52A9 /* KeychainManager.swift in Sources */,
 				08A4FDAA258F54E7003A387A /* HabitDisplayCell.swift in Sources */,
 				08DA7DA824C9C26400CC52A9 /* ErrorModel.swift in Sources */,
@@ -2158,7 +2174,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Daulet Almagambetov (6MJ6BZN9Z9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				CURRENT_SCHEME_NAME = "";
 				DEVELOPMENT_TEAM = JNA8QM22SG;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2385,7 +2401,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Daulet Almagambetov (6MJ6BZN9Z9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				CURRENT_SCHEME_NAME = "";
 				DEVELOPMENT_TEAM = JNA8QM22SG;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2411,7 +2427,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Daulet Almagambetov (JNA8QM22SG)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				CURRENT_SCHEME_NAME = "";
 				DEVELOPMENT_TEAM = JNA8QM22SG;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
