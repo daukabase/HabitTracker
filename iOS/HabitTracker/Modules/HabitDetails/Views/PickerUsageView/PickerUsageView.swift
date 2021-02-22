@@ -29,7 +29,15 @@ class TitleContentView: UIView {
         return label
     }()
     
-    init(frame: CGRect) {
+    private lazy var lineView: UIView = {
+        let view = UIView(frame: .zero)
+        
+        view.backgroundColor = ColorName.uiBlueSecondary.color
+        
+        return view
+    }()
+    
+    override init(frame: CGRect) {
         super.init(frame: .zero)
         commonInit()
     }
@@ -39,18 +47,22 @@ class TitleContentView: UIView {
     }
     
     private func commonInit() {
-        [titleLabel, dataLabel].forEach(addSubview)
+        [titleLabel, dataLabel, lineView].forEach(addSubview)
         
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
-            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(8)
         }
         dataLabel.snp.makeConstraints { make in
             make.right.equalToSuperview()
-            make.centerY.equalToSuperview()
+            make.centerY.centerY.equalTo(titleLabel)
         }
         snp.makeConstraints { make in
-            make.height.equalTo(36)
+            make.height.equalTo(48)
+        }
+        lineView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(1)
         }
     }
 
@@ -103,11 +115,20 @@ class PickerIntegratableView: TitleContentView {
         hiddenTextField.tintColor = .clear
     }
     
+    override func enable() {
+        super.enable()
+        hiddenTextField.isUserInteractionEnabled = true
+    }
+    
+    override func disable() {
+        super.disable()
+        hiddenTextField.isUserInteractionEnabled = false
+    }
 }
 
 class StartDateView: PickerIntegratableView {
     
-    private(set) var startDate: Date = Date() {
+    var startDate: Date = Date() {
         didSet {
             updateUI()
         }
@@ -131,12 +152,14 @@ class StartDateView: PickerIntegratableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
+        updateUI()
+        set(title: "Start date")
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-        
+    
     private func commonInit() {
         set(inpuView: datePicker)
         startDate = { startDate }()
@@ -172,7 +195,7 @@ class DurationPickerView: PickerIntegratableView {
         static let durationDaysArray: [Int] = [5, 7, 13, 21, 48, 66, 85, 256]
     }
     
-    private(set) var durationDays: Int = Constants.suggestedDays {
+    var durationDays: Int = Constants.suggestedDays {
         didSet {
             updateDuration()
         }
@@ -190,6 +213,8 @@ class DurationPickerView: PickerIntegratableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
+        updateDuration()
+        set(title: "Duration")
     }
     
     required init?(coder: NSCoder) {

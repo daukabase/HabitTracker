@@ -49,11 +49,9 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         return notesInputView
     }()
     
-    private lazy var durationView: DurationView = {
-        let durationView = DurationView(frame: .zero)
-        durationView.setup(title: L10n.HabitDetails.Duration.title)
-        return durationView
-    }()
+    private lazy var startDateInputView = StartDateView(frame: .zero)
+    
+    private lazy var durationInputView = DurationPickerView(frame: .zero)
     
     private lazy var scheduleView: ScheduleView = {
         let scheduleView = ScheduleView(frame: .zero)
@@ -167,7 +165,8 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
             notesInputView,
             iconsViewController.view,
             colorsViewController.view,
-            durationView,
+            startDateInputView,
+            durationInputView,
             scheduleView,
             chooseAllView,
             remindView,
@@ -176,7 +175,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         ]
             .forEach(stackView.addArrangedSubview)
         
-        stackView.setCustomSpacing(16, after: colorsViewController.view)
+        stackView.setCustomSpacing(24, after: colorsViewController.view)
         stackView.setCustomSpacing(38, after: saveButton)
     }
 
@@ -247,8 +246,8 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
                                frequence: frequency,
                                colorHex: colorsViewController.selectedColor.color.toHexString(),
                                icon: iconsViewController.selectedIcon.rawValue,
-                               startDate: durationView.startDate,
-                               durationDays: durationView.durationDays)
+                               startDate: startDateInputView.startDate,
+                               durationDays: durationInputView.durationDays)
         
         return habit
     }
@@ -290,7 +289,8 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         colorsViewController.set(selected: habit.color)
         iconsViewController.select(icon: habit.habitIcon)
         iconsViewController.setup(color: habit.color)
-        durationView.set(startDate: habit.startDate, durationDays: habit.durationDays)
+        startDateInputView.startDate = habit.startDate
+        durationInputView.durationDays = habit.durationDays
     }
     
     private func setupRemindTime(for habit: Habit, completion: Closure<RResult<Void>>?) {
