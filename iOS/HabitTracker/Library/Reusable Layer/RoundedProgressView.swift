@@ -15,7 +15,7 @@ class RoundedProgressView: UIView {
     private enum Constants {
         static let progressViewHeight: CGFloat = 12
         static let radius = progressViewHeight / 2
-        static let minimumProgressWidth = radius
+        static let minimumProgressWidth = progressViewHeight
     }
     
     // MARK: - Properties
