@@ -31,10 +31,10 @@ class FastlaneUITests: XCTestCase {
         // 2 - CreateHabit
         app/*@START_MENU_TOKEN@*/.buttons["Add habit button"]/*[[".buttons[\"add\"]",".buttons[\"Add habit button\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         snapshot("02CreateHabit")
-        app.navigationBars["Habit details"].buttons["Back"].tap()
+        app.navigationBars["Create Habit"].buttons["Back"].tap()
         
         // 3 - Habit
-        app.scrollViews.otherElements.scrollViews.otherElements.tables/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Running at 7 am")/*[[".cells.containing(.staticText, identifier:\"4\/21\")",".cells.containing(.staticText, identifier:\"Running at 7 am\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.progressIndicators["Progress"].tap()
+        app.tables.staticTexts["Running at 7 am"].tap()
         
         snapshot("02DHabit")
     }

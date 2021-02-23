@@ -28,6 +28,8 @@ final class HabitsInteractor {
     }
     
     func getCheckpointsForToday(completion: @escaping Closure<RResult<[Habit]>>) {
+        completion(.success(FastlaneData.TestData.Habits.testData))
+        return
         if Target.current == .fastlaneUiTest {
             completion(.success(FastlaneData.TestData.Habits.testData))
             return

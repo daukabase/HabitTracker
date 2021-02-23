@@ -33,7 +33,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="354"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-ib-WCE" customClass="JTACMonthView" customModule="JTAppleCalendar">
-                                                <rect key="frame" x="1" y="0.0" width="380" height="330"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="330"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="edM-7N-nTW">
                                                     <size key="itemSize" width="70" height="66"/>
@@ -102,24 +102,22 @@
                                                             <outlet property="doneImageView" destination="V7U-Cd-U9Q" id="oUi-mZ-tcH"/>
                                                             <outlet property="selectedSingleView" destination="Dbq-NS-e2B" id="TcR-RM-wfu"/>
                                                             <outlet property="selectedView" destination="Q7g-Zl-mX8" id="RPM-oh-Djt"/>
-                                                            <outlet property="selectedViewLeftConstraint" destination="NLV-we-bPA" id="atk-iJ-HsU"/>
-                                                            <outlet property="selectedViewRightConstraint" destination="Gk3-FJ-HMR" id="aIi-45-76k"/>
                                                             <outlet property="todayIndicatorView" destination="yOq-kY-HNW" id="8C5-la-rFB"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="DateHeader" id="1b1-Ud-4G1" customClass="DateHeader" customModule="HabitTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="June, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry1-Rp-7HO">
-                                                            <rect key="frame" x="150" y="24" width="80.5" height="19.5"/>
+                                                            <rect key="frame" x="151" y="24" width="80.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-u6-lwM">
-                                                            <rect key="frame" x="0.0" y="60" width="380" height="36"/>
+                                                            <rect key="frame" x="0.0" y="60" width="382" height="36"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU5-gi-hNl">
                                                                     <rect key="frame" x="0.0" y="0.0" width="54.5" height="36"/>
@@ -128,37 +126,37 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQP-34-Bio">
-                                                                    <rect key="frame" x="54.5" y="0.0" width="54" height="36"/>
+                                                                    <rect key="frame" x="54.5" y="0.0" width="54.5" height="36"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="16"/>
                                                                     <color key="textColor" red="0.65098039215686276" green="0.66666666666666663" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRr-pC-qdS">
-                                                                    <rect key="frame" x="108.5" y="0.0" width="54.5" height="36"/>
+                                                                    <rect key="frame" x="109" y="0.0" width="54.5" height="36"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="16"/>
                                                                     <color key="textColor" red="0.65098039215686276" green="0.66666666666666663" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Th" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5O-cO-WHu">
-                                                                    <rect key="frame" x="163" y="0.0" width="54" height="36"/>
+                                                                    <rect key="frame" x="163.5" y="0.0" width="55" height="36"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="16"/>
                                                                     <color key="textColor" red="0.65098039215686276" green="0.66666666666666663" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1N-Ok-6Ex">
-                                                                    <rect key="frame" x="217" y="0.0" width="54.5" height="36"/>
+                                                                    <rect key="frame" x="218.5" y="0.0" width="54.5" height="36"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="16"/>
                                                                     <color key="textColor" red="0.65098039215686276" green="0.66666666666666663" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgB-RW-xZI">
-                                                                    <rect key="frame" x="271.5" y="0.0" width="54" height="36"/>
+                                                                    <rect key="frame" x="273" y="0.0" width="54.5" height="36"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="16"/>
                                                                     <color key="textColor" red="0.65098039215686276" green="0.66666666666666663" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Su" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKf-Ph-3nr">
-                                                                    <rect key="frame" x="325.5" y="0.0" width="54.5" height="36"/>
+                                                                    <rect key="frame" x="327.5" y="0.0" width="54.5" height="36"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="16"/>
                                                                     <color key="textColor" red="0.65098039215686276" green="0.66666666666666663" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -189,9 +187,9 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Pfc-ib-WCE" firstAttribute="top" secondItem="eiQ-zl-YJj" secondAttribute="top" id="EXo-nU-IB5"/>
-                                            <constraint firstItem="Pfc-ib-WCE" firstAttribute="leading" secondItem="eiQ-zl-YJj" secondAttribute="leading" constant="1" id="WvY-Kv-LH6"/>
+                                            <constraint firstItem="Pfc-ib-WCE" firstAttribute="leading" secondItem="eiQ-zl-YJj" secondAttribute="leading" id="WvY-Kv-LH6"/>
                                             <constraint firstAttribute="bottom" secondItem="Pfc-ib-WCE" secondAttribute="bottom" constant="24" id="ZPZ-z9-yJ7"/>
-                                            <constraint firstAttribute="trailing" secondItem="Pfc-ib-WCE" secondAttribute="trailing" constant="1" id="spt-ta-E8x"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pfc-ib-WCE" secondAttribute="trailing" id="spt-ta-E8x"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

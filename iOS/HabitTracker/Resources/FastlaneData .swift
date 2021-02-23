@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum FastlaneData {
-    enum TestData {
+public enum FastlaneData {
+    public enum TestData {
         private static let _goal = HabitGoal(done: 4, total: 21)
         
         enum Checkpoints {
@@ -35,9 +35,9 @@ enum FastlaneData {
             static let total = CommonAchievement.getTotalDone(for: _goal.done)
         }
         
-        enum Habits {
+        public enum Habits {
             static let testData = [run, drink, meditation]
-            static let run = Habit(id: "run",
+            public static let run = Habit(id: "run",
                                    title: "Running at 7 am",
                                    notes: "Short run is better than no run",
                                    durationDays: 21,

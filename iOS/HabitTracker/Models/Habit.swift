@@ -9,7 +9,7 @@
 import UIKit
 
 
-class Habit {
+public class Habit {
     
     static let empty = Habit(id: "",
                              title: "",
@@ -127,11 +127,11 @@ class Habit {
 extension Habit: Equatable, Hashable {
     
     // MARK: - Equatable & Hashable
-    static func ==(lhs: Habit, rhs: Habit) -> Bool {
+    public static func ==(lhs: Habit, rhs: Habit) -> Bool {
         return lhs.id == rhs.id
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
     

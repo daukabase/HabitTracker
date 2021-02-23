@@ -35,9 +35,6 @@ class DateCell: JTACDayCell {
     @IBOutlet private var todayIndicatorView: UIView!
     @IBOutlet private var doneImageView: UIImageView!
     
-    @IBOutlet private var selectedViewLeftConstraint: NSLayoutConstraint!
-    @IBOutlet private var selectedViewRightConstraint: NSLayoutConstraint!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         clipsToBounds = false
@@ -69,23 +66,14 @@ class DateCell: JTACDayCell {
         selectedView.isHidden = position == .full
         selectedSingleView.isHidden = position != .full
         
-        selectedViewLeftConstraint.constant = -0.5
-        selectedViewRightConstraint.constant = -0.5
-        
         switch position {
         case .left:
-            selectedViewLeftConstraint.constant = 0
-            selectedViewRightConstraint.constant = -0.5
-            
             selectedView.layer.cornerRadius = radius
             selectedView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
         case .middle:
             selectedView.layer.cornerRadius = .zero
             selectedView.layer.maskedCorners = []
         case .right:
-            selectedViewLeftConstraint.constant = -0.5
-            selectedViewRightConstraint.constant = 0
-            
             selectedView.layer.cornerRadius = radius
             selectedView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         case .full:

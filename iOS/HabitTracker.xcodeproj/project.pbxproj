@@ -2259,6 +2259,7 @@
 		};
 		0868DD0B25D9A3FF005C6585 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40F28EB77F731506B9056F24 /* Pods-HabitTracker.release.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
