@@ -54,7 +54,7 @@ class RoundedProgressView: UIView {
         backgroundMask.path = UIBezierPath(roundedRect: rect, cornerRadius: Constants.radius).cgPath
         layer.mask = backgroundMask
         
-        let progressWidth: CGFloat = 0
+        var progressWidth: CGFloat = 0
         if progress != 0 {
             progressWidth = max(Constants.minimumProgressWidth, rect.width * progress)
         }
