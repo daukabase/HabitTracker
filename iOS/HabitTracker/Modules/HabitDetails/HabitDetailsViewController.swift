@@ -32,6 +32,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
     
     // MARK: - Views
     @IBOutlet private var stackView: UIStackView!
+    @IBOutlet private var scrollView: UIScrollView!
     
     private lazy var titleInputView: BaseInputView = {
         let titleInputView = BaseInputView(frame: .zero)
@@ -175,8 +176,12 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         ]
             .forEach(stackView.addArrangedSubview)
         
-        stackView.setCustomSpacing(16, after: colorsViewController.view)
-        stackView.setCustomSpacing(38, after: saveButton)
+        stackView.setCustomSpacing(24, after: colorsViewController.view)
+        
+        let bottomInset = view.safeAreaInsets.bottom == .zero ? 16 : view.safeAreaInsets.bottom
+        
+        scrollView.contentInset.top = 8
+        scrollView.contentInset.bottom = bottomInset
     }
 
     // MARK: - Actions

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HabitDetailsViewController" customModule="HabitTracker" customModuleProvider="target">
             <connections>
+                <outlet property="scrollView" destination="4aE-wQ-nim" id="z92-DZ-qhf"/>
                 <outlet property="stackView" destination="PZI-at-qJZ" id="Dmc-js-Mar"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -53,7 +54,7 @@
             <constraints>
                 <constraint firstItem="4aE-wQ-nim" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0kC-bL-nQu"/>
                 <constraint firstItem="4aE-wQ-nim" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="96Z-IO-alS"/>
-                <constraint firstItem="4aE-wQ-nim" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="MUe-Cj-eqT"/>
+                <constraint firstItem="4aE-wQ-nim" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="MUe-Cj-eqT"/>
                 <constraint firstItem="4aE-wQ-nim" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Y0X-n3-9gF"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
