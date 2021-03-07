@@ -411,6 +411,14 @@
             <point key="canvasLocation" x="118.84057971014494" y="68.973214285714278"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="VIh-20-IzW">
+            <size key="intrinsicContentSize" width="-1" height="1.5"/>
+        </designable>
+        <designable name="Yqy-W5-kBh">
+            <size key="intrinsicContentSize" width="-1" height="1.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="running" width="34" height="26"/>
         <systemColor name="systemBackgroundColor">

@@ -98,10 +98,6 @@ final class HabitViewController: UIViewController, LoaderViewDisplayable, ErrorD
     
     // MARK: - Private Methods
     private func setupCheckpoints(for habit: Habit) {
-        let model = CalendarViewModel(checkpoints: FastlaneData.TestData.Checkpoints.checkpoints, color: habit.color)
-        
-        calendarViewController.setup(model: model)
-        return 
         guard Target.current != .fastlaneUiTest else {
             let model = CalendarViewModel(checkpoints: FastlaneData.TestData.Checkpoints.checkpoints, color: habit.color)
             

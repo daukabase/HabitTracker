@@ -23,9 +23,17 @@ final class CalendarViewController: UIViewController, LoaderViewDisplayable {
     @IBOutlet private var roundViews: [UIView]!
     @IBOutlet private var backgroundedView: [UIView]!
     
+    @IBOutlet private var calendarWidthConstraint: NSLayoutConstraint!
+    
     // MARK: - Superview
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViews()
+    }
+    
+    private func setupViews() {
+        setupCalendarView()
         
         backgroundedView.forEach {
             $0.backgroundColor = .clear
@@ -33,15 +41,28 @@ final class CalendarViewController: UIViewController, LoaderViewDisplayable {
         containerView.layer.backgroundColor = UIColor.clear.cgColor
         containerView.applyDropShadow()
         
+        roundViews.forEach { $0.round() }
+        bufferColorSetup?(viewModel.themeColor)
+        startLoading()
+    }
+    
+    private func setupCalendarView() {
         calendarView.scrollDirection = .horizontal
         calendarView.scrollingMode = .stopAtEachCalendarFrame
         calendarView.rangeSelectionMode = .continuous
         calendarView.allowsMultipleSelection = true
         calendarView.showsHorizontalScrollIndicator = false
+        calendarView.minimumInteritemSpacing = 0
         
-        roundViews.forEach { $0.round() }
-        bufferColorSetup?(viewModel.themeColor)
-        startLoading()
+        configureCalndarCellsWidth()
+    }
+    
+    private func configureCalndarCellsWidth() {
+        let cellsNumberIfRow: CGFloat = 7
+        let calendarWidth = containerView.frame.width - containerView.frame.width.truncatingRemainder(dividingBy: cellsNumberIfRow)
+        
+        calendarWidthConstraint.constant = calendarWidth
+        calendarView.cellSize = calendarWidth / cellsNumberIfRow
     }
     
     // MARK: - Internal Methods
