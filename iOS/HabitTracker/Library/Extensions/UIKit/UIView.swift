@@ -148,6 +148,30 @@ extension UIView {
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
     
+    
+    func applyDropShadow(x: CGFloat = 0,
+                         y: CGFloat = 16,
+                         blur: CGFloat = 40,
+                         spread: CGFloat = 0,
+                         color: UIColor = ColorName.uiGrayPrimary.color,
+                         alpha: Float = 0.2) {
+        var shadowPath: CGPath?
+        
+        if spread != 0 {
+            let rect = bounds.insetBy(dx: -spread, dy: -spread)
+            shadowPath = UIBezierPath(rect: rect).cgPath
+        }
+        
+        masksToBounds = false
+        
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = alpha
+        layer.shadowOffset = CGSize(width: x, height: y)
+        layer.shadowRadius = blur / 2.0
+        layer.shadowPath = shadowPath
+        layer.shouldRasterize = false
+    }
+    
     func applyDropShadow(with model: ShadowModel) {
         applyDropShadow(color: UIColor(cgColor: model.color),
                         opacity: model.opacity,

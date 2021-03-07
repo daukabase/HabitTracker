@@ -175,7 +175,7 @@ final class HabitDetailsViewController: UIViewController, LoaderViewDisplayable,
         ]
             .forEach(stackView.addArrangedSubview)
         
-        stackView.setCustomSpacing(24, after: colorsViewController.view)
+        stackView.setCustomSpacing(16, after: colorsViewController.view)
         stackView.setCustomSpacing(38, after: saveButton)
     }
 

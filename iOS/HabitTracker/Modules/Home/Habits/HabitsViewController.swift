@@ -104,6 +104,9 @@ final class HabitsViewController: UIViewController, LoaderViewDisplayable, Error
         tableView.rowHeight = UITableView.automaticDimension
         tableView.addSubview(refreshControl)
         tableView.delaysContentTouches = false
+        tableView.clipsToBounds = false
+        
+        view.clipsToBounds = false
         
         emptyMessageLabel.textColor = ColorName.textSecondary.color
     }
