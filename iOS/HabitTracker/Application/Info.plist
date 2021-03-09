@@ -109,5 +109,7 @@ Montserrat-ThinItalic.otf</string>
 	<true/>
 	<key>baseUrl</key>
 	<string>https://google.com</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
